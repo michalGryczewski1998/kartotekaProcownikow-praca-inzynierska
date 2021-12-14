@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kartotekapracownikow.Forms.Employees;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,15 @@ namespace Kartotekapracownikow
         private void pracownikaBTN_Click(object sender, EventArgs e)
         {
             TabPage tabPage = new TabPage();
+            wyswietlanieFormsWZakladkach.Controls.Add(tabPage);
 
+            Employees form = new Employees();
+            tabPage.Text = form.Text = "Pracownicy";
+            form.TopLevel = false;
+            form.Visible = true;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            tabPage.Controls.Add(form);
         }
     }
 }

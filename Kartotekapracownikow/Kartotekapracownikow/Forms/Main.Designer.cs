@@ -30,24 +30,33 @@ namespace Kartotekapracownikow
         private void InitializeComponent()
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panelMenuMain = new System.Windows.Forms.TabPage();
+            this.pracownicyZagranica = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.pracownikaBTN = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelWyswietlajacy = new System.Windows.Forms.Panel();
+            this.wyswietlanieFormsWZakladkach = new System.Windows.Forms.TabControl();
             this.status = new System.Windows.Forms.StatusStrip();
             this.statusWersja = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusUzytkownik = new System.Windows.Forms.ToolStripStatusLabel();
-            this.wyswietlanieForms = new System.Windows.Forms.TabControl();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.dodajPracownikaBTN = new System.Windows.Forms.Button();
+            this.splitter3 = new System.Windows.Forms.Splitter();
+            this.zwolnijPracownikaBTN = new System.Windows.Forms.Button();
+            this.splitter5 = new System.Windows.Forms.Splitter();
+            this.byliPracownicyBTN = new System.Windows.Forms.Button();
+            this.splitter4 = new System.Windows.Forms.Splitter();
+            this.UmowyBTN = new System.Windows.Forms.Button();
             this.mainTabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.panelMenuMain.SuspendLayout();
             this.panelWyswietlajacy.SuspendLayout();
             this.status.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabControl
             // 
-            this.mainTabControl.Controls.Add(this.tabPage1);
+            this.mainTabControl.Controls.Add(this.panelMenuMain);
             this.mainTabControl.Controls.Add(this.tabPage2);
             this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.mainTabControl.Location = new System.Drawing.Point(0, 0);
@@ -56,17 +65,36 @@ namespace Kartotekapracownikow
             this.mainTabControl.Size = new System.Drawing.Size(839, 72);
             this.mainTabControl.TabIndex = 0;
             // 
-            // tabPage1
+            // panelMenuMain
             // 
-            this.tabPage1.Controls.Add(this.splitter1);
-            this.tabPage1.Controls.Add(this.pracownikaBTN);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(831, 44);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Ogólne";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.panelMenuMain.Controls.Add(this.byliPracownicyBTN);
+            this.panelMenuMain.Controls.Add(this.splitter5);
+            this.panelMenuMain.Controls.Add(this.UmowyBTN);
+            this.panelMenuMain.Controls.Add(this.splitter4);
+            this.panelMenuMain.Controls.Add(this.zwolnijPracownikaBTN);
+            this.panelMenuMain.Controls.Add(this.splitter3);
+            this.panelMenuMain.Controls.Add(this.dodajPracownikaBTN);
+            this.panelMenuMain.Controls.Add(this.splitter2);
+            this.panelMenuMain.Controls.Add(this.pracownicyZagranica);
+            this.panelMenuMain.Controls.Add(this.splitter1);
+            this.panelMenuMain.Controls.Add(this.pracownikaBTN);
+            this.panelMenuMain.Location = new System.Drawing.Point(4, 24);
+            this.panelMenuMain.Name = "panelMenuMain";
+            this.panelMenuMain.Padding = new System.Windows.Forms.Padding(3);
+            this.panelMenuMain.Size = new System.Drawing.Size(831, 44);
+            this.panelMenuMain.TabIndex = 0;
+            this.panelMenuMain.Text = "Pracownicy";
+            this.panelMenuMain.UseVisualStyleBackColor = true;
+            // 
+            // pracownicyZagranica
+            // 
+            this.pracownicyZagranica.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pracownicyZagranica.Location = new System.Drawing.Point(88, 3);
+            this.pracownicyZagranica.Name = "pracownicyZagranica";
+            this.pracownicyZagranica.Size = new System.Drawing.Size(82, 38);
+            this.pracownicyZagranica.TabIndex = 2;
+            this.pracownicyZagranica.Text = "Zagraniczni";
+            this.pracownicyZagranica.UseVisualStyleBackColor = true;
             // 
             // splitter1
             // 
@@ -99,11 +127,21 @@ namespace Kartotekapracownikow
             // 
             // panelWyswietlajacy
             // 
-            this.panelWyswietlajacy.Controls.Add(this.wyswietlanieForms);
+            this.panelWyswietlajacy.Controls.Add(this.wyswietlanieFormsWZakladkach);
             this.panelWyswietlajacy.Location = new System.Drawing.Point(0, 72);
             this.panelWyswietlajacy.Name = "panelWyswietlajacy";
             this.panelWyswietlajacy.Size = new System.Drawing.Size(839, 369);
             this.panelWyswietlajacy.TabIndex = 1;
+            // 
+            // wyswietlanieFormsWZakladkach
+            // 
+            this.wyswietlanieFormsWZakladkach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wyswietlanieFormsWZakladkach.Location = new System.Drawing.Point(0, 0);
+            this.wyswietlanieFormsWZakladkach.Name = "wyswietlanieFormsWZakladkach";
+            this.wyswietlanieFormsWZakladkach.SelectedIndex = 0;
+            this.wyswietlanieFormsWZakladkach.Size = new System.Drawing.Size(839, 369);
+            this.wyswietlanieFormsWZakladkach.TabIndex = 0;
+            this.wyswietlanieFormsWZakladkach.Click += new System.EventHandler(this.pracownikaBTN_Click);
             // 
             // status
             // 
@@ -120,7 +158,7 @@ namespace Kartotekapracownikow
             // 
             this.statusWersja.Name = "statusWersja";
             this.statusWersja.Size = new System.Drawing.Size(72, 17);
-            this.statusWersja.Text = "Wersja: 1.0.0";
+            this.statusWersja.Text = "Wersja: 1.0.1";
             // 
             // statusUzytkownik
             // 
@@ -128,14 +166,77 @@ namespace Kartotekapracownikow
             this.statusUzytkownik.Size = new System.Drawing.Size(139, 17);
             this.statusUzytkownik.Text = "Zalogowany jako: Michał";
             // 
-            // wyswietlanieForms
+            // splitter2
             // 
-            this.wyswietlanieForms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wyswietlanieForms.Location = new System.Drawing.Point(0, 0);
-            this.wyswietlanieForms.Name = "wyswietlanieForms";
-            this.wyswietlanieForms.SelectedIndex = 0;
-            this.wyswietlanieForms.Size = new System.Drawing.Size(839, 369);
-            this.wyswietlanieForms.TabIndex = 0;
+            this.splitter2.Location = new System.Drawing.Point(170, 3);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(3, 38);
+            this.splitter2.TabIndex = 3;
+            this.splitter2.TabStop = false;
+            // 
+            // dodajPracownikaBTN
+            // 
+            this.dodajPracownikaBTN.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dodajPracownikaBTN.Location = new System.Drawing.Point(173, 3);
+            this.dodajPracownikaBTN.Name = "dodajPracownikaBTN";
+            this.dodajPracownikaBTN.Size = new System.Drawing.Size(121, 38);
+            this.dodajPracownikaBTN.TabIndex = 4;
+            this.dodajPracownikaBTN.Text = "Dodaj Pracownika";
+            this.dodajPracownikaBTN.UseVisualStyleBackColor = true;
+            // 
+            // splitter3
+            // 
+            this.splitter3.Location = new System.Drawing.Point(294, 3);
+            this.splitter3.Name = "splitter3";
+            this.splitter3.Size = new System.Drawing.Size(3, 38);
+            this.splitter3.TabIndex = 5;
+            this.splitter3.TabStop = false;
+            // 
+            // zwolnijPracownikaBTN
+            // 
+            this.zwolnijPracownikaBTN.Dock = System.Windows.Forms.DockStyle.Left;
+            this.zwolnijPracownikaBTN.Location = new System.Drawing.Point(297, 3);
+            this.zwolnijPracownikaBTN.Name = "zwolnijPracownikaBTN";
+            this.zwolnijPracownikaBTN.Size = new System.Drawing.Size(121, 38);
+            this.zwolnijPracownikaBTN.TabIndex = 6;
+            this.zwolnijPracownikaBTN.Text = "Zwolnij Pracownika";
+            this.zwolnijPracownikaBTN.UseVisualStyleBackColor = true;
+            // 
+            // splitter5
+            // 
+            this.splitter5.Location = new System.Drawing.Point(542, 3);
+            this.splitter5.Name = "splitter5";
+            this.splitter5.Size = new System.Drawing.Size(3, 38);
+            this.splitter5.TabIndex = 9;
+            this.splitter5.TabStop = false;
+            // 
+            // byliPracownicyBTN
+            // 
+            this.byliPracownicyBTN.Dock = System.Windows.Forms.DockStyle.Left;
+            this.byliPracownicyBTN.Location = new System.Drawing.Point(545, 3);
+            this.byliPracownicyBTN.Name = "byliPracownicyBTN";
+            this.byliPracownicyBTN.Size = new System.Drawing.Size(139, 38);
+            this.byliPracownicyBTN.TabIndex = 10;
+            this.byliPracownicyBTN.Text = "Byli Pracownicy Firmy";
+            this.byliPracownicyBTN.UseVisualStyleBackColor = true;
+            // 
+            // splitter4
+            // 
+            this.splitter4.Location = new System.Drawing.Point(418, 3);
+            this.splitter4.Name = "splitter4";
+            this.splitter4.Size = new System.Drawing.Size(3, 38);
+            this.splitter4.TabIndex = 7;
+            this.splitter4.TabStop = false;
+            // 
+            // UmowyBTN
+            // 
+            this.UmowyBTN.Dock = System.Windows.Forms.DockStyle.Left;
+            this.UmowyBTN.Location = new System.Drawing.Point(421, 3);
+            this.UmowyBTN.Name = "UmowyBTN";
+            this.UmowyBTN.Size = new System.Drawing.Size(121, 38);
+            this.UmowyBTN.TabIndex = 8;
+            this.UmowyBTN.Text = "Umowy";
+            this.UmowyBTN.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -152,7 +253,7 @@ namespace Kartotekapracownikow
             this.Text = "Kartoteka";
             this.Load += new System.EventHandler(this.Main_Load);
             this.mainTabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.panelMenuMain.ResumeLayout(false);
             this.panelWyswietlajacy.ResumeLayout(false);
             this.status.ResumeLayout(false);
             this.status.PerformLayout();
@@ -164,7 +265,7 @@ namespace Kartotekapracownikow
         #endregion
 
         private System.Windows.Forms.TabControl mainTabControl;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage panelMenuMain;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Button pracownikaBTN;
         private System.Windows.Forms.TabPage tabPage2;
@@ -172,6 +273,15 @@ namespace Kartotekapracownikow
         private System.Windows.Forms.StatusStrip status;
         private System.Windows.Forms.ToolStripStatusLabel statusWersja;
         private System.Windows.Forms.ToolStripStatusLabel statusUzytkownik;
-        private System.Windows.Forms.TabControl wyswietlanieForms;
+        private System.Windows.Forms.TabControl wyswietlanieFormsWZakladkach;
+        private System.Windows.Forms.Button pracownicyZagranica;
+        private System.Windows.Forms.Button byliPracownicyBTN;
+        private System.Windows.Forms.Splitter splitter5;
+        private System.Windows.Forms.Button UmowyBTN;
+        private System.Windows.Forms.Splitter splitter4;
+        private System.Windows.Forms.Button zwolnijPracownikaBTN;
+        private System.Windows.Forms.Splitter splitter3;
+        private System.Windows.Forms.Button dodajPracownikaBTN;
+        private System.Windows.Forms.Splitter splitter2;
     }
 }
