@@ -30,5 +30,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 rezydenciGB.Hide();
             }
         }
+
+        private void numerIdLB_SelectedIndexChanged(object sender, EventArgs e){}
+
+
     }
 }

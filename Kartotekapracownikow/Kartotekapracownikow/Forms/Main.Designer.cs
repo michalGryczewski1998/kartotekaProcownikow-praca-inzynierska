@@ -93,6 +93,7 @@ namespace Kartotekapracownikow
             this.byliPracownicyBTN.TabIndex = 8;
             this.byliPracownicyBTN.Text = "Byli Pracownicy Firmy";
             this.byliPracownicyBTN.UseVisualStyleBackColor = true;
+            this.byliPracownicyBTN.Click += new System.EventHandler(this.byliPracownicyBTN_Click);
             // 
             // splitter4
             // 
@@ -111,6 +112,7 @@ namespace Kartotekapracownikow
             this.zwolnijPracownikaBTN.TabIndex = 6;
             this.zwolnijPracownikaBTN.Text = "Zwolnij Pracownika";
             this.zwolnijPracownikaBTN.UseVisualStyleBackColor = true;
+            this.zwolnijPracownikaBTN.Click += new System.EventHandler(this.zwolnijPracownikaBTN_Click);
             // 
             // splitter3
             // 
@@ -148,6 +150,7 @@ namespace Kartotekapracownikow
             this.pracownicyZagranica.TabIndex = 2;
             this.pracownicyZagranica.Text = "Zagraniczni";
             this.pracownicyZagranica.UseVisualStyleBackColor = true;
+            this.pracownicyZagranica.Click += new System.EventHandler(this.pracownicyZagranica_Click);
             // 
             // splitter1
             // 
