@@ -1,4 +1,5 @@
-﻿using Kartotekapracownikow.Forms.Employees;
+﻿using Kartotekapracownikow.Forms.AddEmployees;
+using Kartotekapracownikow.Forms.Employees;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,20 @@ namespace Kartotekapracownikow
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
             tabPage.Controls.Add(form);
+        }
+
+        private void dodajPracownikaBTN_Click(object sender, EventArgs e)
+        {
+            TabPage tabPageEmployees = new TabPage();
+            wyswietlanieFormsWZakladkach.Controls.Add(tabPageEmployees);
+
+            AddEmployees form = new AddEmployees();
+            tabPageEmployees.Text = form.Text = "Dodaj";
+            form.TopLevel = false;
+            form.Visible = true;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            tabPageEmployees.Controls.Add(form);
         }
     }
 }
