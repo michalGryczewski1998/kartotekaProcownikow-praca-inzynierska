@@ -31,6 +31,7 @@ namespace Kartotekapracownikow
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.panelMenuMain = new System.Windows.Forms.TabPage();
+            this.byliPracownicyBTN = new System.Windows.Forms.Button();
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.zwolnijPracownikaBTN = new System.Windows.Forms.Button();
             this.splitter3 = new System.Windows.Forms.Splitter();
@@ -40,13 +41,12 @@ namespace Kartotekapracownikow
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.pracownikaBTN = new System.Windows.Forms.Button();
             this.UmowyTab = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelWyswietlajacy = new System.Windows.Forms.Panel();
             this.wyswietlanieFormsWZakladkach = new System.Windows.Forms.TabControl();
             this.status = new System.Windows.Forms.StatusStrip();
             this.statusWersja = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusUzytkownik = new System.Windows.Forms.ToolStripStatusLabel();
-            this.byliPracownicyBTN = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.mainTabControl.SuspendLayout();
             this.panelMenuMain.SuspendLayout();
             this.panelWyswietlajacy.SuspendLayout();
@@ -84,6 +84,16 @@ namespace Kartotekapracownikow
             this.panelMenuMain.Text = "Pracownicy";
             this.panelMenuMain.UseVisualStyleBackColor = true;
             // 
+            // byliPracownicyBTN
+            // 
+            this.byliPracownicyBTN.Dock = System.Windows.Forms.DockStyle.Left;
+            this.byliPracownicyBTN.Location = new System.Drawing.Point(421, 3);
+            this.byliPracownicyBTN.Name = "byliPracownicyBTN";
+            this.byliPracownicyBTN.Size = new System.Drawing.Size(137, 38);
+            this.byliPracownicyBTN.TabIndex = 8;
+            this.byliPracownicyBTN.Text = "Byli Pracownicy Firmy";
+            this.byliPracownicyBTN.UseVisualStyleBackColor = true;
+            // 
             // splitter4
             // 
             this.splitter4.Location = new System.Drawing.Point(418, 3);
@@ -119,6 +129,7 @@ namespace Kartotekapracownikow
             this.dodajPracownikaBTN.TabIndex = 4;
             this.dodajPracownikaBTN.Text = "Dodaj Pracownika";
             this.dodajPracownikaBTN.UseVisualStyleBackColor = true;
+            this.dodajPracownikaBTN.Click += new System.EventHandler(this.dodajPracownikaBTN_Click);
             // 
             // splitter2
             // 
@@ -167,6 +178,16 @@ namespace Kartotekapracownikow
             this.UmowyTab.Text = "Umowy";
             this.UmowyTab.UseVisualStyleBackColor = true;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(831, 44);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // panelWyswietlajacy
             // 
             this.panelWyswietlajacy.Controls.Add(this.wyswietlanieFormsWZakladkach);
@@ -207,26 +228,6 @@ namespace Kartotekapracownikow
             this.statusUzytkownik.Name = "statusUzytkownik";
             this.statusUzytkownik.Size = new System.Drawing.Size(139, 17);
             this.statusUzytkownik.Text = "Zalogowany jako: Michał";
-            // 
-            // byliPracownicyBTN
-            // 
-            this.byliPracownicyBTN.Dock = System.Windows.Forms.DockStyle.Left;
-            this.byliPracownicyBTN.Location = new System.Drawing.Point(421, 3);
-            this.byliPracownicyBTN.Name = "byliPracownicyBTN";
-            this.byliPracownicyBTN.Size = new System.Drawing.Size(137, 38);
-            this.byliPracownicyBTN.TabIndex = 8;
-            this.byliPracownicyBTN.Text = "Byli Pracownicy Firmy";
-            this.byliPracownicyBTN.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(831, 44);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
