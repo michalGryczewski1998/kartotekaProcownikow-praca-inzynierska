@@ -83,7 +83,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.wojewodztwoLabel = new System.Windows.Forms.Label();
             this.krajTB = new System.Windows.Forms.TextBox();
             this.krajZamieszkaniaPracownikaLabel = new System.Windows.Forms.Label();
-            this.ubezpieczeniaGB = new System.Windows.Forms.GroupBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.rezydenciGB = new System.Windows.Forms.GroupBox();
@@ -123,7 +122,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.danePodstawoweGB.Controls.Add(this.imiePracownikaLabel);
             this.danePodstawoweGB.Location = new System.Drawing.Point(3, 4);
             this.danePodstawoweGB.Name = "danePodstawoweGB";
-            this.danePodstawoweGB.Size = new System.Drawing.Size(261, 319);
+            this.danePodstawoweGB.Size = new System.Drawing.Size(785, 182);
             this.danePodstawoweGB.TabIndex = 0;
             this.danePodstawoweGB.TabStop = false;
             this.danePodstawoweGB.Text = "Dane Podstawowe";
@@ -131,7 +130,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // nipLabel
             // 
             this.nipLabel.AutoSize = true;
-            this.nipLabel.Location = new System.Drawing.Point(0, 275);
+            this.nipLabel.Location = new System.Drawing.Point(287, 113);
             this.nipLabel.Name = "nipLabel";
             this.nipLabel.Size = new System.Drawing.Size(26, 15);
             this.nipLabel.TabIndex = 18;
@@ -140,7 +139,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // peselLabel
             // 
             this.peselLabel.AutoSize = true;
-            this.peselLabel.Location = new System.Drawing.Point(0, 246);
+            this.peselLabel.Location = new System.Drawing.Point(287, 84);
             this.peselLabel.Name = "peselLabel";
             this.peselLabel.Size = new System.Drawing.Size(34, 15);
             this.peselLabel.TabIndex = 17;
@@ -149,7 +148,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // imieOjcaPracownikaLabel
             // 
             this.imieOjcaPracownikaLabel.AutoSize = true;
-            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(0, 217);
+            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(287, 55);
             this.imieOjcaPracownikaLabel.Name = "imieOjcaPracownikaLabel";
             this.imieOjcaPracownikaLabel.Size = new System.Drawing.Size(55, 15);
             this.imieOjcaPracownikaLabel.TabIndex = 16;
@@ -158,7 +157,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // imiematkiPracownikaLabel
             // 
             this.imiematkiPracownikaLabel.AutoSize = true;
-            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(0, 188);
+            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(287, 26);
             this.imiematkiPracownikaLabel.Name = "imiematkiPracownikaLabel";
             this.imiematkiPracownikaLabel.Size = new System.Drawing.Size(63, 15);
             this.imiematkiPracownikaLabel.TabIndex = 15;
@@ -166,28 +165,28 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // nipTB
             // 
-            this.nipTB.Location = new System.Drawing.Point(108, 272);
+            this.nipTB.Location = new System.Drawing.Point(395, 110);
             this.nipTB.Name = "nipTB";
             this.nipTB.Size = new System.Drawing.Size(147, 23);
             this.nipTB.TabIndex = 14;
             // 
             // peselTB
             // 
-            this.peselTB.Location = new System.Drawing.Point(108, 243);
+            this.peselTB.Location = new System.Drawing.Point(395, 81);
             this.peselTB.Name = "peselTB";
             this.peselTB.Size = new System.Drawing.Size(147, 23);
             this.peselTB.TabIndex = 13;
             // 
             // imieOjcaTB
             // 
-            this.imieOjcaTB.Location = new System.Drawing.Point(108, 214);
+            this.imieOjcaTB.Location = new System.Drawing.Point(395, 52);
             this.imieOjcaTB.Name = "imieOjcaTB";
             this.imieOjcaTB.Size = new System.Drawing.Size(147, 23);
             this.imieOjcaTB.TabIndex = 12;
             // 
             // imieMatkiTB
             // 
-            this.imieMatkiTB.Location = new System.Drawing.Point(108, 185);
+            this.imieMatkiTB.Location = new System.Drawing.Point(395, 23);
             this.imieMatkiTB.Name = "imieMatkiTB";
             this.imieMatkiTB.Size = new System.Drawing.Size(147, 23);
             this.imieMatkiTB.TabIndex = 11;
@@ -290,9 +289,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneZatrudnieniaGB.Controls.Add(this.bankDoPrzelewuLabel);
             this.daneZatrudnieniaGB.Controls.Add(this.daneEtatLB);
             this.daneZatrudnieniaGB.Controls.Add(this.daneUmowaLB);
-            this.daneZatrudnieniaGB.Location = new System.Drawing.Point(270, 192);
+            this.daneZatrudnieniaGB.Location = new System.Drawing.Point(3, 192);
             this.daneZatrudnieniaGB.Name = "daneZatrudnieniaGB";
-            this.daneZatrudnieniaGB.Size = new System.Drawing.Size(518, 246);
+            this.daneZatrudnieniaGB.Size = new System.Drawing.Size(788, 246);
             this.daneZatrudnieniaGB.TabIndex = 1;
             this.daneZatrudnieniaGB.TabStop = false;
             this.daneZatrudnieniaGB.Text = "Dane o zatrudnieniu";
@@ -419,16 +418,19 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // dodajPracownikaBTN
             // 
             this.dodajPracownikaBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dodajPracownikaBTN.Location = new System.Drawing.Point(694, 444);
+            this.dodajPracownikaBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.dodajPracownikaBTN.Location = new System.Drawing.Point(683, 134);
             this.dodajPracownikaBTN.Name = "dodajPracownikaBTN";
-            this.dodajPracownikaBTN.Size = new System.Drawing.Size(94, 49);
+            this.dodajPracownikaBTN.Size = new System.Drawing.Size(94, 42);
             this.dodajPracownikaBTN.TabIndex = 0;
             this.dodajPracownikaBTN.Text = "Dodaj Pracownika";
             this.dodajPracownikaBTN.UseVisualStyleBackColor = false;
+            this.dodajPracownikaBTN.Click += new System.EventHandler(this.dodajPracownikaBTN_Click);
             // 
             // adresGB
             // 
             this.adresGB.Controls.Add(this.nierezydentCB);
+            this.adresGB.Controls.Add(this.dodajPracownikaBTN);
             this.adresGB.Controls.Add(this.pocztaTB);
             this.adresGB.Controls.Add(this.pocztaLabel);
             this.adresGB.Controls.Add(this.numerLokaluLabel);
@@ -447,9 +449,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.adresGB.Controls.Add(this.wojewodztwoLabel);
             this.adresGB.Controls.Add(this.krajTB);
             this.adresGB.Controls.Add(this.krajZamieszkaniaPracownikaLabel);
-            this.adresGB.Location = new System.Drawing.Point(270, 4);
+            this.adresGB.Location = new System.Drawing.Point(5, 439);
             this.adresGB.Name = "adresGB";
-            this.adresGB.Size = new System.Drawing.Size(518, 186);
+            this.adresGB.Size = new System.Drawing.Size(783, 186);
             this.adresGB.TabIndex = 2;
             this.adresGB.TabStop = false;
             this.adresGB.Text = "Adres";
@@ -609,27 +611,16 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.krajZamieszkaniaPracownikaLabel.TabIndex = 19;
             this.krajZamieszkaniaPracownikaLabel.Text = "Kraj";
             // 
-            // ubezpieczeniaGB
-            // 
-            this.ubezpieczeniaGB.Location = new System.Drawing.Point(3, 329);
-            this.ubezpieczeniaGB.Name = "ubezpieczeniaGB";
-            this.ubezpieczeniaGB.Size = new System.Drawing.Size(261, 109);
-            this.ubezpieczeniaGB.TabIndex = 3;
-            this.ubezpieczeniaGB.TabStop = false;
-            this.ubezpieczeniaGB.Text = "Ubezpieczenia";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.rezydenciGB);
-            this.panel1.Controls.Add(this.dodajPracownikaBTN);
             this.panel1.Controls.Add(this.danePodstawoweGB);
-            this.panel1.Controls.Add(this.ubezpieczeniaGB);
             this.panel1.Controls.Add(this.daneZatrudnieniaGB);
             this.panel1.Controls.Add(this.adresGB);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 637);
+            this.panel1.Size = new System.Drawing.Size(800, 891);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -641,9 +632,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.rezydenciGB.Controls.Add(this.krajWydaniaNumeruIdLabel);
             this.rezydenciGB.Controls.Add(this.numerIdLB);
             this.rezydenciGB.Controls.Add(this.dokumentIdRezydentLabel);
-            this.rezydenciGB.Location = new System.Drawing.Point(3, 444);
+            this.rezydenciGB.Location = new System.Drawing.Point(5, 631);
             this.rezydenciGB.Name = "rezydenciGB";
-            this.rezydenciGB.Size = new System.Drawing.Size(685, 125);
+            this.rezydenciGB.Size = new System.Drawing.Size(777, 125);
             this.rezydenciGB.TabIndex = 4;
             this.rezydenciGB.TabStop = false;
             this.rezydenciGB.Text = "Nierezydent";
@@ -708,7 +699,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 637);
+            this.ClientSize = new System.Drawing.Size(800, 891);
             this.Controls.Add(this.panel1);
             this.Name = "AddEmployees";
             this.Text = "AddEmployees";
@@ -731,7 +722,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.GroupBox danePodstawoweGB;
         private System.Windows.Forms.GroupBox daneZatrudnieniaGB;
         private System.Windows.Forms.GroupBox adresGB;
-        private System.Windows.Forms.GroupBox ubezpieczeniaGB;
         private System.Windows.Forms.Button dodajPracownikaBTN;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Panel panel1;
