@@ -22,11 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Icons\" />
     <Folder Include="Images\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="StructureMap" Version="4.7.1" />
   </ItemGroup>
 
 </Project>

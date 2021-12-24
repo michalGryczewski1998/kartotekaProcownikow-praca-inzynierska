@@ -5,7 +5,34 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 {
     public partial class AddEmployees : Form
     {
-        public AddEmployees()
+
+        private static AddEmployees _instance = null;
+
+        public static AddEmployees Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new AddEmployees();
+                }
+                return _instance;
+            }
+        }
+
+        public static bool truOrFalseInstance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private AddEmployees()
         {
             InitializeComponent();
             rezydenciGB.Hide();
@@ -33,6 +60,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void numerIdLB_SelectedIndexChanged(object sender, EventArgs e){}
 
+        private void dodajPracownikaBTN_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
