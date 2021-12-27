@@ -64,5 +64,11 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         {
 
         }
+
+        private void zamknijBTN_Click(object sender, EventArgs e)
+        {
+            Instance.Close();
+            _instance = null;
+        }
     }
 }

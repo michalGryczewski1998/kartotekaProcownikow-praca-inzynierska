@@ -92,6 +92,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.krajWydaniaNumeruIdLabel = new System.Windows.Forms.Label();
             this.numerIdLB = new System.Windows.Forms.ListBox();
             this.dokumentIdRezydentLabel = new System.Windows.Forms.Label();
+            this.zamknijBTN = new System.Windows.Forms.Button();
             this.danePodstawoweGB.SuspendLayout();
             this.daneZatrudnieniaGB.SuspendLayout();
             this.adresGB.SuspendLayout();
@@ -122,7 +123,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.danePodstawoweGB.Controls.Add(this.imiePracownikaLabel);
             this.danePodstawoweGB.Location = new System.Drawing.Point(3, 4);
             this.danePodstawoweGB.Name = "danePodstawoweGB";
-            this.danePodstawoweGB.Size = new System.Drawing.Size(785, 182);
+            this.danePodstawoweGB.Size = new System.Drawing.Size(701, 182);
             this.danePodstawoweGB.TabIndex = 0;
             this.danePodstawoweGB.TabStop = false;
             this.danePodstawoweGB.Text = "Dane Podstawowe";
@@ -613,6 +614,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.zamknijBTN);
             this.panel1.Controls.Add(this.rezydenciGB);
             this.panel1.Controls.Add(this.danePodstawoweGB);
             this.panel1.Controls.Add(this.daneZatrudnieniaGB);
@@ -694,6 +696,18 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.dokumentIdRezydentLabel.Size = new System.Drawing.Size(184, 15);
             this.dokumentIdRezydentLabel.TabIndex = 19;
             this.dokumentIdRezydentLabel.Text = "Rodzaj numeru identyfikacyjnego";
+            // 
+            // zamknijBTN
+            // 
+            this.zamknijBTN.BackColor = System.Drawing.Color.Red;
+            this.zamknijBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.zamknijBTN.Location = new System.Drawing.Point(706, 12);
+            this.zamknijBTN.Name = "zamknijBTN";
+            this.zamknijBTN.Size = new System.Drawing.Size(94, 42);
+            this.zamknijBTN.TabIndex = 37;
+            this.zamknijBTN.Text = "Zamknij";
+            this.zamknijBTN.UseVisualStyleBackColor = false;
+            this.zamknijBTN.Click += new System.EventHandler(this.zamknijBTN_Click);
             // 
             // AddEmployees
             // 
@@ -781,5 +795,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.Label dokumentIdRezydentLabel;
         private System.Windows.Forms.Label ulgapodatkowaLabel;
         private System.Windows.Forms.Label kosztyPrzychoduLabel;
+        private System.Windows.Forms.Button zamknijBTN;
     }
 }

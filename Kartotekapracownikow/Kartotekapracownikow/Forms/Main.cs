@@ -17,6 +17,12 @@ namespace Kartotekapracownikow
 {
     public partial class Main : Form
     {
+        private TabPage tabPageEmployees;
+        private TabPage tabPageDimissEmployees;
+        private TabPage tabPageAddEmployees;
+        private TabPage tabPageFormerEmployees;
+        private TabPage tabPageInternationalStaff;
+
         public Main()
         {
             InitializeComponent();
@@ -31,7 +37,12 @@ namespace Kartotekapracownikow
         {
             if (Employees.truOrFalseInstance)
             {
-                UstawieniaFormWewnatrzTabPage(Employees.Instance);
+                tabPageEmployees = new TabPage();
+                UstawieniaFormWewnatrzTabPage(tabPageEmployees, Employees.Instance);
+            }
+            else
+            {
+                wyswietlanieFormsWZakladkach.SelectedTab = tabPageEmployees;
             }
             
         }
@@ -40,7 +51,12 @@ namespace Kartotekapracownikow
         {
             if(AddEmployees.truOrFalseInstance)
             {
-                UstawieniaFormWewnatrzTabPage(AddEmployees.Instance);
+                tabPageAddEmployees = new TabPage();
+                UstawieniaFormWewnatrzTabPage(tabPageAddEmployees, AddEmployees.Instance);
+            }
+            else
+            {
+                wyswietlanieFormsWZakladkach.SelectedTab = tabPageAddEmployees;
             }
         }
 
@@ -48,7 +64,12 @@ namespace Kartotekapracownikow
         {
             if (InternationalStaff.truOrFalseInstance)
             {
-                UstawieniaFormWewnatrzTabPage(InternationalStaff.Instance);
+                tabPageInternationalStaff = new TabPage();
+                UstawieniaFormWewnatrzTabPage(tabPageInternationalStaff, InternationalStaff.Instance);
+            }
+            else
+            {
+                wyswietlanieFormsWZakladkach.SelectedTab = tabPageInternationalStaff;
             }
         }
 
@@ -56,7 +77,12 @@ namespace Kartotekapracownikow
         {
             if (DismissEmployee.truOrFalseInstance)
             {
-                UstawieniaFormWewnatrzTabPage(DismissEmployee.Instance);
+                tabPageDimissEmployees = new TabPage();
+                UstawieniaFormWewnatrzTabPage(tabPageDimissEmployees, DismissEmployee.Instance);
+            }
+            else
+            {
+                wyswietlanieFormsWZakladkach.SelectedTab = tabPageDimissEmployees;
             }
         }
 
@@ -64,13 +90,17 @@ namespace Kartotekapracownikow
         {
             if (FormerEmployees.truOrFalseInstance)
             {
-                UstawieniaFormWewnatrzTabPage(FormerEmployees.Instance);
+                tabPageFormerEmployees = new TabPage();
+                UstawieniaFormWewnatrzTabPage(tabPageFormerEmployees, FormerEmployees.Instance);
+            }
+            else
+            {
+                wyswietlanieFormsWZakladkach.SelectedTab = tabPageFormerEmployees;
             }
         }
 
-        private void UstawieniaFormWewnatrzTabPage(Form form)
+        private void UstawieniaFormWewnatrzTabPage(TabPage tabPage, Form form)
         {
-            TabPage tabPage = new TabPage();
             wyswietlanieFormsWZakladkach.Controls.Add(tabPage);
       
             tabPage.Text = form.Text;
