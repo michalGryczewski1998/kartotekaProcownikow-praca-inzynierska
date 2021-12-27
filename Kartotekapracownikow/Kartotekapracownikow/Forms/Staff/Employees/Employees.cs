@@ -12,9 +12,40 @@ namespace Kartotekapracownikow.Forms.Employees
 {
     public partial class Employees : Form
     {
-        public Employees()
+        private static Employees _instance = null;
+
+        public static Employees Instance
+        {
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new Employees();
+                }
+                return _instance;
+            }
+        }
+
+        public static bool truOrFalseInstance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private Employees()
         {
             InitializeComponent();
+        }
+
+        private void Employees_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

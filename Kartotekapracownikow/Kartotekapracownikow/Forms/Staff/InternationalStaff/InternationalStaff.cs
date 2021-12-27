@@ -12,9 +12,40 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
 {
     public partial class InternationalStaff : Form
     {
-        public InternationalStaff()
+        private static InternationalStaff _instance = null;
+
+        public static InternationalStaff Instance
+        {
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new InternationalStaff();
+                }
+                return _instance;
+            }
+        }
+
+        public static bool truOrFalseInstance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private InternationalStaff()
         {
             InitializeComponent();
+        }
+
+        private void InternationalStaff_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

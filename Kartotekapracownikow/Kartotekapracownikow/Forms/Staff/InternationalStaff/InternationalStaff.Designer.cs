@@ -29,12 +29,33 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.zagraniczniPracownicyGB = new System.Windows.Forms.GroupBox();
+            this.SuspendLayout();
+            // 
+            // zagraniczniPracownicyGB
+            // 
+            this.zagraniczniPracownicyGB.Location = new System.Drawing.Point(13, 13);
+            this.zagraniczniPracownicyGB.Name = "zagraniczniPracownicyGB";
+            this.zagraniczniPracownicyGB.Size = new System.Drawing.Size(775, 312);
+            this.zagraniczniPracownicyGB.TabIndex = 0;
+            this.zagraniczniPracownicyGB.TabStop = false;
+            this.zagraniczniPracownicyGB.Text = "Pracownicy Zagraniczni";
+            // 
+            // InternationalStaff
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.zagraniczniPracownicyGB);
+            this.Name = "InternationalStaff";
             this.Text = "InternationalStaff";
+            this.Load += new System.EventHandler(this.InternationalStaff_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox zagraniczniPracownicyGB;
     }
 }
