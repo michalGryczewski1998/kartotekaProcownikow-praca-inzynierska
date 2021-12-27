@@ -12,9 +12,41 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployees
 {
     public partial class FormerEmployees : Form
     {
-        public FormerEmployees()
+
+        private static FormerEmployees _instance = null;
+
+        public static FormerEmployees Instance
+        {
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new FormerEmployees();
+                }
+                return _instance;
+            }
+        }
+
+        public static bool truOrFalseInstance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        private FormerEmployees()
         {
             InitializeComponent();
+        }
+
+        private void FormerEmployees_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

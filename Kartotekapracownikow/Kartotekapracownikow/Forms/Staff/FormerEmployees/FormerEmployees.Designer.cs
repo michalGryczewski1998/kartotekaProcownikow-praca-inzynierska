@@ -29,12 +29,33 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployees
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dawniPracownicyGB = new System.Windows.Forms.GroupBox();
+            this.SuspendLayout();
+            // 
+            // dawniPracownicyGB
+            // 
+            this.dawniPracownicyGB.Location = new System.Drawing.Point(12, 12);
+            this.dawniPracownicyGB.Name = "dawniPracownicyGB";
+            this.dawniPracownicyGB.Size = new System.Drawing.Size(776, 283);
+            this.dawniPracownicyGB.TabIndex = 0;
+            this.dawniPracownicyGB.TabStop = false;
+            this.dawniPracownicyGB.Text = "Byli Pracownicy";
+            // 
+            // FormerEmployees
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dawniPracownicyGB);
+            this.Name = "FormerEmployees";
             this.Text = "FormerEmployees";
+            this.Load += new System.EventHandler(this.FormerEmployees_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox dawniPracownicyGB;
     }
 }

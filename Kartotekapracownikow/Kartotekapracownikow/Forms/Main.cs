@@ -29,8 +29,10 @@ namespace Kartotekapracownikow
 
         private void pracownikaBTN_Click(object sender, EventArgs e)
         {
-            Employees form = new Employees();
-            UstawieniaFormWewnatrzTabPage(form);
+            if (Employees.truOrFalseInstance)
+            {
+                UstawieniaFormWewnatrzTabPage(Employees.Instance);
+            }
             
         }
 
@@ -44,20 +46,26 @@ namespace Kartotekapracownikow
 
         private void pracownicyZagranica_Click(object sender, EventArgs e)
         {
-            InternationalStaff form = new InternationalStaff();
-            UstawieniaFormWewnatrzTabPage(form);
+            if (InternationalStaff.truOrFalseInstance)
+            {
+                UstawieniaFormWewnatrzTabPage(InternationalStaff.Instance);
+            }
         }
 
         private void zwolnijPracownikaBTN_Click(object sender, EventArgs e)
         {
-            DismissEmployee form = new DismissEmployee();
-            UstawieniaFormWewnatrzTabPage(form);
+            if (DismissEmployee.truOrFalseInstance)
+            {
+                UstawieniaFormWewnatrzTabPage(DismissEmployee.Instance);
+            }
         }
 
         private void byliPracownicyBTN_Click(object sender, EventArgs e)
         {
-            FormerEmployees form = new FormerEmployees();
-            UstawieniaFormWewnatrzTabPage(form);
+            if (FormerEmployees.truOrFalseInstance)
+            {
+                UstawieniaFormWewnatrzTabPage(FormerEmployees.Instance);
+            }
         }
 
         private void UstawieniaFormWewnatrzTabPage(Form form)
