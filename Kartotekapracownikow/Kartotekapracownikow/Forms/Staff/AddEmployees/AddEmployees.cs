@@ -35,7 +35,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private AddEmployees()
         {
             InitializeComponent();
-            rezydenciGB.Hide();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -49,26 +48,25 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void nierezydentCB_CheckedChanged(object sender, EventArgs e)
         {
-            if(nierezydentCB.Checked){
-                rezydenciGB.Show();
+            if(!nierezydentCB.Checked){
+                rezydenciGB.Hide();
+                dodajPracownikaBTN.Show();
             }
             else
             {
-                rezydenciGB.Hide();
+                rezydenciGB.Show();
+                dodajPracownikaBTN.Hide();
             }
         }
-
-        private void numerIdLB_SelectedIndexChanged(object sender, EventArgs e){}
 
         private void dodajPracownikaBTN_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void zamknijBTN_Click(object sender, EventArgs e)
+        private void anulujBTN_Click(object sender, EventArgs e)
         {
-            Instance.Close();
-            _instance = null;
+
         }
     }
 }

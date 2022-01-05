@@ -47,5 +47,20 @@ namespace Kartotekapracownikow.Forms.Employees
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            //dodanie scrollBar do panelu
+            panelPracownicy.AutoScroll = true;
+            panelPracownicy.HorizontalScroll.Enabled = false;
+            panelPracownicy.HorizontalScroll.Visible = false;
+            panelPracownicy.HorizontalScroll.Maximum = 0;
+        }
+
+        private void szukajBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
