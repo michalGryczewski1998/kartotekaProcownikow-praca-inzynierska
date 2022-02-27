@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace Kartotekapracownikow.DatabaseModel
 {
-    class FormerEmployees : EntityModel
+    class DanePracownikaPodstawowe
     {
+        public int ID { get; set; }
 
         public string Nazwisko { get; set; }
 
         public string Imie { get; set; }
 
+        public string ZdjeciePracownika { get; set; }
+
         public DateTime? DataUrodzenia { get; set; }
 
         public string NumerTelefonu { get; set; }
+
+        public string AdresEmail { get; set; }
 
         public string MiejsceUrodzenia { get; set; }
 
@@ -27,7 +32,7 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public string PESEL { get; set; }
 
-        public int NIP { get; set; }
+        public string NIP { get; set; }
 
         public string Kraj { get; set; }
 
@@ -46,19 +51,5 @@ namespace Kartotekapracownikow.DatabaseModel
         public string NumerLokalu { get; set; }
 
         public string Poczta { get; set; }
-
-        public bool Rezydent { get; set; }
-
-        public string RodzajNumeruIdentyfikacyjnego { get; set; }
-
-        public string KrajWydaniaNumeruIdentyfikacyjnego { get; set; }
-
-        public string NumerIdentyfikacyjny { get; set; }
-
-        public string Stanowisko { get; set; }
-
-        public string Dział { get; set; }
-
-        public double StawkaGodzinowa { get; set; }
     }
 }
