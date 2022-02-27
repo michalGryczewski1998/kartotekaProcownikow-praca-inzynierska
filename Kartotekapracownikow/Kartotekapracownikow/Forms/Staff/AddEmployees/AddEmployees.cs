@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Security.Policy;
+using System.Text;
 using System.Windows.Forms;
+using Kartotekapracownikow.DatabaseModel;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Kartotekapracownikow.Forms.AddEmployees
 {
@@ -46,22 +51,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             panel1.HorizontalScroll.Maximum = 0;
         }
 
-        private void nierezydentCB_CheckedChanged(object sender, EventArgs e)
-        {
-            if(!nierezydentCB.Checked){
-                rezydenciGB.Hide();
-                dodajPracownikaBTN.Show();
-            }
-            else
-            {
-                rezydenciGB.Show();
-                dodajPracownikaBTN.Hide();
-            }
-        }
-
         private void dodajPracownikaBTN_Click(object sender, EventArgs e)
         {
-
+            InsertData();
         }
 
         private void anulujBTN_Click(object sender, EventArgs e)
@@ -89,6 +81,18 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             dataUrodzinDTP.Format = DateTimePickerFormat.Short;
         }
 
+        private void zdjecieBTN_Click(object sender, EventArgs e)
+        {
+            string scierzkaZdjeciePracownika;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
         private void peselTB_Validated(object sender, EventArgs e)
         {
             string peselHelp = peselTB.Text;
@@ -101,6 +105,14 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             {
                 walidacjaPeselEP.Clear();
             }
+        }
+
+        private static void InsertData()
+        {
+            
+
+
+
         }
 
         private void nipTB_Validated(object sender, EventArgs e)
@@ -173,6 +185,35 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             if (dataUrodzinHelp >= DateTime.Today)
             {
                 dataUrodzeniaEP.SetError(dataUrodzinDTP, "Niepoprawna data");
+            }
+        }
+
+        private void peselTB_TextChanged(object sender, EventArgs e)
+        {
+            string peselPomoc = peselTB.Text;
+
+            if(peselPomoc.Length == 11)
+            {
+                int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+                int suma = 0;
+                string liczbaKontrolnaSubstring = peselPomoc.Substring(10);
+                int liczbaKontrolna = int.Parse(liczbaKontrolnaSubstring);
+
+                for(int i = 0; i < peselWagi.Length; i++)
+                {
+                    suma += (int.Parse(peselPomoc.Substring(i, i + 1)) * peselWagi[i]);
+                }
+
+                suma = suma % 10;
+
+                if ((10 - suma) != liczbaKontrolna)
+                {
+                    peselEP.SetError(peselTB, "Błędny PESEL");
+                }
+            }
+            else
+            {
+                peselEP.SetError(peselTB, "PESEL zbyt krótki");
             }
         }
     }

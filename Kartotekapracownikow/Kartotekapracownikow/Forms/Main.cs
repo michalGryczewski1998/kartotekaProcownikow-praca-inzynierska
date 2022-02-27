@@ -111,5 +111,10 @@ namespace Kartotekapracownikow
             tabPage.Controls.Add(form);
             wyswietlanieFormsWZakladkach.SelectedTab = tabPage;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

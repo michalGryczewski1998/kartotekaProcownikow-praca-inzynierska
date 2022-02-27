@@ -47,6 +47,9 @@ namespace Kartotekapracownikow
             this.status = new System.Windows.Forms.StatusStrip();
             this.statusWersja = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusUzytkownik = new System.Windows.Forms.ToolStripStatusLabel();
+            this.splitter5 = new System.Windows.Forms.Splitter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.splitter6 = new System.Windows.Forms.Splitter();
             this.mainTabControl.SuspendLayout();
             this.panelMenuMain.SuspendLayout();
             this.panelWyswietlajacy.SuspendLayout();
@@ -67,6 +70,9 @@ namespace Kartotekapracownikow
             // 
             // panelMenuMain
             // 
+            this.panelMenuMain.Controls.Add(this.splitter6);
+            this.panelMenuMain.Controls.Add(this.button1);
+            this.panelMenuMain.Controls.Add(this.splitter5);
             this.panelMenuMain.Controls.Add(this.byliPracownicyBTN);
             this.panelMenuMain.Controls.Add(this.splitter4);
             this.panelMenuMain.Controls.Add(this.zwolnijPracownikaBTN);
@@ -232,6 +238,32 @@ namespace Kartotekapracownikow
             this.statusUzytkownik.Size = new System.Drawing.Size(139, 17);
             this.statusUzytkownik.Text = "Zalogowany jako: Michał";
             // 
+            // splitter5
+            // 
+            this.splitter5.Location = new System.Drawing.Point(558, 3);
+            this.splitter5.Name = "splitter5";
+            this.splitter5.Size = new System.Drawing.Size(3, 38);
+            this.splitter5.TabIndex = 10;
+            this.splitter5.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.Location = new System.Drawing.Point(561, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(267, 38);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Dodaj Pracownika z zagranicy";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // splitter6
+            // 
+            this.splitter6.Location = new System.Drawing.Point(828, 3);
+            this.splitter6.Name = "splitter6";
+            this.splitter6.Size = new System.Drawing.Size(3, 38);
+            this.splitter6.TabIndex = 12;
+            this.splitter6.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -276,5 +308,8 @@ namespace Kartotekapracownikow
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Button byliPracownicyBTN;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Splitter splitter6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Splitter splitter5;
     }
 }
