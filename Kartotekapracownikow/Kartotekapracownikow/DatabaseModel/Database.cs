@@ -4,32 +4,31 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Windows;
+using Microsoft.EntityFrameworkCore;
 
 namespace Kartotekapracownikow.DatabaseModel
 {
-    class Database : DbContext 
+    public class Database : DbContext
     {
+        
+        public DbSet<DanePracownikaPodstawowe> DanePracownikaPodstawowe { get; set; }
+        public DbSet<DanePracownikaZatrudnienie> DanePracownikaZatrudnienie { get; set; }
 
-        public static MySqlConnection GetMySqlConnection()
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string sql = "server=localhost;uid=root;pwd=SonyW99;database=kartoteka-pracownicza";
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-173Q94A\SQLEXPRESS;Database=KartotekaPracownikow;Trusted_Connection=True;");
 
-            MySqlConnection mySqlConnection = new MySqlConnection(sql);
-
-            try
-            {
-                mySqlConnection.Open();
-            }
-            catch(MySqlException e)
-            {
-                MessageBox.Show("Błąd z połączeniem do bazy danych \n" + e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-            return mySqlConnection;
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<DanePracownikaPodstawowe>()
+                .HasOne(a => a.danePracownikaZatrudnienie)
+                .WithOne(b => b.danePracownika)
+                .HasForeignKey<DanePracownikaZatrudnienie>(b => b.podstawoweRef);
+        }
+
     }
 }

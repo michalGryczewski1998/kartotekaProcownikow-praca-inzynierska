@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Kartotekapracownikow.DatabaseModel
 {
-    class DanePracownikaPodstawowe
+    public class DanePracownikaPodstawowe
     {
+        [Key]
         public int ID { get; set; }
 
         public string Nazwisko { get; set; }
@@ -51,5 +53,7 @@ namespace Kartotekapracownikow.DatabaseModel
         public string NumerLokalu { get; set; }
 
         public string Poczta { get; set; }
+
+        public DanePracownikaZatrudnienie danePracownikaZatrudnienie { get; set; }
     }
 }

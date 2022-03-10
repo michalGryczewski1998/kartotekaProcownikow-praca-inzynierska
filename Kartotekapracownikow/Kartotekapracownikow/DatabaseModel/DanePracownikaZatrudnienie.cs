@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Kartotekapracownikow.DatabaseModel
 {
-    class DanePracownikaZatrudnienie
+    public class DanePracownikaZatrudnienie
     {
         public int ID { get; set; }
 
@@ -29,6 +30,10 @@ namespace Kartotekapracownikow.DatabaseModel
         public string Stanowisko { get; set; }
 
         public int StawkaGodzinowa { get; set; }
+
+        public int podstawoweRef { get; set; }
+
+        public DanePracownikaPodstawowe danePracownika { get; set; }
 
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Security.Policy;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kartotekapracownikow.DatabaseModel;
-using Microsoft.EntityFrameworkCore;
 
 
 namespace Kartotekapracownikow.Forms.AddEmployees
@@ -107,12 +107,53 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             }
         }
 
-        private static void InsertData()
+        private static async Task InsertData()
         {
-            
 
+            var danePodstawowe = new DanePracownikaPodstawowe
+            {
+                Nazwisko = "Gryczewski",
+                Imie = "Michał",
+                ZdjeciePracownika = "photo.png",
+                DataUrodzenia = DateTime.Now,
+                NumerTelefonu = "605384407",
+                AdresEmail = "michal@wp.pl",
+                MiejsceUrodzenia = "Tczew",
+                Plec = true,
+                ImieMatki = "Izabela",
+                ImieOjca = "Krzysztof",
+                PESEL = "98050502018",
+                NIP = "1323",
+                Kraj = "Polska",
+                Wojewodztwo = "Pomorskie",
+                Gmina = "Subkowy",
+                KodZamieszkania = "83-120",
+                Miejscowosc = "Subkowy",
+                Ulica = "Wybickiego",
+                NumerDomu = "66",
+                NumerLokalu = "",
+                Poczta = "Subkowy",
+            };
 
+            var daneZatrudnienie = new DanePracownikaZatrudnienie
+            {
+                NumerKonta = 56489,
+                Umowa = "O pracę",
+                Etat = "Pełny",
+                Bank = "PHO BP",
+                NFZ = "Sokrates Subkowy",
+                UlgaPodatkowa = "Nie",
+                KosztUzyskaniaPrzychodu = "Tak",
+                Dzial = "IT",
+                Stanowisko = "Programista",
+                StawkaGodzinowa = 24,
+            };
 
+            using (var db = new Database())
+            {
+                await db.DanePracownikaPodstawowe.AddAsync(danePodstawowe);
+                await db.DanePracownikaZatrudnienie.AddAsync(daneZatrudnienie);
+            }
         }
 
         private void nipTB_Validated(object sender, EventArgs e)
