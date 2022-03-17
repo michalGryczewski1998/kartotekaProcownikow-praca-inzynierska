@@ -9,7 +9,6 @@ namespace Kartotekapracownikow.DatabaseModel
 {
     public class DanePracownikaPodstawowe
     {
-        [Key]
         public int ID { get; set; }
 
         public string Nazwisko { get; set; }
@@ -54,6 +53,6 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public string Poczta { get; set; }
 
-        public DanePracownikaZatrudnienie danePracownikaZatrudnienie { get; set; }
+        public virtual ICollection<DanePracownikaZatrudnienie> Zatrudnienie { get; set; }
     }
 }

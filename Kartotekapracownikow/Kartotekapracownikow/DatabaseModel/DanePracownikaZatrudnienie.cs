@@ -31,9 +31,6 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public int StawkaGodzinowa { get; set; }
 
-        public int podstawoweRef { get; set; }
-
-        public DanePracownikaPodstawowe danePracownika { get; set; }
-
+        public virtual DanePracownikaPodstawowe Podstawowe { get; set; }
     }
 }

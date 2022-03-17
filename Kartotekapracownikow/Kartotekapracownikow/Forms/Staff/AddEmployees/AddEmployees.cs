@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kartotekapracownikow.DatabaseModel;
-
+using Microsoft.Data.SqlClient;
 
 namespace Kartotekapracownikow.Forms.AddEmployees
 {
@@ -53,7 +53,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void dodajPracownikaBTN_Click(object sender, EventArgs e)
         {
-            InsertData();
+            _ = InsertData();
         }
 
         private void anulujBTN_Click(object sender, EventArgs e)
@@ -109,50 +109,61 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private static async Task InsertData()
         {
-
-            var danePodstawowe = new DanePracownikaPodstawowe
-            {
-                Nazwisko = "Gryczewski",
-                Imie = "Michał",
-                ZdjeciePracownika = "photo.png",
-                DataUrodzenia = DateTime.Now,
-                NumerTelefonu = "605384407",
-                AdresEmail = "michal@wp.pl",
-                MiejsceUrodzenia = "Tczew",
-                Plec = true,
-                ImieMatki = "Izabela",
-                ImieOjca = "Krzysztof",
-                PESEL = "98050502018",
-                NIP = "1323",
-                Kraj = "Polska",
-                Wojewodztwo = "Pomorskie",
-                Gmina = "Subkowy",
-                KodZamieszkania = "83-120",
-                Miejscowosc = "Subkowy",
-                Ulica = "Wybickiego",
-                NumerDomu = "66",
-                NumerLokalu = "",
-                Poczta = "Subkowy",
-            };
-
-            var daneZatrudnienie = new DanePracownikaZatrudnienie
-            {
-                NumerKonta = 56489,
-                Umowa = "O pracę",
-                Etat = "Pełny",
-                Bank = "PHO BP",
-                NFZ = "Sokrates Subkowy",
-                UlgaPodatkowa = "Nie",
-                KosztUzyskaniaPrzychodu = "Tak",
-                Dzial = "IT",
-                Stanowisko = "Programista",
-                StawkaGodzinowa = 24,
-            };
-
+           
             using (var db = new Database())
             {
-                await db.DanePracownikaPodstawowe.AddAsync(danePodstawowe);
-                await db.DanePracownikaZatrudnienie.AddAsync(daneZatrudnienie);
+                db.Database.EnsureCreated();
+
+                try
+                {
+                    var danePodstawowe = new DanePracownikaPodstawowe
+                    {
+                        Nazwisko = "Gryczewski",
+                        Imie = "Michał",
+                        ZdjeciePracownika = "photo.png",
+                        DataUrodzenia = DateTime.Now,
+                        NumerTelefonu = "605384407",
+                        AdresEmail = "michal@wp.pl",
+                        MiejsceUrodzenia = "Tczew",
+                        Plec = true,
+                        ImieMatki = "Izabela",
+                        ImieOjca = "Krzysztof",
+                        PESEL = "98050502018",
+                        NIP = "1323",
+                        Kraj = "Polska",
+                        Wojewodztwo = "Pomorskie",
+                        Gmina = "Subkowy",
+                        KodZamieszkania = "83-120",
+                        Miejscowosc = "Subkowy",
+                        Ulica = "Wybickiego",
+                        NumerDomu = "66",
+                        NumerLokalu = "",
+                        Poczta = "Subkowy",
+                    };
+
+                    await db.DanePracownikaPodstawowe.AddAsync(danePodstawowe);
+
+                    var daneZatrudnienie = new DanePracownikaZatrudnienie
+                    {
+                        NumerKonta = 56489,
+                        Umowa = "O pracę",
+                        Etat = "Pełny",
+                        Bank = "PHO BP",
+                        NFZ = "Sokrates Subkowy",
+                        UlgaPodatkowa = "Nie",
+                        KosztUzyskaniaPrzychodu = "Tak",
+                        Dzial = "IT",
+                        Stanowisko = "Programista",
+                        StawkaGodzinowa = 24,
+                    };
+
+                    await db.DanePracownikaZatrudnienie.AddAsync(daneZatrudnienie);
+                    await db.SaveChangesAsync();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Błąd podczas dodawania pracownika do bazy danych !! \n");
+                }         
             }
         }
 
