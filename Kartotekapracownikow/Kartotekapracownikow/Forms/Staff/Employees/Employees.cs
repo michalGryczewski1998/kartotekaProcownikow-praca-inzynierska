@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Kartotekapracownikow.DatabaseModel;
+using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,10 +59,19 @@ namespace Kartotekapracownikow.Forms.Employees
             panelPracownicy.HorizontalScroll.Maximum = 0;
         }
 
-        private void szukajBTN_Click(object sender, EventArgs e)
+        private void krajowiPracownicyBTN_Click(object sender, EventArgs e)
         {
+            int height;
+            dataGridView.Height = dataGridView.RowCount * dataGridView.RowTemplate.Height * 2;
+            Bitmap bitmap = new Bitmap(dataGridView.Width, dataGridView.Height);
+            dataGridView.DrawToBitmap(bitmap, new Rectangle(0, 0, dataGridView.Width, dataGridView.Height));
 
+            using(var db = new Database())
+            {
+                var collection = new DanePracownikaPodstawowe();
+
+                
+            }
         }
-
     }
 }
