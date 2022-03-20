@@ -25,7 +25,7 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public string MiejsceUrodzenia { get; set; }
 
-        public bool Plec { get; set; }
+        public string Plec { get; set; }
 
         public string ImieMatki { get; set; }
 

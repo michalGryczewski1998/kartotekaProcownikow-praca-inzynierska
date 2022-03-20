@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
     {
 
         private static AddEmployees _instance = null;
+        string scierzkaZdjeciePracownika;
+        static string base64ConvertImageEmployee = "";
 
         public static AddEmployees Instance
         {
@@ -53,7 +57,72 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void dodajPracownikaBTN_Click(object sender, EventArgs e)
         {
-            _ = InsertData();
+            string imie = imiePracownikaTB.Text;
+            string nazwisko = nazwiskoPracownikaTB.Text;
+            string ZdjeciePracownika = base64ConvertImageEmployee;
+            DateTime DataUrodzenia = dataUrodzinDTP.Value;
+            string NumerTelefonu = numertelefonuPracownika.Text;
+            string AdresEmail = adresEmailPracownika.Text;
+            string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
+            string Plec = plecCB.SelectedItem.ToString();
+            string ImieMatki = imieMatkiTB.Text;
+            string ImieOjca = imieOjcaTB.Text;
+            string PESEL = peselTB.Text;
+            string NIP = nipTB.Text;
+            string Kraj = krajTB.Text;
+            string Wojewodztwo = wojewodztwoTB.Text;
+            string Gmina = gminaTB.Text;
+            string KodZamieszkania = kodTB.Text;
+            string Miejscowosc = miejscowoscTB.Text;
+            string Ulica = ulicaTB.Text;
+            string NumerDomu = numerDomuTB.Text;
+            string NumerLokalu = numerLokaluTB.Text;
+            string Poczta = pocztaTB.Text;
+
+            double NumerKonta = Convert.ToDouble(numerKontaTB.Text);
+            string Umowa = daneUmowaLB.SelectedItems.ToString();
+            string Etat = daneEtatLB.SelectedItems.ToString();
+            string Bank = bankTB.Text;
+            string NFZ = nfzTB.Text;
+            string UlgaPodatkowa = ulgaPodatkowaCB.SelectedItem.ToString();
+            string KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedItem.ToString();
+            string Dzial = dzial.Text;
+            string Stanowisko = stanowiskoCB.SelectedItem.ToString();
+            int StawkaGodzinowa = Convert.ToInt32(stawkaGodzinaTB.Text);
+
+        _ = InsertData(
+                imie,
+                nazwisko,
+                ZdjeciePracownika,
+                DataUrodzenia,
+                NumerTelefonu,
+                AdresEmail,
+                MiejsceUrodzenia,
+                Plec,
+                ImieMatki,
+                ImieOjca,
+                PESEL,
+                NIP,
+                Kraj,
+                Wojewodztwo,
+                Gmina,
+                KodZamieszkania,
+                Miejscowosc,
+                Ulica,
+                NumerDomu,
+                NumerLokalu,
+                Poczta,
+                NumerKonta,
+                Umowa,
+                Etat,
+                Bank,
+                NFZ,
+                UlgaPodatkowa,
+                KosztUzyskaniaPrzychodu,
+                Dzial,
+                Stanowisko,
+                StawkaGodzinowa
+                );
         }
 
         private void anulujBTN_Click(object sender, EventArgs e)
@@ -83,14 +152,26 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void zdjecieBTN_Click(object sender, EventArgs e)
         {
-            string scierzkaZdjeciePracownika;
-
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter ="Images (*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|" +"All files (*.*)|*.*";
 
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    scierzkaZdjeciePracownika = openFileDialog.FileName;
+                    zdjeciePracownikaPB.Image = Image.FromFile(openFileDialog.FileName);
+                }
 
+                byte[] imageArray = System.IO.File.ReadAllBytes(scierzkaZdjeciePracownika);
+                base64ConvertImageEmployee = Convert.ToBase64String(imageArray);
+                //Debug.WriteLine(base64ConvertImageEmployee);
             }
+            catch(Exception)
+            {
+                MessageBox.Show("Błąd podczas dodawania zdjęcia");
+            }
+
         }
 
         private void peselTB_Validated(object sender, EventArgs e)
@@ -107,9 +188,42 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             }
         }
 
-        private static async Task InsertData()
-        {
-           
+        private static async Task InsertData(
+
+                string imie,
+                string nazwisko,
+                string ZdjeciePracownika,
+                DateTime DataUrodzenia,
+                string NumerTelefonu,
+                string AdresEmail,
+                string MiejsceUrodzenia,
+                string Plec,
+                string ImieMatki,
+                string ImieOjca,
+                string PESEL,
+                string NIP,
+                string Kraj,
+                string Wojewodztwo,
+                string Gmina,
+                string KodZamieszkania,
+                string Miejscowosc,
+                string Ulica,
+                string NumerDomu,
+                string NumerLokalu,
+                string Poczta,
+                double NumerKonta,
+                string Umowa,
+                string Etat,
+                string Bank,
+                string NFZ,
+                string UlgaPodatkowa,
+                string KosztUzyskaniaPrzychodu,
+                string Dzial,
+                string Stanowisko,
+                int StawkaGodzinowa
+
+            )
+        {         
             using (var db = new Database())
             {
                 db.Database.EnsureCreated();
@@ -118,49 +232,49 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 {
                     var danePodstawowe = new DanePracownikaPodstawowe
                     {
-                        Nazwisko = "Gryczewski",
-                        Imie = "Michał",
-                        ZdjeciePracownika = "photo.png",
-                        DataUrodzenia = DateTime.Now,
-                        NumerTelefonu = "605384407",
-                        AdresEmail = "michal@wp.pl",
-                        MiejsceUrodzenia = "Tczew",
-                        Plec = true,
-                        ImieMatki = "Izabela",
-                        ImieOjca = "Krzysztof",
-                        PESEL = "98050502018",
-                        NIP = "1323",
-                        Kraj = "Polska",
-                        Wojewodztwo = "Pomorskie",
-                        Gmina = "Subkowy",
-                        KodZamieszkania = "83-120",
-                        Miejscowosc = "Subkowy",
-                        Ulica = "Wybickiego",
-                        NumerDomu = "66",
-                        NumerLokalu = "",
-                        Poczta = "Subkowy",
+                        Nazwisko = nazwisko,
+                        Imie = imie,
+                        ZdjeciePracownika = ZdjeciePracownika,
+                        DataUrodzenia = DataUrodzenia,
+                        NumerTelefonu = NumerTelefonu,
+                        AdresEmail = AdresEmail,
+                        MiejsceUrodzenia = MiejsceUrodzenia,
+                        Plec = Plec,
+                        ImieMatki = ImieMatki,
+                        ImieOjca = ImieOjca,
+                        PESEL = PESEL,
+                        NIP = NIP,
+                        Kraj = Kraj,
+                        Wojewodztwo = Wojewodztwo,
+                        Gmina = Gmina,
+                        KodZamieszkania = KodZamieszkania,
+                        Miejscowosc = Miejscowosc,
+                        Ulica = Ulica,
+                        NumerDomu = NumerDomu,
+                        NumerLokalu = NumerLokalu,
+                        Poczta = Poczta,
                     };
 
                     await db.DanePracownikaPodstawowe.AddAsync(danePodstawowe);
 
                     var daneZatrudnienie = new DanePracownikaZatrudnienie
                     {
-                        NumerKonta = 56489,
-                        Umowa = "O pracę",
-                        Etat = "Pełny",
-                        Bank = "PHO BP",
-                        NFZ = "Sokrates Subkowy",
-                        UlgaPodatkowa = "Nie",
-                        KosztUzyskaniaPrzychodu = "Tak",
-                        Dzial = "IT",
-                        Stanowisko = "Programista",
-                        StawkaGodzinowa = 24,
+                        NumerKonta = NumerKonta,
+                        Umowa = Umowa,
+                        Etat = Etat,
+                        Bank = Bank,
+                        NFZ = NFZ,
+                        UlgaPodatkowa = UlgaPodatkowa,
+                        KosztUzyskaniaPrzychodu = KosztUzyskaniaPrzychodu,
+                        Dzial = Dzial,
+                        Stanowisko = Stanowisko,
+                        StawkaGodzinowa = StawkaGodzinowa,
                     };
 
                     await db.DanePracownikaZatrudnienie.AddAsync(daneZatrudnienie);
                     await db.SaveChangesAsync();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     MessageBox.Show("Błąd podczas dodawania pracownika do bazy danych !! \n");
                 }         
@@ -232,7 +346,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void dataUrodzinDTP_Validated(object sender, EventArgs e)
         {
-            DateTime dataUrodzinHelp = Convert.ToDateTime(dataUrodzinDTP.Text);
+            DateTime dataUrodzinHelp = Convert.ToDateTime(dataUrodzinDTP.Value);
 
             if (dataUrodzinHelp >= DateTime.Today)
             {
@@ -244,29 +358,37 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         {
             string peselPomoc = peselTB.Text;
 
-            if(peselPomoc.Length == 11)
+            try
             {
-                int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
-                int suma = 0;
-                string liczbaKontrolnaSubstring = peselPomoc.Substring(10);
-                int liczbaKontrolna = int.Parse(liczbaKontrolnaSubstring);
-
-                for(int i = 0; i < peselWagi.Length; i++)
+                if (peselPomoc.Length == 11)
                 {
-                    suma += (int.Parse(peselPomoc.Substring(i, i + 1)) * peselWagi[i]);
+                    int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+                    int suma = 0;
+                    string liczbaKontrolnaSubstring = peselPomoc.Substring(10);
+                    int liczbaKontrolna = int.Parse(liczbaKontrolnaSubstring);
+
+                    for (int i = 0; i < peselWagi.Length; i++)
+                    {
+                        suma += (int.Parse(peselPomoc.Substring(i, i + 1)) * peselWagi[i]);
+                    }
+
+                    suma = suma % 10;
+
+                    if ((10 - suma) != liczbaKontrolna)
+                    {
+                        peselEP.SetError(peselTB, "Błędny PESEL");
+                    }
                 }
-
-                suma = suma % 10;
-
-                if ((10 - suma) != liczbaKontrolna)
+                else
                 {
-                    peselEP.SetError(peselTB, "Błędny PESEL");
+                    peselEP.SetError(peselTB, "PESEL zbyt krótki");
                 }
             }
-            else
+            catch(Exception)
             {
-                peselEP.SetError(peselTB, "PESEL zbyt krótki");
+                MessageBox.Show("Błędny pesel");
             }
+            
         }
     }
 }
