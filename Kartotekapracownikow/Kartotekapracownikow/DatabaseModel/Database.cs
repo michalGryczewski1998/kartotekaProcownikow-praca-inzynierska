@@ -21,7 +21,6 @@ namespace Kartotekapracownikow.DatabaseModel
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
             try
             {
                 optionsBuilder.UseMySQL($"server=localhost;Port=3306;database=kartoteka-pracownicza;user=root;password=SonyW990");               
