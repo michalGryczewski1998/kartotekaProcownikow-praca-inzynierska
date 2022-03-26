@@ -355,6 +355,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // kosztyUzyskaniaPrzychoduCB
             // 
             this.kosztyUzyskaniaPrzychoduCB.FormattingEnabled = true;
+            this.kosztyUzyskaniaPrzychoduCB.Items.AddRange(new object[] {
+            "Tak"});
             this.kosztyUzyskaniaPrzychoduCB.Location = new System.Drawing.Point(159, 149);
             this.kosztyUzyskaniaPrzychoduCB.Name = "kosztyUzyskaniaPrzychoduCB";
             this.kosztyUzyskaniaPrzychoduCB.Size = new System.Drawing.Size(147, 23);
@@ -363,7 +365,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // ulgaPodatkowaCB
             // 
             this.ulgaPodatkowaCB.FormattingEnabled = true;
-            this.ulgaPodatkowaCB.Location = new System.Drawing.Point(2, 149);
+            this.ulgaPodatkowaCB.Items.AddRange(new object[] {
+            "Tak"});
+            this.ulgaPodatkowaCB.Location = new System.Drawing.Point(9, 149);
             this.ulgaPodatkowaCB.Name = "ulgaPodatkowaCB";
             this.ulgaPodatkowaCB.Size = new System.Drawing.Size(147, 23);
             this.ulgaPodatkowaCB.TabIndex = 46;
@@ -720,6 +724,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // dzialCB
             // 
             this.dzialCB.FormattingEnabled = true;
+            this.dzialCB.Items.AddRange(new object[] {
+            "IT"});
             this.dzialCB.Location = new System.Drawing.Point(114, 20);
             this.dzialCB.Name = "dzialCB";
             this.dzialCB.Size = new System.Drawing.Size(147, 23);
@@ -728,6 +734,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // stanowiskoCB
             // 
             this.stanowiskoCB.FormattingEnabled = true;
+            this.stanowiskoCB.Items.AddRange(new object[] {
+            "Programista - Junior",
+            "Stażysta "});
             this.stanowiskoCB.Location = new System.Drawing.Point(114, 49);
             this.stanowiskoCB.Name = "stanowiskoCB";
             this.stanowiskoCB.Size = new System.Drawing.Size(147, 23);

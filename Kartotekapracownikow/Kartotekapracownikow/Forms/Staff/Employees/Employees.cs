@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -61,17 +62,122 @@ namespace Kartotekapracownikow.Forms.Employees
 
         private void krajowiPracownicyBTN_Click(object sender, EventArgs e)
         {
-            int height;
-            dataGridView.Height = dataGridView.RowCount * dataGridView.RowTemplate.Height * 2;
-            Bitmap bitmap = new Bitmap(dataGridView.Width, dataGridView.Height);
-            dataGridView.DrawToBitmap(bitmap, new Rectangle(0, 0, dataGridView.Width, dataGridView.Height));
-
-            using(var db = new Database())
+            using (var db = new Database())
             {
-                var collection = new DanePracownikaPodstawowe();
+                try
+                {
+                    var querry = (from collection in db.DanePracownikaPodstawowe
+                    select new
+                    {
+                        collection.ID,
+                        collection.Imie,
+                        collection.Nazwisko,
+                        collection.NumerTelefonu,
+                        collection.DataUrodzenia,
+                        collection.Miejscowosc,
+                        collection.Ulica
+                    }).ToList();
 
-                
+                    daneDGW.DataSource = querry;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd podczas wyświetlania");
+                }
+            }           
+        }
+
+        private void daneDGW_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void wyszukajBTN_Click(object sender, EventArgs e)
+        {
+            string imie = imiePracownikaWyszukaj.Text;
+            string nazwisko = nazwiskoPracownikaWyszukaj.Text;
+
+            clearDGW();
+
+            using (var db = new Database())
+            {
+                /**
+                 * TODO: zmienic na SWITCH !!!!!!
+                 */
+
+                try
+                {
+                    if (imie != null && nazwisko == null)
+                    {
+                        var querry = (from collection in db.DanePracownikaPodstawowe
+                                  where collection.Imie == imie
+                                  select new
+                                  {
+                                      collection.ID,
+                                      collection.Imie,
+                                      collection.Nazwisko,
+                                      collection.NumerTelefonu,
+                                      collection.DataUrodzenia,
+                                      collection.Miejscowosc,
+                                      collection.Ulica
+                                  }).ToList();
+                        daneDGW.DataSource = querry;
+
+                    }
+                    else if(imie == null && nazwisko != null){
+                        var querry = (from collection in db.DanePracownikaPodstawowe
+                                      where collection.Nazwisko == nazwisko
+                                      select new
+                                      {
+                                          collection.ID,
+                                          collection.Imie,
+                                          collection.Nazwisko,
+                                          collection.NumerTelefonu,
+                                          collection.DataUrodzenia,
+                                          collection.Miejscowosc,
+                                          collection.Ulica
+                                      }).ToList();
+                        daneDGW.DataSource = querry;
+                    }
+                    else if(imie != null && nazwisko != null)
+                    {
+                        var querry = (from collection in db.DanePracownikaPodstawowe
+                                      where collection.Imie == imie && collection.Nazwisko == nazwisko
+                                      select new
+                                      {
+                                          collection.ID,
+                                          collection.Imie,
+                                          collection.Nazwisko,
+                                          collection.NumerTelefonu,
+                                          collection.DataUrodzenia,
+                                          collection.Miejscowosc,
+                                          collection.Ulica
+                                      }).ToList();
+                        daneDGW.DataSource = querry;
+                    }
+                    else if(imie == null && nazwisko == null)
+                    {
+                        MessageBox.Show("Imie lub Nazwisko jest puste !");
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd wyszukiwania");
+                }
             }
+        }
+
+        public void clearDGW()
+        {
+            daneDGW.DataSource = null;
+            daneDGW.Rows.Clear();
+            //daneDGW.DataSource = GetNewValues();
+        }
+
+        private object GetNewValues()
+        {
+            throw new NotImplementedException();
         }
     }
 }

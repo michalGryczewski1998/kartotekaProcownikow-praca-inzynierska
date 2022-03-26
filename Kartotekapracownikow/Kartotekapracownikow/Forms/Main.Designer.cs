@@ -31,6 +31,9 @@ namespace Kartotekapracownikow
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.panelMenuMain = new System.Windows.Forms.TabPage();
+            this.splitter6 = new System.Windows.Forms.Splitter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.splitter5 = new System.Windows.Forms.Splitter();
             this.byliPracownicyBTN = new System.Windows.Forms.Button();
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.zwolnijPracownikaBTN = new System.Windows.Forms.Button();
@@ -47,9 +50,8 @@ namespace Kartotekapracownikow
             this.status = new System.Windows.Forms.StatusStrip();
             this.statusWersja = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusUzytkownik = new System.Windows.Forms.ToolStripStatusLabel();
-            this.splitter5 = new System.Windows.Forms.Splitter();
-            this.button1 = new System.Windows.Forms.Button();
-            this.splitter6 = new System.Windows.Forms.Splitter();
+            this.infoBTN = new System.Windows.Forms.Button();
+            this.splitter7 = new System.Windows.Forms.Splitter();
             this.mainTabControl.SuspendLayout();
             this.panelMenuMain.SuspendLayout();
             this.panelWyswietlajacy.SuspendLayout();
@@ -65,11 +67,13 @@ namespace Kartotekapracownikow
             this.mainTabControl.Location = new System.Drawing.Point(0, 0);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(839, 72);
+            this.mainTabControl.Size = new System.Drawing.Size(964, 72);
             this.mainTabControl.TabIndex = 0;
             // 
             // panelMenuMain
             // 
+            this.panelMenuMain.Controls.Add(this.splitter7);
+            this.panelMenuMain.Controls.Add(this.infoBTN);
             this.panelMenuMain.Controls.Add(this.splitter6);
             this.panelMenuMain.Controls.Add(this.button1);
             this.panelMenuMain.Controls.Add(this.splitter5);
@@ -85,10 +89,36 @@ namespace Kartotekapracownikow
             this.panelMenuMain.Location = new System.Drawing.Point(4, 24);
             this.panelMenuMain.Name = "panelMenuMain";
             this.panelMenuMain.Padding = new System.Windows.Forms.Padding(3);
-            this.panelMenuMain.Size = new System.Drawing.Size(831, 44);
+            this.panelMenuMain.Size = new System.Drawing.Size(956, 44);
             this.panelMenuMain.TabIndex = 0;
             this.panelMenuMain.Text = "Pracownicy";
             this.panelMenuMain.UseVisualStyleBackColor = true;
+            // 
+            // splitter6
+            // 
+            this.splitter6.Location = new System.Drawing.Point(828, 3);
+            this.splitter6.Name = "splitter6";
+            this.splitter6.Size = new System.Drawing.Size(3, 38);
+            this.splitter6.TabIndex = 12;
+            this.splitter6.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.Location = new System.Drawing.Point(561, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(267, 38);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Dodaj Pracownika z zagranicy";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // splitter5
+            // 
+            this.splitter5.Location = new System.Drawing.Point(558, 3);
+            this.splitter5.Name = "splitter5";
+            this.splitter5.Size = new System.Drawing.Size(3, 38);
+            this.splitter5.TabIndex = 10;
+            this.splitter5.TabStop = false;
             // 
             // byliPracownicyBTN
             // 
@@ -182,7 +212,7 @@ namespace Kartotekapracownikow
             this.UmowyTab.Location = new System.Drawing.Point(4, 24);
             this.UmowyTab.Name = "UmowyTab";
             this.UmowyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.UmowyTab.Size = new System.Drawing.Size(831, 44);
+            this.UmowyTab.Size = new System.Drawing.Size(956, 44);
             this.UmowyTab.TabIndex = 1;
             this.UmowyTab.Text = "Umowy";
             this.UmowyTab.UseVisualStyleBackColor = true;
@@ -192,7 +222,7 @@ namespace Kartotekapracownikow
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(831, 44);
+            this.tabPage1.Size = new System.Drawing.Size(956, 44);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -200,9 +230,10 @@ namespace Kartotekapracownikow
             // panelWyswietlajacy
             // 
             this.panelWyswietlajacy.Controls.Add(this.wyswietlanieFormsWZakladkach);
+            this.panelWyswietlajacy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWyswietlajacy.Location = new System.Drawing.Point(0, 72);
             this.panelWyswietlajacy.Name = "panelWyswietlajacy";
-            this.panelWyswietlajacy.Size = new System.Drawing.Size(839, 369);
+            this.panelWyswietlajacy.Size = new System.Drawing.Size(964, 489);
             this.panelWyswietlajacy.TabIndex = 1;
             // 
             // wyswietlanieFormsWZakladkach
@@ -211,7 +242,7 @@ namespace Kartotekapracownikow
             this.wyswietlanieFormsWZakladkach.Location = new System.Drawing.Point(0, 0);
             this.wyswietlanieFormsWZakladkach.Name = "wyswietlanieFormsWZakladkach";
             this.wyswietlanieFormsWZakladkach.SelectedIndex = 0;
-            this.wyswietlanieFormsWZakladkach.Size = new System.Drawing.Size(839, 369);
+            this.wyswietlanieFormsWZakladkach.Size = new System.Drawing.Size(964, 489);
             this.wyswietlanieFormsWZakladkach.TabIndex = 0;
             this.wyswietlanieFormsWZakladkach.Click += new System.EventHandler(this.pracownikaBTN_Click);
             // 
@@ -220,9 +251,9 @@ namespace Kartotekapracownikow
             this.status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusWersja,
             this.statusUzytkownik});
-            this.status.Location = new System.Drawing.Point(0, 419);
+            this.status.Location = new System.Drawing.Point(0, 539);
             this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(839, 22);
+            this.status.Size = new System.Drawing.Size(964, 22);
             this.status.TabIndex = 2;
             this.status.Text = "statusStrip1";
             // 
@@ -238,37 +269,28 @@ namespace Kartotekapracownikow
             this.statusUzytkownik.Size = new System.Drawing.Size(139, 17);
             this.statusUzytkownik.Text = "Zalogowany jako: Michał";
             // 
-            // splitter5
+            // infoBTN
             // 
-            this.splitter5.Location = new System.Drawing.Point(558, 3);
-            this.splitter5.Name = "splitter5";
-            this.splitter5.Size = new System.Drawing.Size(3, 38);
-            this.splitter5.TabIndex = 10;
-            this.splitter5.TabStop = false;
+            this.infoBTN.Location = new System.Drawing.Point(828, 3);
+            this.infoBTN.Name = "infoBTN";
+            this.infoBTN.Size = new System.Drawing.Size(125, 38);
+            this.infoBTN.TabIndex = 13;
+            this.infoBTN.Text = "Informacje";
+            this.infoBTN.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // splitter7
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(561, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 38);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Dodaj Pracownika z zagranicy";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // splitter6
-            // 
-            this.splitter6.Location = new System.Drawing.Point(828, 3);
-            this.splitter6.Name = "splitter6";
-            this.splitter6.Size = new System.Drawing.Size(3, 38);
-            this.splitter6.TabIndex = 12;
-            this.splitter6.TabStop = false;
+            this.splitter7.Location = new System.Drawing.Point(831, 3);
+            this.splitter7.Name = "splitter7";
+            this.splitter7.Size = new System.Drawing.Size(3, 38);
+            this.splitter7.TabIndex = 14;
+            this.splitter7.TabStop = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 441);
+            this.ClientSize = new System.Drawing.Size(964, 561);
             this.Controls.Add(this.status);
             this.Controls.Add(this.panelWyswietlajacy);
             this.Controls.Add(this.mainTabControl);
@@ -311,5 +333,7 @@ namespace Kartotekapracownikow
         private System.Windows.Forms.Splitter splitter6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Splitter splitter5;
+        private System.Windows.Forms.Splitter splitter7;
+        private System.Windows.Forms.Button infoBTN;
     }
 }
