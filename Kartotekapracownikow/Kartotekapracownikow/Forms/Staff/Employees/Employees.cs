@@ -1,4 +1,5 @@
 ﻿using Kartotekapracownikow.DatabaseModel;
+using Kartotekapracownikow.Forms.Staff.EmployessInfo;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -91,6 +92,10 @@ namespace Kartotekapracownikow.Forms.Employees
 
         private void daneDGW_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string pracownikID;
+
+            int selectedRowCount = daneDGW.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            MessageBox.Show(selectedRowCount.ToString());
 
         }
 
