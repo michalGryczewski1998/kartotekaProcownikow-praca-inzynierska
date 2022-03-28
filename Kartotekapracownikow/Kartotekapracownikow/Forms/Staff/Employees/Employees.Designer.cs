@@ -39,7 +39,7 @@ namespace Kartotekapracownikow.Forms.Employees
             this.wyszukiwanieGB = new System.Windows.Forms.GroupBox();
             this.wyszukajBTN = new System.Windows.Forms.Button();
             this.nazwiskoPracownikaWyszukaj = new System.Windows.Forms.TextBox();
-            this.imiePracownikaWyszukaj = new System.Windows.Forms.TextBox();
+            this.infoStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.daneDGW)).BeginInit();
             this.panelPracownicy.SuspendLayout();
             this.panelBazyDanych.SuspendLayout();
@@ -115,6 +115,7 @@ namespace Kartotekapracownikow.Forms.Employees
             // 
             // przybornikGB
             // 
+            this.przybornikGB.Controls.Add(this.infoStatus);
             this.przybornikGB.Controls.Add(this.wyszukiwanieGB);
             this.przybornikGB.Controls.Add(this.krajowiPracownicyBTN);
             this.przybornikGB.Controls.Add(this.zagraniczniPracownicy);
@@ -129,37 +130,37 @@ namespace Kartotekapracownikow.Forms.Employees
             // 
             this.wyszukiwanieGB.Controls.Add(this.wyszukajBTN);
             this.wyszukiwanieGB.Controls.Add(this.nazwiskoPracownikaWyszukaj);
-            this.wyszukiwanieGB.Controls.Add(this.imiePracownikaWyszukaj);
             this.wyszukiwanieGB.Location = new System.Drawing.Point(8, 104);
             this.wyszukiwanieGB.Name = "wyszukiwanieGB";
-            this.wyszukiwanieGB.Size = new System.Drawing.Size(155, 127);
+            this.wyszukiwanieGB.Size = new System.Drawing.Size(155, 95);
             this.wyszukiwanieGB.TabIndex = 3;
             this.wyszukiwanieGB.TabStop = false;
             this.wyszukiwanieGB.Text = "Wyszukiwanie";
             // 
             // wyszukajBTN
             // 
-            this.wyszukajBTN.Location = new System.Drawing.Point(6, 81);
+            this.wyszukajBTN.Location = new System.Drawing.Point(6, 51);
             this.wyszukajBTN.Name = "wyszukajBTN";
             this.wyszukajBTN.Size = new System.Drawing.Size(143, 35);
             this.wyszukajBTN.TabIndex = 3;
-            this.wyszukajBTN.Text = "Wyszukaj Pracownika";
+            this.wyszukajBTN.Text = "Wyszukaj po Nazwisku";
             this.wyszukajBTN.UseVisualStyleBackColor = true;
             this.wyszukajBTN.Click += new System.EventHandler(this.wyszukajBTN_Click);
             // 
             // nazwiskoPracownikaWyszukaj
             // 
-            this.nazwiskoPracownikaWyszukaj.Location = new System.Drawing.Point(7, 52);
+            this.nazwiskoPracownikaWyszukaj.Location = new System.Drawing.Point(7, 22);
             this.nazwiskoPracownikaWyszukaj.Name = "nazwiskoPracownikaWyszukaj";
             this.nazwiskoPracownikaWyszukaj.Size = new System.Drawing.Size(142, 23);
             this.nazwiskoPracownikaWyszukaj.TabIndex = 1;
             // 
-            // imiePracownikaWyszukaj
+            // infoStatus
             // 
-            this.imiePracownikaWyszukaj.Location = new System.Drawing.Point(7, 23);
-            this.imiePracownikaWyszukaj.Name = "imiePracownikaWyszukaj";
-            this.imiePracownikaWyszukaj.Size = new System.Drawing.Size(142, 23);
-            this.imiePracownikaWyszukaj.TabIndex = 0;
+            this.infoStatus.AutoSize = true;
+            this.infoStatus.Location = new System.Drawing.Point(15, 206);
+            this.infoStatus.Name = "infoStatus";
+            this.infoStatus.Size = new System.Drawing.Size(0, 15);
+            this.infoStatus.TabIndex = 4;
             // 
             // Employees
             // 
@@ -174,6 +175,7 @@ namespace Kartotekapracownikow.Forms.Employees
             this.panelPracownicy.ResumeLayout(false);
             this.panelBazyDanych.ResumeLayout(false);
             this.przybornikGB.ResumeLayout(false);
+            this.przybornikGB.PerformLayout();
             this.wyszukiwanieGB.ResumeLayout(false);
             this.wyszukiwanieGB.PerformLayout();
             this.ResumeLayout(false);
@@ -190,8 +192,8 @@ namespace Kartotekapracownikow.Forms.Employees
         private System.Windows.Forms.GroupBox panelBazyDanych;
         private System.Windows.Forms.GroupBox wyszukiwanieGB;
         private System.Windows.Forms.TextBox nazwiskoPracownikaWyszukaj;
-        private System.Windows.Forms.TextBox imiePracownikaWyszukaj;
         private System.Windows.Forms.Button wyszukajBTN;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label infoStatus;
     }
 }

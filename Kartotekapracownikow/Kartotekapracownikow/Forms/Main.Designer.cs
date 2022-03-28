@@ -31,6 +31,8 @@ namespace Kartotekapracownikow
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.panelMenuMain = new System.Windows.Forms.TabPage();
+            this.splitter7 = new System.Windows.Forms.Splitter();
+            this.infoBTN = new System.Windows.Forms.Button();
             this.splitter6 = new System.Windows.Forms.Splitter();
             this.button1 = new System.Windows.Forms.Button();
             this.splitter5 = new System.Windows.Forms.Splitter();
@@ -50,8 +52,6 @@ namespace Kartotekapracownikow
             this.status = new System.Windows.Forms.StatusStrip();
             this.statusWersja = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusUzytkownik = new System.Windows.Forms.ToolStripStatusLabel();
-            this.infoBTN = new System.Windows.Forms.Button();
-            this.splitter7 = new System.Windows.Forms.Splitter();
             this.mainTabControl.SuspendLayout();
             this.panelMenuMain.SuspendLayout();
             this.panelWyswietlajacy.SuspendLayout();
@@ -93,6 +93,23 @@ namespace Kartotekapracownikow
             this.panelMenuMain.TabIndex = 0;
             this.panelMenuMain.Text = "Pracownicy";
             this.panelMenuMain.UseVisualStyleBackColor = true;
+            // 
+            // splitter7
+            // 
+            this.splitter7.Location = new System.Drawing.Point(831, 3);
+            this.splitter7.Name = "splitter7";
+            this.splitter7.Size = new System.Drawing.Size(3, 38);
+            this.splitter7.TabIndex = 14;
+            this.splitter7.TabStop = false;
+            // 
+            // infoBTN
+            // 
+            this.infoBTN.Location = new System.Drawing.Point(828, 3);
+            this.infoBTN.Name = "infoBTN";
+            this.infoBTN.Size = new System.Drawing.Size(125, 38);
+            this.infoBTN.TabIndex = 13;
+            this.infoBTN.Text = "Informacje";
+            this.infoBTN.UseVisualStyleBackColor = true;
             // 
             // splitter6
             // 
@@ -261,30 +278,13 @@ namespace Kartotekapracownikow
             // 
             this.statusWersja.Name = "statusWersja";
             this.statusWersja.Size = new System.Drawing.Size(72, 17);
-            this.statusWersja.Text = "Wersja: 1.0.1";
+            this.statusWersja.Text = "Wersja: 1.2.1";
             // 
             // statusUzytkownik
             // 
             this.statusUzytkownik.Name = "statusUzytkownik";
             this.statusUzytkownik.Size = new System.Drawing.Size(139, 17);
             this.statusUzytkownik.Text = "Zalogowany jako: Michał";
-            // 
-            // infoBTN
-            // 
-            this.infoBTN.Location = new System.Drawing.Point(828, 3);
-            this.infoBTN.Name = "infoBTN";
-            this.infoBTN.Size = new System.Drawing.Size(125, 38);
-            this.infoBTN.TabIndex = 13;
-            this.infoBTN.Text = "Informacje";
-            this.infoBTN.UseVisualStyleBackColor = true;
-            // 
-            // splitter7
-            // 
-            this.splitter7.Location = new System.Drawing.Point(831, 3);
-            this.splitter7.Name = "splitter7";
-            this.splitter7.Size = new System.Drawing.Size(3, 38);
-            this.splitter7.TabIndex = 14;
-            this.splitter7.TabStop = false;
             // 
             // Main
             // 

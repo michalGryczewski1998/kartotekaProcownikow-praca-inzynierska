@@ -62,6 +62,8 @@ namespace Kartotekapracownikow.Forms.Employees
 
         private void krajowiPracownicyBTN_Click(object sender, EventArgs e)
         {
+            infoStatus.Text = "";
+
             using (var db = new Database())
             {
                 try
@@ -94,70 +96,33 @@ namespace Kartotekapracownikow.Forms.Employees
 
         private void wyszukajBTN_Click(object sender, EventArgs e)
         {
-            string imie = imiePracownikaWyszukaj.Text;
             string nazwisko = nazwiskoPracownikaWyszukaj.Text;
 
+            infoStatus.Text = "";
             clearDGW();
 
             using (var db = new Database())
             {
-                /**
-                 * TODO: zmienic na SWITCH !!!!!!
-                 */
 
                 try
                 {
-                    if (imie != null && nazwisko == null)
-                    {
-                        var querry = (from collection in db.DanePracownikaPodstawowe
-                                  where collection.Imie == imie
-                                  select new
-                                  {
-                                      collection.ID,
-                                      collection.Imie,
-                                      collection.Nazwisko,
-                                      collection.NumerTelefonu,
-                                      collection.DataUrodzenia,
-                                      collection.Miejscowosc,
-                                      collection.Ulica
-                                  }).ToList();
-                        daneDGW.DataSource = querry;
+                    var querry = (from collection in db.DanePracownikaPodstawowe
+                                    where collection.Nazwisko == nazwisko
+                                    select new
+                                    {
+                                        collection.ID,
+                                        collection.Imie,
+                                        collection.Nazwisko,
+                                        collection.NumerTelefonu,
+                                        collection.DataUrodzenia,
+                                        collection.Miejscowosc,
+                                        collection.Ulica
+                                    }).ToList();
+                    daneDGW.DataSource = querry;
 
-                    }
-                    else if(imie == null && nazwisko != null){
-                        var querry = (from collection in db.DanePracownikaPodstawowe
-                                      where collection.Nazwisko == nazwisko
-                                      select new
-                                      {
-                                          collection.ID,
-                                          collection.Imie,
-                                          collection.Nazwisko,
-                                          collection.NumerTelefonu,
-                                          collection.DataUrodzenia,
-                                          collection.Miejscowosc,
-                                          collection.Ulica
-                                      }).ToList();
-                        daneDGW.DataSource = querry;
-                    }
-                    else if(imie != null && nazwisko != null)
+                    if(!querry.Any())
                     {
-                        var querry = (from collection in db.DanePracownikaPodstawowe
-                                      where collection.Imie == imie && collection.Nazwisko == nazwisko
-                                      select new
-                                      {
-                                          collection.ID,
-                                          collection.Imie,
-                                          collection.Nazwisko,
-                                          collection.NumerTelefonu,
-                                          collection.DataUrodzenia,
-                                          collection.Miejscowosc,
-                                          collection.Ulica
-                                      }).ToList();
-                        daneDGW.DataSource = querry;
-                    }
-                    else if(imie == null && nazwisko == null)
-                    {
-                        MessageBox.Show("Imie lub Nazwisko jest puste !");
+                        infoStatus.Text = "Nie znaleziono";
                     }
 
                 }
