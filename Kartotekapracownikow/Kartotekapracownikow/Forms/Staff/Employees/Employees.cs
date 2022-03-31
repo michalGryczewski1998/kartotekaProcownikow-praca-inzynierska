@@ -92,11 +92,18 @@ namespace Kartotekapracownikow.Forms.Employees
 
         private void daneDGW_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string pracownikID;
+            /**
+             * Pobieramy indeks po kliknięciu np. w nazwisko pracownika
+             */
+            int index = e.RowIndex;
+            DataGridViewRow wybranaPozycja = daneDGW.Rows[index];
 
-            int selectedRowCount = daneDGW.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            MessageBox.Show(selectedRowCount.ToString());
-
+            /**
+             * Następnie przekazujemy go do kolejnego WindowsForma
+             * Gdzie wyświetlane są wszystkie dane pracownika
+             */
+            EmployessInfo info = new EmployessInfo(index);
+            info.ShowDialog();
         }
 
         private void wyszukajBTN_Click(object sender, EventArgs e)
