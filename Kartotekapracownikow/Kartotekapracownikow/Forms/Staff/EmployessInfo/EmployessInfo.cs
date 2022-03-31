@@ -12,9 +12,9 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
 {
     public partial class EmployessInfo : Form
     {
-        private string danePracownikaID;
+        private int danePracownikaID;
 
-        public EmployessInfo(string danePracownikaID)
+        public EmployessInfo(int danePracownikaID)
         {
             this.danePracownikaID = danePracownikaID;
             InitializeComponent();
