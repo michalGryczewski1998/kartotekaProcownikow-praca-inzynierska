@@ -92,18 +92,26 @@ namespace Kartotekapracownikow.Forms.Employees
 
         private void daneDGW_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /**
-             * Pobieramy indeks po kliknięciu np. w nazwisko pracownika
-             */
-            int index = e.RowIndex;
-            DataGridViewRow wybranaPozycja = daneDGW.Rows[index];
+            try
+            {
+                /**
+                * Pobieramy indeks po kliknięciu np. w nazwisko pracownika
+                */
+                int index = e.RowIndex;
+                DataGridViewRow wybranaPozycja = daneDGW.Rows[index];
 
-            /**
-             * Następnie przekazujemy go do kolejnego WindowsForma
-             * Gdzie wyświetlane są wszystkie dane pracownika
-             */
-            EmployessInfo info = new EmployessInfo(index);
-            info.ShowDialog();
+                /**
+                 * Następnie przekazujemy go do kolejnego WindowsForma
+                 * Gdzie wyświetlane są wszystkie dane pracownika
+                 */
+                EmployessInfo info = new EmployessInfo(index);
+                info.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd");
+            }
+
         }
 
         private void wyszukajBTN_Click(object sender, EventArgs e)
@@ -115,7 +123,7 @@ namespace Kartotekapracownikow.Forms.Employees
 
             using (var db = new Database())
             {
-
+                // Zapytanie LINQ do bazy danych
                 try
                 {
                     var querry = (from collection in db.DanePracownikaPodstawowe
