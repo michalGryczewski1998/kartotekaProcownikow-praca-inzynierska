@@ -345,7 +345,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneZatrudnieniaGB.Controls.Add(this.bankDoPrzelewuLabel);
             this.daneZatrudnieniaGB.Controls.Add(this.daneEtatLB);
             this.daneZatrudnieniaGB.Controls.Add(this.daneUmowaLB);
-            this.daneZatrudnieniaGB.Location = new System.Drawing.Point(3, 192);
+            this.daneZatrudnieniaGB.Location = new System.Drawing.Point(3, 370);
             this.daneZatrudnieniaGB.Name = "daneZatrudnieniaGB";
             this.daneZatrudnieniaGB.Size = new System.Drawing.Size(512, 246);
             this.daneZatrudnieniaGB.TabIndex = 1;
@@ -495,7 +495,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.adresGB.Controls.Add(this.wojewodztwoLabel);
             this.adresGB.Controls.Add(this.krajTB);
             this.adresGB.Controls.Add(this.krajZamieszkaniaPracownikaLabel);
-            this.adresGB.Location = new System.Drawing.Point(5, 439);
+            this.adresGB.Location = new System.Drawing.Point(3, 192);
             this.adresGB.Name = "adresGB";
             this.adresGB.Size = new System.Drawing.Size(510, 177);
             this.adresGB.TabIndex = 2;
@@ -652,8 +652,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.panel1.Controls.Add(this.StanowiskoGB);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.danePodstawoweGB);
-            this.panel1.Controls.Add(this.daneZatrudnieniaGB);
             this.panel1.Controls.Add(this.adresGB);
+            this.panel1.Controls.Add(this.daneZatrudnieniaGB);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -669,7 +669,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneKontaktoweGB.Controls.Add(this.numertelefonuPracownika);
             this.daneKontaktoweGB.Location = new System.Drawing.Point(521, 192);
             this.daneKontaktoweGB.Name = "daneKontaktoweGB";
-            this.daneKontaktoweGB.Size = new System.Drawing.Size(267, 246);
+            this.daneKontaktoweGB.Size = new System.Drawing.Size(267, 177);
             this.daneKontaktoweGB.TabIndex = 47;
             this.daneKontaktoweGB.TabStop = false;
             this.daneKontaktoweGB.Text = "Dane kontaktowe";
@@ -714,9 +714,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.StanowiskoGB.Controls.Add(this.stawkaZaGodzine);
             this.StanowiskoGB.Controls.Add(this.dzial);
             this.StanowiskoGB.Controls.Add(this.stanowisko);
-            this.StanowiskoGB.Location = new System.Drawing.Point(521, 439);
+            this.StanowiskoGB.Location = new System.Drawing.Point(521, 370);
             this.StanowiskoGB.Name = "StanowiskoGB";
-            this.StanowiskoGB.Size = new System.Drawing.Size(267, 177);
+            this.StanowiskoGB.Size = new System.Drawing.Size(267, 246);
             this.StanowiskoGB.TabIndex = 46;
             this.StanowiskoGB.TabStop = false;
             this.StanowiskoGB.Text = "Dane o miejscu pracy";

@@ -56,6 +56,22 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                                       collection.Poczta
                                   }).Single();
 
+                    var queryZatrudnienie = (from zatrudnienie in db.DanePracownikaZatrudnienie
+                                 where zatrudnienie.ID == danePracownikaID + 1
+                                 select new
+                                 {
+                                     zatrudnienie.NumerKonta,
+                                     zatrudnienie.Umowa,
+                                     zatrudnienie.Etat,
+                                     zatrudnienie.Bank,
+                                     zatrudnienie.NFZ,
+                                     zatrudnienie.UlgaPodatkowa,
+                                     zatrudnienie.KosztUzyskaniaPrzychodu,
+                                     zatrudnienie.Dzial,
+                                     zatrudnienie.Stanowisko,
+                                     zatrudnienie.StawkaGodzinowa
+                                 }).Single();
+
                     byte[] zdjecie = Convert.FromBase64String(query.ZdjeciePracownika.ToString());
                     var pomocZdjecie = new MemoryStream(zdjecie,0,zdjecie.Length);
 
@@ -80,6 +96,17 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     numerDomuTB.Text = query.NumerDomu.ToString();
                     numerLokaluTB.Text = query.NumerLokalu.ToString();
                     pocztaTB.Text = query.Poczta.ToString();
+
+                    numerKontaTB.Text = queryZatrudnienie.NumerKonta.ToString();
+                    umowaTB.Text = queryZatrudnienie.Umowa.ToString();
+                    etatTB.Text = queryZatrudnienie.Etat.ToString();
+                    bankTB.Text = queryZatrudnienie.Bank.ToString();
+                    nfzTB.Text = queryZatrudnienie.NFZ.ToString();
+                    ulgapodatkowaTB.Text = queryZatrudnienie.UlgaPodatkowa.ToString();
+                    kosztUzyskaniaPrzychoduTB.Text = queryZatrudnienie.KosztUzyskaniaPrzychodu.ToString();
+                    dzialTB.Text = queryZatrudnienie.Dzial.ToString();
+                    stanowiskoTB.Text = queryZatrudnienie.Stanowisko.ToString();
+                    stawkaGodzinaTB.Text = queryZatrudnienie.StawkaGodzinowa.ToString();
 
                 }
                 catch (Exception)
