@@ -153,7 +153,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private void zdjecieBTN_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter ="Images (*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|" +"All files (*.*)|*.*";
+            openFileDialog.Filter ="Images (*.PNG;*.JPG;*.GIF)|*.PNG;*.JPG;*.GIF|" +"All files (*.*)|*.*";
 
             try
             {
