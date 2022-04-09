@@ -92,6 +92,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.adresEmailPracownika = new System.Windows.Forms.TextBox();
             this.numertelefonuPracownika = new System.Windows.Forms.TextBox();
             this.StanowiskoGB = new System.Windows.Forms.GroupBox();
+            this.dziennyCzasPracyCB = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataZatrudnieniaDTP = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.dzialCB = new System.Windows.Forms.ComboBox();
             this.stanowiskoCB = new System.Windows.Forms.ComboBox();
             this.stawkaGodzinaTB = new System.Windows.Forms.TextBox();
@@ -106,6 +110,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.walidajcaNipEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataUrodzeniaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.peselEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.danePodstawoweGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zdjeciePracownikaPB)).BeginInit();
             this.daneZatrudnieniaGB.SuspendLayout();
@@ -457,7 +465,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneUmowaLB.Items.AddRange(new object[] {
             "Umowa zlecenie",
             "Umowa o dzieło",
-            "Umowa o pracę"});
+            "Umowa o pracę",
+            "Umowa B2B (business-to-business)"});
             this.daneUmowaLB.Location = new System.Drawing.Point(7, 23);
             this.daneUmowaLB.Name = "daneUmowaLB";
             this.daneUmowaLB.Size = new System.Drawing.Size(120, 94);
@@ -663,6 +672,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // daneKontaktoweGB
             // 
+            this.daneKontaktoweGB.Controls.Add(this.label3);
+            this.daneKontaktoweGB.Controls.Add(this.label4);
+            this.daneKontaktoweGB.Controls.Add(this.textBox1);
+            this.daneKontaktoweGB.Controls.Add(this.textBox2);
             this.daneKontaktoweGB.Controls.Add(this.adresEmailLabel);
             this.daneKontaktoweGB.Controls.Add(this.numerTelefonuPracownikaLabel);
             this.daneKontaktoweGB.Controls.Add(this.adresEmailPracownika);
@@ -708,6 +721,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // StanowiskoGB
             // 
+            this.StanowiskoGB.Controls.Add(this.dziennyCzasPracyCB);
+            this.StanowiskoGB.Controls.Add(this.label2);
+            this.StanowiskoGB.Controls.Add(this.dataZatrudnieniaDTP);
+            this.StanowiskoGB.Controls.Add(this.label1);
             this.StanowiskoGB.Controls.Add(this.dzialCB);
             this.StanowiskoGB.Controls.Add(this.stanowiskoCB);
             this.StanowiskoGB.Controls.Add(this.stawkaGodzinaTB);
@@ -720,6 +737,48 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.StanowiskoGB.TabIndex = 46;
             this.StanowiskoGB.TabStop = false;
             this.StanowiskoGB.Text = "Dane o miejscu pracy";
+            // 
+            // dziennyCzasPracyCB
+            // 
+            this.dziennyCzasPracyCB.FormattingEnabled = true;
+            this.dziennyCzasPracyCB.Items.AddRange(new object[] {
+            "2 - godziny",
+            "4 - godziny",
+            "6 - godziny",
+            "8 - godziny",
+            "10 - godziny",
+            "12 - godziny"});
+            this.dziennyCzasPracyCB.Location = new System.Drawing.Point(114, 140);
+            this.dziennyCzasPracyCB.Name = "dziennyCzasPracyCB";
+            this.dziennyCzasPracyCB.Size = new System.Drawing.Size(147, 23);
+            this.dziennyCzasPracyCB.TabIndex = 49;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 15);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Dzienny czas pracy";
+            // 
+            // dataZatrudnieniaDTP
+            // 
+            this.dataZatrudnieniaDTP.CustomFormat = " ";
+            this.dataZatrudnieniaDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dataZatrudnieniaDTP.Location = new System.Drawing.Point(114, 111);
+            this.dataZatrudnieniaDTP.Name = "dataZatrudnieniaDTP";
+            this.dataZatrudnieniaDTP.Size = new System.Drawing.Size(147, 23);
+            this.dataZatrudnieniaDTP.TabIndex = 47;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 15);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Data zatrudnienia";
             // 
             // dzialCB
             // 
@@ -736,7 +795,28 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.stanowiskoCB.FormattingEnabled = true;
             this.stanowiskoCB.Items.AddRange(new object[] {
             "Programista - Junior",
-            "Stażysta "});
+            "Programista - Mid",
+            "Programista - Master",
+            "Programista - Staż",
+            "(Software) Developer",
+            "(Software) Engineer",
+            "Web Developer - Junior",
+            "Web Developer - Mid",
+            "Web Developer - Master",
+            "Web Developer - Staż",
+            "DevOps Developer",
+            "Front-end Developer",
+            "Back-end Developer",
+            "Full Stack Developer",
+            "Software Architect",
+            "Inżynier systemowy",
+            "Stażysta",
+            "Project Manager",
+            "Analityk biznesowy",
+            "UI/UX Designer",
+            "Role techniczne",
+            "Architekt systemu",
+            "Testerzy"});
             this.stanowiskoCB.Location = new System.Drawing.Point(114, 49);
             this.stanowiskoCB.Name = "stanowiskoCB";
             this.stanowiskoCB.Size = new System.Drawing.Size(147, 23);
@@ -825,6 +905,38 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // peselEP
             // 
             this.peselEP.ContainerControl = this;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 15);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Numer telefonu";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 15);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Nagłe wypadki";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(108, 115);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(147, 23);
+            this.textBox1.TabIndex = 19;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(108, 86);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(147, 23);
+            this.textBox2.TabIndex = 18;
             // 
             // AddEmployees
             // 
@@ -936,5 +1048,13 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.ErrorProvider peselEP;
         private System.Windows.Forms.Button zdjecieBTN;
         private System.Windows.Forms.PictureBox zdjeciePracownikaPB;
+        private System.Windows.Forms.DateTimePicker dataZatrudnieniaDTP;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox dziennyCzasPracyCB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

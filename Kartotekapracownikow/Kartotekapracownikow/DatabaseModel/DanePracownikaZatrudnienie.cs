@@ -11,7 +11,7 @@ namespace Kartotekapracownikow.DatabaseModel
     {
         public int ID { get; set; }
 
-        public double NumerKonta { get; set; }
+        public string NumerKonta { get; set; }
 
         public string Umowa { get; set; }
 
@@ -29,7 +29,11 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public string Stanowisko { get; set; }
 
-        public int StawkaGodzinowa { get; set; }
+        public string StawkaGodzinowa { get; set; }
+
+        public DateTime? DataRozpoczeciaPracy { get; set; } 
+
+        public string DziennyCzasPracy { get; set; }
 
         public virtual DanePracownikaPodstawowe Podstawowe { get; set; }
     }

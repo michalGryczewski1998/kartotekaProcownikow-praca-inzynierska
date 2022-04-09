@@ -83,6 +83,8 @@ namespace Kartotekapracownikow.DatabaseModel
                 entity.Property(e => e.Dzial).IsRequired();
                 entity.Property(e => e.Stanowisko).IsRequired();
                 entity.Property(e => e.StawkaGodzinowa).IsRequired();
+                entity.Property(e => e.DataRozpoczeciaPracy).IsRequired();
+                entity.Property(e => e.DziennyCzasPracy).IsRequired();
                 entity.HasOne(e => e.Podstawowe).WithMany(m => m.Zatrudnienie);
             });
         }

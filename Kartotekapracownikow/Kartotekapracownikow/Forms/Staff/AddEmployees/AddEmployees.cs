@@ -16,6 +16,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private static AddEmployees _instance = null;
         string scierzkaZdjeciePracownika;
         static string base64ConvertImageEmployee = "";
+        bool peselError;
 
         public static AddEmployees Instance
         {
@@ -46,7 +47,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e) 
         {
             //dodanie scrollBar do panelu
             panel1.AutoScroll = true;
@@ -57,72 +58,149 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void dodajPracownikaBTN_Click(object sender, EventArgs e)
         {
-            string imie = imiePracownikaTB.Text;
-            string nazwisko = nazwiskoPracownikaTB.Text;
-            string ZdjeciePracownika = base64ConvertImageEmployee;
-            DateTime DataUrodzenia = dataUrodzinDTP.Value;
-            string NumerTelefonu = numertelefonuPracownika.Text;
-            string AdresEmail = adresEmailPracownika.Text;
-            string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
-            string Plec = plecCB.SelectedItem.ToString();
-            string ImieMatki = imieMatkiTB.Text;
-            string ImieOjca = imieOjcaTB.Text;
-            string PESEL = peselTB.Text;
-            string NIP = nipTB.Text;
-            string Kraj = krajTB.Text;
-            string Wojewodztwo = wojewodztwoTB.Text;
-            string Gmina = gminaTB.Text;
-            string KodZamieszkania = kodTB.Text;
-            string Miejscowosc = miejscowoscTB.Text;
-            string Ulica = ulicaTB.Text;
-            string NumerDomu = numerDomuTB.Text;
-            string NumerLokalu = numerLokaluTB.Text;
-            string Poczta = pocztaTB.Text;
+            try
+            {
+                string Plec;
+                string UlgaPodatkowa;
+                string KosztUzyskaniaPrzychodu;
+                string Stanowisko;
+                string PESEL = "";
+                string DziennyCzasPracy;
 
-            double NumerKonta = Convert.ToDouble(numerKontaTB.Text);
-            string Umowa = daneUmowaLB.SelectedItems.ToString();
-            string Etat = daneEtatLB.SelectedItems.ToString();
-            string Bank = bankTB.Text;
-            string NFZ = nfzTB.Text;
-            string UlgaPodatkowa = ulgaPodatkowaCB.SelectedItem.ToString();
-            string KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedItem.ToString();
-            string Dzial = dzial.Text;
-            string Stanowisko = stanowiskoCB.SelectedItem.ToString();
-            int StawkaGodzinowa = Convert.ToInt32(stawkaGodzinaTB.Text);
+                string imie = imiePracownikaTB.Text;
+                string nazwisko = nazwiskoPracownikaTB.Text;
+                string ZdjeciePracownika = base64ConvertImageEmployee;
+                DateTime DataUrodzenia = dataUrodzinDTP.Value;
+                string NumerTelefonu = numertelefonuPracownika.Text;
+                string AdresEmail = adresEmailPracownika.Text;
+                string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
 
-        _ = InsertData(
-                imie,
-                nazwisko,
-                ZdjeciePracownika,
-                DataUrodzenia,
-                NumerTelefonu,
-                AdresEmail,
-                MiejsceUrodzenia,
-                Plec,
-                ImieMatki,
-                ImieOjca,
-                PESEL,
-                NIP,
-                Kraj,
-                Wojewodztwo,
-                Gmina,
-                KodZamieszkania,
-                Miejscowosc,
-                Ulica,
-                NumerDomu,
-                NumerLokalu,
-                Poczta,
-                NumerKonta,
-                Umowa,
-                Etat,
-                Bank,
-                NFZ,
-                UlgaPodatkowa,
-                KosztUzyskaniaPrzychodu,
-                Dzial,
-                Stanowisko,
-                StawkaGodzinowa
-                );
+                if (plecCB.SelectedItem == null)
+                {
+                    MessageBox.Show("Proszę o wybranie danych !!!");
+                    Plec = "Brak";
+                }
+                else
+                {
+                    Plec = plecCB.SelectedItem.ToString();
+                }
+
+                string ImieMatki = imieMatkiTB.Text;
+                string ImieOjca = imieOjcaTB.Text;
+
+                if (peselError == true)
+                {
+                    MessageBox.Show("Proszę poprawnie wypełnic pole PESEL!");
+                }
+                else
+                {
+                    PESEL = peselTB.Text;
+                }
+
+                string NIP = nipTB.Text;
+                string Kraj = krajTB.Text;
+                string Wojewodztwo = wojewodztwoTB.Text;
+                string Gmina = gminaTB.Text;
+                string KodZamieszkania = kodTB.Text;
+                string Miejscowosc = miejscowoscTB.Text;
+                string Ulica = ulicaTB.Text;
+                string NumerDomu = numerDomuTB.Text;
+                string NumerLokalu = numerLokaluTB.Text;
+                string Poczta = pocztaTB.Text;
+
+                string NumerKonta = numerKontaTB.Text;
+                string Umowa = daneUmowaLB.SelectedItems.ToString();
+                string Etat = daneEtatLB.SelectedItems.ToString();
+                string Bank = bankTB.Text;
+                string NFZ = nfzTB.Text;
+
+                if (ulgaPodatkowaCB.SelectedItem == null)
+                {
+                    MessageBox.Show("Proszę o wybranie danych o uldze podatkowej!!!");
+                    UlgaPodatkowa = "Nie";
+                }
+                else
+                {
+                    UlgaPodatkowa = ulgaPodatkowaCB.SelectedItem.ToString();
+                }
+
+                if (kosztyUzyskaniaPrzychoduCB.SelectedItem == null)
+                {
+                    MessageBox.Show("Proszę o wybranie danych o kosztach uzyskania przychodu!!!");
+                    KosztUzyskaniaPrzychodu = "Nie";
+                }
+                else
+                {
+                    KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedItem.ToString();
+                }
+
+                string Dzial = dzial.Text;
+
+                if (stanowiskoCB.SelectedItem == null)
+                {
+                    MessageBox.Show("Proszę o wybranie danych o stanowisku !!!");
+                    Stanowisko = "Nie";
+                    
+                }
+                else
+                {
+                    Stanowisko = stanowiskoCB.SelectedItem.ToString();
+                }
+
+                string StawkaGodzinowa = stawkaGodzinaTB.Text;
+                DateTime DataRozpoczeciaPracy = dataZatrudnieniaDTP.Value;
+
+                if (dziennyCzasPracyCB.SelectedItem == null)
+                {
+                    MessageBox.Show("Proszę o wybranie danych !!!");
+                    DziennyCzasPracy = "Brak danych";
+                }
+                else
+                {
+                    DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString();
+                }
+
+
+                _ = InsertData(
+                    imie,
+                    nazwisko,
+                    ZdjeciePracownika,
+                    DataUrodzenia,
+                    NumerTelefonu,
+                    AdresEmail,
+                    MiejsceUrodzenia,
+                    Plec,
+                    ImieMatki,
+                    ImieOjca,
+                    PESEL,
+                    NIP,
+                    Kraj,
+                    Wojewodztwo,
+                    Gmina,
+                    KodZamieszkania,
+                    Miejscowosc,
+                    Ulica,
+                    NumerDomu,
+                    NumerLokalu,
+                    Poczta,
+                    NumerKonta,
+                    Umowa,
+                    Etat,
+                    Bank,
+                    NFZ,
+                    UlgaPodatkowa,
+                    KosztUzyskaniaPrzychodu,
+                    Dzial,
+                    Stanowisko,
+                    StawkaGodzinowa,
+                    DataRozpoczeciaPracy,
+                    DziennyCzasPracy
+                    );
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Wszystkie pola muszą zostać wypełnione");
+            }
         }
 
         private void anulujBTN_Click(object sender, EventArgs e)
@@ -161,7 +239,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 {
                     scierzkaZdjeciePracownika = openFileDialog.FileName;
                     zdjeciePracownikaPB.Image = Image.FromFile(openFileDialog.FileName);
-                }
+                }           
 
                 byte[] imageArray = System.IO.File.ReadAllBytes(scierzkaZdjeciePracownika);
                 base64ConvertImageEmployee = Convert.ToBase64String(imageArray);
@@ -211,7 +289,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string NumerDomu,
                 string NumerLokalu,
                 string Poczta,
-                double NumerKonta,
+                string NumerKonta,
                 string Umowa,
                 string Etat,
                 string Bank,
@@ -220,7 +298,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string KosztUzyskaniaPrzychodu,
                 string Dzial,
                 string Stanowisko,
-                int StawkaGodzinowa
+                string StawkaGodzinowa,
+                DateTime DataRozpoczeciaPracy,
+                string DziennyCzasPracy
 
             )
         {         
@@ -269,6 +349,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                         Dzial = Dzial,
                         Stanowisko = Stanowisko,
                         StawkaGodzinowa = StawkaGodzinowa,
+                        DataRozpoczeciaPracy = DataRozpoczeciaPracy,
+                        DziennyCzasPracy = DziennyCzasPracy
                     };
 
                     await db.DanePracownikaZatrudnienie.AddAsync(daneZatrudnienie);
@@ -378,10 +460,13 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                     {
                         peselEP.SetError(peselTB, "Błędny PESEL");
                     }
+
+                    peselError = false;
                 }
                 else
                 {
                     peselEP.SetError(peselTB, "PESEL zbyt krótki");
+                    peselError = true;
                 }
             }
             catch(Exception)
