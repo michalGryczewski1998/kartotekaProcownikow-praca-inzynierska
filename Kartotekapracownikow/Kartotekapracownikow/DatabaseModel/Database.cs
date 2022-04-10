@@ -68,6 +68,10 @@ namespace Kartotekapracownikow.DatabaseModel
                 entity.Property(e => e.NumerDomu).IsRequired();
                 entity.Property(e => e.NumerLokalu).IsRequired();
                 entity.Property(e => e.Poczta).IsRequired();
+                entity.Property(e => e.DoKogoWNaglymWypadku).IsRequired();
+                entity.Property(e => e.NumerNagleWypadki).IsRequired();
+
+
             });
 
             modelBuilder.Entity<DanePracownikaZatrudnienie>(entity =>

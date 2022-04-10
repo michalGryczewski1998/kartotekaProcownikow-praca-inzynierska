@@ -66,6 +66,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string Stanowisko;
                 string PESEL = "";
                 string DziennyCzasPracy;
+                string Umowa;
+                string Etat;
 
                 string imie = imiePracownikaTB.Text;
                 string nazwisko = nazwiskoPracownikaTB.Text;
@@ -107,10 +109,31 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string NumerDomu = numerDomuTB.Text;
                 string NumerLokalu = numerLokaluTB.Text;
                 string Poczta = pocztaTB.Text;
+                string DoKogoWNaglymWypadku = doKogoNaglyWypadekTB.Text;
+                string NumerNagleWypadki = NumerTelefonuNaglyWypadekTB.Text;
 
                 string NumerKonta = numerKontaTB.Text;
-                string Umowa = daneUmowaLB.SelectedItems.ToString();
-                string Etat = daneEtatLB.SelectedItems.ToString();
+
+                if (daneUmowaCB.SelectedItem == null)
+                {
+                    MessageBox.Show("Proszę o wybranie typu Umowy!!!");
+                    Umowa = "Umowa o pracę";
+                }
+                else
+                {
+                    Umowa = daneUmowaCB.SelectedItem.ToString();
+                }
+
+                if (daneEtatCB.SelectedItem == null)
+                {
+                    MessageBox.Show("Proszę o wybranie Etatu !!!");
+                    Etat = "Pełny etat";
+                }
+                else
+                {
+                    Etat = daneEtatCB.SelectedItem.ToString();
+                }
+
                 string Bank = bankTB.Text;
                 string NFZ = nfzTB.Text;
 
@@ -162,42 +185,44 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
 
                 _ = InsertData(
-                    imie,
-                    nazwisko,
-                    ZdjeciePracownika,
-                    DataUrodzenia,
-                    NumerTelefonu,
-                    AdresEmail,
-                    MiejsceUrodzenia,
-                    Plec,
-                    ImieMatki,
-                    ImieOjca,
-                    PESEL,
-                    NIP,
-                    Kraj,
-                    Wojewodztwo,
-                    Gmina,
-                    KodZamieszkania,
-                    Miejscowosc,
-                    Ulica,
-                    NumerDomu,
-                    NumerLokalu,
-                    Poczta,
-                    NumerKonta,
-                    Umowa,
-                    Etat,
-                    Bank,
-                    NFZ,
-                    UlgaPodatkowa,
-                    KosztUzyskaniaPrzychodu,
-                    Dzial,
-                    Stanowisko,
-                    StawkaGodzinowa,
-                    DataRozpoczeciaPracy,
-                    DziennyCzasPracy
+                     imie,
+                     nazwisko,
+                     ZdjeciePracownika,
+                     DataUrodzenia,
+                     NumerTelefonu,
+                     AdresEmail,
+                     MiejsceUrodzenia,
+                     Plec,
+                     ImieMatki,
+                     ImieOjca,
+                     PESEL,
+                     NIP,
+                     Kraj,
+                     Wojewodztwo,
+                     Gmina,
+                     KodZamieszkania,
+                     Miejscowosc,
+                     Ulica,
+                     NumerDomu,
+                     NumerLokalu,
+                     Poczta,
+                     DoKogoWNaglymWypadku,
+                     NumerNagleWypadki,
+                     NumerKonta,
+                     Umowa,
+                     Etat,
+                     Bank,
+                     NFZ,
+                     UlgaPodatkowa,
+                     KosztUzyskaniaPrzychodu,
+                     Dzial,
+                     Stanowisko,
+                     StawkaGodzinowa,
+                     DataRozpoczeciaPracy,
+                     DziennyCzasPracy
                     );
             }
-            catch (NullReferenceException)
+            catch (Exception)
             {
                 MessageBox.Show("Wszystkie pola muszą zostać wypełnione");
             }
@@ -289,6 +314,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string NumerDomu,
                 string NumerLokalu,
                 string Poczta,
+                string DoKogoWNaglymWypadku,
+                string NumerNagleWypadki,
                 string NumerKonta,
                 string Umowa,
                 string Etat,
@@ -333,6 +360,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                         NumerDomu = NumerDomu,
                         NumerLokalu = NumerLokalu,
                         Poczta = Poczta,
+                        DoKogoWNaglymWypadku = DoKogoWNaglymWypadku,
+                        NumerNagleWypadki = NumerNagleWypadki
                     };
 
                     await db.DanePracownikaPodstawowe.AddAsync(danePodstawowe);
