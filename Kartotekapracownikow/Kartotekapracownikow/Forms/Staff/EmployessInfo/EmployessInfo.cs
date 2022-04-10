@@ -53,7 +53,10 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                                       collection.Ulica,
                                       collection.NumerDomu,
                                       collection.NumerLokalu,
-                                      collection.Poczta
+                                      collection.Poczta,
+                                      collection.DoKogoWNaglymWypadku,
+                                      collection.NumerNagleWypadki
+                                      
                                   }).Single();
 
                     var queryZatrudnienie = (from zatrudnienie in db.DanePracownikaZatrudnienie
@@ -69,7 +72,9 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                                      zatrudnienie.KosztUzyskaniaPrzychodu,
                                      zatrudnienie.Dzial,
                                      zatrudnienie.Stanowisko,
-                                     zatrudnienie.StawkaGodzinowa
+                                     zatrudnienie.StawkaGodzinowa,
+                                     zatrudnienie.DataRozpoczeciaPracy,
+                                     zatrudnienie.DziennyCzasPracy
                                  }).Single();
 
                     byte[] zdjecie = Convert.FromBase64String(query.ZdjeciePracownika.ToString());
@@ -96,6 +101,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     numerDomuTB.Text = query.NumerDomu.ToString();
                     numerLokaluTB.Text = query.NumerLokalu.ToString();
                     pocztaTB.Text = query.Poczta.ToString();
+                    numerDo.Text = query.DoKogoWNaglymWypadku.ToString();
+                    numerTelefonuNagleWypadki.Text = query.NumerNagleWypadki.ToString();
 
                     numerKontaTB.Text = queryZatrudnienie.NumerKonta.ToString();
                     umowaTB.Text = queryZatrudnienie.Umowa.ToString();
@@ -107,6 +114,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     dzialTB.Text = queryZatrudnienie.Dzial.ToString();
                     stanowiskoTB.Text = queryZatrudnienie.Stanowisko.ToString();
                     stawkaGodzinaTB.Text = queryZatrudnienie.StawkaGodzinowa.ToString();
+                    dataRozpoczęciaPracyTB.Text = queryZatrudnienie.DataRozpoczeciaPracy.ToString();
+                    dziennyCzasPracyTB.Text = queryZatrudnienie.DziennyCzasPracy.ToString();
 
                 }
                 catch (Exception)

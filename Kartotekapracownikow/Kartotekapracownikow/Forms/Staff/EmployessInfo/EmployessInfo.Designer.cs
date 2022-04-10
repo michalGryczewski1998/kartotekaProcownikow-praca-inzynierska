@@ -30,6 +30,20 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.peselTB = new System.Windows.Forms.TextBox();
+            this.nipTB = new System.Windows.Forms.TextBox();
+            this.peselLabel = new System.Windows.Forms.Label();
+            this.nipLabel = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.numerDo = new System.Windows.Forms.TextBox();
+            this.numerTelefonuNagleWypadki = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numertelefonuPracownika = new System.Windows.Forms.TextBox();
+            this.adresEmailPracownika = new System.Windows.Forms.TextBox();
+            this.adresEmailLabel = new System.Windows.Forms.Label();
+            this.numerTelefonuPracownikaLabel = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pocztaTB = new System.Windows.Forms.TextBox();
             this.pocztaLabel = new System.Windows.Forms.Label();
@@ -39,10 +53,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.numerDomuLabel = new System.Windows.Forms.Label();
             this.ulicaTB = new System.Windows.Forms.TextBox();
             this.ulicaLabel = new System.Windows.Forms.Label();
-            this.adresEmailLabel = new System.Windows.Forms.Label();
-            this.numerTelefonuPracownikaLabel = new System.Windows.Forms.Label();
-            this.adresEmailPracownika = new System.Windows.Forms.TextBox();
-            this.numertelefonuPracownika = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.miejscowoscTB = new System.Windows.Forms.TextBox();
             this.miejscowoscLabel = new System.Windows.Forms.Label();
@@ -58,17 +68,13 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.dataUrodzeniaTB = new System.Windows.Forms.TextBox();
             this.zdjeciePracownikaPB = new System.Windows.Forms.PictureBox();
             this.edytujBTN = new System.Windows.Forms.Button();
-            this.nipLabel = new System.Windows.Forms.Label();
             this.imiePracownikaTB = new System.Windows.Forms.TextBox();
-            this.peselLabel = new System.Windows.Forms.Label();
             this.imiePracownikaLabel = new System.Windows.Forms.Label();
             this.imieOjcaPracownikaLabel = new System.Windows.Forms.Label();
             this.nazwiskoPracownikaTB = new System.Windows.Forms.TextBox();
             this.imiematkiPracownikaLabel = new System.Windows.Forms.Label();
             this.nazwiskoPracownikaLabel = new System.Windows.Forms.Label();
-            this.nipTB = new System.Windows.Forms.TextBox();
             this.dataUrodzeniaLabel = new System.Windows.Forms.Label();
-            this.peselTB = new System.Windows.Forms.TextBox();
             this.miejsceUrodzeniaTB = new System.Windows.Forms.TextBox();
             this.imieOjcaTB = new System.Windows.Forms.TextBox();
             this.miejsceurodzeniaLabel = new System.Windows.Forms.Label();
@@ -78,12 +84,10 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.kosztUzyskaniaPrzychoduTB = new System.Windows.Forms.TextBox();
             this.ulgapodatkowaTB = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dataRozpoczęciaPracyTB = new System.Windows.Forms.TextBox();
+            this.dziennyCzasPracyTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dzialTB = new System.Windows.Forms.TextBox();
             this.stanowiskoTB = new System.Windows.Forms.TextBox();
             this.stawkaGodzinaTB = new System.Windows.Forms.TextBox();
@@ -104,6 +108,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.bankDoPrzelewuLabel = new System.Windows.Forms.Label();
             this.edytujZatrudnienieBTN = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zdjeciePracownikaPB)).BeginInit();
@@ -113,38 +119,164 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox7);
+            this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.adresEmailLabel);
-            this.groupBox1.Controls.Add(this.numerTelefonuPracownikaLabel);
-            this.groupBox1.Controls.Add(this.adresEmailPracownika);
-            this.groupBox1.Controls.Add(this.numertelefonuPracownika);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.plecTB);
             this.groupBox1.Controls.Add(this.dataUrodzeniaTB);
             this.groupBox1.Controls.Add(this.zdjeciePracownikaPB);
             this.groupBox1.Controls.Add(this.edytujBTN);
-            this.groupBox1.Controls.Add(this.nipLabel);
             this.groupBox1.Controls.Add(this.imiePracownikaTB);
-            this.groupBox1.Controls.Add(this.peselLabel);
             this.groupBox1.Controls.Add(this.imiePracownikaLabel);
             this.groupBox1.Controls.Add(this.imieOjcaPracownikaLabel);
             this.groupBox1.Controls.Add(this.nazwiskoPracownikaTB);
             this.groupBox1.Controls.Add(this.imiematkiPracownikaLabel);
             this.groupBox1.Controls.Add(this.nazwiskoPracownikaLabel);
-            this.groupBox1.Controls.Add(this.nipTB);
             this.groupBox1.Controls.Add(this.dataUrodzeniaLabel);
-            this.groupBox1.Controls.Add(this.peselTB);
             this.groupBox1.Controls.Add(this.miejsceUrodzeniaTB);
             this.groupBox1.Controls.Add(this.imieOjcaTB);
             this.groupBox1.Controls.Add(this.miejsceurodzeniaLabel);
             this.groupBox1.Controls.Add(this.imieMatkiTB);
             this.groupBox1.Controls.Add(this.plecLabel);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
+            this.groupBox1.Location = new System.Drawing.Point(6, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(781, 379);
+            this.groupBox1.Size = new System.Drawing.Size(788, 433);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dane Podstawowe";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.peselTB);
+            this.groupBox7.Controls.Add(this.nipTB);
+            this.groupBox7.Controls.Add(this.peselLabel);
+            this.groupBox7.Controls.Add(this.nipLabel);
+            this.groupBox7.Location = new System.Drawing.Point(274, 16);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(266, 100);
+            this.groupBox7.TabIndex = 48;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Identyfikator";
+            // 
+            // peselTB
+            // 
+            this.peselTB.Location = new System.Drawing.Point(98, 29);
+            this.peselTB.Name = "peselTB";
+            this.peselTB.ReadOnly = true;
+            this.peselTB.Size = new System.Drawing.Size(147, 23);
+            this.peselTB.TabIndex = 31;
+            // 
+            // nipTB
+            // 
+            this.nipTB.Location = new System.Drawing.Point(98, 58);
+            this.nipTB.Name = "nipTB";
+            this.nipTB.ReadOnly = true;
+            this.nipTB.Size = new System.Drawing.Size(147, 23);
+            this.nipTB.TabIndex = 32;
+            // 
+            // peselLabel
+            // 
+            this.peselLabel.AutoSize = true;
+            this.peselLabel.Location = new System.Drawing.Point(6, 32);
+            this.peselLabel.Name = "peselLabel";
+            this.peselLabel.Size = new System.Drawing.Size(34, 15);
+            this.peselLabel.TabIndex = 35;
+            this.peselLabel.Text = "Pesel";
+            // 
+            // nipLabel
+            // 
+            this.nipLabel.AutoSize = true;
+            this.nipLabel.Location = new System.Drawing.Point(6, 61);
+            this.nipLabel.Name = "nipLabel";
+            this.nipLabel.Size = new System.Drawing.Size(26, 15);
+            this.nipLabel.TabIndex = 36;
+            this.nipLabel.Text = "NIP";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.numerDo);
+            this.groupBox6.Controls.Add(this.numerTelefonuNagleWypadki);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.numertelefonuPracownika);
+            this.groupBox6.Controls.Add(this.adresEmailPracownika);
+            this.groupBox6.Controls.Add(this.adresEmailLabel);
+            this.groupBox6.Controls.Add(this.numerTelefonuPracownikaLabel);
+            this.groupBox6.Location = new System.Drawing.Point(531, 250);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(251, 148);
+            this.groupBox6.TabIndex = 47;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Dane kontaktowe";
+            // 
+            // numerDo
+            // 
+            this.numerDo.Location = new System.Drawing.Point(104, 90);
+            this.numerDo.Name = "numerDo";
+            this.numerDo.ReadOnly = true;
+            this.numerDo.Size = new System.Drawing.Size(147, 23);
+            this.numerDo.TabIndex = 46;
+            // 
+            // numerTelefonuNagleWypadki
+            // 
+            this.numerTelefonuNagleWypadki.Location = new System.Drawing.Point(104, 119);
+            this.numerTelefonuNagleWypadki.Name = "numerTelefonuNagleWypadki";
+            this.numerTelefonuNagleWypadki.ReadOnly = true;
+            this.numerTelefonuNagleWypadki.Size = new System.Drawing.Size(147, 23);
+            this.numerTelefonuNagleWypadki.TabIndex = 47;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 125);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 15);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "Numer telefonu";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 15);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Telefon do";
+            // 
+            // numertelefonuPracownika
+            // 
+            this.numertelefonuPracownika.Location = new System.Drawing.Point(104, 29);
+            this.numertelefonuPracownika.Name = "numertelefonuPracownika";
+            this.numertelefonuPracownika.ReadOnly = true;
+            this.numertelefonuPracownika.Size = new System.Drawing.Size(147, 23);
+            this.numertelefonuPracownika.TabIndex = 42;
+            // 
+            // adresEmailPracownika
+            // 
+            this.adresEmailPracownika.Location = new System.Drawing.Point(104, 58);
+            this.adresEmailPracownika.Name = "adresEmailPracownika";
+            this.adresEmailPracownika.ReadOnly = true;
+            this.adresEmailPracownika.Size = new System.Drawing.Size(147, 23);
+            this.adresEmailPracownika.TabIndex = 43;
+            // 
+            // adresEmailLabel
+            // 
+            this.adresEmailLabel.AutoSize = true;
+            this.adresEmailLabel.Location = new System.Drawing.Point(13, 64);
+            this.adresEmailLabel.Name = "adresEmailLabel";
+            this.adresEmailLabel.Size = new System.Drawing.Size(74, 15);
+            this.adresEmailLabel.TabIndex = 45;
+            this.adresEmailLabel.Text = "Adres e-mail";
+            // 
+            // numerTelefonuPracownikaLabel
+            // 
+            this.numerTelefonuPracownikaLabel.AutoSize = true;
+            this.numerTelefonuPracownikaLabel.Location = new System.Drawing.Point(12, 32);
+            this.numerTelefonuPracownikaLabel.Name = "numerTelefonuPracownikaLabel";
+            this.numerTelefonuPracownikaLabel.Size = new System.Drawing.Size(45, 15);
+            this.numerTelefonuPracownikaLabel.TabIndex = 44;
+            this.numerTelefonuPracownikaLabel.Text = "Telefon";
             // 
             // groupBox5
             // 
@@ -156,7 +288,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox5.Controls.Add(this.numerDomuLabel);
             this.groupBox5.Controls.Add(this.ulicaTB);
             this.groupBox5.Controls.Add(this.ulicaLabel);
-            this.groupBox5.Location = new System.Drawing.Point(267, 196);
+            this.groupBox5.Location = new System.Drawing.Point(269, 250);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(258, 177);
             this.groupBox5.TabIndex = 46;
@@ -231,40 +363,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.ulicaLabel.TabIndex = 54;
             this.ulicaLabel.Text = "Ulica";
             // 
-            // adresEmailLabel
-            // 
-            this.adresEmailLabel.AutoSize = true;
-            this.adresEmailLabel.Location = new System.Drawing.Point(273, 170);
-            this.adresEmailLabel.Name = "adresEmailLabel";
-            this.adresEmailLabel.Size = new System.Drawing.Size(74, 15);
-            this.adresEmailLabel.TabIndex = 45;
-            this.adresEmailLabel.Text = "Adres e-mail";
-            // 
-            // numerTelefonuPracownikaLabel
-            // 
-            this.numerTelefonuPracownikaLabel.AutoSize = true;
-            this.numerTelefonuPracownikaLabel.Location = new System.Drawing.Point(273, 141);
-            this.numerTelefonuPracownikaLabel.Name = "numerTelefonuPracownikaLabel";
-            this.numerTelefonuPracownikaLabel.Size = new System.Drawing.Size(45, 15);
-            this.numerTelefonuPracownikaLabel.TabIndex = 44;
-            this.numerTelefonuPracownikaLabel.Text = "Telefon";
-            // 
-            // adresEmailPracownika
-            // 
-            this.adresEmailPracownika.Location = new System.Drawing.Point(371, 167);
-            this.adresEmailPracownika.Name = "adresEmailPracownika";
-            this.adresEmailPracownika.ReadOnly = true;
-            this.adresEmailPracownika.Size = new System.Drawing.Size(147, 23);
-            this.adresEmailPracownika.TabIndex = 43;
-            // 
-            // numertelefonuPracownika
-            // 
-            this.numertelefonuPracownika.Location = new System.Drawing.Point(371, 138);
-            this.numertelefonuPracownika.Name = "numertelefonuPracownika";
-            this.numertelefonuPracownika.ReadOnly = true;
-            this.numertelefonuPracownika.Size = new System.Drawing.Size(147, 23);
-            this.numertelefonuPracownika.TabIndex = 42;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.miejscowoscTB);
@@ -277,7 +375,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox3.Controls.Add(this.wojewodztwoLabel);
             this.groupBox3.Controls.Add(this.krajTB);
             this.groupBox3.Controls.Add(this.krajZamieszkaniaPracownikaLabel);
-            this.groupBox3.Location = new System.Drawing.Point(6, 196);
+            this.groupBox3.Location = new System.Drawing.Point(8, 250);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(255, 177);
             this.groupBox3.TabIndex = 41;
@@ -371,7 +469,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // plecTB
             // 
-            this.plecTB.Location = new System.Drawing.Point(114, 135);
+            this.plecTB.Location = new System.Drawing.Point(114, 188);
             this.plecTB.Name = "plecTB";
             this.plecTB.ReadOnly = true;
             this.plecTB.Size = new System.Drawing.Size(147, 23);
@@ -379,7 +477,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // dataUrodzeniaTB
             // 
-            this.dataUrodzeniaTB.Location = new System.Drawing.Point(114, 106);
+            this.dataUrodzeniaTB.Location = new System.Drawing.Point(114, 159);
             this.dataUrodzeniaTB.Name = "dataUrodzeniaTB";
             this.dataUrodzeniaTB.ReadOnly = true;
             this.dataUrodzeniaTB.Size = new System.Drawing.Size(147, 23);
@@ -387,30 +485,21 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // zdjeciePracownikaPB
             // 
-            this.zdjeciePracownikaPB.Location = new System.Drawing.Point(531, 16);
+            this.zdjeciePracownikaPB.Location = new System.Drawing.Point(546, 16);
             this.zdjeciePracownikaPB.Name = "zdjeciePracownikaPB";
-            this.zdjeciePracownikaPB.Size = new System.Drawing.Size(244, 290);
+            this.zdjeciePracownikaPB.Size = new System.Drawing.Size(236, 228);
             this.zdjeciePracownikaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.zdjeciePracownikaPB.TabIndex = 1;
             this.zdjeciePracownikaPB.TabStop = false;
             // 
             // edytujBTN
             // 
-            this.edytujBTN.Location = new System.Drawing.Point(700, 350);
+            this.edytujBTN.Location = new System.Drawing.Point(701, 404);
             this.edytujBTN.Name = "edytujBTN";
             this.edytujBTN.Size = new System.Drawing.Size(75, 23);
             this.edytujBTN.TabIndex = 0;
             this.edytujBTN.Text = "Edytuj";
             this.edytujBTN.UseVisualStyleBackColor = true;
-            // 
-            // nipLabel
-            // 
-            this.nipLabel.AutoSize = true;
-            this.nipLabel.Location = new System.Drawing.Point(279, 106);
-            this.nipLabel.Name = "nipLabel";
-            this.nipLabel.Size = new System.Drawing.Size(26, 15);
-            this.nipLabel.TabIndex = 36;
-            this.nipLabel.Text = "NIP";
             // 
             // imiePracownikaTB
             // 
@@ -419,15 +508,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.imiePracownikaTB.ReadOnly = true;
             this.imiePracownikaTB.Size = new System.Drawing.Size(147, 23);
             this.imiePracownikaTB.TabIndex = 22;
-            // 
-            // peselLabel
-            // 
-            this.peselLabel.AutoSize = true;
-            this.peselLabel.Location = new System.Drawing.Point(279, 77);
-            this.peselLabel.Name = "peselLabel";
-            this.peselLabel.Size = new System.Drawing.Size(34, 15);
-            this.peselLabel.TabIndex = 35;
-            this.peselLabel.Text = "Pesel";
             // 
             // imiePracownikaLabel
             // 
@@ -441,7 +521,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // imieOjcaPracownikaLabel
             // 
             this.imieOjcaPracownikaLabel.AutoSize = true;
-            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(279, 48);
+            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(8, 103);
             this.imieOjcaPracownikaLabel.Name = "imieOjcaPracownikaLabel";
             this.imieOjcaPracownikaLabel.Size = new System.Drawing.Size(55, 15);
             this.imieOjcaPracownikaLabel.TabIndex = 34;
@@ -458,7 +538,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // imiematkiPracownikaLabel
             // 
             this.imiematkiPracownikaLabel.AutoSize = true;
-            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(279, 19);
+            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(8, 74);
             this.imiematkiPracownikaLabel.Name = "imiematkiPracownikaLabel";
             this.imiematkiPracownikaLabel.Size = new System.Drawing.Size(63, 15);
             this.imiematkiPracownikaLabel.TabIndex = 33;
@@ -473,34 +553,18 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.nazwiskoPracownikaLabel.TabIndex = 24;
             this.nazwiskoPracownikaLabel.Text = "Nazwisko";
             // 
-            // nipTB
-            // 
-            this.nipTB.Location = new System.Drawing.Point(371, 103);
-            this.nipTB.Name = "nipTB";
-            this.nipTB.ReadOnly = true;
-            this.nipTB.Size = new System.Drawing.Size(147, 23);
-            this.nipTB.TabIndex = 32;
-            // 
             // dataUrodzeniaLabel
             // 
             this.dataUrodzeniaLabel.AutoSize = true;
-            this.dataUrodzeniaLabel.Location = new System.Drawing.Point(6, 109);
+            this.dataUrodzeniaLabel.Location = new System.Drawing.Point(8, 162);
             this.dataUrodzeniaLabel.Name = "dataUrodzeniaLabel";
             this.dataUrodzeniaLabel.Size = new System.Drawing.Size(86, 15);
             this.dataUrodzeniaLabel.TabIndex = 25;
             this.dataUrodzeniaLabel.Text = "Data urodzenia";
             // 
-            // peselTB
-            // 
-            this.peselTB.Location = new System.Drawing.Point(371, 74);
-            this.peselTB.Name = "peselTB";
-            this.peselTB.ReadOnly = true;
-            this.peselTB.Size = new System.Drawing.Size(147, 23);
-            this.peselTB.TabIndex = 31;
-            // 
             // miejsceUrodzeniaTB
             // 
-            this.miejsceUrodzeniaTB.Location = new System.Drawing.Point(114, 77);
+            this.miejsceUrodzeniaTB.Location = new System.Drawing.Point(114, 130);
             this.miejsceUrodzeniaTB.Name = "miejsceUrodzeniaTB";
             this.miejsceUrodzeniaTB.ReadOnly = true;
             this.miejsceUrodzeniaTB.Size = new System.Drawing.Size(147, 23);
@@ -508,7 +572,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // imieOjcaTB
             // 
-            this.imieOjcaTB.Location = new System.Drawing.Point(371, 45);
+            this.imieOjcaTB.Location = new System.Drawing.Point(114, 100);
             this.imieOjcaTB.Name = "imieOjcaTB";
             this.imieOjcaTB.ReadOnly = true;
             this.imieOjcaTB.Size = new System.Drawing.Size(147, 23);
@@ -517,7 +581,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // miejsceurodzeniaLabel
             // 
             this.miejsceurodzeniaLabel.AutoSize = true;
-            this.miejsceurodzeniaLabel.Location = new System.Drawing.Point(6, 80);
+            this.miejsceurodzeniaLabel.Location = new System.Drawing.Point(8, 133);
             this.miejsceurodzeniaLabel.Name = "miejsceurodzeniaLabel";
             this.miejsceurodzeniaLabel.Size = new System.Drawing.Size(102, 15);
             this.miejsceurodzeniaLabel.TabIndex = 27;
@@ -525,7 +589,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // imieMatkiTB
             // 
-            this.imieMatkiTB.Location = new System.Drawing.Point(371, 16);
+            this.imieMatkiTB.Location = new System.Drawing.Point(114, 71);
             this.imieMatkiTB.Name = "imieMatkiTB";
             this.imieMatkiTB.ReadOnly = true;
             this.imieMatkiTB.Size = new System.Drawing.Size(147, 23);
@@ -534,7 +598,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // plecLabel
             // 
             this.plecLabel.AutoSize = true;
-            this.plecLabel.Location = new System.Drawing.Point(6, 138);
+            this.plecLabel.Location = new System.Drawing.Point(8, 191);
             this.plecLabel.Name = "plecLabel";
             this.plecLabel.Size = new System.Drawing.Size(29, 15);
             this.plecLabel.TabIndex = 28;
@@ -558,7 +622,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox2.Controls.Add(this.bankTB);
             this.groupBox2.Controls.Add(this.bankDoPrzelewuLabel);
             this.groupBox2.Controls.Add(this.edytujZatrudnienieBTN);
-            this.groupBox2.Location = new System.Drawing.Point(12, 398);
+            this.groupBox2.Location = new System.Drawing.Point(6, 452);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(782, 314);
             this.groupBox2.TabIndex = 1;
@@ -568,7 +632,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // kosztUzyskaniaPrzychoduTB
             // 
-            this.kosztUzyskaniaPrzychoduTB.Location = new System.Drawing.Point(268, 209);
+            this.kosztUzyskaniaPrzychoduTB.Location = new System.Drawing.Point(8, 249);
             this.kosztUzyskaniaPrzychoduTB.Name = "kosztUzyskaniaPrzychoduTB";
             this.kosztUzyskaniaPrzychoduTB.ReadOnly = true;
             this.kosztUzyskaniaPrzychoduTB.Size = new System.Drawing.Size(254, 23);
@@ -576,7 +640,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // ulgapodatkowaTB
             // 
-            this.ulgapodatkowaTB.Location = new System.Drawing.Point(8, 209);
+            this.ulgapodatkowaTB.Location = new System.Drawing.Point(8, 205);
             this.ulgapodatkowaTB.Name = "ulgapodatkowaTB";
             this.ulgapodatkowaTB.ReadOnly = true;
             this.ulgapodatkowaTB.Size = new System.Drawing.Size(254, 23);
@@ -584,12 +648,10 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox3);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.dataRozpoczęciaPracyTB);
+            this.groupBox4.Controls.Add(this.dziennyCzasPracyTB);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.dzialTB);
             this.groupBox4.Controls.Add(this.stanowiskoTB);
             this.groupBox4.Controls.Add(this.stawkaGodzinaTB);
@@ -598,40 +660,31 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox4.Controls.Add(this.stanowisko);
             this.groupBox4.Location = new System.Drawing.Point(268, 17);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(508, 171);
+            this.groupBox4.Size = new System.Drawing.Size(514, 259);
             this.groupBox4.TabIndex = 64;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dane o miejscu pracy";
             // 
-            // textBox3
+            // dataRozpoczęciaPracyTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(412, 109);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(90, 23);
-            this.textBox3.TabIndex = 59;
+            this.dataRozpoczęciaPracyTB.Location = new System.Drawing.Point(143, 118);
+            this.dataRozpoczęciaPracyTB.Name = "dataRozpoczęciaPracyTB";
+            this.dataRozpoczęciaPracyTB.ReadOnly = true;
+            this.dataRozpoczęciaPracyTB.Size = new System.Drawing.Size(147, 23);
+            this.dataRozpoczęciaPracyTB.TabIndex = 61;
             // 
-            // label5
+            // dziennyCzasPracyTB
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(278, 112);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 15);
-            this.label5.TabIndex = 58;
-            this.label5.Text = "Dzienny czas pracy";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(412, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(90, 23);
-            this.textBox2.TabIndex = 57;
+            this.dziennyCzasPracyTB.Location = new System.Drawing.Point(143, 149);
+            this.dziennyCzasPracyTB.Name = "dziennyCzasPracyTB";
+            this.dziennyCzasPracyTB.ReadOnly = true;
+            this.dziennyCzasPracyTB.Size = new System.Drawing.Size(147, 23);
+            this.dziennyCzasPracyTB.TabIndex = 60;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(278, 79);
+            this.label4.Location = new System.Drawing.Point(6, 149);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 15);
             this.label4.TabIndex = 56;
@@ -640,23 +693,15 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(278, 48);
+            this.label1.Location = new System.Drawing.Point(6, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 15);
             this.label1.TabIndex = 55;
             this.label1.Text = "Data rozpoczęcia pracy";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(412, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(90, 23);
-            this.textBox1.TabIndex = 54;
-            // 
             // dzialTB
             // 
-            this.dzialTB.Location = new System.Drawing.Point(125, 45);
+            this.dzialTB.Location = new System.Drawing.Point(143, 22);
             this.dzialTB.Name = "dzialTB";
             this.dzialTB.ReadOnly = true;
             this.dzialTB.Size = new System.Drawing.Size(147, 23);
@@ -664,7 +709,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // stanowiskoTB
             // 
-            this.stanowiskoTB.Location = new System.Drawing.Point(125, 76);
+            this.stanowiskoTB.Location = new System.Drawing.Point(143, 53);
             this.stanowiskoTB.Name = "stanowiskoTB";
             this.stanowiskoTB.ReadOnly = true;
             this.stanowiskoTB.Size = new System.Drawing.Size(147, 23);
@@ -672,7 +717,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // stawkaGodzinaTB
             // 
-            this.stawkaGodzinaTB.Location = new System.Drawing.Point(125, 109);
+            this.stawkaGodzinaTB.Location = new System.Drawing.Point(143, 86);
             this.stawkaGodzinaTB.Name = "stawkaGodzinaTB";
             this.stawkaGodzinaTB.ReadOnly = true;
             this.stawkaGodzinaTB.Size = new System.Drawing.Size(147, 23);
@@ -681,7 +726,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // stawkaZaGodzine
             // 
             this.stawkaZaGodzine.AutoSize = true;
-            this.stawkaZaGodzine.Location = new System.Drawing.Point(12, 111);
+            this.stawkaZaGodzine.Location = new System.Drawing.Point(10, 88);
             this.stawkaZaGodzine.Name = "stawkaZaGodzine";
             this.stawkaZaGodzine.Size = new System.Drawing.Size(105, 15);
             this.stawkaZaGodzine.TabIndex = 48;
@@ -690,7 +735,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // dzial
             // 
             this.dzial.AutoSize = true;
-            this.dzial.Location = new System.Drawing.Point(12, 48);
+            this.dzial.Location = new System.Drawing.Point(10, 25);
             this.dzial.Name = "dzial";
             this.dzial.Size = new System.Drawing.Size(32, 15);
             this.dzial.TabIndex = 47;
@@ -699,7 +744,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // stanowisko
             // 
             this.stanowisko.AutoSize = true;
-            this.stanowisko.Location = new System.Drawing.Point(12, 79);
+            this.stanowisko.Location = new System.Drawing.Point(10, 56);
             this.stanowisko.Name = "stanowisko";
             this.stanowisko.Size = new System.Drawing.Size(67, 15);
             this.stanowisko.TabIndex = 46;
@@ -707,7 +752,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // etatTB
             // 
-            this.etatTB.Location = new System.Drawing.Point(115, 59);
+            this.etatTB.Location = new System.Drawing.Point(102, 71);
             this.etatTB.Name = "etatTB";
             this.etatTB.ReadOnly = true;
             this.etatTB.Size = new System.Drawing.Size(147, 23);
@@ -716,7 +761,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 62);
+            this.label2.Location = new System.Drawing.Point(8, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 15);
             this.label2.TabIndex = 62;
@@ -724,7 +769,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // umowaTB
             // 
-            this.umowaTB.Location = new System.Drawing.Point(115, 27);
+            this.umowaTB.Location = new System.Drawing.Point(102, 39);
             this.umowaTB.Name = "umowaTB";
             this.umowaTB.ReadOnly = true;
             this.umowaTB.Size = new System.Drawing.Size(147, 23);
@@ -733,7 +778,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 30);
+            this.label3.Location = new System.Drawing.Point(8, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 15);
             this.label3.TabIndex = 60;
@@ -742,7 +787,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // ulgapodatkowaLabel
             // 
             this.ulgapodatkowaLabel.AutoSize = true;
-            this.ulgapodatkowaLabel.Location = new System.Drawing.Point(8, 191);
+            this.ulgapodatkowaLabel.Location = new System.Drawing.Point(8, 187);
             this.ulgapodatkowaLabel.Name = "ulgapodatkowaLabel";
             this.ulgapodatkowaLabel.Size = new System.Drawing.Size(93, 15);
             this.ulgapodatkowaLabel.TabIndex = 57;
@@ -751,7 +796,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // kosztyPrzychoduLabel
             // 
             this.kosztyPrzychoduLabel.AutoSize = true;
-            this.kosztyPrzychoduLabel.Location = new System.Drawing.Point(268, 191);
+            this.kosztyPrzychoduLabel.Location = new System.Drawing.Point(8, 231);
             this.kosztyPrzychoduLabel.Name = "kosztyPrzychoduLabel";
             this.kosztyPrzychoduLabel.Size = new System.Drawing.Size(154, 15);
             this.kosztyPrzychoduLabel.TabIndex = 56;
@@ -759,7 +804,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // nfzTB
             // 
-            this.nfzTB.Location = new System.Drawing.Point(115, 149);
+            this.nfzTB.Location = new System.Drawing.Point(102, 161);
             this.nfzTB.Name = "nfzTB";
             this.nfzTB.ReadOnly = true;
             this.nfzTB.Size = new System.Drawing.Size(147, 23);
@@ -768,7 +813,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // nfzLabel
             // 
             this.nfzLabel.AutoSize = true;
-            this.nfzLabel.Location = new System.Drawing.Point(8, 152);
+            this.nfzLabel.Location = new System.Drawing.Point(8, 164);
             this.nfzLabel.Name = "nfzLabel";
             this.nfzLabel.Size = new System.Drawing.Size(29, 15);
             this.nfzLabel.TabIndex = 54;
@@ -776,7 +821,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // numerKontaTB
             // 
-            this.numerKontaTB.Location = new System.Drawing.Point(115, 120);
+            this.numerKontaTB.Location = new System.Drawing.Point(102, 132);
             this.numerKontaTB.Name = "numerKontaTB";
             this.numerKontaTB.ReadOnly = true;
             this.numerKontaTB.Size = new System.Drawing.Size(147, 23);
@@ -785,7 +830,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // numerKontaLabel
             // 
             this.numerKontaLabel.AutoSize = true;
-            this.numerKontaLabel.Location = new System.Drawing.Point(8, 123);
+            this.numerKontaLabel.Location = new System.Drawing.Point(8, 135);
             this.numerKontaLabel.Name = "numerKontaLabel";
             this.numerKontaLabel.Size = new System.Drawing.Size(77, 15);
             this.numerKontaLabel.TabIndex = 52;
@@ -793,7 +838,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // bankTB
             // 
-            this.bankTB.Location = new System.Drawing.Point(115, 88);
+            this.bankTB.Location = new System.Drawing.Point(102, 100);
             this.bankTB.Name = "bankTB";
             this.bankTB.ReadOnly = true;
             this.bankTB.Size = new System.Drawing.Size(147, 23);
@@ -802,7 +847,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // bankDoPrzelewuLabel
             // 
             this.bankDoPrzelewuLabel.AutoSize = true;
-            this.bankDoPrzelewuLabel.Location = new System.Drawing.Point(8, 91);
+            this.bankDoPrzelewuLabel.Location = new System.Drawing.Point(8, 103);
             this.bankDoPrzelewuLabel.Name = "bankDoPrzelewuLabel";
             this.bankDoPrzelewuLabel.Size = new System.Drawing.Size(33, 15);
             this.bankDoPrzelewuLabel.TabIndex = 50;
@@ -821,7 +866,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 724);
+            this.ClientSize = new System.Drawing.Size(800, 778);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "EmployessInfo";
@@ -829,6 +874,10 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.Load += new System.EventHandler(this.EmployessInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -912,11 +961,15 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.Label numerDomuLabel;
         private System.Windows.Forms.TextBox ulicaTB;
         private System.Windows.Forms.Label ulicaLabel;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox numerDo;
+        private System.Windows.Forms.TextBox numerTelefonuNagleWypadki;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox dataRozpoczęciaPracyTB;
+        private System.Windows.Forms.TextBox dziennyCzasPracyTB;
     }
 }

@@ -53,6 +53,10 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public string Poczta { get; set; }
 
+        public string DoKogoWNaglymWypadku { get; set; }
+
+        public string NumerNagleWypadki { get; set; }
+
         public virtual ICollection<DanePracownikaZatrudnienie> Zatrudnienie { get; set; }
     }
 }
