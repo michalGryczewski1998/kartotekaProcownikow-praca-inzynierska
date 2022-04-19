@@ -67,7 +67,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.plecTB = new System.Windows.Forms.TextBox();
             this.dataUrodzeniaTB = new System.Windows.Forms.TextBox();
             this.zdjeciePracownikaPB = new System.Windows.Forms.PictureBox();
-            this.edytujBTN = new System.Windows.Forms.Button();
             this.imiePracownikaTB = new System.Windows.Forms.TextBox();
             this.imiePracownikaLabel = new System.Windows.Forms.Label();
             this.imieOjcaPracownikaLabel = new System.Windows.Forms.Label();
@@ -84,6 +83,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.kosztUzyskaniaPrzychoduTB = new System.Windows.Forms.TextBox();
             this.ulgapodatkowaTB = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.iloscPrzepracowanychDniTB = new System.Windows.Forms.TextBox();
             this.dataRozpoczęciaPracyTB = new System.Windows.Forms.TextBox();
             this.dziennyCzasPracyTB = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -126,7 +127,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox1.Controls.Add(this.plecTB);
             this.groupBox1.Controls.Add(this.dataUrodzeniaTB);
             this.groupBox1.Controls.Add(this.zdjeciePracownikaPB);
-            this.groupBox1.Controls.Add(this.edytujBTN);
             this.groupBox1.Controls.Add(this.imiePracownikaTB);
             this.groupBox1.Controls.Add(this.imiePracownikaLabel);
             this.groupBox1.Controls.Add(this.imieOjcaPracownikaLabel);
@@ -205,7 +205,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox6.Controls.Add(this.numerTelefonuPracownikaLabel);
             this.groupBox6.Location = new System.Drawing.Point(531, 250);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(251, 148);
+            this.groupBox6.Size = new System.Drawing.Size(251, 177);
             this.groupBox6.TabIndex = 47;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Dane kontaktowe";
@@ -492,15 +492,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.zdjeciePracownikaPB.TabIndex = 1;
             this.zdjeciePracownikaPB.TabStop = false;
             // 
-            // edytujBTN
-            // 
-            this.edytujBTN.Location = new System.Drawing.Point(701, 404);
-            this.edytujBTN.Name = "edytujBTN";
-            this.edytujBTN.Size = new System.Drawing.Size(75, 23);
-            this.edytujBTN.TabIndex = 0;
-            this.edytujBTN.Text = "Edytuj";
-            this.edytujBTN.UseVisualStyleBackColor = true;
-            // 
             // imiePracownikaTB
             // 
             this.imiePracownikaTB.Location = new System.Drawing.Point(114, 16);
@@ -621,10 +612,9 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox2.Controls.Add(this.numerKontaLabel);
             this.groupBox2.Controls.Add(this.bankTB);
             this.groupBox2.Controls.Add(this.bankDoPrzelewuLabel);
-            this.groupBox2.Controls.Add(this.edytujZatrudnienieBTN);
             this.groupBox2.Location = new System.Drawing.Point(6, 452);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(782, 314);
+            this.groupBox2.Size = new System.Drawing.Size(788, 276);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane o Zatrudnieniu";
@@ -648,6 +638,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.iloscPrzepracowanychDniTB);
             this.groupBox4.Controls.Add(this.dataRozpoczęciaPracyTB);
             this.groupBox4.Controls.Add(this.dziennyCzasPracyTB);
             this.groupBox4.Controls.Add(this.label4);
@@ -660,10 +652,29 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox4.Controls.Add(this.stanowisko);
             this.groupBox4.Location = new System.Drawing.Point(268, 17);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(514, 259);
+            this.groupBox4.Size = new System.Drawing.Size(520, 259);
             this.groupBox4.TabIndex = 64;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dane o miejscu pracy";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(297, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(211, 15);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "Ilość przepracowanych dni w firmie.";
+            // 
+            // iloscPrzepracowanychDniTB
+            // 
+            this.iloscPrzepracowanychDniTB.Location = new System.Drawing.Point(296, 53);
+            this.iloscPrzepracowanychDniTB.Name = "iloscPrzepracowanychDniTB";
+            this.iloscPrzepracowanychDniTB.ReadOnly = true;
+            this.iloscPrzepracowanychDniTB.Size = new System.Drawing.Size(212, 23);
+            this.iloscPrzepracowanychDniTB.TabIndex = 62;
+            this.iloscPrzepracowanychDniTB.TextChanged += new System.EventHandler(this.iloscPrzepracowanychDniTB_TextChanged);
             // 
             // dataRozpoczęciaPracyTB
             // 
@@ -855,20 +866,22 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // edytujZatrudnienieBTN
             // 
-            this.edytujZatrudnienieBTN.Location = new System.Drawing.Point(701, 285);
+            this.edytujZatrudnienieBTN.Location = new System.Drawing.Point(713, 734);
             this.edytujZatrudnienieBTN.Name = "edytujZatrudnienieBTN";
             this.edytujZatrudnienieBTN.Size = new System.Drawing.Size(75, 23);
             this.edytujZatrudnienieBTN.TabIndex = 1;
             this.edytujZatrudnienieBTN.Text = "Edytuj";
             this.edytujZatrudnienieBTN.UseVisualStyleBackColor = true;
+            this.edytujZatrudnienieBTN.Click += new System.EventHandler(this.edytujZatrudnienieBTN_Click);
             // 
             // EmployessInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 778);
+            this.ClientSize = new System.Drawing.Size(809, 767);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.edytujZatrudnienieBTN);
             this.Name = "EmployessInfo";
             this.Text = "Informacje o Pracowniku";
             this.Load += new System.EventHandler(this.EmployessInfo_Load);
@@ -895,7 +908,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox zdjeciePracownikaPB;
-        private System.Windows.Forms.Button edytujBTN;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button edytujZatrudnienieBTN;
         private System.Windows.Forms.TextBox dataUrodzeniaTB;
@@ -971,5 +983,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox dataRozpoczęciaPracyTB;
         private System.Windows.Forms.TextBox dziennyCzasPracyTB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox iloscPrzepracowanychDniTB;
     }
 }
