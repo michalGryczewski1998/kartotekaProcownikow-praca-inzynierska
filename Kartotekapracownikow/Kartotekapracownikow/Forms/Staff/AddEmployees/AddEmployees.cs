@@ -483,7 +483,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                         suma += (int.Parse(peselPomoc.Substring(i, i + 1)) * peselWagi[i]);
                     }
 
-                    suma = suma % 10;
+                    suma %= 10;
 
                     if ((10 - suma) != liczbaKontrolna)
                     {

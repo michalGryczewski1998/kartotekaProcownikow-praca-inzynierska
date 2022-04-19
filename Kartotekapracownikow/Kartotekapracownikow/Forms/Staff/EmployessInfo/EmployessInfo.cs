@@ -117,6 +117,10 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     dataRozpoczęciaPracyTB.Text = queryZatrudnienie.DataRozpoczeciaPracy.ToString();
                     dziennyCzasPracyTB.Text = queryZatrudnienie.DziennyCzasPracy.ToString();
 
+                    DateTime dataPomoc = (DateTime)queryZatrudnienie.DataRozpoczeciaPracy;
+
+                    IloscPrzepracowanychDni(dataPomoc);
+
                 }
                 catch (Exception)
                 {
@@ -125,12 +129,29 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             }
         }
 
+        private void IloscPrzepracowanychDni(DateTime data)
+        {
+            DateTime now = DateTime.Now.Date;
+            int different = DateTime.Compare(now, data.Date);
+
+            iloscPrzepracowanychDniTB.Text = different.ToString();
+        }
         private void EmployessInfo_Load(object sender, EventArgs e)
         {
 
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iloscPrzepracowanychDniTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void edytujZatrudnienieBTN_Click(object sender, EventArgs e)
         {
 
         }
