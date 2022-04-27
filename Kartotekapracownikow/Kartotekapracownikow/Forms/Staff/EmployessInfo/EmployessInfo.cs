@@ -1,4 +1,5 @@
 ﻿using Kartotekapracownikow.DatabaseModel;
+using System.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
     public partial class EmployessInfo : Form
     {
         private int danePracownikaID;
+        private string newPicture;
+        private string imageEmployeesUpdateBase64;
 
         public EmployessInfo(int danePracownikaID)
         {
@@ -151,9 +154,75 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            zdjeciePracownikaPB.Image.Dispose();
+            zdjeciePracownikaPB.Image = null;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Images (*.PNG;*.JPG;*.GIF)|*.PNG;*.JPG;*.GIF|" + "All files (*.*)|*.*";
+
+            try
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    newPicture = openFileDialog.FileName;
+                    zdjeciePracownikaPB.Image = Image.FromFile(openFileDialog.FileName);
+                }
+
+                byte[] imageArray = File.ReadAllBytes(newPicture);
+                imageEmployeesUpdateBase64 = Convert.ToBase64String(imageArray);
+                //Debug.WriteLine(base64ConvertImageEmployee);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd podczas dodawania zdjęcia");
+            }
+        }
+
         private void edytujZatrudnienieBTN_Click(object sender, EventArgs e)
         {
-
+            UpdateData();
         }
+
+        private void UpdateData()
+        {
+            try
+            {
+                using (var db = new Database())
+                {
+                    try
+                    {
+                        //Aktualizacja danych o zatrudnieniu
+                        var update = (from s in db.DanePracownikaZatrudnienie where s.ID == danePracownikaID + 1 select s).First();
+                        update.NumerKonta = numerKontaTB.Text;
+                        update.Umowa = umowaTB.Text;
+                        update.Etat = etatTB.Text;
+                        update.Bank = bankTB.Text;
+                        update.NFZ = nfzTB.Text;
+                        update.UlgaPodatkowa = ulgapodatkowaTB.Text;
+                        update.KosztUzyskaniaPrzychodu = kosztUzyskaniaPrzychoduTB.Text;
+                        update.Dzial = dzialTB.Text;
+                        update.Stanowisko = stanowiskoTB.Text;
+                        update.StawkaGodzinowa = stawkaZaGodzine.Text;
+                        //update.DataRozpoczeciaPracy = dataRozpoczęciaPracyTB.Text;
+                        update.DziennyCzasPracy = dziennyCzasPracyTB.Text;
+                        //Zapisanie zaktualizowanych danych
+                        db.SaveChanges();
+                        MessageBox.Show("Zaktualizowano pomyślnie :)");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Błąd podczas aktualizacji !");
+                    }                   
+                }
+            }
+            catch (Exception)
+            {
+                UpdateError.SetError(edytujZatrudnienieBTN, "Błąd podczas aktualizacji.");
+            }
+        }
+
+
     }
 }

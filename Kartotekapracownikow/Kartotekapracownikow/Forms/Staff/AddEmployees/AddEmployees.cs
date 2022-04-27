@@ -471,38 +471,77 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
             try
             {
-                if (peselPomoc.Length == 11)
+                //if (peselPomoc.Length == 11)
+                //{
+                //    int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+                //    int suma = 0;
+                //    string liczbaKontrolnaSubstring = peselPomoc.Substring(10);
+                //    int liczbaKontrolna = int.Parse(liczbaKontrolnaSubstring);
+
+                //    for (int i = 0; i < peselWagi.Length; i++)
+                //    {
+                //        suma += (int.Parse(peselPomoc.Substring(i, i + 1)) * peselWagi[i]);
+                //    }
+
+                //    suma %= 10;
+
+                //    if ((10 - suma) != liczbaKontrolna)
+                //    {
+                //        peselEP.SetError(peselTB, "Błędny PESEL");
+                //    }
+
+                //    peselError = false;
+                //}
+                //else
+                //{
+                //    peselEP.SetError(peselTB, "PESEL zbyt krótki");
+                //    peselError = true;
+                //}
+
+                int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+                bool result = false;
+
+                while (result == true)
                 {
-                    int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
-                    int suma = 0;
-                    string liczbaKontrolnaSubstring = peselPomoc.Substring(10);
-                    int liczbaKontrolna = int.Parse(liczbaKontrolnaSubstring);
-
-                    for (int i = 0; i < peselWagi.Length; i++)
+                    if (peselPomoc.Length <= 11)
                     {
-                        suma += (int.Parse(peselPomoc.Substring(i, i + 1)) * peselWagi[i]);
+                        int controlSum = CalculateControlSum(peselPomoc, peselWagi);
+                        int controlNum = controlSum % 10;
+                        controlNum = 10 - controlNum;
+                        if (controlNum == 10)
+                        {
+                            controlNum = 0;
+                        }
+                        int lastDigit = int.Parse(peselPomoc[peselPomoc.Length - 1].ToString());
+                        result = controlNum == lastDigit;
+
+                        if (result == false)
+                        {
+                            peselEP.SetError(peselTB, "Błędny PESEL");
+                        }
                     }
-
-                    suma %= 10;
-
-                    if ((10 - suma) != liczbaKontrolna)
+                    else
                     {
-                        peselEP.SetError(peselTB, "Błędny PESEL");
+                        peselEP.SetError(peselTB, peselPomoc.Length.ToString());
+                        peselError = true;
                     }
-
-                    peselError = false;
-                }
-                else
-                {
-                    peselEP.SetError(peselTB, "PESEL zbyt krótki");
-                    peselError = true;
-                }
+                } 
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Błędny pesel");
             }
             
+        }
+
+        private static int CalculateControlSum(string input, int[] weights, int offset = 0)
+        {
+            int controlSum = 0;
+            for (int i = 0; i < input.Length - 1; i++)
+            {
+                controlSum += weights[i + offset] * int.Parse(input[i].ToString());
+            }
+            return controlSum;
         }
     }
 }
