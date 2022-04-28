@@ -189,24 +189,37 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         {
             try
             {
+                string numerKonta = numerKontaTB.Text;
+                string umowa = umowaTB.Text;
+                string etat = etatTB.Text;
+                string bank = bankTB.Text;
+                string nfz = nfzTB.Text;
+                string ulgaPodatkowa = ulgapodatkowaTB.Text;
+                string kosztUzyskPrzy = kosztUzyskaniaPrzychoduTB.Text;
+                string dzial = dzialTB.Text;
+                string stanowisko = stanowiskoTB.Text;
+                string stawkaGodz = stawkaGodzinaTB.Text;
+                string dziennyCzasPracy = dziennyCzasPracyTB.Text;
+
                 using (var db = new Database())
                 {
                     try
                     {
                         //Aktualizacja danych o zatrudnieniu
                         var update = (from s in db.DanePracownikaZatrudnienie where s.ID == danePracownikaID + 1 select s).First();
-                        update.NumerKonta = numerKontaTB.Text;
-                        update.Umowa = umowaTB.Text;
-                        update.Etat = etatTB.Text;
-                        update.Bank = bankTB.Text;
-                        update.NFZ = nfzTB.Text;
-                        update.UlgaPodatkowa = ulgapodatkowaTB.Text;
-                        update.KosztUzyskaniaPrzychodu = kosztUzyskaniaPrzychoduTB.Text;
-                        update.Dzial = dzialTB.Text;
-                        update.Stanowisko = stanowiskoTB.Text;
-                        update.StawkaGodzinowa = stawkaZaGodzine.Text;
+                        System.Diagnostics.Debug.WriteLine(update);
+                        update.NumerKonta = numerKonta;
+                        update.Umowa = umowa;
+                        update.Etat = etat;
+                        update.Bank = bank;
+                        update.NFZ = nfz;
+                        update.UlgaPodatkowa = ulgaPodatkowa;
+                        update.KosztUzyskaniaPrzychodu = kosztUzyskPrzy;
+                        update.Dzial = dzial;
+                        update.Stanowisko = stanowisko;
+                        update.StawkaGodzinowa = stawkaGodz;
                         //update.DataRozpoczeciaPracy = dataRozpoczęciaPracyTB.Text;
-                        update.DziennyCzasPracy = dziennyCzasPracyTB.Text;
+                        update.DziennyCzasPracy = dziennyCzasPracy;
                         //Zapisanie zaktualizowanych danych
                         db.SaveChanges();
                         MessageBox.Show("Zaktualizowano pomyślnie :)");
@@ -223,6 +236,84 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UpdateDataPodstawowedane();
+        }
 
+        private void UpdateDataPodstawowedane()
+        {
+            try
+            {
+                using (var db = new Database())
+                {
+                    string imie = imiePracownikaTB.Text;
+                    string nazwisko = nazwiskoPracownikaTB.Text;
+                    //DateTime DataUrodzenia,
+                    string NumerTelefonu = numertelefonuPracownika.Text;
+                    string AdresEmail = adresEmailPracownika.Text;
+                    string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
+                    string Plec = plecTB.Text;
+                    string ImieMatki = imieMatkiTB.Text;
+                    string ImieOjca = imieOjcaTB.Text;
+                    string PESEL = peselTB.Text;
+                    string NIP = nipTB.Text;
+                    string Kraj = krajTB.Text;
+                    string Wojewodztwo = wojewodztwoTB.Text;
+                    string Gmina = gminaTB.Text;
+                    string KodZamieszkania = kodTB.Text;
+                    string Miejscowosc = miejscowoscTB.Text;
+                    string Ulica = ulicaTB.Text;
+                    string NumerDomu = numerDomuTB.Text;
+                    string NumerLokalu = numerLokaluTB.Text;
+                    string Poczta = pocztaTB.Text;
+                    string DoKogoWNaglymWypadku = numerDo.Text;
+                    string NumerNagleWypadki = numerTelefonuNagleWypadki.Text;
+
+                    try
+                    {
+                        var update = (from s in db.DanePracownikaPodstawowe where s.ID == danePracownikaID + 1 select s).First();
+                        update.Nazwisko = nazwisko;
+                        update.Imie = imie;
+                        //update.DataUrodzenia = DataUrodzenia,
+                        update.NumerTelefonu = NumerTelefonu;
+                        update.AdresEmail = AdresEmail;
+                        update.MiejsceUrodzenia = MiejsceUrodzenia;
+                        update.Plec = Plec;
+                        update.ImieMatki = ImieMatki;
+                        update.ImieOjca = ImieOjca;
+                        update.PESEL = PESEL;
+                        update.NIP = NIP;
+                        update.Kraj = Kraj;
+                        update.Wojewodztwo = Wojewodztwo;
+                        update.Gmina = Gmina;
+                        update.KodZamieszkania = KodZamieszkania;
+                        update.Miejscowosc = Miejscowosc;
+                        update.Ulica = Ulica;
+                        update.NumerDomu = NumerDomu;
+                        update.NumerLokalu = NumerLokalu;
+                        update.Poczta = Poczta;
+                        update.DoKogoWNaglymWypadku = DoKogoWNaglymWypadku;
+                        update.NumerNagleWypadki = NumerNagleWypadki;
+
+                        db.SaveChanges();
+
+                        MessageBox.Show("Zaktualizowano pomyślnie :)");
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Błąd podczas aktualizacji !");
+                    }
+                }
+            }
+
+            catch (Exception)
+            {
+                UpdateErrorPodstawoweEP.SetError(EdytujPodstawoweBTN, "Błąd podczas aktualizacji.");
+            }
+           
+        }
     }
 }
+
