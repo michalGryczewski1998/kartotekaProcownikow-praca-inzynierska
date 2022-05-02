@@ -17,7 +17,7 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public string ZdjeciePracownika { get; set; }
 
-        public DateTime? DataUrodzenia { get; set; }
+        public DateTime DataUrodzenia { get; set; }
 
         public string NumerTelefonu { get; set; }
 

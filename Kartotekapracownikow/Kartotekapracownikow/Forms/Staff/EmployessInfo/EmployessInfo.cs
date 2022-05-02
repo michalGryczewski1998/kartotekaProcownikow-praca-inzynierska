@@ -17,7 +17,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
     {
         private int danePracownikaID;
         private string newPicture;
-        private string imageEmployeesUpdateBase64;
 
         public EmployessInfo(int danePracownikaID)
         {
@@ -120,9 +119,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     dataRozpoczęciaPracyTB.Text = queryZatrudnienie.DataRozpoczeciaPracy.ToString();
                     dziennyCzasPracyTB.Text = queryZatrudnienie.DziennyCzasPracy.ToString();
 
-                    DateTime dataPomoc = (DateTime)queryZatrudnienie.DataRozpoczeciaPracy;
-
-                    IloscPrzepracowanychDni(dataPomoc);
+                    IloscPrzepracowanychDni();
 
                 }
                 catch (Exception)
@@ -132,10 +129,30 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             }
         }
 
-        private void IloscPrzepracowanychDni(DateTime data)
+        private void IloscPrzepracowanychDni()
         {
-            DateTime now = DateTime.Now.Date;
-            int different = DateTime.Compare(now, data.Date);
+            /*
+             * Metoda oblicza ile upłynęło dni 
+             * między datą zatrudnienia a dniem dzisiejszym.
+             * 
+             */
+
+            DateTime StartTime;
+
+            using (var db = new Database())
+            {
+                var queryZatrudnienie = (from zatrudnienie in db.DanePracownikaZatrudnienie
+                                         where zatrudnienie.ID == danePracownikaID + 1
+                                         select new
+                                         {
+                                             zatrudnienie.DataRozpoczeciaPracy
+                                         }).Single();
+
+                StartTime = queryZatrudnienie.DataRozpoczeciaPracy;
+            }
+
+            DateTime EndTime = DateTime.Now.Date;
+            double different = (EndTime - StartTime).Days;
 
             iloscPrzepracowanychDniTB.Text = different.ToString();
         }
@@ -158,8 +175,9 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         {
             zdjeciePracownikaPB.Image.Dispose();
             zdjeciePracownikaPB.Image = null;
+            string imageEmployeesUpdateBase64;
 
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+        OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Images (*.PNG;*.JPG;*.GIF)|*.PNG;*.JPG;*.GIF|" + "All files (*.*)|*.*";
 
             try
@@ -173,6 +191,22 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                 byte[] imageArray = File.ReadAllBytes(newPicture);
                 imageEmployeesUpdateBase64 = Convert.ToBase64String(imageArray);
                 //Debug.WriteLine(base64ConvertImageEmployee);
+
+                try
+                {
+                    using (var db = new Database())
+                    {
+                        var uploadPicture = (from s in db.DanePracownikaPodstawowe where s.ID == danePracownikaID + 1 select s).First();
+                        System.Diagnostics.Debug.WriteLine(imageEmployeesUpdateBase64);
+                        uploadPicture.ZdjeciePracownika = imageEmployeesUpdateBase64;
+                        MessageBox.Show("Zaktualizowano pomyślnie :)");
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd podczas aktualizacji !");
+                }
+
             }
             catch (Exception)
             {
@@ -207,7 +241,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     {
                         //Aktualizacja danych o zatrudnieniu
                         var update = (from s in db.DanePracownikaZatrudnienie where s.ID == danePracownikaID + 1 select s).First();
-                        System.Diagnostics.Debug.WriteLine(update);
                         update.NumerKonta = numerKonta;
                         update.Umowa = umowa;
                         update.Etat = etat;

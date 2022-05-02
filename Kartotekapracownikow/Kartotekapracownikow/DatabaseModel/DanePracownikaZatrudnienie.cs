@@ -31,7 +31,7 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public string StawkaGodzinowa { get; set; }
 
-        public DateTime? DataRozpoczeciaPracy { get; set; } 
+        public DateTime DataRozpoczeciaPracy { get; set; } 
 
         public string DziennyCzasPracy { get; set; }
 
