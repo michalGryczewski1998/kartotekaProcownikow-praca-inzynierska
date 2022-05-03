@@ -909,15 +909,16 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkRed;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Location = new System.Drawing.Point(6, 129);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(188, 48);
             this.button2.TabIndex = 65;
-            this.button2.Text = "Zwolnij";
+            this.button2.Text = "Odświerz";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // EmployessInfo
             // 

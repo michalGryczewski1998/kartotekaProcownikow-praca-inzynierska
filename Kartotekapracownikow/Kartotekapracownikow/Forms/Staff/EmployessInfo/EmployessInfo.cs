@@ -175,9 +175,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         {
             zdjeciePracownikaPB.Image.Dispose();
             zdjeciePracownikaPB.Image = null;
-            string imageEmployeesUpdateBase64;
 
-        OpenFileDialog openFileDialog = new OpenFileDialog();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Images (*.PNG;*.JPG;*.GIF)|*.PNG;*.JPG;*.GIF|" + "All files (*.*)|*.*";
 
             try
@@ -189,22 +188,26 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                 }
 
                 byte[] imageArray = File.ReadAllBytes(newPicture);
-                imageEmployeesUpdateBase64 = Convert.ToBase64String(imageArray);
                 //Debug.WriteLine(base64ConvertImageEmployee);
 
-                try
+                using (var db = new Database())
                 {
-                    using (var db = new Database())
+                    string imageEmployeesUpdateBase64 = Convert.ToBase64String(imageArray);
+
+                    try
                     {
-                        var uploadPicture = (from s in db.DanePracownikaPodstawowe where s.ID == danePracownikaID + 1 select s).First();
-                        System.Diagnostics.Debug.WriteLine(imageEmployeesUpdateBase64);
-                        uploadPicture.ZdjeciePracownika = imageEmployeesUpdateBase64;
+                        var update = (from s in db.DanePracownikaPodstawowe where s.ID == danePracownikaID + 1 select s).First();
+                        update.ZdjeciePracownika = "";
+                        update.ZdjeciePracownika = imageEmployeesUpdateBase64;
+
+                        db.SaveChanges();
+
                         MessageBox.Show("Zaktualizowano pomyślnie :)");
                     }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Błąd podczas aktualizacji !");
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Błąd podczas aktualizacji !");
+                    }
                 }
 
             }
@@ -282,7 +285,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                 {
                     string imie = imiePracownikaTB.Text;
                     string nazwisko = nazwiskoPracownikaTB.Text;
-                    //DateTime DataUrodzenia,
                     string NumerTelefonu = numertelefonuPracownika.Text;
                     string AdresEmail = adresEmailPracownika.Text;
                     string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
@@ -308,7 +310,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                         var update = (from s in db.DanePracownikaPodstawowe where s.ID == danePracownikaID + 1 select s).First();
                         update.Nazwisko = nazwisko;
                         update.Imie = imie;
-                        //update.DataUrodzenia = DataUrodzenia,
                         update.NumerTelefonu = NumerTelefonu;
                         update.AdresEmail = AdresEmail;
                         update.MiejsceUrodzenia = MiejsceUrodzenia;
@@ -346,6 +347,12 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                 UpdateErrorPodstawoweEP.SetError(EdytujPodstawoweBTN, "Błąd podczas aktualizacji.");
             }
            
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            //odswierzenie strony
+            _ = DanePracownika(danePracownikaID);
         }
     }
 }

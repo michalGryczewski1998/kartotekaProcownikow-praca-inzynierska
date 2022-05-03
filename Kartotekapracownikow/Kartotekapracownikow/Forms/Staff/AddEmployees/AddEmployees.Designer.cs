@@ -52,6 +52,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.imiePracownikaTB = new System.Windows.Forms.TextBox();
             this.imiePracownikaLabel = new System.Windows.Forms.Label();
             this.daneZatrudnieniaGB = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Umowa = new System.Windows.Forms.Label();
+            this.daneEtatCB = new System.Windows.Forms.ComboBox();
+            this.daneUmowaCB = new System.Windows.Forms.ComboBox();
             this.kosztyUzyskaniaPrzychoduCB = new System.Windows.Forms.ComboBox();
             this.ulgaPodatkowaCB = new System.Windows.Forms.ComboBox();
             this.ulgapodatkowaLabel = new System.Windows.Forms.Label();
@@ -112,10 +116,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.walidajcaNipEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataUrodzeniaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.peselEP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.daneUmowaCB = new System.Windows.Forms.ComboBox();
-            this.daneEtatCB = new System.Windows.Forms.ComboBox();
-            this.Umowa = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.danePodstawoweGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zdjeciePracownikaPB)).BeginInit();
             this.daneZatrudnieniaGB.SuspendLayout();
@@ -363,6 +363,48 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneZatrudnieniaGB.TabIndex = 1;
             this.daneZatrudnieniaGB.TabStop = false;
             this.daneZatrudnieniaGB.Text = "Dane o zatrudnieniu";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 148);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 15);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "Etat";
+            // 
+            // Umowa
+            // 
+            this.Umowa.AutoSize = true;
+            this.Umowa.Location = new System.Drawing.Point(8, 117);
+            this.Umowa.Name = "Umowa";
+            this.Umowa.Size = new System.Drawing.Size(48, 15);
+            this.Umowa.TabIndex = 50;
+            this.Umowa.Text = "Umowa";
+            // 
+            // daneEtatCB
+            // 
+            this.daneEtatCB.FormattingEnabled = true;
+            this.daneEtatCB.Items.AddRange(new object[] {
+            "Pełny etat",
+            "Połowa etatu"});
+            this.daneEtatCB.Location = new System.Drawing.Point(94, 146);
+            this.daneEtatCB.Name = "daneEtatCB";
+            this.daneEtatCB.Size = new System.Drawing.Size(147, 23);
+            this.daneEtatCB.TabIndex = 49;
+            // 
+            // daneUmowaCB
+            // 
+            this.daneUmowaCB.FormattingEnabled = true;
+            this.daneUmowaCB.Items.AddRange(new object[] {
+            "Umowa zlecenie",
+            "Umowa o dzieło",
+            "Umowa o pracę",
+            "Umowa B2B (business-to-business)"});
+            this.daneUmowaCB.Location = new System.Drawing.Point(94, 115);
+            this.daneUmowaCB.Name = "daneUmowaCB";
+            this.daneUmowaCB.Size = new System.Drawing.Size(147, 23);
+            this.daneUmowaCB.TabIndex = 48;
             // 
             // kosztyUzyskaniaPrzychoduCB
             // 
@@ -915,52 +957,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // peselEP
             // 
             this.peselEP.ContainerControl = this;
-            // 
-            // daneUmowaCB
-            // 
-            this.daneUmowaCB.FormattingEnabled = true;
-            this.daneUmowaCB.Items.AddRange(new object[] {
-            "Umowa zlecenie",
-            "",
-            "Umowa o dzieło",
-            "",
-            "Umowa o pracę",
-            "",
-            "Umowa B2B (business-to-business)"});
-            this.daneUmowaCB.Location = new System.Drawing.Point(94, 115);
-            this.daneUmowaCB.Name = "daneUmowaCB";
-            this.daneUmowaCB.Size = new System.Drawing.Size(147, 23);
-            this.daneUmowaCB.TabIndex = 48;
-            // 
-            // daneEtatCB
-            // 
-            this.daneEtatCB.FormattingEnabled = true;
-            this.daneEtatCB.Items.AddRange(new object[] {
-            "Pełny etat",
-            "",
-            "Połowa etatu"});
-            this.daneEtatCB.Location = new System.Drawing.Point(94, 146);
-            this.daneEtatCB.Name = "daneEtatCB";
-            this.daneEtatCB.Size = new System.Drawing.Size(147, 23);
-            this.daneEtatCB.TabIndex = 49;
-            // 
-            // Umowa
-            // 
-            this.Umowa.AutoSize = true;
-            this.Umowa.Location = new System.Drawing.Point(8, 117);
-            this.Umowa.Name = "Umowa";
-            this.Umowa.Size = new System.Drawing.Size(48, 15);
-            this.Umowa.TabIndex = 50;
-            this.Umowa.Text = "Umowa";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 148);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 15);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "Etat";
             // 
             // AddEmployees
             // 
