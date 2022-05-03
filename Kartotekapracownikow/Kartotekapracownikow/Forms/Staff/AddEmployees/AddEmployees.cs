@@ -77,14 +77,14 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string AdresEmail = adresEmailPracownika.Text;
                 string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
 
-                if (plecCB.SelectedItem == null)
+                if (plecCB.SelectedValue == null)
                 {
                     MessageBox.Show("Proszę o wybranie danych !!!");
                     Plec = "Brak";
                 }
                 else
                 {
-                    Plec = plecCB.SelectedItem.ToString();
+                    Plec = plecCB.SelectedValue.ToString();
                 }
 
                 string ImieMatki = imieMatkiTB.Text;
@@ -114,52 +114,52 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
                 string NumerKonta = numerKontaTB.Text;
 
-                if (daneUmowaCB.SelectedItem == null)
+                if (daneUmowaCB.SelectedValue == null)
                 {
                     MessageBox.Show("Proszę o wybranie typu Umowy!!!");
                     Umowa = "Umowa o pracę";
                 }
                 else
                 {
-                    Umowa = daneUmowaCB.SelectedItem.ToString();
+                    Umowa = daneUmowaCB.SelectedValue.ToString();
                 }
 
-                if (daneEtatCB.SelectedItem == null)
+                if (daneEtatCB.SelectedValue == null)
                 {
                     MessageBox.Show("Proszę o wybranie Etatu !!!");
                     Etat = "Pełny etat";
                 }
                 else
                 {
-                    Etat = daneEtatCB.SelectedItem.ToString();
+                    Etat = daneEtatCB.SelectedValue.ToString();
                 }
 
                 string Bank = bankTB.Text;
                 string NFZ = nfzTB.Text;
 
-                if (ulgaPodatkowaCB.SelectedItem == null)
+                if (ulgaPodatkowaCB.SelectedValue == null)
                 {
                     MessageBox.Show("Proszę o wybranie danych o uldze podatkowej!!!");
                     UlgaPodatkowa = "Nie";
                 }
                 else
                 {
-                    UlgaPodatkowa = ulgaPodatkowaCB.SelectedItem.ToString();
+                    UlgaPodatkowa = ulgaPodatkowaCB.SelectedValue.ToString();
                 }
 
-                if (kosztyUzyskaniaPrzychoduCB.SelectedItem == null)
+                if (kosztyUzyskaniaPrzychoduCB.SelectedValue == null)
                 {
                     MessageBox.Show("Proszę o wybranie danych o kosztach uzyskania przychodu!!!");
                     KosztUzyskaniaPrzychodu = "Nie";
                 }
                 else
                 {
-                    KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedItem.ToString();
+                    KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedValue.ToString();
                 }
 
                 string Dzial = dzial.Text;
 
-                if (stanowiskoCB.SelectedItem == null)
+                if (stanowiskoCB.SelectedValue == null)
                 {
                     MessageBox.Show("Proszę o wybranie danych o stanowisku !!!");
                     Stanowisko = "Nie";
@@ -167,20 +167,20 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 }
                 else
                 {
-                    Stanowisko = stanowiskoCB.SelectedItem.ToString();
+                    Stanowisko = stanowiskoCB.SelectedValue.ToString();
                 }
 
                 string StawkaGodzinowa = stawkaGodzinaTB.Text;
                 DateTime DataRozpoczeciaPracy = dataZatrudnieniaDTP.Value;
 
-                if (dziennyCzasPracyCB.SelectedItem == null)
+                if (dziennyCzasPracyCB.SelectedValue == null)
                 {
                     MessageBox.Show("Proszę o wybranie danych !!!");
                     DziennyCzasPracy = "Brak danych";
                 }
                 else
                 {
-                    DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString();
+                    DziennyCzasPracy = dziennyCzasPracyCB.SelectedValue.ToString();
                 }
 
 

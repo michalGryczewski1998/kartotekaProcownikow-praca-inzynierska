@@ -91,6 +91,23 @@ namespace Kartotekapracownikow.DatabaseModel
                 entity.Property(e => e.DziennyCzasPracy).IsRequired();
                 entity.HasOne(e => e.Podstawowe).WithMany(m => m.Zatrudnienie);
             });
+
+            modelBuilder.Entity<ZwolnieniPracownicy>(entity =>
+            {
+                entity.HasKey(e => e.ID);
+                entity.Property(e => e.Imie);
+                entity.Property(e => e.Nazwisko);
+                entity.Property(e => e.Kraj).IsRequired();
+                entity.Property(e => e.NumerTelefonu);
+                entity.Property(e => e.Umowa);
+                entity.Property(e => e.Etat);
+                entity.Property(e => e.Dzial);
+                entity.Property(e => e.Stanowisko);
+                entity.Property(e => e.StawkaGodzinowa);
+                entity.Property(e => e.DataRozpoczeciaPracy);
+                entity.Property(e => e.DziennyCzasPracy);
+                entity.Property(e => e.IloscPrzepracowanychDni);
+            });
         }
     }
 }
