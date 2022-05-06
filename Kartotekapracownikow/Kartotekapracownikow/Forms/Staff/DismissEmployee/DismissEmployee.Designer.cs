@@ -30,14 +30,20 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
         private void InitializeComponent()
         {
             this.zwolnijPracownikaGB = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.daneDGW = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.zaznaczonyPracownikLabel = new System.Windows.Forms.Label();
             this.zwolnijPracownikaGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.daneDGW)).BeginInit();
             this.SuspendLayout();
             // 
             // zwolnijPracownikaGB
             // 
+            this.zwolnijPracownikaGB.Controls.Add(this.zaznaczonyPracownikLabel);
+            this.zwolnijPracownikaGB.Controls.Add(this.label2);
+            this.zwolnijPracownikaGB.Controls.Add(this.label1);
             this.zwolnijPracownikaGB.Controls.Add(this.daneDGW);
             this.zwolnijPracownikaGB.Controls.Add(this.button1);
             this.zwolnijPracownikaGB.Location = new System.Drawing.Point(13, 13);
@@ -46,6 +52,14 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             this.zwolnijPracownikaGB.TabIndex = 0;
             this.zwolnijPracownikaGB.TabStop = false;
             this.zwolnijPracownikaGB.Text = "Zwolnienia pracowników";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(585, 338);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 15);
+            this.label1.TabIndex = 2;
             // 
             // daneDGW
             // 
@@ -56,6 +70,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             this.daneDGW.RowTemplate.Height = 25;
             this.daneDGW.Size = new System.Drawing.Size(922, 284);
             this.daneDGW.TabIndex = 1;
+            this.daneDGW.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daneDGW_CellContentClick);
             // 
             // button1
             // 
@@ -67,6 +82,23 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 313);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Zaznaczony pracownik: ";
+            // 
+            // zaznaczonyPracownikLabel
+            // 
+            this.zaznaczonyPracownikLabel.AutoSize = true;
+            this.zaznaczonyPracownikLabel.Location = new System.Drawing.Point(147, 313);
+            this.zaznaczonyPracownikLabel.Name = "zaznaczonyPracownikLabel";
+            this.zaznaczonyPracownikLabel.Size = new System.Drawing.Size(0, 15);
+            this.zaznaczonyPracownikLabel.TabIndex = 4;
+            // 
             // DismissEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -77,6 +109,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             this.Text = "DismissEmployee";
             this.Load += new System.EventHandler(this.DismissEmployee_Load);
             this.zwolnijPracownikaGB.ResumeLayout(false);
+            this.zwolnijPracownikaGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.daneDGW)).EndInit();
             this.ResumeLayout(false);
 
@@ -87,5 +120,8 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
         private System.Windows.Forms.GroupBox zwolnijPracownikaGB;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView daneDGW;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label zaznaczonyPracownikLabel;
+        private System.Windows.Forms.Label label2;
     }
 }

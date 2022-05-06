@@ -105,6 +105,7 @@ namespace Kartotekapracownikow.DatabaseModel
                 entity.Property(e => e.Stanowisko);
                 entity.Property(e => e.StawkaGodzinowa);
                 entity.Property(e => e.DataRozpoczeciaPracy);
+                entity.Property(e => e.DataZakonczeniaPracy);
                 entity.Property(e => e.DziennyCzasPracy);
                 entity.Property(e => e.IloscPrzepracowanychDni);
             });

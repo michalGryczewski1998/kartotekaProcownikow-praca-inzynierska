@@ -31,6 +31,8 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public DateTime DataRozpoczeciaPracy { get; set; }
 
+        public DateTime DataZakonczeniaPracy { get; set; } 
+
         public string DziennyCzasPracy { get; set; }
 
         public double IloscPrzepracowanychDni { get; set; }
