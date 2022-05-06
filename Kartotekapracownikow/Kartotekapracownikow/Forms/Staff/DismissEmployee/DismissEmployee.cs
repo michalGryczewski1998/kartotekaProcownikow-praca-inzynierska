@@ -13,8 +13,24 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
 {
     public partial class DismissEmployee : Form
     {
-        private static DismissEmployee _instance = null;
+        string imiePracownika;
+        string nazwiskoPracownika;
+        string kraj;
+        string numerTelefonu;
+        string umowa;
+        string etat;
+        string dzial;
+        string stanowisko;
+        string stawkaGodzinowa;
+        string dziennyCzasPracy;
+        DateTime dataRozpoczeciaPracy;
+        DateTime dataZakonczeniaPracy;
 
+        string imieZwolnionego;
+
+
+        private static DismissEmployee _instance = null;
+        int employeesID;
         public static DismissEmployee Instance
         {
             get
@@ -74,6 +90,25 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             }
         }
 
+        private void daneDGW_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*
+             * Po kliknięciu w dany wiersz
+             * zostanie przypisany do zmiennej 
+             * jego ID, dzięki temu możemy 
+             * wykonywac operacje.
+             * 
+             */
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = daneDGW.Rows[e.RowIndex];
+                employeesID = (int)row.Cells["ID"].Value;
+                imieZwolnionego = row.Cells["Imie"].Value.ToString();
+                zaznaczonyPracownikLabel.Text = row.Cells["Imie"].Value.ToString();
+            }
+
+        }
+
         private void DismissEmployee_Load(object sender, EventArgs e)
         {
 
@@ -81,12 +116,131 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
 
         private void button1_Click(object sender, EventArgs e)
         {
-            zwolnijPracownikaGB();
+            ZwolnijPracownikaGB();
         }
 
-        private void zwolnijPracownikaGB()
+        private void ZwolnijPracownikaGB()
         {
-            
+            /* Zwolnienie pracownika działa na zasadzie
+             * usunięcia większości danych, ale zostana
+             * tylko te dane, ktore potwierdza
+             * ze dana osoba tu pracowala     .
+             * 
+             * Wiec usuwanie polega na usunieciu czesci danych,
+             * jak i przeniesieniu pewnej puli informacji
+             * do innej tabeli ZwolnieniPracownicy
+             */
+
+            dataZakonczeniaPracy = DateTime.Now.Date;
+
+            using (var db = new Database())
+            {
+                try
+                {
+                    var query = (from podstawowe in db.DanePracownikaPodstawowe
+                                 join zatrudnienie in db.DanePracownikaZatrudnienie
+                                 on podstawowe.ID equals zatrudnienie.ID
+                                 select new
+                                 {
+                                     podstawowe.Imie,
+                                     podstawowe.Nazwisko,
+                                     podstawowe.Kraj,
+                                     podstawowe.NumerTelefonu,
+                                     zatrudnienie.Umowa,
+                                     zatrudnienie.Etat,
+                                     zatrudnienie.Dzial,
+                                     zatrudnienie.Stanowisko,
+                                     zatrudnienie.StawkaGodzinowa,
+                                     zatrudnienie.DataRozpoczeciaPracy,
+                                     zatrudnienie.DziennyCzasPracy,
+                                 }).Single();
+
+                    imiePracownika = query.Imie.ToString();
+                    nazwiskoPracownika = query.Nazwisko.ToString();
+                    kraj = query.Kraj.ToString();
+                    numerTelefonu = query.NumerTelefonu.ToString();
+                    umowa = query.Umowa.ToString();
+                    etat = query.Etat.ToString();
+                    dzial = query.Dzial.ToString();
+                    stanowisko = query.Stanowisko.ToString();
+                    stawkaGodzinowa = query.StawkaGodzinowa.ToString();
+                    dziennyCzasPracy = query.DziennyCzasPracy.ToString();
+                    dataRozpoczeciaPracy = query.DataRozpoczeciaPracy;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd");
+                    ZwolnijPracownikaGB();
+                }
+
+                double iloscPrzepracowanych = 354;
+
+                try
+                {
+                    db.Database.EnsureCreated();
+
+                    var ZwolnieniPracownicy = new ZwolnieniPracownicy
+                    {
+                        Imie = imiePracownika,
+                        Nazwisko = nazwiskoPracownika,
+                        Kraj = kraj,
+                        NumerTelefonu = numerTelefonu,
+                        Umowa = umowa,
+                        Etat = etat,
+                        Dzial = dzial,
+                        Stanowisko = stanowisko,
+                        StawkaGodzinowa =stawkaGodzinowa,
+                        DataRozpoczeciaPracy = dataRozpoczeciaPracy,
+                        DataZakonczeniaPracy = dataZakonczeniaPracy,
+                        DziennyCzasPracy = dziennyCzasPracy,
+                        IloscPrzepracowanychDni = iloscPrzepracowanych
+                    };
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd podczas zwalniania pracownika \n");
+
+                    ZwolnijPracownikaGB();
+                }
+
+                try
+                {
+                    var zatrudnienie = (from z in db.DanePracownikaZatrudnienie where z.ID == employeesID + 1 select z).FirstOrDefault();
+                    db.DanePracownikaZatrudnienie.Remove(zatrudnienie);
+
+                    var podstawowe = (from p in db.DanePracownikaPodstawowe where p.ID == employeesID + 1 select p).FirstOrDefault();
+                    db.DanePracownikaPodstawowe.Remove(podstawowe);
+
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Pracownik " + imieZwolnionego + " został zwolniony.");
+                }
+            }
+
+        }
+
+        private double ObliczenieIlosciPrzepracowanychDni()
+        {
+            DateTime StartTime;
+
+            using (var db = new Database())
+            {
+                var queryZatrudnienie = (from zatrudnienie in db.DanePracownikaZatrudnienie
+                                         where zatrudnienie.ID == employeesID + 1
+                                         select new
+                                         {
+                                             zatrudnienie.DataRozpoczeciaPracy
+                                         }).Single();
+
+                StartTime = queryZatrudnienie.DataRozpoczeciaPracy;
+            }
+
+            DateTime EndTime = DateTime.Now.Date;
+            double different = (EndTime - StartTime).Days;
+
+            return different;
         }
     }
 }
