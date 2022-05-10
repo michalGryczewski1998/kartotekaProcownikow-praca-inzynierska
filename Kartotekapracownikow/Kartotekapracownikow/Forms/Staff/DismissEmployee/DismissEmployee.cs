@@ -175,6 +175,8 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
 
                 double iloscPrzepracowanych = 354;
 
+                System.Diagnostics.Debug.WriteLine(imiePracownika,stanowisko);
+
                 try
                 {
                     db.Database.EnsureCreated();
@@ -205,10 +207,10 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
 
                 try
                 {
-                    var zatrudnienie = (from z in db.DanePracownikaZatrudnienie where z.ID == employeesID + 1 select z).FirstOrDefault();
+                    var zatrudnienie = (from z in db.DanePracownikaZatrudnienie where z.ID == employeesID select z).FirstOrDefault();
                     db.DanePracownikaZatrudnienie.Remove(zatrudnienie);
 
-                    var podstawowe = (from p in db.DanePracownikaPodstawowe where p.ID == employeesID + 1 select p).FirstOrDefault();
+                    var podstawowe = (from p in db.DanePracownikaPodstawowe where p.ID == employeesID select p).FirstOrDefault();
                     db.DanePracownikaPodstawowe.Remove(podstawowe);
 
                     db.SaveChanges();
@@ -228,7 +230,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             using (var db = new Database())
             {
                 var queryZatrudnienie = (from zatrudnienie in db.DanePracownikaZatrudnienie
-                                         where zatrudnienie.ID == employeesID + 1
+                                         where zatrudnienie.ID == employeesID
                                          select new
                                          {
                                              zatrudnienie.DataRozpoczeciaPracy
