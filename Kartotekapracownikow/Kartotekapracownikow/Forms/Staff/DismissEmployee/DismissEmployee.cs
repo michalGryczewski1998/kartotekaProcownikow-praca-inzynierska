@@ -175,8 +175,6 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
 
                 double iloscPrzepracowanych = 354;
 
-                System.Diagnostics.Debug.WriteLine(imiePracownika,stanowisko);
-
                 try
                 {
                     db.Database.EnsureCreated();
@@ -191,18 +189,20 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
                         Etat = etat,
                         Dzial = dzial,
                         Stanowisko = stanowisko,
-                        StawkaGodzinowa =stawkaGodzinowa,
+                        StawkaGodzinowa = stawkaGodzinowa,
                         DataRozpoczeciaPracy = dataRozpoczeciaPracy,
                         DataZakonczeniaPracy = dataZakonczeniaPracy,
                         DziennyCzasPracy = dziennyCzasPracy,
                         IloscPrzepracowanychDni = iloscPrzepracowanych
+
                     };
+
+                    db.ZwolnieniPracownicy.Add(ZwolnieniPracownicy);
+
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Błąd podczas zwalniania pracownika \n");
-
-                    ZwolnijPracownikaGB();
                 }
 
                 try
@@ -214,10 +214,12 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
                     db.DanePracownikaPodstawowe.Remove(podstawowe);
 
                     db.SaveChanges();
+
+                    MessageBox.Show("Pracownik " + imieZwolnionego + " został zwolniony.");
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Pracownik " + imieZwolnionego + " został zwolniony.");
+                    MessageBox.Show("Pracownik " + imieZwolnionego + " nie został zwolniony.");
                 }
             }
 

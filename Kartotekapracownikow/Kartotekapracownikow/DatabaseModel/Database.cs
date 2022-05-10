@@ -18,6 +18,7 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public DbSet<DanePracownikaPodstawowe> DanePracownikaPodstawowe { get; set; }
         public DbSet<DanePracownikaZatrudnienie> DanePracownikaZatrudnienie { get; set; }
+        public DbSet<ZwolnieniPracownicy> ZwolnieniPracownicy { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -95,19 +96,19 @@ namespace Kartotekapracownikow.DatabaseModel
             modelBuilder.Entity<ZwolnieniPracownicy>(entity =>
             {
                 entity.HasKey(e => e.ID);
-                entity.Property(e => e.Imie);
-                entity.Property(e => e.Nazwisko);
+                entity.Property(e => e.Imie).IsRequired();
+                entity.Property(e => e.Nazwisko).IsRequired();
                 entity.Property(e => e.Kraj).IsRequired();
                 entity.Property(e => e.NumerTelefonu);
-                entity.Property(e => e.Umowa);
-                entity.Property(e => e.Etat);
-                entity.Property(e => e.Dzial);
-                entity.Property(e => e.Stanowisko);
-                entity.Property(e => e.StawkaGodzinowa);
-                entity.Property(e => e.DataRozpoczeciaPracy);
-                entity.Property(e => e.DataZakonczeniaPracy);
-                entity.Property(e => e.DziennyCzasPracy);
-                entity.Property(e => e.IloscPrzepracowanychDni);
+                entity.Property(e => e.Umowa).IsRequired();
+                entity.Property(e => e.Etat).IsRequired();
+                entity.Property(e => e.Dzial).IsRequired();
+                entity.Property(e => e.Stanowisko).IsRequired();
+                entity.Property(e => e.StawkaGodzinowa).IsRequired();
+                entity.Property(e => e.DataRozpoczeciaPracy).IsRequired();
+                entity.Property(e => e.DataZakonczeniaPracy).IsRequired();
+                entity.Property(e => e.DziennyCzasPracy).IsRequired();
+                entity.Property(e => e.IloscPrzepracowanychDni).IsRequired();
             });
         }
     }
