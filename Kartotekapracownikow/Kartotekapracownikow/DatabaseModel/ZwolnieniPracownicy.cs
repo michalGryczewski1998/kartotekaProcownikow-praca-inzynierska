@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kartotekapracownikow.DatabaseModel
 {
-    class ZwolnieniPracownicy
+    public class ZwolnieniPracownicy
     {
 
         public int ID { get; set; }
