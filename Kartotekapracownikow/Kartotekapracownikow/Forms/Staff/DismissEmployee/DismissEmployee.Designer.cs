@@ -30,17 +30,19 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
         private void InitializeComponent()
         {
             this.zwolnijPracownikaGB = new System.Windows.Forms.GroupBox();
+            this.zaznaczonyPracownikLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.daneDGW = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.zaznaczonyPracownikLabel = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.zwolnijPracownikaGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.daneDGW)).BeginInit();
             this.SuspendLayout();
             // 
             // zwolnijPracownikaGB
             // 
+            this.zwolnijPracownikaGB.Controls.Add(this.button2);
             this.zwolnijPracownikaGB.Controls.Add(this.zaznaczonyPracownikLabel);
             this.zwolnijPracownikaGB.Controls.Add(this.label2);
             this.zwolnijPracownikaGB.Controls.Add(this.label1);
@@ -52,6 +54,23 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             this.zwolnijPracownikaGB.TabIndex = 0;
             this.zwolnijPracownikaGB.TabStop = false;
             this.zwolnijPracownikaGB.Text = "Zwolnienia pracowników";
+            // 
+            // zaznaczonyPracownikLabel
+            // 
+            this.zaznaczonyPracownikLabel.AutoSize = true;
+            this.zaznaczonyPracownikLabel.Location = new System.Drawing.Point(147, 313);
+            this.zaznaczonyPracownikLabel.Name = "zaznaczonyPracownikLabel";
+            this.zaznaczonyPracownikLabel.Size = new System.Drawing.Size(0, 15);
+            this.zaznaczonyPracownikLabel.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 313);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Zaznaczony pracownik: ";
             // 
             // label1
             // 
@@ -82,22 +101,15 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
+            // button2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 313);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Zaznaczony pracownik: ";
-            // 
-            // zaznaczonyPracownikLabel
-            // 
-            this.zaznaczonyPracownikLabel.AutoSize = true;
-            this.zaznaczonyPracownikLabel.Location = new System.Drawing.Point(147, 313);
-            this.zaznaczonyPracownikLabel.Name = "zaznaczonyPracownikLabel";
-            this.zaznaczonyPracownikLabel.Size = new System.Drawing.Size(0, 15);
-            this.zaznaczonyPracownikLabel.TabIndex = 4;
+            this.button2.Location = new System.Drawing.Point(772, 338);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Odśwież";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // DismissEmployee
             // 
@@ -123,5 +135,6 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label zaznaczonyPracownikLabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -173,7 +173,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
                     ZwolnijPracownikaGB();
                 }
 
-                double iloscPrzepracowanych = 354;
+                double iloscPrzepracowanych = ObliczenieIlosciPrzepracowanychDni();
 
                 try
                 {
@@ -245,6 +245,14 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             double different = (EndTime - StartTime).Days;
 
             return different;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            daneDGW.Update();
+            daneDGW.Refresh();
+
+            WczytanieDanych();
         }
     }
 }
