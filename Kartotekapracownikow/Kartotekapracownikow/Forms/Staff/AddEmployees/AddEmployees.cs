@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Drawing;
 using System.Security.Policy;
@@ -60,15 +62,14 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         {
             try
             {
-                string Plec;
-                string UlgaPodatkowa;
-                string KosztUzyskaniaPrzychodu;
-                string Stanowisko;
-                string PESEL = "";
-                string DziennyCzasPracy;
-                string Umowa;
-                string Etat;
-
+                string Plec = plecCB.SelectedValue.ToString();
+                string UlgaPodatkowa = ulgaPodatkowaCB.SelectedValue.ToString();
+                string KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedValue.ToString();
+                string Stanowisko = stanowiskoCB.SelectedValue.ToString();
+                string PESEL = peselTB.Text;
+                string DziennyCzasPracy = dziennyCzasPracyCB.SelectedValue.ToString();
+                string Umowa = daneUmowaCB.SelectedValue.ToString();
+                string Etat = daneEtatCB.SelectedValue.ToString();
                 string imie = imiePracownikaTB.Text;
                 string nazwisko = nazwiskoPracownikaTB.Text;
                 string ZdjeciePracownika = base64ConvertImageEmployee;
@@ -76,29 +77,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string NumerTelefonu = numertelefonuPracownika.Text;
                 string AdresEmail = adresEmailPracownika.Text;
                 string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
-
-                if (plecCB.SelectedValue == null)
-                {
-                    MessageBox.Show("Proszę o wybranie danych !!!");
-                    Plec = "Brak";
-                }
-                else
-                {
-                    Plec = plecCB.SelectedValue.ToString();
-                }
-
                 string ImieMatki = imieMatkiTB.Text;
                 string ImieOjca = imieOjcaTB.Text;
-
-                if (peselError == true)
-                {
-                    MessageBox.Show("Proszę poprawnie wypełnic pole PESEL!");
-                }
-                else
-                {
-                    PESEL = peselTB.Text;
-                }
-
                 string NIP = nipTB.Text;
                 string Kraj = krajTB.Text;
                 string Wojewodztwo = wojewodztwoTB.Text;
@@ -111,78 +91,12 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string Poczta = pocztaTB.Text;
                 string DoKogoWNaglymWypadku = doKogoNaglyWypadekTB.Text;
                 string NumerNagleWypadki = NumerTelefonuNaglyWypadekTB.Text;
-
                 string NumerKonta = numerKontaTB.Text;
-
-                if (daneUmowaCB.SelectedValue == null)
-                {
-                    MessageBox.Show("Proszę o wybranie typu Umowy!!!");
-                    Umowa = "Umowa o pracę";
-                }
-                else
-                {
-                    Umowa = daneUmowaCB.SelectedValue.ToString();
-                }
-
-                if (daneEtatCB.SelectedValue == null)
-                {
-                    MessageBox.Show("Proszę o wybranie Etatu !!!");
-                    Etat = "Pełny etat";
-                }
-                else
-                {
-                    Etat = daneEtatCB.SelectedValue.ToString();
-                }
-
                 string Bank = bankTB.Text;
                 string NFZ = nfzTB.Text;
-
-                if (ulgaPodatkowaCB.SelectedValue == null)
-                {
-                    MessageBox.Show("Proszę o wybranie danych o uldze podatkowej!!!");
-                    UlgaPodatkowa = "Nie";
-                }
-                else
-                {
-                    UlgaPodatkowa = ulgaPodatkowaCB.SelectedValue.ToString();
-                }
-
-                if (kosztyUzyskaniaPrzychoduCB.SelectedValue == null)
-                {
-                    MessageBox.Show("Proszę o wybranie danych o kosztach uzyskania przychodu!!!");
-                    KosztUzyskaniaPrzychodu = "Nie";
-                }
-                else
-                {
-                    KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedValue.ToString();
-                }
-
                 string Dzial = dzial.Text;
-
-                if (stanowiskoCB.SelectedValue == null)
-                {
-                    MessageBox.Show("Proszę o wybranie danych o stanowisku !!!");
-                    Stanowisko = "Nie";
-                    
-                }
-                else
-                {
-                    Stanowisko = stanowiskoCB.SelectedValue.ToString();
-                }
-
                 string StawkaGodzinowa = stawkaGodzinaTB.Text;
                 DateTime DataRozpoczeciaPracy = dataZatrudnieniaDTP.Value;
-
-                if (dziennyCzasPracyCB.SelectedValue == null)
-                {
-                    MessageBox.Show("Proszę o wybranie danych !!!");
-                    DziennyCzasPracy = "Brak danych";
-                }
-                else
-                {
-                    DziennyCzasPracy = dziennyCzasPracyCB.SelectedValue.ToString();
-                }
-
 
                 _ = InsertData(
                      imie,
@@ -235,7 +149,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void imiePracownikaTB_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void nazwiskoPracownikaTB_TextChanged(object sender, EventArgs e)

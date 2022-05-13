@@ -116,6 +116,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.walidajcaNipEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataUrodzeniaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.peselEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.imieEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.danePodstawoweGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zdjeciePracownikaPB)).BeginInit();
             this.daneZatrudnieniaGB.SuspendLayout();
@@ -131,6 +132,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.walidajcaNipEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUrodzeniaEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imieEP)).BeginInit();
             this.SuspendLayout();
             // 
             // danePodstawoweGB
@@ -958,6 +960,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.peselEP.ContainerControl = this;
             // 
+            // imieEP
+            // 
+            this.imieEP.ContainerControl = this;
+            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -986,6 +992,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.walidajcaNipEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUrodzeniaEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imieEP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1078,5 +1085,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.Label Umowa;
         private System.Windows.Forms.ComboBox daneEtatCB;
         private System.Windows.Forms.ComboBox daneUmowaCB;
+        private System.Windows.Forms.ErrorProvider imieEP;
     }
 }
