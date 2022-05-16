@@ -10,13 +10,13 @@ namespace Kartotekapracownikow.DatabaseModel
     public class DanePracownikaPodstawowe
     {
         [Required]
-        [Range(1, 10000)]
+        [Range(0, 10000)]
         public int ID { get; set; }
 
-        [Required]
+        [Required, RegularExpression(@"^.*[a-zA-Z]",ErrorMessage = "Proszę wpisać poprawne Nazwisko !")]
         public string Nazwisko { get; set; }
 
-        [Required]
+        [Required, RegularExpression(@"^.*[a-zA-Z]", ErrorMessage = "Proszę wpisać poprawne Imię !")]
         public string Imie { get; set; }
 
         [Required]
