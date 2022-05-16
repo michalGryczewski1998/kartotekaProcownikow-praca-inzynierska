@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -62,16 +63,16 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         {
             try
             {
-                string Plec = plecCB.SelectedValue.ToString();
-                string UlgaPodatkowa = ulgaPodatkowaCB.SelectedValue.ToString();
-                string KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedValue.ToString();
-                string Stanowisko = stanowiskoCB.SelectedValue.ToString();
+                string Plec = plecCB.SelectedItem.ToString();
+                string UlgaPodatkowa = ulgaPodatkowaCB.SelectedItem.ToString();
+                string KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedItem.ToString();
+                string Stanowisko = stanowiskoCB.SelectedItem.ToString();
                 string PESEL = peselTB.Text;
-                string DziennyCzasPracy = dziennyCzasPracyCB.SelectedValue.ToString();
-                string Umowa = daneUmowaCB.SelectedValue.ToString();
-                string Etat = daneEtatCB.SelectedValue.ToString();
+                string DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString();
+                string Umowa = daneUmowaCB.SelectedItem.ToString();
+                string Etat = daneEtatCB.SelectedItem.ToString();
                 string imie = imiePracownikaTB.Text;
-                string nazwisko = nazwiskoPracownikaTB.Text;
+                string nazwisko = Nazwisko.Text;
                 string ZdjeciePracownika = base64ConvertImageEmployee;
                 DateTime DataUrodzenia = dataUrodzinDTP.Value;
                 string NumerTelefonu = numertelefonuPracownika.Text;
@@ -138,7 +139,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             }
             catch (Exception)
             {
-                MessageBox.Show("Wszystkie pola muszą zostać wypełnione");
+                MessageBox.Show("Proszę ponowić próbę.");
             }
         }
 
@@ -345,29 +346,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             }
         }
 
-        private void nazwiskoPracownikaTB_Validated(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(nazwiskoPracownikaTB.Text))
-            {
-                walidacjaNazwiskoEP.SetError(nazwiskoPracownikaTB, "Pole Nazwisko nie może być puste.");
-            }
-            else
-            {
-                walidacjaNazwiskoEP.Clear();
-            }
-        }
-
-        private void imiePracownikaTB_Validated(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(imiePracownikaTB.Text))
-            {
-                walidacjaImieEP.SetError(imiePracownikaTB, "Pole Imię nie może być puste.");
-            }
-            else
-            {
-                walidacjaImieEP.Clear();
-            }
-        }
 
         private void dataUrodzinDTP_Validated(object sender, EventArgs e)
         {
@@ -456,6 +434,67 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 controlSum += weights[i + offset] * int.Parse(input[i].ToString());
             }
             return controlSum;
+        }
+
+        private void imiePracownikaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(imiePracownikaTB.Text))
+            {
+                e.Cancel = true;
+                imiePracownikaTB.Focus();
+                imieEP.SetError(imiePracownikaTB, "Proszę wprowadzić imie pracownika");
+            }
+            else
+            {
+                e.Cancel = false;
+                imieEP.SetError(imiePracownikaTB, null);
+            }
+        }
+
+        private void imiePracownikaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Ustawiamy że w TextBox są dostępne tylko litery z zakresy a-zA-Z
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void Nazwisko_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Nazwisko.Text))
+            {
+                e.Cancel = true;
+                imiePracownikaTB.Focus();
+                walidacjaNazwiskoEP.SetError(Nazwisko, "Proszę wprowadzić nazwisko pracownika");
+            }
+            else
+            {
+                e.Cancel = false;
+                walidacjaNazwiskoEP.SetError(Nazwisko, null);
+            }
+        }
+
+        private void Nazwisko_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void miejsceUrodzeniaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(miejsceUrodzeniaTB.Text))
+            {
+                e.Cancel = true;
+                imiePracownikaTB.Focus();
+                MiejsceUrodzeniaEP.SetError(miejsceUrodzeniaTB, "Proszę wprowadzić nazwisko pracownika");
+            }
+            else
+            {
+                e.Cancel = false;
+                MiejsceUrodzeniaEP.SetError(miejsceUrodzeniaTB, null);
+            }
+        }
+
+        private void miejsceUrodzeniaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }

@@ -31,11 +31,11 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         {
             this.components = new System.ComponentModel.Container();
             this.danePodstawoweGB = new System.Windows.Forms.GroupBox();
+            this.nipLabel = new System.Windows.Forms.Label();
             this.zdjecieBTN = new System.Windows.Forms.Button();
             this.zdjeciePracownikaPB = new System.Windows.Forms.PictureBox();
             this.plecCB = new System.Windows.Forms.ComboBox();
             this.dataUrodzinDTP = new System.Windows.Forms.DateTimePicker();
-            this.nipLabel = new System.Windows.Forms.Label();
             this.peselLabel = new System.Windows.Forms.Label();
             this.imieOjcaPracownikaLabel = new System.Windows.Forms.Label();
             this.imiematkiPracownikaLabel = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.miejsceUrodzeniaTB = new System.Windows.Forms.TextBox();
             this.dataUrodzeniaLabel = new System.Windows.Forms.Label();
             this.nazwiskoPracownikaLabel = new System.Windows.Forms.Label();
-            this.nazwiskoPracownikaTB = new System.Windows.Forms.TextBox();
+            this.Nazwisko = new System.Windows.Forms.TextBox();
             this.imiePracownikaTB = new System.Windows.Forms.TextBox();
             this.imiePracownikaLabel = new System.Windows.Forms.Label();
             this.daneZatrudnieniaGB = new System.Windows.Forms.GroupBox();
@@ -86,7 +86,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.wojewodztwoLabel = new System.Windows.Forms.Label();
             this.krajTB = new System.Windows.Forms.TextBox();
             this.krajZamieszkaniaPracownikaLabel = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.daneKontaktoweGB = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -117,11 +117,12 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.dataUrodzeniaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.peselEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.imieEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MiejsceUrodzeniaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.danePodstawoweGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zdjeciePracownikaPB)).BeginInit();
             this.daneZatrudnieniaGB.SuspendLayout();
             this.adresGB.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.daneKontaktoweGB.SuspendLayout();
             this.StanowiskoGB.SuspendLayout();
@@ -133,15 +134,16 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.dataUrodzeniaEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MiejsceUrodzeniaEP)).BeginInit();
             this.SuspendLayout();
             // 
             // danePodstawoweGB
             // 
+            this.danePodstawoweGB.Controls.Add(this.nipLabel);
             this.danePodstawoweGB.Controls.Add(this.zdjecieBTN);
             this.danePodstawoweGB.Controls.Add(this.zdjeciePracownikaPB);
             this.danePodstawoweGB.Controls.Add(this.plecCB);
             this.danePodstawoweGB.Controls.Add(this.dataUrodzinDTP);
-            this.danePodstawoweGB.Controls.Add(this.nipLabel);
             this.danePodstawoweGB.Controls.Add(this.peselLabel);
             this.danePodstawoweGB.Controls.Add(this.imieOjcaPracownikaLabel);
             this.danePodstawoweGB.Controls.Add(this.imiematkiPracownikaLabel);
@@ -154,21 +156,30 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.danePodstawoweGB.Controls.Add(this.miejsceUrodzeniaTB);
             this.danePodstawoweGB.Controls.Add(this.dataUrodzeniaLabel);
             this.danePodstawoweGB.Controls.Add(this.nazwiskoPracownikaLabel);
-            this.danePodstawoweGB.Controls.Add(this.nazwiskoPracownikaTB);
+            this.danePodstawoweGB.Controls.Add(this.Nazwisko);
             this.danePodstawoweGB.Controls.Add(this.imiePracownikaTB);
             this.danePodstawoweGB.Controls.Add(this.imiePracownikaLabel);
             this.danePodstawoweGB.Location = new System.Drawing.Point(3, 4);
             this.danePodstawoweGB.Name = "danePodstawoweGB";
-            this.danePodstawoweGB.Size = new System.Drawing.Size(785, 182);
+            this.danePodstawoweGB.Size = new System.Drawing.Size(869, 182);
             this.danePodstawoweGB.TabIndex = 0;
             this.danePodstawoweGB.TabStop = false;
             this.danePodstawoweGB.Text = "Dane Podstawowe";
             // 
+            // nipLabel
+            // 
+            this.nipLabel.AutoSize = true;
+            this.nipLabel.Location = new System.Drawing.Point(317, 113);
+            this.nipLabel.Name = "nipLabel";
+            this.nipLabel.Size = new System.Drawing.Size(26, 15);
+            this.nipLabel.TabIndex = 23;
+            this.nipLabel.Text = "NIP";
+            // 
             // zdjecieBTN
             // 
-            this.zdjecieBTN.Location = new System.Drawing.Point(667, 116);
+            this.zdjecieBTN.Location = new System.Drawing.Point(562, 133);
             this.zdjecieBTN.Name = "zdjecieBTN";
-            this.zdjecieBTN.Size = new System.Drawing.Size(106, 46);
+            this.zdjecieBTN.Size = new System.Drawing.Size(146, 43);
             this.zdjecieBTN.TabIndex = 22;
             this.zdjecieBTN.Text = "Dodaj zdjęcie";
             this.zdjecieBTN.UseVisualStyleBackColor = true;
@@ -176,9 +187,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // zdjeciePracownikaPB
             // 
-            this.zdjeciePracownikaPB.Location = new System.Drawing.Point(528, 23);
+            this.zdjeciePracownikaPB.Location = new System.Drawing.Point(714, 22);
             this.zdjeciePracownikaPB.Name = "zdjeciePracownikaPB";
-            this.zdjeciePracownikaPB.Size = new System.Drawing.Size(133, 137);
+            this.zdjeciePracownikaPB.Size = new System.Drawing.Size(149, 154);
             this.zdjeciePracownikaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.zdjeciePracownikaPB.TabIndex = 21;
             this.zdjeciePracownikaPB.TabStop = false;
@@ -189,7 +200,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.plecCB.Items.AddRange(new object[] {
             "Kobieta",
             "Mężczyzna"});
-            this.plecCB.Location = new System.Drawing.Point(108, 113);
+            this.plecCB.Location = new System.Drawing.Point(126, 113);
             this.plecCB.Name = "plecCB";
             this.plecCB.Size = new System.Drawing.Size(147, 23);
             this.plecCB.TabIndex = 20;
@@ -198,26 +209,17 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.dataUrodzinDTP.CustomFormat = " ";
             this.dataUrodzinDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dataUrodzinDTP.Location = new System.Drawing.Point(365, 139);
+            this.dataUrodzinDTP.Location = new System.Drawing.Point(409, 138);
             this.dataUrodzinDTP.Name = "dataUrodzinDTP";
             this.dataUrodzinDTP.Size = new System.Drawing.Size(147, 23);
             this.dataUrodzinDTP.TabIndex = 19;
             this.dataUrodzinDTP.ValueChanged += new System.EventHandler(this.dataUrodzinDTP_ValueChanged);
             this.dataUrodzinDTP.Validated += new System.EventHandler(this.dataUrodzinDTP_Validated);
             // 
-            // nipLabel
-            // 
-            this.nipLabel.AutoSize = true;
-            this.nipLabel.Location = new System.Drawing.Point(273, 113);
-            this.nipLabel.Name = "nipLabel";
-            this.nipLabel.Size = new System.Drawing.Size(26, 15);
-            this.nipLabel.TabIndex = 18;
-            this.nipLabel.Text = "NIP";
-            // 
             // peselLabel
             // 
             this.peselLabel.AutoSize = true;
-            this.peselLabel.Location = new System.Drawing.Point(273, 84);
+            this.peselLabel.Location = new System.Drawing.Point(317, 83);
             this.peselLabel.Name = "peselLabel";
             this.peselLabel.Size = new System.Drawing.Size(34, 15);
             this.peselLabel.TabIndex = 17;
@@ -226,7 +228,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // imieOjcaPracownikaLabel
             // 
             this.imieOjcaPracownikaLabel.AutoSize = true;
-            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(273, 55);
+            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(317, 54);
             this.imieOjcaPracownikaLabel.Name = "imieOjcaPracownikaLabel";
             this.imieOjcaPracownikaLabel.Size = new System.Drawing.Size(55, 15);
             this.imieOjcaPracownikaLabel.TabIndex = 16;
@@ -235,7 +237,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // imiematkiPracownikaLabel
             // 
             this.imiematkiPracownikaLabel.AutoSize = true;
-            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(273, 26);
+            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(317, 25);
             this.imiematkiPracownikaLabel.Name = "imiematkiPracownikaLabel";
             this.imiematkiPracownikaLabel.Size = new System.Drawing.Size(63, 15);
             this.imiematkiPracownikaLabel.TabIndex = 15;
@@ -243,7 +245,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // nipTB
             // 
-            this.nipTB.Location = new System.Drawing.Point(365, 110);
+            this.nipTB.Location = new System.Drawing.Point(409, 109);
             this.nipTB.Name = "nipTB";
             this.nipTB.Size = new System.Drawing.Size(147, 23);
             this.nipTB.TabIndex = 14;
@@ -251,7 +253,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // peselTB
             // 
-            this.peselTB.Location = new System.Drawing.Point(365, 81);
+            this.peselTB.Location = new System.Drawing.Point(409, 80);
             this.peselTB.Name = "peselTB";
             this.peselTB.Size = new System.Drawing.Size(147, 23);
             this.peselTB.TabIndex = 13;
@@ -261,14 +263,14 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // imieOjcaTB
             // 
-            this.imieOjcaTB.Location = new System.Drawing.Point(365, 52);
+            this.imieOjcaTB.Location = new System.Drawing.Point(409, 51);
             this.imieOjcaTB.Name = "imieOjcaTB";
             this.imieOjcaTB.Size = new System.Drawing.Size(147, 23);
             this.imieOjcaTB.TabIndex = 12;
             // 
             // imieMatkiTB
             // 
-            this.imieMatkiTB.Location = new System.Drawing.Point(365, 23);
+            this.imieMatkiTB.Location = new System.Drawing.Point(409, 22);
             this.imieMatkiTB.Name = "imieMatkiTB";
             this.imieMatkiTB.Size = new System.Drawing.Size(147, 23);
             this.imieMatkiTB.TabIndex = 11;
@@ -276,7 +278,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // plecLabel
             // 
             this.plecLabel.AutoSize = true;
-            this.plecLabel.Location = new System.Drawing.Point(0, 116);
+            this.plecLabel.Location = new System.Drawing.Point(18, 116);
             this.plecLabel.Name = "plecLabel";
             this.plecLabel.Size = new System.Drawing.Size(29, 15);
             this.plecLabel.TabIndex = 9;
@@ -285,7 +287,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // miejsceurodzeniaLabel
             // 
             this.miejsceurodzeniaLabel.AutoSize = true;
-            this.miejsceurodzeniaLabel.Location = new System.Drawing.Point(0, 87);
+            this.miejsceurodzeniaLabel.Location = new System.Drawing.Point(18, 87);
             this.miejsceurodzeniaLabel.Name = "miejsceurodzeniaLabel";
             this.miejsceurodzeniaLabel.Size = new System.Drawing.Size(102, 15);
             this.miejsceurodzeniaLabel.TabIndex = 7;
@@ -293,15 +295,17 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // miejsceUrodzeniaTB
             // 
-            this.miejsceUrodzeniaTB.Location = new System.Drawing.Point(108, 84);
+            this.miejsceUrodzeniaTB.Location = new System.Drawing.Point(126, 84);
             this.miejsceUrodzeniaTB.Name = "miejsceUrodzeniaTB";
             this.miejsceUrodzeniaTB.Size = new System.Drawing.Size(147, 23);
             this.miejsceUrodzeniaTB.TabIndex = 6;
+            this.miejsceUrodzeniaTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.miejsceUrodzeniaTB_KeyPress);
+            this.miejsceUrodzeniaTB.Validating += new System.ComponentModel.CancelEventHandler(this.miejsceUrodzeniaTB_Validating);
             // 
             // dataUrodzeniaLabel
             // 
             this.dataUrodzeniaLabel.AutoSize = true;
-            this.dataUrodzeniaLabel.Location = new System.Drawing.Point(273, 145);
+            this.dataUrodzeniaLabel.Location = new System.Drawing.Point(317, 144);
             this.dataUrodzeniaLabel.Name = "dataUrodzeniaLabel";
             this.dataUrodzeniaLabel.Size = new System.Drawing.Size(86, 15);
             this.dataUrodzeniaLabel.TabIndex = 5;
@@ -310,34 +314,36 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // nazwiskoPracownikaLabel
             // 
             this.nazwiskoPracownikaLabel.AutoSize = true;
-            this.nazwiskoPracownikaLabel.Location = new System.Drawing.Point(0, 55);
+            this.nazwiskoPracownikaLabel.Location = new System.Drawing.Point(18, 55);
             this.nazwiskoPracownikaLabel.Name = "nazwiskoPracownikaLabel";
             this.nazwiskoPracownikaLabel.Size = new System.Drawing.Size(57, 15);
             this.nazwiskoPracownikaLabel.TabIndex = 3;
             this.nazwiskoPracownikaLabel.Text = "Nazwisko";
             // 
-            // nazwiskoPracownikaTB
+            // Nazwisko
             // 
-            this.nazwiskoPracownikaTB.Location = new System.Drawing.Point(108, 52);
-            this.nazwiskoPracownikaTB.Name = "nazwiskoPracownikaTB";
-            this.nazwiskoPracownikaTB.Size = new System.Drawing.Size(147, 23);
-            this.nazwiskoPracownikaTB.TabIndex = 2;
-            this.nazwiskoPracownikaTB.TextChanged += new System.EventHandler(this.nazwiskoPracownikaTB_TextChanged);
-            this.nazwiskoPracownikaTB.Validated += new System.EventHandler(this.nazwiskoPracownikaTB_Validated);
+            this.Nazwisko.Location = new System.Drawing.Point(126, 52);
+            this.Nazwisko.Name = "Nazwisko";
+            this.Nazwisko.Size = new System.Drawing.Size(147, 23);
+            this.Nazwisko.TabIndex = 2;
+            this.Nazwisko.TextChanged += new System.EventHandler(this.nazwiskoPracownikaTB_TextChanged);
+            this.Nazwisko.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nazwisko_KeyPress);
+            this.Nazwisko.Validating += new System.ComponentModel.CancelEventHandler(this.Nazwisko_Validating);
             // 
             // imiePracownikaTB
             // 
-            this.imiePracownikaTB.Location = new System.Drawing.Point(108, 23);
+            this.imiePracownikaTB.Location = new System.Drawing.Point(126, 23);
             this.imiePracownikaTB.Name = "imiePracownikaTB";
             this.imiePracownikaTB.Size = new System.Drawing.Size(147, 23);
             this.imiePracownikaTB.TabIndex = 1;
             this.imiePracownikaTB.TextChanged += new System.EventHandler(this.imiePracownikaTB_TextChanged);
-            this.imiePracownikaTB.Validated += new System.EventHandler(this.imiePracownikaTB_Validated);
+            this.imiePracownikaTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.imiePracownikaTB_KeyPress);
+            this.imiePracownikaTB.Validating += new System.ComponentModel.CancelEventHandler(this.imiePracownikaTB_Validating);
             // 
             // imiePracownikaLabel
             // 
             this.imiePracownikaLabel.AutoSize = true;
-            this.imiePracownikaLabel.Location = new System.Drawing.Point(0, 26);
+            this.imiePracownikaLabel.Location = new System.Drawing.Point(18, 26);
             this.imiePracownikaLabel.Name = "imiePracownikaLabel";
             this.imiePracownikaLabel.Size = new System.Drawing.Size(30, 15);
             this.imiePracownikaLabel.TabIndex = 0;
@@ -688,7 +694,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 711);
+            this.panel1.Size = new System.Drawing.Size(884, 711);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -917,7 +923,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 616);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 95);
+            this.panel2.Size = new System.Drawing.Size(884, 95);
             this.panel2.TabIndex = 5;
             // 
             // anulujBTN
@@ -964,11 +970,15 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.imieEP.ContainerControl = this;
             // 
+            // MiejsceUrodzeniaEP
+            // 
+            this.MiejsceUrodzeniaEP.ContainerControl = this;
+            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 711);
+            this.ClientSize = new System.Drawing.Size(884, 711);
             this.Controls.Add(this.panel1);
             this.Name = "AddEmployees";
             this.Text = "AddEmployees";
@@ -979,7 +989,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneZatrudnieniaGB.PerformLayout();
             this.adresGB.ResumeLayout(false);
             this.adresGB.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.daneKontaktoweGB.ResumeLayout(false);
             this.daneKontaktoweGB.PerformLayout();
@@ -993,6 +1003,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.dataUrodzeniaEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MiejsceUrodzeniaEP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1003,9 +1014,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.GroupBox daneZatrudnieniaGB;
         private System.Windows.Forms.GroupBox adresGB;
         private System.Windows.Forms.Button dodajPracownikaBTN;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource bindingSource;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label nipLabel;
         private System.Windows.Forms.Label peselLabel;
         private System.Windows.Forms.Label imieOjcaPracownikaLabel;
         private System.Windows.Forms.Label imiematkiPracownikaLabel;
@@ -1018,7 +1028,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.TextBox miejsceUrodzeniaTB;
         private System.Windows.Forms.Label dataUrodzeniaLabel;
         private System.Windows.Forms.Label nazwiskoPracownikaLabel;
-        private System.Windows.Forms.TextBox nazwiskoPracownikaTB;
+        private System.Windows.Forms.TextBox Nazwisko;
         private System.Windows.Forms.TextBox imiePracownikaTB;
         private System.Windows.Forms.Label imiePracownikaLabel;
         private System.Windows.Forms.TextBox pocztaTB;
@@ -1060,17 +1070,11 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.Label stawkaZaGodzine;
         private System.Windows.Forms.Label dzial;
         private System.Windows.Forms.Label stanowisko;
-        private System.Windows.Forms.ErrorProvider walidacjaNazwiskoEP;
-        private System.Windows.Forms.ErrorProvider walidacjaImieEP;
         private System.Windows.Forms.GroupBox daneKontaktoweGB;
         private System.Windows.Forms.Label adresEmailLabel;
         private System.Windows.Forms.Label numerTelefonuPracownikaLabel;
         private System.Windows.Forms.TextBox adresEmailPracownika;
         private System.Windows.Forms.TextBox numertelefonuPracownika;
-        private System.Windows.Forms.ErrorProvider walidacjaPeselEP;
-        private System.Windows.Forms.ErrorProvider walidajcaNipEP;
-        private System.Windows.Forms.ErrorProvider dataUrodzeniaEP;
-        private System.Windows.Forms.ErrorProvider peselEP;
         private System.Windows.Forms.Button zdjecieBTN;
         private System.Windows.Forms.PictureBox zdjeciePracownikaPB;
         private System.Windows.Forms.DateTimePicker dataZatrudnieniaDTP;
@@ -1085,6 +1089,14 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.Label Umowa;
         private System.Windows.Forms.ComboBox daneEtatCB;
         private System.Windows.Forms.ComboBox daneUmowaCB;
+        private System.Windows.Forms.ErrorProvider walidacjaNazwiskoEP;
+        private System.Windows.Forms.ErrorProvider walidacjaImieEP;
+        private System.Windows.Forms.ErrorProvider walidacjaPeselEP;
+        private System.Windows.Forms.ErrorProvider walidajcaNipEP;
+        private System.Windows.Forms.ErrorProvider dataUrodzeniaEP;
+        private System.Windows.Forms.ErrorProvider peselEP;
+        private System.Windows.Forms.Label nipLabel;
         private System.Windows.Forms.ErrorProvider imieEP;
+        private System.Windows.Forms.ErrorProvider MiejsceUrodzeniaEP;
     }
 }

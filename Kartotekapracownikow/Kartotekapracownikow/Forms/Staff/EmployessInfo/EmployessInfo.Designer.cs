@@ -112,11 +112,11 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.bankTB = new System.Windows.Forms.TextBox();
             this.bankDoPrzelewuLabel = new System.Windows.Forms.Label();
             this.edytujZatrudnienieBTN = new System.Windows.Forms.Button();
-            this.UpdateInfo = new System.Windows.Forms.HelpProvider();
             this.UpdateError = new System.Windows.Forms.ErrorProvider(this.components);
             this.UpdateErrorPodstawoweEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.UpdateInfo = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -929,6 +929,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "EmployessInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informacje o Pracowniku";
             this.Load += new System.EventHandler(this.EmployessInfo_Load);
             this.groupBox1.ResumeLayout(false);
@@ -1034,7 +1035,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.TextBox dziennyCzasPracyTB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox iloscPrzepracowanychDniTB;
-        private System.Windows.Forms.HelpProvider UpdateInfo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider UpdateError;
@@ -1042,5 +1042,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.ErrorProvider UpdateErrorPodstawoweEP;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.HelpProvider UpdateInfo;
     }
 }
