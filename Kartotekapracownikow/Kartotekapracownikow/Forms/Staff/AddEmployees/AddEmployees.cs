@@ -346,7 +346,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             }
         }
 
-
         private void dataUrodzinDTP_Validated(object sender, EventArgs e)
         {
             DateTime dataUrodzinHelp = Convert.ToDateTime(dataUrodzinDTP.Value);
@@ -355,85 +354,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             {
                 dataUrodzeniaEP.SetError(dataUrodzinDTP, "Niepoprawna data");
             }
-        }
-
-        private void peselTB_TextChanged(object sender, EventArgs e)
-        {
-            string peselPomoc = peselTB.Text;
-
-            try
-            {
-                //if (peselPomoc.Length == 11)
-                //{
-                //    int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
-                //    int suma = 0;
-                //    string liczbaKontrolnaSubstring = peselPomoc.Substring(10);
-                //    int liczbaKontrolna = int.Parse(liczbaKontrolnaSubstring);
-
-                //    for (int i = 0; i < peselWagi.Length; i++)
-                //    {
-                //        suma += (int.Parse(peselPomoc.Substring(i, i + 1)) * peselWagi[i]);
-                //    }
-
-                //    suma %= 10;
-
-                //    if ((10 - suma) != liczbaKontrolna)
-                //    {
-                //        peselEP.SetError(peselTB, "Błędny PESEL");
-                //    }
-
-                //    peselError = false;
-                //}
-                //else
-                //{
-                //    peselEP.SetError(peselTB, "PESEL zbyt krótki");
-                //    peselError = true;
-                //}
-
-                int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
-                bool result = false;
-
-                while (result == true)
-                {
-                    if (peselPomoc.Length <= 11)
-                    {
-                        int controlSum = CalculateControlSum(peselPomoc, peselWagi);
-                        int controlNum = controlSum % 10;
-                        controlNum = 10 - controlNum;
-                        if (controlNum == 10)
-                        {
-                            controlNum = 0;
-                        }
-                        int lastDigit = int.Parse(peselPomoc[peselPomoc.Length - 1].ToString());
-                        result = controlNum == lastDigit;
-
-                        if (result == false)
-                        {
-                            peselEP.SetError(peselTB, "Błędny PESEL");
-                        }
-                    }
-                    else
-                    {
-                        peselEP.SetError(peselTB, peselPomoc.Length.ToString());
-                        peselError = true;
-                    }
-                } 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Błędny pesel");
-            }
-            
-        }
-
-        private static int CalculateControlSum(string input, int[] weights, int offset = 0)
-        {
-            int controlSum = 0;
-            for (int i = 0; i < input.Length - 1; i++)
-            {
-                controlSum += weights[i + offset] * int.Parse(input[i].ToString());
-            }
-            return controlSum;
         }
 
         private void imiePracownikaTB_Validating(object sender, CancelEventArgs e)
@@ -483,7 +403,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             {
                 e.Cancel = true;
                 imiePracownikaTB.Focus();
-                MiejsceUrodzeniaEP.SetError(miejsceUrodzeniaTB, "Proszę wprowadzić nazwisko pracownika");
+                MiejsceUrodzeniaEP.SetError(miejsceUrodzeniaTB, "Proszę wprowadzić miejsce urodzenie");
             }
             else
             {
@@ -496,5 +416,119 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
+
+        private void plecCB_Validating(object sender, CancelEventArgs e)
+        {
+            // plecCB.SelectedIndex == -1 znaczy że nie wybrano NIC 
+            if (plecCB.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                plecCB.Focus();
+                PlecEP.SetError(plecCB, "Musisz wybrać jedną z opcji");
+            }
+            else
+            {
+                e.Cancel = false;
+                PlecEP.SetError(plecCB, null);
+            }
+        }
+
+        private void imieMatkiTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(imieMatkiTB.Text))
+            {
+                e.Cancel = true;
+                imieMatkiTB.Focus();
+                ImieMatkiEP.SetError(imieMatkiTB, "Proszę wprowadzić imię matki");
+            }
+            else
+            {
+                e.Cancel = false;
+                ImieMatkiEP.SetError(imieMatkiTB, null);
+            }
+        }
+
+        private void imieMatkiTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void imieOjcaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(imieOjcaTB.Text))
+            {
+                e.Cancel = true;
+                imieOjcaTB.Focus();
+                ImieOjcaEP.SetError(imieOjcaTB, "Proszę wprowadzić imię ojca");
+            }
+            else
+            {
+                e.Cancel = false;
+                ImieOjcaEP.SetError(imieOjcaTB, null);
+            }
+        }
+
+        private void imieOjcaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void peselTB_Validating(object sender, CancelEventArgs e)
+        {
+            // TODO: Poprawic walidacje PESEL - DONE!
+            string peselPomoc = peselTB.Text;
+            int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+            bool poprawnosc;
+            e.Cancel = false;
+
+            try
+            {
+                if (peselPomoc.Length == 11)
+                {
+                    int controlSum = ObliczSumeKontrolna(peselPomoc, peselWagi);
+                    int controlNum = controlSum % 10;
+                    controlNum = 10 - controlNum;
+                    if (controlNum == 10)
+                    {
+                        controlNum = 0;
+                    }
+                    int lastDigit = int.Parse(peselPomoc[peselPomoc.Length - 1].ToString());
+                    poprawnosc = controlNum == lastDigit;
+
+                    if (poprawnosc == false)
+                    {
+                        e.Cancel = true;
+                        peselTB.Focus();
+                        peselEP.SetError(peselTB, "PESEL jest błędny");
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        peselEP.SetError(peselTB, null);
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                    peselTB.Focus();
+                    peselEP.SetError(peselTB, "PESEL zbyt krótki");
+                }
+            }
+            catch (ArgumentOutOfRangeException argumentOutOfRangeException)
+            {
+                MessageBox.Show($"Błędny numer PESEL: {argumentOutOfRangeException.Message}");
+            }
+        }
+
+        private static int ObliczSumeKontrolna(string pesel, int[] wagi, int offset = 0)
+        {
+            int suma = 0;
+            for (int i = 0; i < pesel.Length - 1; i++)
+            {
+                suma += wagi[i + offset] * int.Parse(pesel[i].ToString());
+            }
+            return suma;
+        }
+
     }
 }
