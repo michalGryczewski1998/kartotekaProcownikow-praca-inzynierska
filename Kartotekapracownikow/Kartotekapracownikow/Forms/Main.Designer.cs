@@ -31,9 +31,6 @@ namespace Kartotekapracownikow
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.panelMenuMain = new System.Windows.Forms.TabPage();
-            this.splitter7 = new System.Windows.Forms.Splitter();
-            this.infoBTN = new System.Windows.Forms.Button();
-            this.splitter6 = new System.Windows.Forms.Splitter();
             this.button1 = new System.Windows.Forms.Button();
             this.splitter5 = new System.Windows.Forms.Splitter();
             this.byliPracownicyBTN = new System.Windows.Forms.Button();
@@ -72,9 +69,6 @@ namespace Kartotekapracownikow
             // 
             // panelMenuMain
             // 
-            this.panelMenuMain.Controls.Add(this.splitter7);
-            this.panelMenuMain.Controls.Add(this.infoBTN);
-            this.panelMenuMain.Controls.Add(this.splitter6);
             this.panelMenuMain.Controls.Add(this.button1);
             this.panelMenuMain.Controls.Add(this.splitter5);
             this.panelMenuMain.Controls.Add(this.byliPracownicyBTN);
@@ -94,37 +88,12 @@ namespace Kartotekapracownikow
             this.panelMenuMain.Text = "Pracownicy";
             this.panelMenuMain.UseVisualStyleBackColor = true;
             // 
-            // splitter7
-            // 
-            this.splitter7.Location = new System.Drawing.Point(831, 3);
-            this.splitter7.Name = "splitter7";
-            this.splitter7.Size = new System.Drawing.Size(3, 38);
-            this.splitter7.TabIndex = 14;
-            this.splitter7.TabStop = false;
-            // 
-            // infoBTN
-            // 
-            this.infoBTN.Location = new System.Drawing.Point(828, 3);
-            this.infoBTN.Name = "infoBTN";
-            this.infoBTN.Size = new System.Drawing.Size(125, 38);
-            this.infoBTN.TabIndex = 13;
-            this.infoBTN.Text = "Informacje";
-            this.infoBTN.UseVisualStyleBackColor = true;
-            // 
-            // splitter6
-            // 
-            this.splitter6.Location = new System.Drawing.Point(828, 3);
-            this.splitter6.Name = "splitter6";
-            this.splitter6.Size = new System.Drawing.Size(3, 38);
-            this.splitter6.TabIndex = 12;
-            this.splitter6.TabStop = false;
-            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Left;
             this.button1.Location = new System.Drawing.Point(561, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 38);
+            this.button1.Size = new System.Drawing.Size(215, 38);
             this.button1.TabIndex = 11;
             this.button1.Text = "Dodaj Pracownika z zagranicy";
             this.button1.UseVisualStyleBackColor = true;
@@ -278,7 +247,7 @@ namespace Kartotekapracownikow
             // 
             this.statusWersja.Name = "statusWersja";
             this.statusWersja.Size = new System.Drawing.Size(72, 17);
-            this.statusWersja.Text = "Wersja: 1.2.1";
+            this.statusWersja.Text = "Wersja: 1.3.2";
             // 
             // statusUzytkownik
             // 
@@ -330,10 +299,7 @@ namespace Kartotekapracownikow
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Button byliPracownicyBTN;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Splitter splitter6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Splitter splitter5;
-        private System.Windows.Forms.Splitter splitter7;
-        private System.Windows.Forms.Button infoBTN;
     }
 }
