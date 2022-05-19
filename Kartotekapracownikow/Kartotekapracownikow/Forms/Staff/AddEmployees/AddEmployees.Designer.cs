@@ -115,7 +115,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.walidacjaNazwiskoEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.walidacjaImieEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.walidacjaPeselEP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.walidajcaNipEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataUrodzeniaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.peselEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.imieEP = new System.Windows.Forms.ErrorProvider(this.components);
@@ -123,6 +122,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.PlecEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.ImieMatkiEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.ImieOjcaEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.walidajcaNipEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.danePodstawoweGB.SuspendLayout();
             this.daneZatrudnieniaGB.SuspendLayout();
             this.adresGB.SuspendLayout();
@@ -136,7 +136,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.walidacjaNazwiskoEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walidacjaImieEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walidacjaPeselEP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walidajcaNipEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUrodzeniaEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieEP)).BeginInit();
@@ -144,6 +143,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.PlecEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImieMatkiEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImieOjcaEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walidajcaNipEP)).BeginInit();
             this.SuspendLayout();
             // 
             // danePodstawoweGB
@@ -247,7 +247,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.nipTB.Name = "nipTB";
             this.nipTB.Size = new System.Drawing.Size(147, 23);
             this.nipTB.TabIndex = 14;
-            this.nipTB.Validated += new System.EventHandler(this.nipTB_Validated);
+            this.nipTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nipTB_KeyPress);
+            this.nipTB.Validating += new System.ComponentModel.CancelEventHandler(this.nipTB_Validating);
             // 
             // peselTB
             // 
@@ -985,10 +986,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.walidacjaPeselEP.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.walidacjaPeselEP.ContainerControl = this;
             // 
-            // walidajcaNipEP
-            // 
-            this.walidajcaNipEP.ContainerControl = this;
-            // 
             // dataUrodzeniaEP
             // 
             this.dataUrodzeniaEP.ContainerControl = this;
@@ -1017,6 +1014,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.ImieOjcaEP.ContainerControl = this;
             // 
+            // walidajcaNipEP
+            // 
+            this.walidajcaNipEP.ContainerControl = this;
+            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1043,7 +1044,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.walidacjaNazwiskoEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.walidacjaImieEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.walidacjaPeselEP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walidajcaNipEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUrodzeniaEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieEP)).EndInit();
@@ -1051,6 +1051,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.PlecEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImieMatkiEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImieOjcaEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walidajcaNipEP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1137,7 +1138,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.ErrorProvider walidacjaNazwiskoEP;
         private System.Windows.Forms.ErrorProvider walidacjaImieEP;
         private System.Windows.Forms.ErrorProvider walidacjaPeselEP;
-        private System.Windows.Forms.ErrorProvider walidajcaNipEP;
         private System.Windows.Forms.ErrorProvider dataUrodzeniaEP;
         private System.Windows.Forms.ErrorProvider peselEP;
         private System.Windows.Forms.Label nipLabel;
@@ -1150,5 +1150,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.ErrorProvider PlecEP;
         private System.Windows.Forms.ErrorProvider ImieMatkiEP;
         private System.Windows.Forms.ErrorProvider ImieOjcaEP;
+        private System.Windows.Forms.ErrorProvider walidajcaNipEP;
     }
 }
