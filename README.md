@@ -8,3 +8,5 @@ Wersja 1.0.1 - Dodanie podstawowych formularzy
 Wersja 1.2.1 - Baza Danych i operacje CRUD
 <br>
 Wersja 1.3.1 - Zaawansowane peracje CRUD - Zwolnienia
+<br>
+Wersja 1.3.2 - Poprawa walidacji - Walidacja 
