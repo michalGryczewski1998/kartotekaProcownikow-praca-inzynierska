@@ -162,11 +162,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         {
             dataUrodzinDTP.Format = DateTimePickerFormat.Short;
         }
-
-        private void zdjecieBTN_Click(object sender, EventArgs e)
+        private void zdjecieBTN_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter ="Images (*.PNG;*.JPG;*.GIF)|*.PNG;*.JPG;*.GIF|" +"All files (*.*)|*.*";
+            openFileDialog.Filter = "Images (*.PNG;*.JPG;*.GIF)|*.PNG;*.JPG;*.GIF|" + "All files (*.*)|*.*";
 
             try
             {
@@ -174,17 +173,16 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 {
                     scierzkaZdjeciePracownika = openFileDialog.FileName;
                     zdjeciePracownikaPB.Image = Image.FromFile(openFileDialog.FileName);
-                }           
+                }
 
                 byte[] imageArray = System.IO.File.ReadAllBytes(scierzkaZdjeciePracownika);
                 base64ConvertImageEmployee = Convert.ToBase64String(imageArray);
                 //Debug.WriteLine(base64ConvertImageEmployee);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Błąd podczas dodawania zdjęcia");
             }
-
         }
 
         private static async Task InsertData(
@@ -285,16 +283,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 {
                     MessageBox.Show("Błąd podczas dodawania pracownika do bazy danych !! \n");
                 }         
-            }
-        }
-
-        private void dataUrodzinDTP_Validated(object sender, EventArgs e)
-        {
-            DateTime dataUrodzinHelp = Convert.ToDateTime(dataUrodzinDTP.Value);
-
-            if (dataUrodzinHelp >= DateTime.Today)
-            {
-                dataUrodzeniaEP.SetError(dataUrodzinDTP, "Niepoprawna data");
             }
         }
 
@@ -524,6 +512,34 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             return suma;
         }
 
+        private void dataUrodzinDTP_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(dataUrodzinDTP.Value.ToString()))
+            {
+                e.Cancel = true;
+                plecCB.Focus();
+                dataUrodzeniaEP.SetError(dataUrodzinDTP, "Proszę wprowadzić datę urodzin");
+            }
+            else
+            {
+                e.Cancel = false;
+                dataUrodzeniaEP.SetError(dataUrodzinDTP, null);
+            }
+        }
 
+        private void zdjeciePracownikaPB_Validating(object sender, CancelEventArgs e)
+        {
+            if(zdjeciePracownikaPB.Image == null)
+            {
+                e.Cancel = true;
+                zdjeciePracownikaPB.Focus();
+                zdjeciePracownikaEP.SetError(zdjeciePracownikaPB, "Proszę o wybranie zdjęcia");
+            }
+            else
+            {
+                e.Cancel = false;
+                zdjeciePracownikaEP.SetError(zdjeciePracownikaPB, null);
+            }
+        }
     }
 }
