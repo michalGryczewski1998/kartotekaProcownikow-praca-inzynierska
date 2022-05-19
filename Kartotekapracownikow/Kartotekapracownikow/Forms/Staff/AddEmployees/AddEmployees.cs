@@ -158,11 +158,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         }
 
-        private void peselTB_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
         private void dataUrodzinDTP_ValueChanged(object sender, EventArgs e)
         {
             dataUrodzinDTP.Format = DateTimePickerFormat.Short;
@@ -190,20 +185,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 MessageBox.Show("Błąd podczas dodawania zdjęcia");
             }
 
-        }
-
-        private void peselTB_Validated(object sender, EventArgs e)
-        {
-            string peselHelp = peselTB.Text;
-
-            if (string.IsNullOrWhiteSpace(peselHelp))
-            {
-                walidacjaPeselEP.SetError(peselTB, "Podaj prawidłową wartość PESEL");
-            }
-            else
-            {
-                walidacjaPeselEP.Clear();
-            }
         }
 
         private static async Task InsertData(
@@ -304,45 +285,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 {
                     MessageBox.Show("Błąd podczas dodawania pracownika do bazy danych !! \n");
                 }         
-            }
-        }
-
-        private void nipTB_Validated(object sender, EventArgs e)
-        {
-            /*
-             * Funkcja sprawdza poprawnosc NIP-u
-             * Mnoży każdą liczbę przez wagę
-             * Następnie sprawdza czy ta suma jest równa liczbie kontrolnej
-             * Jeśli tak to NIP jest poprawny, w przeciwnym wypadku NIP jest nieprawidłowy
-             */
-            string nip = nipTB.Text;
-            //System.Diagnostics.Debug.WriteLine(nip);
-
-            if(nip.Length != 10)
-            {
-                walidajcaNipEP.SetError(nipTB, "Numer NIP składa się z 11 cyfr");
-            }
-            else
-            {
-                int[] wagi = new int[] { 6, 5, 7, 2, 3, 4, 5, 6, 7 };
-                int suma = 0;
-
-                string kontrolnaLiczbaSubstring = nip.Substring(9);
-                int kontrolnaLiczba = int.Parse(kontrolnaLiczbaSubstring);
-
-                for (int i = 0; i < wagi.Length; i++)
-                {
-                    suma += (int.Parse(nip.Substring(i, 1)) * wagi[i]);
-                }
-
-                if (suma % 11 != kontrolnaLiczba)
-                {
-                    walidajcaNipEP.SetError(nipTB, "Nieprawidłowy numer NIP");
-                }
-                else
-                {
-                    walidajcaNipEP.Clear();
-                }
             }
         }
 
@@ -519,7 +461,59 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 MessageBox.Show($"Błędny numer PESEL: {argumentOutOfRangeException.Message}");
             }
         }
+        private void peselTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+        private void nipTB_Validating(object sender, CancelEventArgs e)
+        {
+            string nipPomoc = nipTB.Text;
 
+            int[] weights = { 6, 5, 7, 2, 3, 4, 5, 6, 7 };
+            bool poprawnosc = false;
+
+            try
+            {
+                if(nipPomoc.Length == 10)
+                {
+                    int controlSum = ObliczSumeKontrolna(nipPomoc, weights);
+                    int controlNum = controlSum % 11;
+                    if (controlNum == 10)
+                    {
+                        
+                    }
+                    int lastDigit = Convert.ToInt32(nipPomoc[nipPomoc.Length - 1].ToString());
+                    poprawnosc = controlNum == lastDigit;
+
+                    if (poprawnosc == false)
+                    {
+                        e.Cancel = true;
+                        peselTB.Focus();
+                        walidajcaNipEP.SetError(nipTB, "NIP jest błędny");
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        walidajcaNipEP.SetError(nipTB, null);
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                    nipTB.Focus();
+                    walidajcaNipEP.SetError(nipTB, "NIP zbyt krótki");
+                }
+            }
+            catch(ArgumentOutOfRangeException argumentOutOfRangeException)
+            {
+                MessageBox.Show($"Błędny numer NIP: {argumentOutOfRangeException.Message}");
+            }
+
+        }
+        private void nipTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
         private static int ObliczSumeKontrolna(string pesel, int[] wagi, int offset = 0)
         {
             int suma = 0;
@@ -529,6 +523,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             }
             return suma;
         }
+
 
     }
 }
