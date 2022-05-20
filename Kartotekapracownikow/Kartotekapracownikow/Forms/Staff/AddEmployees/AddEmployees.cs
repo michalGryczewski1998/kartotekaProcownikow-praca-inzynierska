@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kartotekapracownikow.DatabaseModel;
@@ -540,6 +541,196 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 e.Cancel = false;
                 zdjeciePracownikaEP.SetError(zdjeciePracownikaPB, null);
             }
+        }
+
+        private void krajTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(krajTB.Text))
+            {
+                e.Cancel = true;
+                krajTB.Focus();
+                krajEP.SetError(krajTB, "Proszę wpisać nazwę kraju pochodzenia");
+            }
+            else
+            {
+                e.Cancel = false;
+                krajEP.SetError(krajTB, null);
+            }
+        }
+
+        private void krajTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void wojewodztwoTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(wojewodztwoTB.Text))
+            {
+                e.Cancel = true;
+                wojewodztwoTB.Focus();
+                wojewodztwoEP.SetError(wojewodztwoTB, "Proszę wpisać nazwę województwa");
+            }
+            else
+            {
+                e.Cancel = false;
+                wojewodztwoEP.SetError(wojewodztwoTB, null);
+            }
+        }
+
+        private void wojewodztwoTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void gminaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(gminaTB.Text))
+            {
+                e.Cancel = true;
+                gminaTB.Focus();
+                gminaEP.SetError(gminaTB, "Proszę wpisać nazwę gminy");
+            }
+            else
+            {
+                e.Cancel = false;
+                gminaEP.SetError(gminaTB, null);
+            }
+        }
+
+        private void gminaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void kodTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(kodTB.Text))
+            {
+                e.Cancel = true;
+                kodTB.Focus();
+                kodPocztowyEP.SetError(kodTB, "Proszę wpisać kod pocztowy");
+            }
+            else
+            {
+                string pomocKodPocztowy = kodTB.Text;
+
+                if (pomocKodPocztowy.Contains("-")){
+                    e.Cancel = false;
+                    kodPocztowyEP.SetError(kodTB, null);
+                }
+                else
+                {
+                    e.Cancel = true;
+                    kodTB.Focus();
+                    kodPocztowyEP.SetError(kodTB, "Kod pocztowy jest niepoprawny");
+                }
+            }
+        }
+
+        private void kodTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Zezwalamy tylko na liczby oraz znaki specjalne
+            if (char.IsLetterOrDigit(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void miejscowoscTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(miejscowoscTB.Text))
+            {
+                e.Cancel = true;
+                miejscowoscTB.Focus();
+                miejscowoscEP.SetError(miejscowoscTB, "Proszę wpisać nazwę miejscowości");
+            }
+            else
+            {
+                e.Cancel = false;
+                miejscowoscEP.SetError(miejscowoscTB, null);
+            }
+        }
+
+        private void miejscowoscTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void ulicaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(ulicaTB.Text))
+            {
+                e.Cancel = true;
+                ulicaTB.Focus();
+                ulicaEP.SetError(ulicaTB, "Proszę wpisać ulicę");
+            }
+            else
+            {
+                e.Cancel = false;
+                ulicaEP.SetError(ulicaTB, null);
+            }
+        }
+
+        private void ulicaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void numerDomuTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(numerLokaluTB.Text))
+            {
+                if (string.IsNullOrWhiteSpace(numerDomuTB.Text))
+                {
+                    e.Cancel = true;
+                    numerDomuTB.Focus();
+                    numerDomuEP.SetError(numerDomuTB, "Proszę wpisać numer domu lub mieszkania");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    numerDomuEP.SetError(numerDomuTB, null);
+                }
+            }
+        }
+
+        private void numerLokaluTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(numerDomuTB.Text))
+            {
+                if (string.IsNullOrWhiteSpace(numerLokaluTB.Text))
+                {
+                    e.Cancel = true;
+                    numerLokaluTB.Focus();
+                    numerLokaluEP.SetError(numerLokaluTB, "Proszę wpisać numer domu lub mieszkania");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    numerLokaluEP.SetError(numerLokaluTB, null);
+                }
+            }
+        }
+
+        private void pocztaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(pocztaTB.Text))
+            {
+                e.Cancel = true;
+                pocztaTB.Focus();
+                pocztaEP.SetError(pocztaTB, "Proszę wpisać ulicę");
+            }
+            else
+            {
+                e.Cancel = false;
+                pocztaEP.SetError(pocztaTB, null);
+            }
+        }
+
+        private void pocztaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
