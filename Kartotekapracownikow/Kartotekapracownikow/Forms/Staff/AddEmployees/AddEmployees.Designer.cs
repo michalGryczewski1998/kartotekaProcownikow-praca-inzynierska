@@ -575,6 +575,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.pocztaTB.Name = "pocztaTB";
             this.pocztaTB.Size = new System.Drawing.Size(147, 23);
             this.pocztaTB.TabIndex = 35;
+            this.pocztaTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pocztaTB_KeyPress);
+            this.pocztaTB.Validating += new System.ComponentModel.CancelEventHandler(this.pocztaTB_Validating);
             // 
             // pocztaLabel
             // 
@@ -600,6 +602,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.numerLokaluTB.Name = "numerLokaluTB";
             this.numerLokaluTB.Size = new System.Drawing.Size(147, 23);
             this.numerLokaluTB.TabIndex = 32;
+            this.numerLokaluTB.Validating += new System.ComponentModel.CancelEventHandler(this.numerLokaluTB_Validating);
             // 
             // numerDomuTB
             // 
@@ -607,6 +610,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.numerDomuTB.Name = "numerDomuTB";
             this.numerDomuTB.Size = new System.Drawing.Size(147, 23);
             this.numerDomuTB.TabIndex = 31;
+            this.numerDomuTB.Validating += new System.ComponentModel.CancelEventHandler(this.numerDomuTB_Validating);
             // 
             // numerDomuLabel
             // 
@@ -623,6 +627,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.ulicaTB.Name = "ulicaTB";
             this.ulicaTB.Size = new System.Drawing.Size(147, 23);
             this.ulicaTB.TabIndex = 29;
+            this.ulicaTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ulicaTB_KeyPress);
+            this.ulicaTB.Validating += new System.ComponentModel.CancelEventHandler(this.ulicaTB_Validating);
             // 
             // ulicaLabel
             // 
@@ -639,6 +645,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.miejscowoscTB.Name = "miejscowoscTB";
             this.miejscowoscTB.Size = new System.Drawing.Size(147, 23);
             this.miejscowoscTB.TabIndex = 27;
+            this.miejscowoscTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.miejscowoscTB_KeyPress);
+            this.miejscowoscTB.Validating += new System.ComponentModel.CancelEventHandler(this.miejscowoscTB_Validating);
             // 
             // miejscowoscLabel
             // 
@@ -655,6 +663,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.kodTB.Name = "kodTB";
             this.kodTB.Size = new System.Drawing.Size(147, 23);
             this.kodTB.TabIndex = 25;
+            this.kodTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kodTB_KeyPress);
+            this.kodTB.Validating += new System.ComponentModel.CancelEventHandler(this.kodTB_Validating);
             // 
             // kodLabel
             // 
@@ -671,6 +681,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.gminaTB.Name = "gminaTB";
             this.gminaTB.Size = new System.Drawing.Size(147, 23);
             this.gminaTB.TabIndex = 23;
+            this.gminaTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gminaTB_KeyPress);
+            this.gminaTB.Validating += new System.ComponentModel.CancelEventHandler(this.gminaTB_Validating);
             // 
             // gminaLabel
             // 
@@ -687,6 +699,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.wojewodztwoTB.Name = "wojewodztwoTB";
             this.wojewodztwoTB.Size = new System.Drawing.Size(147, 23);
             this.wojewodztwoTB.TabIndex = 21;
+            this.wojewodztwoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wojewodztwoTB_KeyPress);
+            this.wojewodztwoTB.Validating += new System.ComponentModel.CancelEventHandler(this.wojewodztwoTB_Validating);
             // 
             // wojewodztwoLabel
             // 
@@ -703,6 +717,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.krajTB.Name = "krajTB";
             this.krajTB.Size = new System.Drawing.Size(147, 23);
             this.krajTB.TabIndex = 19;
+            this.krajTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.krajTB_KeyPress);
+            this.krajTB.Validating += new System.ComponentModel.CancelEventHandler(this.krajTB_Validating);
             // 
             // krajZamieszkaniaPracownikaLabel
             // 
