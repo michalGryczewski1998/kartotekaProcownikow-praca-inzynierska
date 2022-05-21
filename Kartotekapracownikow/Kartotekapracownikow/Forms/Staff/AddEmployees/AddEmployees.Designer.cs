@@ -98,7 +98,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.adresEmailLabel = new System.Windows.Forms.Label();
             this.numerTelefonuPracownikaLabel = new System.Windows.Forms.Label();
             this.adresEmailPracownika = new System.Windows.Forms.TextBox();
-            this.numertelefonuPracownika = new System.Windows.Forms.TextBox();
+            this.numertelefonuPracownikaTB = new System.Windows.Forms.TextBox();
             this.StanowiskoGB = new System.Windows.Forms.GroupBox();
             this.dziennyCzasPracyCB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -137,6 +137,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.adresEmailEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.nagleWypadkiEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.numertelefonuEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NumertelefonuNaglyWypadekEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.danePodstawoweGB.SuspendLayout();
             this.daneZatrudnieniaGB.SuspendLayout();
             this.adresGB.SuspendLayout();
@@ -172,6 +173,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.adresEmailEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nagleWypadkiEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numertelefonuEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumertelefonuNaglyWypadekEP)).BeginInit();
             this.SuspendLayout();
             // 
             // danePodstawoweGB
@@ -786,7 +788,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneKontaktoweGB.Controls.Add(this.adresEmailLabel);
             this.daneKontaktoweGB.Controls.Add(this.numerTelefonuPracownikaLabel);
             this.daneKontaktoweGB.Controls.Add(this.adresEmailPracownika);
-            this.daneKontaktoweGB.Controls.Add(this.numertelefonuPracownika);
+            this.daneKontaktoweGB.Controls.Add(this.numertelefonuPracownikaTB);
             this.daneKontaktoweGB.Location = new System.Drawing.Point(614, 262);
             this.daneKontaktoweGB.Name = "daneKontaktoweGB";
             this.daneKontaktoweGB.Size = new System.Drawing.Size(316, 177);
@@ -818,6 +820,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.NumerTelefonuNaglyWypadekTB.Name = "NumerTelefonuNaglyWypadekTB";
             this.NumerTelefonuNaglyWypadekTB.Size = new System.Drawing.Size(147, 23);
             this.NumerTelefonuNaglyWypadekTB.TabIndex = 19;
+            this.NumerTelefonuNaglyWypadekTB.Validating += new System.ComponentModel.CancelEventHandler(this.NumerTelefonuNaglyWypadekTB_Validating);
             // 
             // doKogoNaglyWypadekTB
             // 
@@ -851,12 +854,13 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.adresEmailPracownika.Size = new System.Drawing.Size(147, 23);
             this.adresEmailPracownika.TabIndex = 3;
             // 
-            // numertelefonuPracownika
+            // numertelefonuPracownikaTB
             // 
-            this.numertelefonuPracownika.Location = new System.Drawing.Point(135, 22);
-            this.numertelefonuPracownika.Name = "numertelefonuPracownika";
-            this.numertelefonuPracownika.Size = new System.Drawing.Size(147, 23);
-            this.numertelefonuPracownika.TabIndex = 2;
+            this.numertelefonuPracownikaTB.Location = new System.Drawing.Point(135, 22);
+            this.numertelefonuPracownikaTB.Name = "numertelefonuPracownikaTB";
+            this.numertelefonuPracownikaTB.Size = new System.Drawing.Size(147, 23);
+            this.numertelefonuPracownikaTB.TabIndex = 2;
+            this.numertelefonuPracownikaTB.Validating += new System.ComponentModel.CancelEventHandler(this.numertelefonuPracownika_Validating);
             // 
             // StanowiskoGB
             // 
@@ -1121,6 +1125,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.numertelefonuEP.ContainerControl = this;
             // 
+            // NumertelefonuNaglyWypadekEP
+            // 
+            this.NumertelefonuNaglyWypadekEP.ContainerControl = this;
+            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1169,6 +1177,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.adresEmailEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nagleWypadkiEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numertelefonuEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumertelefonuNaglyWypadekEP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1239,7 +1248,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.Label adresEmailLabel;
         private System.Windows.Forms.Label numerTelefonuPracownikaLabel;
         private System.Windows.Forms.TextBox adresEmailPracownika;
-        private System.Windows.Forms.TextBox numertelefonuPracownika;
+        private System.Windows.Forms.TextBox numertelefonuPracownikaTB;
         private System.Windows.Forms.DateTimePicker dataZatrudnieniaDTP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -1282,5 +1291,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.ErrorProvider adresEmailEP;
         private System.Windows.Forms.ErrorProvider nagleWypadkiEP;
         private System.Windows.Forms.ErrorProvider numertelefonuEP;
+        private System.Windows.Forms.ErrorProvider NumertelefonuNaglyWypadekEP;
     }
 }
