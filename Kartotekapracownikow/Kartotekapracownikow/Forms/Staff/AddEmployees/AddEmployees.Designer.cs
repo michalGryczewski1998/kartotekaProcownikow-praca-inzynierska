@@ -138,6 +138,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.nagleWypadkiEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.numertelefonuEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.NumertelefonuNaglyWypadekEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.WalidacjaAdresEmailEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.danePodstawoweGB.SuspendLayout();
             this.daneZatrudnieniaGB.SuspendLayout();
             this.adresGB.SuspendLayout();
@@ -174,6 +175,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.nagleWypadkiEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numertelefonuEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumertelefonuNaglyWypadekEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WalidacjaAdresEmailEP)).BeginInit();
             this.SuspendLayout();
             // 
             // danePodstawoweGB
@@ -828,6 +830,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.doKogoNaglyWypadekTB.Name = "doKogoNaglyWypadekTB";
             this.doKogoNaglyWypadekTB.Size = new System.Drawing.Size(147, 23);
             this.doKogoNaglyWypadekTB.TabIndex = 18;
+            this.doKogoNaglyWypadekTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.doKogoNaglyWypadekTB_KeyPress);
+            this.doKogoNaglyWypadekTB.Validating += new System.ComponentModel.CancelEventHandler(this.doKogoNaglyWypadekTB_Validating);
             // 
             // adresEmailLabel
             // 
@@ -853,6 +857,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.adresEmailPracownika.Name = "adresEmailPracownika";
             this.adresEmailPracownika.Size = new System.Drawing.Size(147, 23);
             this.adresEmailPracownika.TabIndex = 3;
+            this.adresEmailPracownika.Validating += new System.ComponentModel.CancelEventHandler(this.adresEmailPracownika_Validating);
             // 
             // numertelefonuPracownikaTB
             // 
@@ -1129,6 +1134,10 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.NumertelefonuNaglyWypadekEP.ContainerControl = this;
             // 
+            // WalidacjaAdresEmailEP
+            // 
+            this.WalidacjaAdresEmailEP.ContainerControl = this;
+            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1178,6 +1187,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.nagleWypadkiEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numertelefonuEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumertelefonuNaglyWypadekEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WalidacjaAdresEmailEP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1292,5 +1302,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.ErrorProvider nagleWypadkiEP;
         private System.Windows.Forms.ErrorProvider numertelefonuEP;
         private System.Windows.Forms.ErrorProvider NumertelefonuNaglyWypadekEP;
+        private System.Windows.Forms.ErrorProvider WalidacjaAdresEmailEP;
     }
 }

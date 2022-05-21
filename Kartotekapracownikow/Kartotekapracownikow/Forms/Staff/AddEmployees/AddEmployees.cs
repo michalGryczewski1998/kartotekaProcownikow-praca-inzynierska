@@ -10,7 +10,6 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kartotekapracownikow.DatabaseModel;
-using Microsoft.Data.SqlClient;
 
 namespace Kartotekapracownikow.Forms.AddEmployees
 {
@@ -756,7 +755,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 {
                     e.Cancel = true;
                     numertelefonuPracownikaTB.Focus();
-                    numertelefonuEP.SetError(numertelefonuPracownikaTB, "Numer telefonu błędny");
+                    numertelefonuEP.SetError(numertelefonuPracownikaTB, "Numer telefonu jest błędny");
                 }
             }
         }
@@ -784,9 +783,56 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 {
                     e.Cancel = true;
                     NumerTelefonuNaglyWypadekTB.Focus();
-                    NumertelefonuNaglyWypadekEP.SetError(NumerTelefonuNaglyWypadekTB, "Numer telefonu błędny");
+                    NumertelefonuNaglyWypadekEP.SetError(NumerTelefonuNaglyWypadekTB, "Numer telefonu jest błędny");
                 }
             }
+        }
+
+        private void adresEmailPracownika_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(adresEmailPracownika.Text))
+            {
+                e.Cancel = true;
+                adresEmailPracownika.Focus();
+                WalidacjaAdresEmailEP.SetError(adresEmailPracownika, "Proszę wpisać adres E-Mail");
+            }
+            else
+            {
+                string pomoc = adresEmailPracownika.Text;
+                var email = new EmailAddressAttribute();
+
+                if (email.IsValid(pomoc))
+                {
+                    e.Cancel = false;
+                    WalidacjaAdresEmailEP.SetError(adresEmailPracownika, null);
+                }
+                else
+                {
+                    e.Cancel = true;
+                    adresEmailPracownika.Focus();
+                    WalidacjaAdresEmailEP.SetError(adresEmailPracownika, "Błędny adres E-Mail");
+                }
+            }
+        }
+
+        private void doKogoNaglyWypadekTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(doKogoNaglyWypadekTB.Text))
+            {
+                e.Cancel = true;
+                doKogoNaglyWypadekTB.Focus();
+                nagleWypadkiEP.SetError(doKogoNaglyWypadekTB, "Proszę wprowadzić imię osoby upoważnionej");
+            }
+            else
+            {
+                e.Cancel = false;
+                nagleWypadkiEP.SetError(doKogoNaglyWypadekTB, null);
+            }
+        }
+
+        private void doKogoNaglyWypadekTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }
