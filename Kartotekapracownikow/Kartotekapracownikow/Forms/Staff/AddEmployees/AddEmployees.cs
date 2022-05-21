@@ -76,7 +76,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string nazwisko = Nazwisko.Text;
                 string ZdjeciePracownika = base64ConvertImageEmployee;
                 DateTime DataUrodzenia = dataUrodzinDTP.Value;
-                string NumerTelefonu = numertelefonuPracownika.Text;
+                string NumerTelefonu = numertelefonuPracownikaTB.Text;
                 string AdresEmail = adresEmailPracownika.Text;
                 string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
                 string ImieMatki = imieMatkiTB.Text;
@@ -731,6 +731,62 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private void pocztaTB_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void numertelefonuPracownika_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(numertelefonuPracownikaTB.Text))
+            {
+                e.Cancel = true;
+                numertelefonuPracownikaTB.Focus();
+                numertelefonuEP.SetError(numertelefonuPracownikaTB, "Proszę wpisać numer telefonu");
+            }
+            else
+            {
+                string number = numertelefonuPracownikaTB.Text;
+                const string motifPhoneNumberNormal = @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
+                const string motifPhoneNumber = @"^([\+]?[1-9]{2}[-]?|[0])?[1-9][0-9]{8}$";
+
+                if (Regex.IsMatch(number, motifPhoneNumberNormal) || Regex.IsMatch(number, motifPhoneNumber))
+                {
+                    e.Cancel = false;
+                    numertelefonuEP.SetError(numertelefonuPracownikaTB, null);
+                }
+                else
+                {
+                    e.Cancel = true;
+                    numertelefonuPracownikaTB.Focus();
+                    numertelefonuEP.SetError(numertelefonuPracownikaTB, "Numer telefonu błędny");
+                }
+            }
+        }
+
+        private void NumerTelefonuNaglyWypadekTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(NumerTelefonuNaglyWypadekTB.Text))
+            {
+                e.Cancel = true;
+                NumerTelefonuNaglyWypadekTB.Focus();
+                NumertelefonuNaglyWypadekEP.SetError(NumerTelefonuNaglyWypadekTB, "Proszę wpisać numer telefonu");
+            }
+            else
+            {
+                string number = NumerTelefonuNaglyWypadekTB.Text;
+                const string motifPhoneNumberNormal = @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
+                const string motifPhoneNumber = @"^([\+]?[1-9]{2}[-]?|[0])?[1-9][0-9]{8}$";
+
+                if (Regex.IsMatch(number, motifPhoneNumberNormal) || Regex.IsMatch(number, motifPhoneNumber))
+                {
+                    e.Cancel = false;
+                    NumertelefonuNaglyWypadekEP.SetError(NumerTelefonuNaglyWypadekTB, null);
+                }
+                else
+                {
+                    e.Cancel = true;
+                    NumerTelefonuNaglyWypadekTB.Focus();
+                    NumertelefonuNaglyWypadekEP.SetError(NumerTelefonuNaglyWypadekTB, "Numer telefonu błędny");
+                }
+            }
         }
     }
 }
