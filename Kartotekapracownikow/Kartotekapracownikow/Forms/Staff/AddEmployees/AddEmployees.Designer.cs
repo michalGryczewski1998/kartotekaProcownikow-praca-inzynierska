@@ -139,6 +139,18 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.numertelefonuEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.NumertelefonuNaglyWypadekEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.WalidacjaAdresEmailEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BankEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NumerKontaEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NfzEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.UmowaEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.EtatEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.UlgaPodatkowaEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.KosztUzyskaniaPrzychoduEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DziałEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.StanowiskoEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.StawkaGodzinowaEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DataZatrudnieniaEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DziennyCzasPracyEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.danePodstawoweGB.SuspendLayout();
             this.daneZatrudnieniaGB.SuspendLayout();
             this.adresGB.SuspendLayout();
@@ -176,6 +188,18 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.numertelefonuEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumertelefonuNaglyWypadekEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalidacjaAdresEmailEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BankEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumerKontaEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NfzEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UmowaEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EtatEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UlgaPodatkowaEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KosztUzyskaniaPrzychoduEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DziałEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StanowiskoEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StawkaGodzinowaEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataZatrudnieniaEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DziennyCzasPracyEP)).BeginInit();
             this.SuspendLayout();
             // 
             // danePodstawoweGB
@@ -409,7 +433,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 148);
+            this.label5.Location = new System.Drawing.Point(18, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 15);
             this.label5.TabIndex = 51;
@@ -418,7 +442,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // Umowa
             // 
             this.Umowa.AutoSize = true;
-            this.Umowa.Location = new System.Drawing.Point(8, 117);
+            this.Umowa.Location = new System.Drawing.Point(17, 117);
             this.Umowa.Name = "Umowa";
             this.Umowa.Size = new System.Drawing.Size(48, 15);
             this.Umowa.TabIndex = 50;
@@ -430,10 +454,11 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneEtatCB.Items.AddRange(new object[] {
             "Pełny etat",
             "Połowa etatu"});
-            this.daneEtatCB.Location = new System.Drawing.Point(94, 146);
+            this.daneEtatCB.Location = new System.Drawing.Point(103, 146);
             this.daneEtatCB.Name = "daneEtatCB";
             this.daneEtatCB.Size = new System.Drawing.Size(147, 23);
             this.daneEtatCB.TabIndex = 49;
+            this.daneEtatCB.Validating += new System.ComponentModel.CancelEventHandler(this.daneEtatCB_Validating);
             // 
             // daneUmowaCB
             // 
@@ -443,35 +468,38 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             "Umowa o dzieło",
             "Umowa o pracę",
             "Umowa B2B (business-to-business)"});
-            this.daneUmowaCB.Location = new System.Drawing.Point(94, 115);
+            this.daneUmowaCB.Location = new System.Drawing.Point(103, 115);
             this.daneUmowaCB.Name = "daneUmowaCB";
             this.daneUmowaCB.Size = new System.Drawing.Size(147, 23);
             this.daneUmowaCB.TabIndex = 48;
+            this.daneUmowaCB.Validating += new System.ComponentModel.CancelEventHandler(this.daneUmowaCB_Validating);
             // 
             // kosztyUzyskaniaPrzychoduCB
             // 
             this.kosztyUzyskaniaPrzychoduCB.FormattingEnabled = true;
             this.kosztyUzyskaniaPrzychoduCB.Items.AddRange(new object[] {
             "Tak"});
-            this.kosztyUzyskaniaPrzychoduCB.Location = new System.Drawing.Point(247, 115);
+            this.kosztyUzyskaniaPrzychoduCB.Location = new System.Drawing.Point(307, 115);
             this.kosztyUzyskaniaPrzychoduCB.Name = "kosztyUzyskaniaPrzychoduCB";
-            this.kosztyUzyskaniaPrzychoduCB.Size = new System.Drawing.Size(309, 23);
+            this.kosztyUzyskaniaPrzychoduCB.Size = new System.Drawing.Size(255, 23);
             this.kosztyUzyskaniaPrzychoduCB.TabIndex = 47;
+            this.kosztyUzyskaniaPrzychoduCB.Validating += new System.ComponentModel.CancelEventHandler(this.kosztyUzyskaniaPrzychoduCB_Validating);
             // 
             // ulgaPodatkowaCB
             // 
             this.ulgaPodatkowaCB.FormattingEnabled = true;
             this.ulgaPodatkowaCB.Items.AddRange(new object[] {
             "Tak"});
-            this.ulgaPodatkowaCB.Location = new System.Drawing.Point(247, 58);
+            this.ulgaPodatkowaCB.Location = new System.Drawing.Point(307, 58);
             this.ulgaPodatkowaCB.Name = "ulgaPodatkowaCB";
-            this.ulgaPodatkowaCB.Size = new System.Drawing.Size(309, 23);
+            this.ulgaPodatkowaCB.Size = new System.Drawing.Size(255, 23);
             this.ulgaPodatkowaCB.TabIndex = 46;
+            this.ulgaPodatkowaCB.Validating += new System.ComponentModel.CancelEventHandler(this.ulgaPodatkowaCB_Validating);
             // 
             // ulgapodatkowaLabel
             // 
             this.ulgapodatkowaLabel.AutoSize = true;
-            this.ulgapodatkowaLabel.Location = new System.Drawing.Point(251, 29);
+            this.ulgapodatkowaLabel.Location = new System.Drawing.Point(307, 34);
             this.ulgapodatkowaLabel.Name = "ulgapodatkowaLabel";
             this.ulgapodatkowaLabel.Size = new System.Drawing.Size(93, 15);
             this.ulgapodatkowaLabel.TabIndex = 44;
@@ -480,7 +508,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // kosztyPrzychoduLabel
             // 
             this.kosztyPrzychoduLabel.AutoSize = true;
-            this.kosztyPrzychoduLabel.Location = new System.Drawing.Point(249, 90);
+            this.kosztyPrzychoduLabel.Location = new System.Drawing.Point(307, 95);
             this.kosztyPrzychoduLabel.Name = "kosztyPrzychoduLabel";
             this.kosztyPrzychoduLabel.Size = new System.Drawing.Size(154, 15);
             this.kosztyPrzychoduLabel.TabIndex = 43;
@@ -488,15 +516,16 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // nfzTB
             // 
-            this.nfzTB.Location = new System.Drawing.Point(94, 87);
+            this.nfzTB.Location = new System.Drawing.Point(103, 87);
             this.nfzTB.Name = "nfzTB";
             this.nfzTB.Size = new System.Drawing.Size(147, 23);
             this.nfzTB.TabIndex = 42;
+            this.nfzTB.Validating += new System.ComponentModel.CancelEventHandler(this.nfzTB_Validating);
             // 
             // nfzLabel
             // 
             this.nfzLabel.AutoSize = true;
-            this.nfzLabel.Location = new System.Drawing.Point(9, 90);
+            this.nfzLabel.Location = new System.Drawing.Point(18, 90);
             this.nfzLabel.Name = "nfzLabel";
             this.nfzLabel.Size = new System.Drawing.Size(29, 15);
             this.nfzLabel.TabIndex = 41;
@@ -504,15 +533,17 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // numerKontaTB
             // 
-            this.numerKontaTB.Location = new System.Drawing.Point(94, 58);
+            this.numerKontaTB.Location = new System.Drawing.Point(103, 58);
             this.numerKontaTB.Name = "numerKontaTB";
             this.numerKontaTB.Size = new System.Drawing.Size(147, 23);
             this.numerKontaTB.TabIndex = 38;
+            this.numerKontaTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numerKontaTB_KeyPress);
+            this.numerKontaTB.Validating += new System.ComponentModel.CancelEventHandler(this.numerKontaTB_Validating);
             // 
             // numerKontaLabel
             // 
             this.numerKontaLabel.AutoSize = true;
-            this.numerKontaLabel.Location = new System.Drawing.Point(9, 61);
+            this.numerKontaLabel.Location = new System.Drawing.Point(18, 61);
             this.numerKontaLabel.Name = "numerKontaLabel";
             this.numerKontaLabel.Size = new System.Drawing.Size(77, 15);
             this.numerKontaLabel.TabIndex = 37;
@@ -520,15 +551,16 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // bankTB
             // 
-            this.bankTB.Location = new System.Drawing.Point(94, 26);
+            this.bankTB.Location = new System.Drawing.Point(103, 26);
             this.bankTB.Name = "bankTB";
             this.bankTB.Size = new System.Drawing.Size(147, 23);
             this.bankTB.TabIndex = 36;
+            this.bankTB.Validating += new System.ComponentModel.CancelEventHandler(this.bankTB_Validating);
             // 
             // bankDoPrzelewuLabel
             // 
             this.bankDoPrzelewuLabel.AutoSize = true;
-            this.bankDoPrzelewuLabel.Location = new System.Drawing.Point(9, 29);
+            this.bankDoPrzelewuLabel.Location = new System.Drawing.Point(18, 29);
             this.bankDoPrzelewuLabel.Name = "bankDoPrzelewuLabel";
             this.bankDoPrzelewuLabel.Size = new System.Drawing.Size(33, 15);
             this.bankDoPrzelewuLabel.TabIndex = 35;
@@ -900,6 +932,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.dziennyCzasPracyCB.Name = "dziennyCzasPracyCB";
             this.dziennyCzasPracyCB.Size = new System.Drawing.Size(147, 23);
             this.dziennyCzasPracyCB.TabIndex = 49;
+            this.dziennyCzasPracyCB.Validating += new System.ComponentModel.CancelEventHandler(this.dziennyCzasPracyCB_Validating);
             // 
             // label2
             // 
@@ -918,6 +951,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.dataZatrudnieniaDTP.Name = "dataZatrudnieniaDTP";
             this.dataZatrudnieniaDTP.Size = new System.Drawing.Size(147, 23);
             this.dataZatrudnieniaDTP.TabIndex = 47;
+            this.dataZatrudnieniaDTP.Validating += new System.ComponentModel.CancelEventHandler(this.dataZatrudnieniaDTP_Validating);
             // 
             // label1
             // 
@@ -937,6 +971,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.dzialCB.Name = "dzialCB";
             this.dzialCB.Size = new System.Drawing.Size(147, 23);
             this.dzialCB.TabIndex = 45;
+            this.dzialCB.Validating += new System.ComponentModel.CancelEventHandler(this.dzialCB_Validating);
             // 
             // stanowiskoCB
             // 
@@ -969,6 +1004,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.stanowiskoCB.Name = "stanowiskoCB";
             this.stanowiskoCB.Size = new System.Drawing.Size(147, 23);
             this.stanowiskoCB.TabIndex = 44;
+            this.stanowiskoCB.Validating += new System.ComponentModel.CancelEventHandler(this.stanowiskoCB_Validating);
             // 
             // stawkaGodzinaTB
             // 
@@ -976,6 +1012,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.stawkaGodzinaTB.Name = "stawkaGodzinaTB";
             this.stawkaGodzinaTB.Size = new System.Drawing.Size(147, 23);
             this.stawkaGodzinaTB.TabIndex = 43;
+            this.stawkaGodzinaTB.Validating += new System.ComponentModel.CancelEventHandler(this.stawkaGodzinaTB_Validating);
             // 
             // stawkaZaGodzine
             // 
@@ -1138,6 +1175,54 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.WalidacjaAdresEmailEP.ContainerControl = this;
             // 
+            // BankEP
+            // 
+            this.BankEP.ContainerControl = this;
+            // 
+            // NumerKontaEP
+            // 
+            this.NumerKontaEP.ContainerControl = this;
+            // 
+            // NfzEP
+            // 
+            this.NfzEP.ContainerControl = this;
+            // 
+            // UmowaEP
+            // 
+            this.UmowaEP.ContainerControl = this;
+            // 
+            // EtatEP
+            // 
+            this.EtatEP.ContainerControl = this;
+            // 
+            // UlgaPodatkowaEP
+            // 
+            this.UlgaPodatkowaEP.ContainerControl = this;
+            // 
+            // KosztUzyskaniaPrzychoduEP
+            // 
+            this.KosztUzyskaniaPrzychoduEP.ContainerControl = this;
+            // 
+            // DziałEP
+            // 
+            this.DziałEP.ContainerControl = this;
+            // 
+            // StanowiskoEP
+            // 
+            this.StanowiskoEP.ContainerControl = this;
+            // 
+            // StawkaGodzinowaEP
+            // 
+            this.StawkaGodzinowaEP.ContainerControl = this;
+            // 
+            // DataZatrudnieniaEP
+            // 
+            this.DataZatrudnieniaEP.ContainerControl = this;
+            // 
+            // DziennyCzasPracyEP
+            // 
+            this.DziennyCzasPracyEP.ContainerControl = this;
+            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1188,6 +1273,18 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             ((System.ComponentModel.ISupportInitialize)(this.numertelefonuEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumertelefonuNaglyWypadekEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalidacjaAdresEmailEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BankEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumerKontaEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NfzEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UmowaEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EtatEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UlgaPodatkowaEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KosztUzyskaniaPrzychoduEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DziałEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StanowiskoEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StawkaGodzinowaEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataZatrudnieniaEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DziennyCzasPracyEP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1303,5 +1400,17 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.ErrorProvider numertelefonuEP;
         private System.Windows.Forms.ErrorProvider NumertelefonuNaglyWypadekEP;
         private System.Windows.Forms.ErrorProvider WalidacjaAdresEmailEP;
+        private System.Windows.Forms.ErrorProvider BankEP;
+        private System.Windows.Forms.ErrorProvider NumerKontaEP;
+        private System.Windows.Forms.ErrorProvider NfzEP;
+        private System.Windows.Forms.ErrorProvider UmowaEP;
+        private System.Windows.Forms.ErrorProvider EtatEP;
+        private System.Windows.Forms.ErrorProvider UlgaPodatkowaEP;
+        private System.Windows.Forms.ErrorProvider KosztUzyskaniaPrzychoduEP;
+        private System.Windows.Forms.ErrorProvider DziałEP;
+        private System.Windows.Forms.ErrorProvider StanowiskoEP;
+        private System.Windows.Forms.ErrorProvider StawkaGodzinowaEP;
+        private System.Windows.Forms.ErrorProvider DataZatrudnieniaEP;
+        private System.Windows.Forms.ErrorProvider DziennyCzasPracyEP;
     }
 }
