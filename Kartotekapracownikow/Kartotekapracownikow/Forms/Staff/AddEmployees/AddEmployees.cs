@@ -834,5 +834,193 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
+
+        private void bankTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(bankTB.Text))
+            {
+                e.Cancel = true;
+                bankTB.Focus();
+                BankEP.SetError(doKogoNaglyWypadekTB, "Proszę wprowadzić imię osoby upoważnionej");
+
+            }
+            else
+            {
+                e.Cancel = false;
+                BankEP.SetError(doKogoNaglyWypadekTB, null);
+            }
+        }
+
+        private void numerKontaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(numerKontaTB.Text))
+            {
+                e.Cancel = true;
+                numerKontaTB.Focus();
+                NumerKontaEP.SetError(doKogoNaglyWypadekTB, "Proszę wprowadzić numer konta");
+
+            }
+            else
+            {
+                e.Cancel = false;
+                NumerKontaEP.SetError(doKogoNaglyWypadekTB, null);
+            }
+        }
+
+        private void numerKontaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void nfzTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nfzTB.Text))
+            {
+                e.Cancel = true;
+                nfzTB.Focus();
+                NfzEP.SetError(nfzTB, "Proszę wprowadzić nazwę odziału NFZ");
+
+            }
+            else
+            {
+                e.Cancel = false;
+                NfzEP.SetError(nfzTB, null);
+            }
+        }
+
+        private void daneUmowaCB_Validating(object sender, CancelEventArgs e)
+        {
+            if(daneUmowaCB.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                daneUmowaCB.Focus();
+                UmowaEP.SetError(daneUmowaCB, "Proszę wybrać umowę");
+            }
+            else
+            {
+                e.Cancel = false;
+                UmowaEP.SetError(daneUmowaCB, null);
+            }
+        }
+
+        private void daneEtatCB_Validating(object sender, CancelEventArgs e)
+        {
+            if (daneEtatCB.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                daneEtatCB.Focus();
+                EtatEP.SetError(daneEtatCB, "Proszę wybrać etat");
+            }
+            else
+            {
+                e.Cancel = false;
+                EtatEP.SetError(daneEtatCB, null);
+            }
+        }
+
+        private void ulgaPodatkowaCB_Validating(object sender, CancelEventArgs e)
+        {
+            if (ulgaPodatkowaCB.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                ulgaPodatkowaCB.Focus();
+                UlgaPodatkowaEP.SetError(ulgaPodatkowaCB, "Proszę wybrać ulgę podatkową");
+            }
+            else
+            {
+                e.Cancel = false;
+                UlgaPodatkowaEP.SetError(ulgaPodatkowaCB, null);
+            }
+        }
+
+        private void kosztyUzyskaniaPrzychoduCB_Validating(object sender, CancelEventArgs e)
+        {
+            if (kosztyUzyskaniaPrzychoduCB.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                kosztyUzyskaniaPrzychoduCB.Focus();
+                KosztUzyskaniaPrzychoduEP.SetError(kosztyUzyskaniaPrzychoduCB, "Proszę podać koszt uzyskania przychodu");
+            }
+            else
+            {
+                e.Cancel = false;
+                KosztUzyskaniaPrzychoduEP.SetError(kosztyUzyskaniaPrzychoduCB, null);
+            }
+        }
+
+        private void dzialCB_Validating(object sender, CancelEventArgs e)
+        {
+            if (dzialCB.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                dzialCB.Focus();
+                DziałEP.SetError(dzialCB, "Proszę wybrać dział");
+            }
+            else
+            {
+                e.Cancel = false;
+                DziałEP.SetError(dzialCB, null);
+            }
+        }
+
+        private void stanowiskoCB_Validating(object sender, CancelEventArgs e)
+        {
+            if (stanowiskoCB.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                stanowiskoCB.Focus();
+                StanowiskoEP.SetError(stanowiskoCB, "Proszę wybrać stanowisko");
+            }
+            else
+            {
+                e.Cancel = false;
+                StanowiskoEP.SetError(stanowiskoCB, null);
+            }
+        }
+
+        private void stawkaGodzinaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(stawkaGodzinaTB.Text))
+            {
+                e.Cancel = true;
+                stawkaGodzinaTB.Focus();
+                StawkaGodzinowaEP.SetError(stanowiskoCB, "Proszę wybrać stawkę za godzinę");
+            }
+            else
+            {
+                e.Cancel = false;
+                StawkaGodzinowaEP.SetError(stanowiskoCB, null);
+            }
+        }
+
+        private void dataZatrudnieniaDTP_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(dataZatrudnieniaDTP.Value.ToString()))
+            {
+                e.Cancel = true;
+                dataZatrudnieniaDTP.Focus();
+                DataZatrudnieniaEP.SetError(dataZatrudnieniaDTP, "Proszę wprowadzić datę zatrudnienia");
+            }
+            else
+            {
+                e.Cancel = false;
+                DataZatrudnieniaEP.SetError(dataZatrudnieniaDTP, null);
+            }
+        }
+
+        private void dziennyCzasPracyCB_Validating(object sender, CancelEventArgs e)
+        {
+            if (dziennyCzasPracyCB.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                dziennyCzasPracyCB.Focus();
+                DziennyCzasPracyEP.SetError(dziennyCzasPracyCB, "Proszę wpisać dzienny czas pracy");
+            }
+            else
+            {
+                e.Cancel = false;
+                DziennyCzasPracyEP.SetError(dziennyCzasPracyCB, null);
+            }
+        }
     }
 }
