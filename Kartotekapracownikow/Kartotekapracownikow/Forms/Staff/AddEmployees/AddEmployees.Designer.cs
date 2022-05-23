@@ -252,7 +252,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.plecCB.FormattingEnabled = true;
             this.plecCB.Items.AddRange(new object[] {
             "Kobieta",
-            "Mężczyzna"});
+            "Mężczyzna",
+            "Nie chcę podawać"});
             this.plecCB.Location = new System.Drawing.Point(126, 113);
             this.plecCB.Name = "plecCB";
             this.plecCB.Size = new System.Drawing.Size(147, 23);
@@ -454,7 +455,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneEtatCB.Items.AddRange(new object[] {
             "Pełny etat",
             "Połowa etatu"});
-            this.daneEtatCB.Location = new System.Drawing.Point(103, 146);
+            this.daneEtatCB.Location = new System.Drawing.Point(127, 146);
             this.daneEtatCB.Name = "daneEtatCB";
             this.daneEtatCB.Size = new System.Drawing.Size(147, 23);
             this.daneEtatCB.TabIndex = 49;
@@ -468,7 +469,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             "Umowa o dzieło",
             "Umowa o pracę",
             "Umowa B2B (business-to-business)"});
-            this.daneUmowaCB.Location = new System.Drawing.Point(103, 115);
+            this.daneUmowaCB.Location = new System.Drawing.Point(127, 115);
             this.daneUmowaCB.Name = "daneUmowaCB";
             this.daneUmowaCB.Size = new System.Drawing.Size(147, 23);
             this.daneUmowaCB.TabIndex = 48;
@@ -516,7 +517,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // nfzTB
             // 
-            this.nfzTB.Location = new System.Drawing.Point(103, 87);
+            this.nfzTB.Location = new System.Drawing.Point(127, 87);
             this.nfzTB.Name = "nfzTB";
             this.nfzTB.Size = new System.Drawing.Size(147, 23);
             this.nfzTB.TabIndex = 42;
@@ -533,7 +534,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // numerKontaTB
             // 
-            this.numerKontaTB.Location = new System.Drawing.Point(103, 58);
+            this.numerKontaTB.Location = new System.Drawing.Point(127, 58);
             this.numerKontaTB.Name = "numerKontaTB";
             this.numerKontaTB.Size = new System.Drawing.Size(147, 23);
             this.numerKontaTB.TabIndex = 38;
@@ -551,7 +552,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // bankTB
             // 
-            this.bankTB.Location = new System.Drawing.Point(103, 26);
+            this.bankTB.Location = new System.Drawing.Point(127, 26);
             this.bankTB.Name = "bankTB";
             this.bankTB.Size = new System.Drawing.Size(147, 23);
             this.bankTB.TabIndex = 36;
