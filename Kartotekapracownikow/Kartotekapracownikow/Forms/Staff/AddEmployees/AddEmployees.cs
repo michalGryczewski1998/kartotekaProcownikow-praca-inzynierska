@@ -559,7 +559,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void krajTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
         private void wojewodztwoTB_Validating(object sender, CancelEventArgs e)
@@ -579,7 +579,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void wojewodztwoTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
         private void gminaTB_Validating(object sender, CancelEventArgs e)
@@ -599,7 +599,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void gminaTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
         private void kodTB_Validating(object sender, CancelEventArgs e)
@@ -653,7 +653,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void miejscowoscTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
         private void ulicaTB_Validating(object sender, CancelEventArgs e)
@@ -673,7 +673,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void ulicaTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
         private void numerDomuTB_Validating(object sender, CancelEventArgs e)
@@ -729,7 +729,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void pocztaTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
         private void numertelefonuPracownika_Validating(object sender, CancelEventArgs e)
@@ -841,13 +841,13 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             {
                 e.Cancel = true;
                 bankTB.Focus();
-                BankEP.SetError(doKogoNaglyWypadekTB, "Proszę wprowadzić imię osoby upoważnionej");
+                BankEP.SetError(bankTB, "Proszę wprowadzić nazwę banku");
 
             }
             else
             {
                 e.Cancel = false;
-                BankEP.SetError(doKogoNaglyWypadekTB, null);
+                BankEP.SetError(bankTB, null);
             }
         }
 
@@ -984,12 +984,12 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             {
                 e.Cancel = true;
                 stawkaGodzinaTB.Focus();
-                StawkaGodzinowaEP.SetError(stanowiskoCB, "Proszę wybrać stawkę za godzinę");
+                StawkaGodzinowaEP.SetError(stawkaGodzinaTB, "Proszę wybrać stawkę za godzinę");
             }
             else
             {
                 e.Cancel = false;
-                StawkaGodzinowaEP.SetError(stanowiskoCB, null);
+                StawkaGodzinowaEP.SetError(stawkaGodzinaTB, null);
             }
         }
 
