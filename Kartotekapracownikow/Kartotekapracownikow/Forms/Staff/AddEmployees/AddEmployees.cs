@@ -61,86 +61,94 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void dodajPracownikaBTN_Click(object sender, EventArgs e)
         {
-            try
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                string Plec = plecCB.SelectedItem.ToString();
-                string UlgaPodatkowa = ulgaPodatkowaCB.SelectedItem.ToString();
-                string KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedItem.ToString();
-                string Stanowisko = stanowiskoCB.SelectedItem.ToString();
-                string PESEL = peselTB.Text;
-                string DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString();
-                string Umowa = daneUmowaCB.SelectedItem.ToString();
-                string Etat = daneEtatCB.SelectedItem.ToString();
-                string imie = imiePracownikaTB.Text;
-                string nazwisko = Nazwisko.Text;
-                string ZdjeciePracownika = base64ConvertImageEmployee;
-                DateTime DataUrodzenia = dataUrodzinDTP.Value;
-                string NumerTelefonu = numertelefonuPracownikaTB.Text;
-                string AdresEmail = adresEmailPracownika.Text;
-                string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
-                string ImieMatki = imieMatkiTB.Text;
-                string ImieOjca = imieOjcaTB.Text;
-                string NIP = nipTB.Text;
-                string Kraj = krajTB.Text;
-                string Wojewodztwo = wojewodztwoTB.Text;
-                string Gmina = gminaTB.Text;
-                string KodZamieszkania = kodTB.Text;
-                string Miejscowosc = miejscowoscTB.Text;
-                string Ulica = ulicaTB.Text;
-                string NumerDomu = numerDomuTB.Text;
-                string NumerLokalu = numerLokaluTB.Text;
-                string Poczta = pocztaTB.Text;
-                string DoKogoWNaglymWypadku = doKogoNaglyWypadekTB.Text;
-                string NumerNagleWypadki = NumerTelefonuNaglyWypadekTB.Text;
-                string NumerKonta = numerKontaTB.Text;
-                string Bank = bankTB.Text;
-                string NFZ = nfzTB.Text;
-                string Dzial = dzial.Text;
-                string StawkaGodzinowa = stawkaGodzinaTB.Text;
-                DateTime DataRozpoczeciaPracy = dataZatrudnieniaDTP.Value;
+                try
+                {
+                    string Plec = plecCB.SelectedItem.ToString();
+                    string UlgaPodatkowa = ulgaPodatkowaCB.SelectedItem.ToString();
+                    string KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedItem.ToString();
+                    string Stanowisko = stanowiskoCB.SelectedItem.ToString();
+                    string PESEL = peselTB.Text;
+                    string DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString();
+                    string Umowa = daneUmowaCB.SelectedItem.ToString();
+                    string Etat = daneEtatCB.SelectedItem.ToString();
+                    string imie = imiePracownikaTB.Text;
+                    string nazwisko = Nazwisko.Text;
+                    string ZdjeciePracownika = base64ConvertImageEmployee;
+                    DateTime DataUrodzenia = dataUrodzinDTP.Value;
+                    string NumerTelefonu = numertelefonuPracownikaTB.Text;
+                    string AdresEmail = adresEmailPracownika.Text;
+                    string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
+                    string ImieMatki = imieMatkiTB.Text;
+                    string ImieOjca = imieOjcaTB.Text;
+                    string NIP = nipTB.Text;
+                    string Kraj = krajTB.Text;
+                    string Wojewodztwo = wojewodztwoTB.Text;
+                    string Gmina = gminaTB.Text;
+                    string KodZamieszkania = kodTB.Text;
+                    string Miejscowosc = miejscowoscTB.Text;
+                    string Ulica = ulicaTB.Text;
+                    string NumerDomu = numerDomuTB.Text;
+                    string NumerLokalu = numerLokaluTB.Text;
+                    string Poczta = pocztaTB.Text;
+                    string DoKogoWNaglymWypadku = doKogoNaglyWypadekTB.Text;
+                    string NumerNagleWypadki = NumerTelefonuNaglyWypadekTB.Text;
+                    string NumerKonta = numerKontaTB.Text;
+                    string Bank = bankTB.Text;
+                    string NFZ = nfzTB.Text;
+                    string Dzial = dzial.Text;
+                    string StawkaGodzinowa = stawkaGodzinaTB.Text;
+                    DateTime DataRozpoczeciaPracy = dataZatrudnieniaDTP.Value;
 
-                _ = InsertData(
-                     imie,
-                     nazwisko,
-                     ZdjeciePracownika,
-                     DataUrodzenia,
-                     NumerTelefonu,
-                     AdresEmail,
-                     MiejsceUrodzenia,
-                     Plec,
-                     ImieMatki,
-                     ImieOjca,
-                     PESEL,
-                     NIP,
-                     Kraj,
-                     Wojewodztwo,
-                     Gmina,
-                     KodZamieszkania,
-                     Miejscowosc,
-                     Ulica,
-                     NumerDomu,
-                     NumerLokalu,
-                     Poczta,
-                     DoKogoWNaglymWypadku,
-                     NumerNagleWypadki,
-                     NumerKonta,
-                     Umowa,
-                     Etat,
-                     Bank,
-                     NFZ,
-                     UlgaPodatkowa,
-                     KosztUzyskaniaPrzychodu,
-                     Dzial,
-                     Stanowisko,
-                     StawkaGodzinowa,
-                     DataRozpoczeciaPracy,
-                     DziennyCzasPracy
-                    );
+                    _ = InsertData(
+                         imie,
+                         nazwisko,
+                         ZdjeciePracownika,
+                         DataUrodzenia,
+                         NumerTelefonu,
+                         AdresEmail,
+                         MiejsceUrodzenia,
+                         Plec,
+                         ImieMatki,
+                         ImieOjca,
+                         PESEL,
+                         NIP,
+                         Kraj,
+                         Wojewodztwo,
+                         Gmina,
+                         KodZamieszkania,
+                         Miejscowosc,
+                         Ulica,
+                         NumerDomu,
+                         NumerLokalu,
+                         Poczta,
+                         DoKogoWNaglymWypadku,
+                         NumerNagleWypadki,
+                         NumerKonta,
+                         Umowa,
+                         Etat,
+                         Bank,
+                         NFZ,
+                         UlgaPodatkowa,
+                         KosztUzyskaniaPrzychodu,
+                         Dzial,
+                         Stanowisko,
+                         StawkaGodzinowa,
+                         DataRozpoczeciaPracy,
+                         DziennyCzasPracy
+                        );
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Proszę ponowić próbę.");
+                }
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Proszę ponowić próbę.");
+                MessageBox.Show($"Proszę wypełnić wszystkie pola");
             }
+    
         }
 
         private void anulujBTN_Click(object sender, EventArgs e)
@@ -161,6 +169,11 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private void dataUrodzinDTP_ValueChanged(object sender, EventArgs e)
         {
             dataUrodzinDTP.Format = DateTimePickerFormat.Short;
+        }
+
+        private void dataZatrudnieniaDTP_ValueChanged(object sender, EventArgs e)
+        {
+            dataZatrudnieniaDTP.Format = DateTimePickerFormat.Short;
         }
         private void zdjecieBTN_Click_1(object sender, EventArgs e)
         {
@@ -857,14 +870,50 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             {
                 e.Cancel = true;
                 numerKontaTB.Focus();
-                NumerKontaEP.SetError(doKogoNaglyWypadekTB, "Proszę wprowadzić numer konta");
+                NumerKontaEP.SetError(numerKontaTB, "Proszę wprowadzić numer konta");
 
             }
             else
             {
-                e.Cancel = false;
-                NumerKontaEP.SetError(doKogoNaglyWypadekTB, null);
+                string pomoc = numerKontaTB.Text;
+                if (pomoc.Length != 26 && pomoc.Length != 32)
+                {
+                    e.Cancel = true;
+                    numerKontaTB.Focus();
+                    NumerKontaEP.SetError(numerKontaTB, "Proszę wprowadzić poprawny numer konta, składający się z 26 cyfr bez spacji");
+                }
+                else
+                {
+                    const int countryCode = 2521;
+                    string checkSum = pomoc.Substring(0, 2);
+                    string accountNumber = pomoc.Substring(2);
+                    string reversedDigits = accountNumber + countryCode + checkSum;
+                    if (ModString(reversedDigits, 97) == 1)
+                    {
+                        //57188010225878527221405455 - testowy numer konta
+                        e.Cancel = false;
+                        NumerKontaEP.SetError(numerKontaTB, null);
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                        numerKontaTB.Focus();
+                        NumerKontaEP.SetError(numerKontaTB, "Błędny numer konta");
+                    }
+                }
+
             }
+        }
+
+        private static int ModString(string x, int y)
+        {
+            if (string.IsNullOrEmpty(x))
+            {
+                return 0;
+            }
+            string firstDigit = x.Substring(0, x.Length - 1);
+            int lastDigit = int.Parse(x.Substring(x.Length - 1));
+            return (ModString(firstDigit, y) * 10 + lastDigit) % y;
         }
 
         private void numerKontaTB_KeyPress(object sender, KeyPressEventArgs e)
