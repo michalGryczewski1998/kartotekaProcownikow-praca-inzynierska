@@ -952,6 +952,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.dataZatrudnieniaDTP.Name = "dataZatrudnieniaDTP";
             this.dataZatrudnieniaDTP.Size = new System.Drawing.Size(147, 23);
             this.dataZatrudnieniaDTP.TabIndex = 47;
+            this.dataZatrudnieniaDTP.ValueChanged += new System.EventHandler(this.dataZatrudnieniaDTP_ValueChanged);
             this.dataZatrudnieniaDTP.Validating += new System.ComponentModel.CancelEventHandler(this.dataZatrudnieniaDTP_Validating);
             // 
             // label1
