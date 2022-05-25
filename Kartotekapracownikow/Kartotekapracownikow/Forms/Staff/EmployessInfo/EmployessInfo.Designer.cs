@@ -127,7 +127,14 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.peselEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.walidajcaNipEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.krajEP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.wojewodztwoEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.gminaEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.kodEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.miejscowoscEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ulicaEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.numerDomuEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.numerLokaluEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pocztaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -149,7 +156,14 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             ((System.ComponentModel.ISupportInitialize)(this.peselEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walidajcaNipEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.krajEP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wojewodztwoEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gminaEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kodEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.miejscowoscEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ulicaEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerDomuEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerLokaluEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocztaEP)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -216,9 +230,9 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox7.Controls.Add(this.nipTB);
             this.groupBox7.Controls.Add(this.peselLabel);
             this.groupBox7.Controls.Add(this.nipLabel);
-            this.groupBox7.Location = new System.Drawing.Point(304, 16);
+            this.groupBox7.Location = new System.Drawing.Point(291, 16);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(313, 102);
+            this.groupBox7.Size = new System.Drawing.Size(326, 102);
             this.groupBox7.TabIndex = 48;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Identyfikator";
@@ -363,6 +377,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.pocztaTB.Name = "pocztaTB";
             this.pocztaTB.Size = new System.Drawing.Size(147, 23);
             this.pocztaTB.TabIndex = 61;
+            this.pocztaTB.Validating += new System.ComponentModel.CancelEventHandler(this.pocztaTB_Validating);
             // 
             // pocztaLabel
             // 
@@ -388,6 +403,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.numerLokaluTB.Name = "numerLokaluTB";
             this.numerLokaluTB.Size = new System.Drawing.Size(147, 23);
             this.numerLokaluTB.TabIndex = 58;
+            this.numerLokaluTB.Validating += new System.ComponentModel.CancelEventHandler(this.numerLokaluTB_Validating);
             // 
             // numerDomuTB
             // 
@@ -395,6 +411,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.numerDomuTB.Name = "numerDomuTB";
             this.numerDomuTB.Size = new System.Drawing.Size(147, 23);
             this.numerDomuTB.TabIndex = 57;
+            this.numerDomuTB.Validating += new System.ComponentModel.CancelEventHandler(this.numerDomuTB_Validating);
             // 
             // numerDomuLabel
             // 
@@ -411,6 +428,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.ulicaTB.Name = "ulicaTB";
             this.ulicaTB.Size = new System.Drawing.Size(147, 23);
             this.ulicaTB.TabIndex = 55;
+            this.ulicaTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ulicaTB_KeyPress);
+            this.ulicaTB.Validating += new System.ComponentModel.CancelEventHandler(this.ulicaTB_Validating);
             // 
             // ulicaLabel
             // 
@@ -446,6 +465,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.miejscowoscTB.Name = "miejscowoscTB";
             this.miejscowoscTB.Size = new System.Drawing.Size(147, 23);
             this.miejscowoscTB.TabIndex = 45;
+            this.miejscowoscTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.miejscowoscTB_KeyPress);
+            this.miejscowoscTB.Validating += new System.ComponentModel.CancelEventHandler(this.miejscowoscTB_Validating);
             // 
             // miejscowoscLabel
             // 
@@ -462,6 +483,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.kodTB.Name = "kodTB";
             this.kodTB.Size = new System.Drawing.Size(147, 23);
             this.kodTB.TabIndex = 43;
+            this.kodTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kodTB_KeyPress);
+            this.kodTB.Validating += new System.ComponentModel.CancelEventHandler(this.kodTB_Validating);
             // 
             // kodLabel
             // 
@@ -478,6 +501,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.gminaTB.Name = "gminaTB";
             this.gminaTB.Size = new System.Drawing.Size(147, 23);
             this.gminaTB.TabIndex = 41;
+            this.gminaTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gminaTB_KeyPress);
+            this.gminaTB.Validating += new System.ComponentModel.CancelEventHandler(this.gminaTB_Validating);
             // 
             // gminaLabel
             // 
@@ -494,6 +519,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.wojewodztwoTB.Name = "wojewodztwoTB";
             this.wojewodztwoTB.Size = new System.Drawing.Size(147, 23);
             this.wojewodztwoTB.TabIndex = 39;
+            this.wojewodztwoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wojewodztwoTB_KeyPress);
+            this.wojewodztwoTB.Validating += new System.ComponentModel.CancelEventHandler(this.wojewodztwoTB_Validating);
             // 
             // wojewodztwoLabel
             // 
@@ -1004,9 +1031,37 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             this.krajEP.ContainerControl = this;
             // 
-            // errorProvider1
+            // wojewodztwoEP
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.wojewodztwoEP.ContainerControl = this;
+            // 
+            // gminaEP
+            // 
+            this.gminaEP.ContainerControl = this;
+            // 
+            // kodEP
+            // 
+            this.kodEP.ContainerControl = this;
+            // 
+            // miejscowoscEP
+            // 
+            this.miejscowoscEP.ContainerControl = this;
+            // 
+            // ulicaEP
+            // 
+            this.ulicaEP.ContainerControl = this;
+            // 
+            // numerDomuEP
+            // 
+            this.numerDomuEP.ContainerControl = this;
+            // 
+            // numerLokaluEP
+            // 
+            this.numerLokaluEP.ContainerControl = this;
+            // 
+            // pocztaEP
+            // 
+            this.pocztaEP.ContainerControl = this;
             // 
             // EmployessInfo
             // 
@@ -1048,7 +1103,14 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             ((System.ComponentModel.ISupportInitialize)(this.peselEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.walidajcaNipEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.krajEP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wojewodztwoEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gminaEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kodEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.miejscowoscEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ulicaEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerDomuEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerLokaluEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pocztaEP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1152,6 +1214,13 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.ErrorProvider peselEP;
         private System.Windows.Forms.ErrorProvider walidajcaNipEP;
         private System.Windows.Forms.ErrorProvider krajEP;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider wojewodztwoEP;
+        private System.Windows.Forms.ErrorProvider gminaEP;
+        private System.Windows.Forms.ErrorProvider kodEP;
+        private System.Windows.Forms.ErrorProvider miejscowoscEP;
+        private System.Windows.Forms.ErrorProvider ulicaEP;
+        private System.Windows.Forms.ErrorProvider numerDomuEP;
+        private System.Windows.Forms.ErrorProvider numerLokaluEP;
+        private System.Windows.Forms.ErrorProvider pocztaEP;
     }
 }
