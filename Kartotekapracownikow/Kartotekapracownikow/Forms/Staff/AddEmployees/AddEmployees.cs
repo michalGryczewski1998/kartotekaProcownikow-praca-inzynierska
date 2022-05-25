@@ -19,7 +19,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private static AddEmployees _instance = null;
         string scierzkaZdjeciePracownika;
         static string base64ConvertImageEmployee = "";
-        bool peselError;
 
         public static AddEmployees Instance
         {
@@ -146,7 +145,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             }
             else
             {
-                MessageBox.Show($"Proszę wypełnić wszystkie pola");
+                this.ActiveControl = null;
+                MessageBox.Show($"Proszę wypełnić wszystkie pola, zaczynając od zdjęcia pracownika.");
             }
     
         }
@@ -530,7 +530,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             if (string.IsNullOrWhiteSpace(dataUrodzinDTP.Value.ToString()))
             {
                 e.Cancel = true;
-                plecCB.Focus();
+                dataUrodzinDTP.Focus();
                 dataUrodzeniaEP.SetError(dataUrodzinDTP, "Proszę wprowadzić datę urodzin");
             }
             else
