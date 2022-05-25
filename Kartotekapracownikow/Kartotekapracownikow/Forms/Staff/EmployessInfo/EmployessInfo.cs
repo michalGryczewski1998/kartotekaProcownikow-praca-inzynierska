@@ -85,7 +85,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     zdjeciePracownikaPB.Image = Image.FromStream(pomocZdjecie, true);
                     imiePracownikaTB.Text = query.Imie.ToString();
                     nazwiskoPracownikaTB.Text = query.Nazwisko.ToString();
-                    dataUrodzeniaTB.Text = query.DataUrodzenia.ToString();
+                    DataUrodzinDTP.Value = query.DataUrodzenia;
                     numertelefonuPracownika.Text = query.NumerTelefonu.ToString();
                     adresEmailPracownika.Text = query.AdresEmail.ToString();
                     miejsceUrodzeniaTB.Text = query.MiejsceUrodzenia.ToString();
@@ -115,8 +115,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     kosztUzyskaniaPrzychoduTB.Text = queryZatrudnienie.KosztUzyskaniaPrzychodu.ToString();
                     dzialTB.Text = queryZatrudnienie.Dzial.ToString();
                     stanowiskoTB.Text = queryZatrudnienie.Stanowisko.ToString();
-                    stawkaGodzinaTB.Text = queryZatrudnienie.StawkaGodzinowa.ToString();
-                    dataRozpoczęciaPracyTB.Text = queryZatrudnienie.DataRozpoczeciaPracy.ToString();
+                    stawkaGodzinowaTB.Text = queryZatrudnienie.StawkaGodzinowa.ToString();
+                    dataPracaDTP.Value = queryZatrudnienie.DataRozpoczeciaPracy;
                     dziennyCzasPracyTB.Text = queryZatrudnienie.DziennyCzasPracy.ToString();
 
                     IloscPrzepracowanychDni();
@@ -235,7 +235,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                 string kosztUzyskPrzy = kosztUzyskaniaPrzychoduTB.Text;
                 string dzial = dzialTB.Text;
                 string stanowisko = stanowiskoTB.Text;
-                string stawkaGodz = stawkaGodzinaTB.Text;
+                string stawkaGodz = stawkaGodzinowaTB.Text;
                 string dziennyCzasPracy = dziennyCzasPracyTB.Text;
 
                 using (var db = new Database())
@@ -353,6 +353,276 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         {
             //odswierzenie strony
             _ = DanePracownika(danePracownikaID);
+        }
+
+        private void dataRozpoczęciaPracyTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imiePracownikaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(imiePracownikaTB.Text))
+            {
+                e.Cancel = true;
+                imiePracownikaTB.Focus();
+                imieEP.SetError(imiePracownikaTB, "Proszę wpisać imię pracownika");
+            }
+            else
+            {
+                e.Cancel = false;
+                imieEP.SetError(imiePracownikaTB, null);
+            }
+        }
+
+        private void imiePracownikaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void nazwiskoPracownikaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nazwiskoPracownikaTB.Text))
+            {
+                e.Cancel = true;
+                nazwiskoPracownikaTB.Focus();
+                nazwiskoEP.SetError(nazwiskoPracownikaTB, "Proszę wpisać nazwisko pracownika");
+            }
+            else
+            {
+                e.Cancel = false;
+                nazwiskoEP.SetError(nazwiskoPracownikaTB, null);
+            }
+        }
+
+        private void nazwiskoPracownikaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void imieMatkiTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(imieMatkiTB.Text))
+            {
+                e.Cancel = true;
+                imieMatkiTB.Focus();
+                imieMatkiEP.SetError(imieMatkiTB, "Proszę wpisać imię matki");
+            }
+            else
+            {
+                e.Cancel = false;
+                imieMatkiEP.SetError(imieMatkiTB, null);
+            }
+        }
+
+        private void imieMatkiTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void imieOjcaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(imieOjcaTB.Text))
+            {
+                e.Cancel = true;
+                imieOjcaTB.Focus();
+                imieOjcaEP.SetError(imieOjcaTB, "Proszę wpisać imię ojca");
+            }
+            else
+            {
+                e.Cancel = false;
+                imieOjcaEP.SetError(imieOjcaTB, null);
+            }
+        }
+
+        private void imieOjcaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void miejsceUrodzeniaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(miejsceUrodzeniaTB.Text))
+            {
+                e.Cancel = true;
+                miejsceUrodzeniaTB.Focus();
+                miejsceUrodzeniaEP.SetError(miejsceUrodzeniaTB, "Proszę wpisać miejsce urodzenia");
+            }
+            else
+            {
+                e.Cancel = false;
+                miejsceUrodzeniaEP.SetError(miejsceUrodzeniaTB, null);
+            }
+        }
+        private void miejsceUrodzeniaTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+
+        }
+        private void DataUrodzinDTP_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(DataUrodzinDTP.Value.ToString()))
+            {
+                e.Cancel = true;
+                DataUrodzinDTP.Focus();
+                dataUrodzeniaEP.SetError(DataUrodzinDTP, "Proszę wprowadzić datę urodzin");
+            }
+            else
+            {
+                e.Cancel = false;
+                dataUrodzeniaEP.SetError(DataUrodzinDTP, null);
+            }
+        }
+
+        private void plecTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(plecTB.Text))
+            {
+                e.Cancel = true;
+                plecTB.Focus();
+                plecEP.SetError(plecTB, "Proszę wpisać płeć");
+            }
+            else
+            {
+                e.Cancel = false;
+                plecEP.SetError(plecTB, null);
+            }
+        }
+
+        private void plecTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void peselTB_Validating(object sender, CancelEventArgs e)
+        {
+            string peselPomoc = peselTB.Text;
+            int[] peselWagi = new int[] { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+            bool poprawnosc;
+            e.Cancel = false;
+
+            try
+            {
+                if (peselPomoc.Length == 11)
+                {
+                    int controlSum = ObliczSumeKontrolna(peselPomoc, peselWagi);
+                    int controlNum = controlSum % 10;
+                    controlNum = 10 - controlNum;
+                    if (controlNum == 10)
+                    {
+                        controlNum = 0;
+                    }
+                    int lastDigit = int.Parse(peselPomoc[peselPomoc.Length - 1].ToString());
+                    poprawnosc = controlNum == lastDigit;
+
+                    if (poprawnosc == false)
+                    {
+                        e.Cancel = true;
+                        peselTB.Focus();
+                        peselEP.SetError(peselTB, "PESEL jest błędny");
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        peselEP.SetError(peselTB, null);
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                    peselTB.Focus();
+                    peselEP.SetError(peselTB, "PESEL zbyt krótki");
+                }
+            }
+            catch (ArgumentOutOfRangeException argumentOutOfRangeException)
+            {
+                MessageBox.Show($"Błędny numer PESEL: {argumentOutOfRangeException.Message}");
+            }
+        }
+
+        private void peselTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void nipTB_Validating(object sender, CancelEventArgs e)
+        {
+            string nipPomoc = nipTB.Text;
+
+            int[] weights = { 6, 5, 7, 2, 3, 4, 5, 6, 7 };
+            bool poprawnosc = false;
+
+            try
+            {
+                if (nipPomoc.Length == 10)
+                {
+                    int controlSum = ObliczSumeKontrolna(nipPomoc, weights);
+                    int controlNum = controlSum % 11;
+                    if (controlNum == 10)
+                    {
+
+                    }
+                    int lastDigit = Convert.ToInt32(nipPomoc[nipPomoc.Length - 1].ToString());
+                    poprawnosc = controlNum == lastDigit;
+
+                    if (poprawnosc == false)
+                    {
+                        e.Cancel = true;
+                        peselTB.Focus();
+                        walidajcaNipEP.SetError(nipTB, "NIP jest błędny");
+                    }
+                    else
+                    {
+                        e.Cancel = false;
+                        walidajcaNipEP.SetError(nipTB, null);
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                    nipTB.Focus();
+                    walidajcaNipEP.SetError(nipTB, "NIP zbyt krótki");
+                }
+            }
+            catch (ArgumentOutOfRangeException argumentOutOfRangeException)
+            {
+                MessageBox.Show($"Błędny numer NIP: {argumentOutOfRangeException.Message}");
+            }
+        }
+
+        private void nipTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private static int ObliczSumeKontrolna(string pesel, int[] wagi, int offset = 0)
+        {
+            int suma = 0;
+            for (int i = 0; i < pesel.Length - 1; i++)
+            {
+                suma += wagi[i + offset] * int.Parse(pesel[i].ToString());
+            }
+            return suma;
+        }
+
+        private void krajTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(krajTB.Text))
+            {
+                e.Cancel = true;
+                krajTB.Focus();
+                krajEP.SetError(krajTB, "Proszę wpisać kraj");
+            }
+            else
+            {
+                e.Cancel = false;
+                krajEP.SetError(krajTB, null);
+            }
+        }
+
+        private void krajTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
