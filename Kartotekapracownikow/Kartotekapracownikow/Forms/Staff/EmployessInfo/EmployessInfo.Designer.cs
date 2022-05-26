@@ -40,11 +40,11 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.peselLabel = new System.Windows.Forms.Label();
             this.nipLabel = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.numerDo = new System.Windows.Forms.TextBox();
-            this.numerTelefonuNagleWypadki = new System.Windows.Forms.TextBox();
+            this.numerDoTB = new System.Windows.Forms.TextBox();
+            this.numerTelefonuNagleWypadkiTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.numertelefonuPracownika = new System.Windows.Forms.TextBox();
+            this.numertelefonuPracownikaTB = new System.Windows.Forms.TextBox();
             this.adresEmailPracownika = new System.Windows.Forms.TextBox();
             this.adresEmailLabel = new System.Windows.Forms.Label();
             this.numerTelefonuPracownikaLabel = new System.Windows.Forms.Label();
@@ -135,6 +135,10 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.numerDomuEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.numerLokaluEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.pocztaEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.numerTelefonuEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.adresEmailEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.telefonDoEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.numerZaufanejOsobyEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -164,6 +168,10 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             ((System.ComponentModel.ISupportInitialize)(this.numerDomuEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerLokaluEP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pocztaEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerTelefonuEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adresEmailEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telefonDoEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerZaufanejOsobyEP)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -275,11 +283,11 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.numerDo);
-            this.groupBox6.Controls.Add(this.numerTelefonuNagleWypadki);
+            this.groupBox6.Controls.Add(this.numerDoTB);
+            this.groupBox6.Controls.Add(this.numerTelefonuNagleWypadkiTB);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.numertelefonuPracownika);
+            this.groupBox6.Controls.Add(this.numertelefonuPracownikaTB);
             this.groupBox6.Controls.Add(this.adresEmailPracownika);
             this.groupBox6.Controls.Add(this.adresEmailLabel);
             this.groupBox6.Controls.Add(this.numerTelefonuPracownikaLabel);
@@ -290,19 +298,22 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Dane kontaktowe";
             // 
-            // numerDo
+            // numerDoTB
             // 
-            this.numerDo.Location = new System.Drawing.Point(104, 90);
-            this.numerDo.Name = "numerDo";
-            this.numerDo.Size = new System.Drawing.Size(147, 23);
-            this.numerDo.TabIndex = 46;
+            this.numerDoTB.Location = new System.Drawing.Point(104, 90);
+            this.numerDoTB.Name = "numerDoTB";
+            this.numerDoTB.Size = new System.Drawing.Size(147, 23);
+            this.numerDoTB.TabIndex = 46;
+            this.numerDoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numerDo_KeyPress);
+            this.numerDoTB.Validating += new System.ComponentModel.CancelEventHandler(this.numerDo_Validating);
             // 
-            // numerTelefonuNagleWypadki
+            // numerTelefonuNagleWypadkiTB
             // 
-            this.numerTelefonuNagleWypadki.Location = new System.Drawing.Point(104, 119);
-            this.numerTelefonuNagleWypadki.Name = "numerTelefonuNagleWypadki";
-            this.numerTelefonuNagleWypadki.Size = new System.Drawing.Size(147, 23);
-            this.numerTelefonuNagleWypadki.TabIndex = 47;
+            this.numerTelefonuNagleWypadkiTB.Location = new System.Drawing.Point(104, 119);
+            this.numerTelefonuNagleWypadkiTB.Name = "numerTelefonuNagleWypadkiTB";
+            this.numerTelefonuNagleWypadkiTB.Size = new System.Drawing.Size(147, 23);
+            this.numerTelefonuNagleWypadkiTB.TabIndex = 47;
+            this.numerTelefonuNagleWypadkiTB.Validating += new System.ComponentModel.CancelEventHandler(this.numerTelefonuNagleWypadki_Validating);
             // 
             // label6
             // 
@@ -322,12 +333,13 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.label7.TabIndex = 48;
             this.label7.Text = "Telefon do";
             // 
-            // numertelefonuPracownika
+            // numertelefonuPracownikaTB
             // 
-            this.numertelefonuPracownika.Location = new System.Drawing.Point(104, 29);
-            this.numertelefonuPracownika.Name = "numertelefonuPracownika";
-            this.numertelefonuPracownika.Size = new System.Drawing.Size(147, 23);
-            this.numertelefonuPracownika.TabIndex = 42;
+            this.numertelefonuPracownikaTB.Location = new System.Drawing.Point(104, 29);
+            this.numertelefonuPracownikaTB.Name = "numertelefonuPracownikaTB";
+            this.numertelefonuPracownikaTB.Size = new System.Drawing.Size(147, 23);
+            this.numertelefonuPracownikaTB.TabIndex = 42;
+            this.numertelefonuPracownikaTB.Validating += new System.ComponentModel.CancelEventHandler(this.numertelefonuPracownika_Validating);
             // 
             // adresEmailPracownika
             // 
@@ -335,6 +347,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.adresEmailPracownika.Name = "adresEmailPracownika";
             this.adresEmailPracownika.Size = new System.Drawing.Size(147, 23);
             this.adresEmailPracownika.TabIndex = 43;
+            this.adresEmailPracownika.Validating += new System.ComponentModel.CancelEventHandler(this.adresEmailPracownika_Validating);
             // 
             // adresEmailLabel
             // 
@@ -1063,6 +1076,22 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             this.pocztaEP.ContainerControl = this;
             // 
+            // numerTelefonuEP
+            // 
+            this.numerTelefonuEP.ContainerControl = this;
+            // 
+            // adresEmailEP
+            // 
+            this.adresEmailEP.ContainerControl = this;
+            // 
+            // telefonDoEP
+            // 
+            this.telefonDoEP.ContainerControl = this;
+            // 
+            // numerZaufanejOsobyEP
+            // 
+            this.numerZaufanejOsobyEP.ContainerControl = this;
+            // 
             // EmployessInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1111,6 +1140,10 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             ((System.ComponentModel.ISupportInitialize)(this.numerDomuEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numerLokaluEP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pocztaEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerTelefonuEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adresEmailEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telefonDoEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numerZaufanejOsobyEP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1151,7 +1184,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.Label adresEmailLabel;
         private System.Windows.Forms.Label numerTelefonuPracownikaLabel;
         private System.Windows.Forms.TextBox adresEmailPracownika;
-        private System.Windows.Forms.TextBox numertelefonuPracownika;
+        private System.Windows.Forms.TextBox numertelefonuPracownikaTB;
         private System.Windows.Forms.TextBox etatTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox umowaTB;
@@ -1183,8 +1216,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox numerDo;
-        private System.Windows.Forms.TextBox numerTelefonuNagleWypadki;
+        private System.Windows.Forms.TextBox numerDoTB;
+        private System.Windows.Forms.TextBox numerTelefonuNagleWypadkiTB;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -1222,5 +1255,9 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.ErrorProvider numerDomuEP;
         private System.Windows.Forms.ErrorProvider numerLokaluEP;
         private System.Windows.Forms.ErrorProvider pocztaEP;
+        private System.Windows.Forms.ErrorProvider numerTelefonuEP;
+        private System.Windows.Forms.ErrorProvider adresEmailEP;
+        private System.Windows.Forms.ErrorProvider telefonDoEP;
+        private System.Windows.Forms.ErrorProvider numerZaufanejOsobyEP;
     }
 }

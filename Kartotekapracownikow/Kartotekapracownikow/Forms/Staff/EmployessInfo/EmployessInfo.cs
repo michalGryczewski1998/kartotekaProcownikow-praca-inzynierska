@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 
 namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
 {
@@ -86,7 +88,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     imiePracownikaTB.Text = query.Imie.ToString();
                     nazwiskoPracownikaTB.Text = query.Nazwisko.ToString();
                     DataUrodzinDTP.Value = query.DataUrodzenia;
-                    numertelefonuPracownika.Text = query.NumerTelefonu.ToString();
+                    numertelefonuPracownikaTB.Text = query.NumerTelefonu.ToString();
                     adresEmailPracownika.Text = query.AdresEmail.ToString();
                     miejsceUrodzeniaTB.Text = query.MiejsceUrodzenia.ToString();
                     plecTB.Text = query.Plec.ToString();
@@ -103,8 +105,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     numerDomuTB.Text = query.NumerDomu.ToString();
                     numerLokaluTB.Text = query.NumerLokalu.ToString();
                     pocztaTB.Text = query.Poczta.ToString();
-                    numerDo.Text = query.DoKogoWNaglymWypadku.ToString();
-                    numerTelefonuNagleWypadki.Text = query.NumerNagleWypadki.ToString();
+                    numerDoTB.Text = query.DoKogoWNaglymWypadku.ToString();
+                    numerTelefonuNagleWypadkiTB.Text = query.NumerNagleWypadki.ToString();
 
                     numerKontaTB.Text = queryZatrudnienie.NumerKonta.ToString();
                     umowaTB.Text = queryZatrudnienie.Umowa.ToString();
@@ -285,7 +287,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                 {
                     string imie = imiePracownikaTB.Text;
                     string nazwisko = nazwiskoPracownikaTB.Text;
-                    string NumerTelefonu = numertelefonuPracownika.Text;
+                    string NumerTelefonu = numertelefonuPracownikaTB.Text;
                     string AdresEmail = adresEmailPracownika.Text;
                     string MiejsceUrodzenia = miejsceUrodzeniaTB.Text;
                     string Plec = plecTB.Text;
@@ -302,8 +304,8 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     string NumerDomu = numerDomuTB.Text;
                     string NumerLokalu = numerLokaluTB.Text;
                     string Poczta = pocztaTB.Text;
-                    string DoKogoWNaglymWypadku = numerDo.Text;
-                    string NumerNagleWypadki = numerTelefonuNagleWypadki.Text;
+                    string DoKogoWNaglymWypadku = numerDoTB.Text;
+                    string NumerNagleWypadki = numerTelefonuNagleWypadkiTB.Text;
 
                     try
                     {
@@ -787,6 +789,112 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             {
                 e.Cancel = false;
                 pocztaEP.SetError(pocztaTB, null);
+            }
+        }
+
+        private void numertelefonuPracownika_Validating(object sender, CancelEventArgs e)
+        {
+            var phone = new PhoneAttribute();
+            string pomoc = numertelefonuPracownikaTB.Text;
+
+            if (string.IsNullOrWhiteSpace(numertelefonuPracownikaTB.Text))
+            {
+                e.Cancel = true;
+                numertelefonuPracownikaTB.Focus();
+                numerTelefonuEP.SetError(numertelefonuPracownikaTB, "Proszę wpisać numer telefonu");
+            }
+            else
+            {
+                string number = numertelefonuPracownikaTB.Text;
+                const string motifPhoneNumberNormal = @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
+                const string motifPhoneNumber = @"^([\+]?[1-9]{2}[-]?|[0])?[1-9][0-9]{8}$";
+
+                if (Regex.IsMatch(number, motifPhoneNumberNormal) || Regex.IsMatch(number, motifPhoneNumber))
+                {
+                    e.Cancel = false;
+                    numerTelefonuEP.SetError(numertelefonuPracownikaTB, null);
+                }
+                else
+                {
+                    e.Cancel = true;
+                    numertelefonuPracownikaTB.Focus();
+                    numerTelefonuEP.SetError(numertelefonuPracownikaTB, "Numer telefonu jest błędny");
+                }
+            }
+        }
+
+        private void adresEmailPracownika_Validating(object sender, CancelEventArgs e)
+        {
+            var email = new EmailAddressAttribute();
+            string pomoc = adresEmailPracownika.Text;
+
+            if (string.IsNullOrWhiteSpace(adresEmailPracownika.Text))
+            {
+                e.Cancel = true;
+                adresEmailPracownika.Focus();
+                adresEmailEP.SetError(adresEmailPracownika, "Proszę wpisać adres E-mail");
+            }
+            else
+            {
+                if (!email.IsValid(pomoc))
+                {
+                    e.Cancel = true;
+                    adresEmailPracownika.Focus();
+                    adresEmailEP.SetError(adresEmailPracownika, "Proszę wpisać poprawny adres E-mail");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    adresEmailEP.SetError(adresEmailPracownika, null);
+                }
+            }
+        }
+
+        private void numerDo_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(numerDoTB.Text))
+            {
+                e.Cancel = true;
+                numerDoTB.Focus();
+                telefonDoEP.SetError(numerDoTB, "Proszę wpisać numer kontaktowy do zaufanej osoby pracownika");
+            }
+            else
+            {
+                e.Cancel = false;
+                telefonDoEP.SetError(numerDoTB, null);
+            }
+        }
+
+        private void numerDo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void numerTelefonuNagleWypadki_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(numerTelefonuNagleWypadkiTB.Text))
+            {
+                e.Cancel = true;
+                numerTelefonuNagleWypadkiTB.Focus();
+                numerZaufanejOsobyEP.SetError(numerTelefonuNagleWypadkiTB, "Proszę wpisać numer telefonu");
+            }
+            else
+            {
+                string number = numerTelefonuNagleWypadkiTB.Text;
+                const string motifPhoneNumberNormal = @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
+                const string motifPhoneNumber = @"^([\+]?[1-9]{2}[-]?|[0])?[1-9][0-9]{8}$";
+
+                if (Regex.IsMatch(number, motifPhoneNumberNormal) || Regex.IsMatch(number, motifPhoneNumber))
+                {
+                    e.Cancel = false;
+                    numerZaufanejOsobyEP.SetError(numerTelefonuNagleWypadkiTB, null);
+                }
+                else
+                {
+                    e.Cancel = true;
+                    numerTelefonuNagleWypadkiTB.Focus();
+                    numerZaufanejOsobyEP.SetError(numerTelefonuNagleWypadkiTB, "Numer telefonu jest błędny");
+                }
             }
         }
     }
