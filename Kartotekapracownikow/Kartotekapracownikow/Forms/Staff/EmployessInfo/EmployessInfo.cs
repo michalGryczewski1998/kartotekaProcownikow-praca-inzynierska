@@ -115,11 +115,11 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     nfzTB.Text = queryZatrudnienie.NFZ.ToString();
                     ulgapodatkowaTB.Text = queryZatrudnienie.UlgaPodatkowa.ToString();
                     kosztUzyskaniaPrzychoduTB.Text = queryZatrudnienie.KosztUzyskaniaPrzychodu.ToString();
-                    dzialTB.Text = queryZatrudnienie.Dzial.ToString();
-                    stanowiskoTB.Text = queryZatrudnienie.Stanowisko.ToString();
-                    stawkaGodzinowaTB.Text = queryZatrudnienie.StawkaGodzinowa.ToString();
-                    dataPracaDTP.Value = queryZatrudnienie.DataRozpoczeciaPracy;
-                    dziennyCzasPracyTB.Text = queryZatrudnienie.DziennyCzasPracy.ToString();
+                    DzialTB.Text = queryZatrudnienie.Dzial.ToString();
+                    StanowiskoTB.Text = queryZatrudnienie.Stanowisko.ToString();
+                    StawkaGodzinowaTB.Text = queryZatrudnienie.StawkaGodzinowa.ToString();
+                    DataPracaDTP.Value = queryZatrudnienie.DataRozpoczeciaPracy;
+                    DziennyCzasPracyTB.Text = queryZatrudnienie.DziennyCzasPracy.ToString();
 
                     IloscPrzepracowanychDni();
 
@@ -221,7 +221,21 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
 
         private void edytujZatrudnienieBTN_Click(object sender, EventArgs e)
         {
-            UpdateData();
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                try
+                {
+                    UpdateData();
+                }
+                catch
+                {
+                    MessageBox.Show("Nie można zaktualizować danych pracownika, proszę ponowic próbę");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie można zaktualizować danych pracownika, proszę ponowic próbę");
+            }
         }
 
         private void UpdateData()
@@ -235,10 +249,10 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                 string nfz = nfzTB.Text;
                 string ulgaPodatkowa = ulgapodatkowaTB.Text;
                 string kosztUzyskPrzy = kosztUzyskaniaPrzychoduTB.Text;
-                string dzial = dzialTB.Text;
-                string stanowisko = stanowiskoTB.Text;
-                string stawkaGodz = stawkaGodzinowaTB.Text;
-                string dziennyCzasPracy = dziennyCzasPracyTB.Text;
+                string dzial = DzialTB.Text;
+                string stanowisko = StanowiskoTB.Text;
+                string stawkaGodz = StawkaGodzinowaTB.Text;
+                string dziennyCzasPracy = DziennyCzasPracyTB.Text;
 
                 using (var db = new Database())
                 {
@@ -276,7 +290,22 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            UpdateDataPodstawowedane();
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                try
+                {
+                    UpdateDataPodstawowedane();
+
+                }
+                catch
+                {
+                    MessageBox.Show("Nie można zaktualizować danych pracownika, proszę ponowic próbę");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie można zaktualizować danych pracownika, proszę ponowic próbę");
+            }
         }
 
         private void UpdateDataPodstawowedane()
@@ -895,6 +924,233 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     numerTelefonuNagleWypadkiTB.Focus();
                     numerZaufanejOsobyEP.SetError(numerTelefonuNagleWypadkiTB, "Numer telefonu jest błędny");
                 }
+            }
+        }
+
+        private void umowaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(umowaTB.Text))
+            {
+                e.Cancel = true;
+                umowaTB.Focus();
+                umowaEP.SetError(umowaTB,"Proszę o wpisanie umowy");
+            }
+            else
+            {
+                e.Cancel = false;
+                umowaEP.SetError(umowaTB, null);
+            }
+        }
+
+        private void etatTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(etatTB.Text))
+            {
+                e.Cancel = true;
+                etatTB.Focus();
+                etatEP.SetError(etatTB, "Proszę o wpisanie etatu");
+            }
+            else
+            {
+                e.Cancel = false;
+                etatEP.SetError(etatTB, null);
+            }
+        }
+
+        private void bankTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(bankTB.Text))
+            {
+                e.Cancel = true;
+                bankTB.Focus();
+                bankEP.SetError(bankTB, "Proszę o wpisanie banku");
+            }
+            else
+            {
+                e.Cancel = false;
+                bankEP.SetError(bankTB, null);
+            }
+        }
+
+        private void numerKontaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(numerKontaTB.Text))
+            {
+                e.Cancel = true;
+                numerKontaTB.Focus();
+                numerKontaEP.SetError(numerKontaTB, "Proszę wprowadzić numer konta");
+
+            }
+            else
+            {
+                string pomoc = numerKontaTB.Text;
+                if (pomoc.Length != 26 && pomoc.Length != 32)
+                {
+                    e.Cancel = true;
+                    numerKontaTB.Focus();
+                    numerKontaEP.SetError(numerKontaTB, "Proszę wprowadzić poprawny numer konta, składający się z 26 cyfr bez spacji");
+                }
+                else
+                {
+                    const int countryCode = 2521;
+                    string checkSum = pomoc.Substring(0, 2);
+                    string accountNumber = pomoc.Substring(2);
+                    string reversedDigits = accountNumber + countryCode + checkSum;
+                    if (ModString(reversedDigits, 97) == 1)
+                    {
+                        //57188010225878527221405455 - testowy numer konta
+                        e.Cancel = false;
+                        numerKontaEP.SetError(numerKontaTB, null);
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                        numerKontaTB.Focus();
+                        numerKontaEP.SetError(numerKontaTB, "Błędny numer konta");
+                    }
+                }
+
+            }
+        }
+
+        private int ModString(string x, int y)
+        {
+            if (string.IsNullOrEmpty(x))
+            {
+                return 0;
+            }
+            string firstDigit = x.Substring(0, x.Length - 1);
+            int lastDigit = int.Parse(x.Substring(x.Length - 1));
+            return (ModString(firstDigit, y) * 10 + lastDigit) % y;
+        }
+
+        private void nfzTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(nfzTB.Text))
+            {
+                e.Cancel = true;
+                nfzTB.Focus();
+                nfzEP.SetError(nfzTB, "Proszę o wypełnienie pola NFZ");
+            }
+            else
+            {
+                e.Cancel = false;
+                nfzEP.SetError(nfzTB, null);
+            }
+        }
+
+        private void ulgapodatkowaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(ulgapodatkowaTB.Text))
+            {
+                e.Cancel = true;
+                ulgapodatkowaTB.Focus();
+                UlgaPodatkowaEP.SetError(ulgapodatkowaTB, "Proszę o wypełnienie pola - ulga podatkowa");
+            }
+            else
+            {
+                e.Cancel = false;
+                UlgaPodatkowaEP.SetError(ulgapodatkowaTB, null);
+            }
+        }
+
+        private void kosztUzyskaniaPrzychoduTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(kosztUzyskaniaPrzychoduTB.Text))
+            {
+                e.Cancel = true;
+                kosztUzyskaniaPrzychoduTB.Focus();
+                KosztUzyskaniaPrzychoduEP.SetError(kosztUzyskaniaPrzychoduTB, "Proszę o wypełnienie pola - koszt uzyskania przychodu");
+            }
+            else
+            {
+                e.Cancel = false;
+                KosztUzyskaniaPrzychoduEP.SetError(kosztUzyskaniaPrzychoduTB, null);
+            }
+        }
+
+        private void DzialTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(DzialTB.Text))
+            {
+                e.Cancel = true;
+                DzialTB.Focus();
+                DzialEP.SetError(DzialTB, "Proszę o wypełnienie pola - dział");
+            }
+            else
+            {
+                e.Cancel = false;
+                DzialEP.SetError(DzialTB, null);
+            }
+        }
+
+        private void DzialTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void StanowiskoTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(StanowiskoTB.Text))
+            {
+                e.Cancel = true;
+                StanowiskoTB.Focus();
+                StanowiskoEP.SetError(StanowiskoTB, "Proszę o wypełnienie pola - stanowisko");
+            }
+            else
+            {
+                e.Cancel = false;
+                StanowiskoEP.SetError(StanowiskoTB, null);
+            }
+        }
+
+        private void StanowiskoTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void StawkaGodzinowaTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(StawkaGodzinowaTB.Text))
+            {
+                e.Cancel = true;
+                StawkaGodzinowaTB.Focus();
+                StawkaGodzinowaEP.SetError(StawkaGodzinowaTB, "Proszę o wypełnienie pola - stawka godzinowa");
+            }
+            else
+            {
+                e.Cancel = false;
+                StawkaGodzinowaEP.SetError(StawkaGodzinowaTB, null);
+            }
+        }
+
+        private void DataPracaDTP_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(DataPracaDTP.Value.ToString()))
+            {
+                e.Cancel = true;
+                DataPracaDTP.Focus();
+                DataRozpoczeciaPracyEP.SetError(DataPracaDTP, "Proszę wprowadzić datę rozpoczęcia pracy");
+            }
+            else
+            {
+                e.Cancel = false;
+                DataRozpoczeciaPracyEP.SetError(DataPracaDTP, null);
+            }
+        }
+
+        private void DziennyCzasPracyTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(DziennyCzasPracyTB.Text))
+            {
+                e.Cancel = true;
+                DziennyCzasPracyTB.Focus();
+                DziennyCzasPracyEP.SetError(DziennyCzasPracyTB, "Proszę wprowadzić - dzienny czas pracy");
+            }
+            else
+            {
+                e.Cancel = false;
+                DziennyCzasPracyEP.SetError(DziennyCzasPracyTB, null);
             }
         }
     }
