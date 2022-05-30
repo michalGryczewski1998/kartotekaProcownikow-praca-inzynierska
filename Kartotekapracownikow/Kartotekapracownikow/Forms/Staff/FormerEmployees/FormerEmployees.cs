@@ -1,4 +1,5 @@
 ﻿using Kartotekapracownikow.DatabaseModel;
+using Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,6 +101,20 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployees
                 MessageBox.Show("Błąd podczas pobierania danych o zwolnionych pracownikach");
             }
 
+        }
+
+        private void InformacjePracownikBylyBTN_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(imieZwolnionego))
+            {
+                InformacjaEP.SetError(InformacjeLabel, "Proszę kliknąć na konkretnego pracownika");
+            }
+            else
+            {
+                FormerInfo info = new FormerInfo(employeesID);
+                info.ShowDialog();
+            }
         }
     }
 }
