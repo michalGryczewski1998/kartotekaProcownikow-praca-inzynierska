@@ -183,6 +183,9 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
 
             try
             {
+                /*
+                 * TODO: poprawic aktualizacje zdjecia
+                 */
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     newPicture = openFileDialog.FileName;
