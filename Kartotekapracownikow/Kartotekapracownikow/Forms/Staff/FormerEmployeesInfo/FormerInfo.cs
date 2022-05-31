@@ -19,31 +19,59 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
         {
             InitializeComponent();
             this.employeesID = employesID;
+            ZapytanieZwolnionyPracownik();
         }
 
         private void ZapytanieZwolnionyPracownik()
         {
-            using(var db = new Database())
+            try
             {
-                var query = (from zwolnieni in db.ZwolnieniPracownicy
-                             where zwolnieni.ID == employeesID
-                             select new
-                             {
-                                 zwolnieni.Imie,
-                                 zwolnieni.Nazwisko,
-                                 zwolnieni.Kraj,
-                                 zwolnieni.NumerTelefonu,
-                                 zwolnieni.Umowa,
-                                 zwolnieni.Etat,
-                                 zwolnieni.Dzial,
-                                 zwolnieni.Stanowisko,
-                                 zwolnieni.StawkaGodzinowa,
-                                 zwolnieni.DziennyCzasPracy,
-                                 zwolnieni.IloscPrzepracowanychDni,
-                                 zwolnieni.DataRozpoczeciaPracy,
-                                 zwolnieni.DataZakonczeniaPracy
-                             }).ToList();
+                using (var db = new Database())
+                {
+                    var query = (from zwolnieni in db.ZwolnieniPracownicy
+                                 where zwolnieni.ID == employeesID
+                                 select new
+                                 {
+                                     zwolnieni.Imie,
+                                     zwolnieni.Nazwisko,
+                                     zwolnieni.Kraj,
+                                     zwolnieni.NumerTelefonu,
+                                     zwolnieni.Umowa,
+                                     zwolnieni.Etat,
+                                     zwolnieni.Dzial,
+                                     zwolnieni.Stanowisko,
+                                     zwolnieni.StawkaGodzinowa,
+                                     zwolnieni.DziennyCzasPracy,
+                                     zwolnieni.IloscPrzepracowanychDni,
+                                     zwolnieni.DataRozpoczeciaPracy,
+                                     zwolnieni.DataZakonczeniaPracy
+                                 }).Single();
+
+                    ImiePracownikaTB.Text = query.Imie.ToString();
+                    NazwiskoTB.Text = query.Nazwisko.ToString();
+                    KrajTB.Text = query.Kraj.ToString();
+                    NumerTelefonuTB.Text = query.NumerTelefonu.ToString();
+                    UmowaTB.Text = query.Umowa.ToString();
+                    EtatTB.Text = query.Etat.ToString();
+                    DzialTB.Text = query.Dzial.ToString();
+                    StanowiskoTB.Text = query.Stanowisko.ToString();
+                    StawkaGodzinowaTB.Text = query.StawkaGodzinowa.ToString();
+                    DziennyCzasPracyTB.Text = query.DziennyCzasPracy.ToString();
+                    PoczatekPracyTB.Text = query.DataRozpoczeciaPracy.ToString();
+                    KoniecPracyTB.Text = query.DataZakonczeniaPracy.ToString();
+                    IloscPrzepracowanychDniTB.Text = query.IloscPrzepracowanychDni.ToString();
+                }
             }
+            catch(InvalidOperationException)
+            {
+                MessageBox.Show("Błąd podczas pobierania danych");
+            }
+
+        }
+
+        private void UmowaPodgladBTN_Click(object sender, EventArgs e)
+        {
+            // TODO: podgląd umowy PDF w WindowsForm
         }
     }
 }
