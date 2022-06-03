@@ -1,4 +1,5 @@
 ﻿using Kartotekapracownikow.DatabaseModel;
+using Kartotekapracownikow.Forms.Staff.DismissDetails;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,7 +117,9 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ZwolnijPracownikaGB();
+            //ZwolnijPracownikaGB();
+            FiredEmployeesDetails fed = new FiredEmployeesDetails(employeesID);
+            fed.ShowDialog();
         }
 
         private void ZwolnijPracownikaGB()

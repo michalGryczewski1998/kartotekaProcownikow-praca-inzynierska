@@ -103,6 +103,8 @@ namespace Kartotekapracownikow.DatabaseModel
                 entity.Property(e => e.Umowa).IsRequired();
                 entity.Property(e => e.Etat).IsRequired();
                 entity.Property(e => e.Dzial).IsRequired();
+                entity.Property(e => e.PrzyczynaZwolnienia).IsRequired();
+                entity.Property(e => e.OpisPrzyczynyZwolnienia).IsRequired();
                 entity.Property(e => e.Stanowisko).IsRequired();
                 entity.Property(e => e.StawkaGodzinowa).IsRequired();
                 entity.Property(e => e.DataRozpoczeciaPracy).IsRequired();

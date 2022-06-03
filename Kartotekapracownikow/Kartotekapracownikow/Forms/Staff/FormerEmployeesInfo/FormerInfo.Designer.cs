@@ -57,14 +57,17 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.label10 = new System.Windows.Forms.Label();
             this.PrzybornikTC = new System.Windows.Forms.TabControl();
             this.ZwolnieniaTP = new System.Windows.Forms.TabPage();
+            this.OpisPrzyczynyZwolnieniaTB = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.InformacjeTP = new System.Windows.Forms.TabPage();
             this.IloscPrzepracowanychDniTB = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.PrzyczynyZwolnieniaTB = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.PrzyczynaZwolnieniaTB = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.PrzybornikTC.SuspendLayout();
             this.ZwolnieniaTP.SuspendLayout();
+            this.InformacjeTP.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -306,15 +309,23 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             // 
             // ZwolnieniaTP
             // 
-            this.ZwolnieniaTP.Controls.Add(this.PrzyczynyZwolnieniaTB);
+            this.ZwolnieniaTP.Controls.Add(this.OpisPrzyczynyZwolnieniaTB);
             this.ZwolnieniaTP.Controls.Add(this.label13);
             this.ZwolnieniaTP.Location = new System.Drawing.Point(4, 24);
             this.ZwolnieniaTP.Name = "ZwolnieniaTP";
             this.ZwolnieniaTP.Padding = new System.Windows.Forms.Padding(3);
             this.ZwolnieniaTP.Size = new System.Drawing.Size(485, 238);
             this.ZwolnieniaTP.TabIndex = 0;
-            this.ZwolnieniaTP.Text = "Zwolnienie";
+            this.ZwolnieniaTP.Text = "Opis zwolnienia";
             this.ZwolnieniaTP.UseVisualStyleBackColor = true;
+            // 
+            // OpisPrzyczynyZwolnieniaTB
+            // 
+            this.OpisPrzyczynyZwolnieniaTB.Location = new System.Drawing.Point(7, 26);
+            this.OpisPrzyczynyZwolnieniaTB.Multiline = true;
+            this.OpisPrzyczynyZwolnieniaTB.Name = "OpisPrzyczynyZwolnieniaTB";
+            this.OpisPrzyczynyZwolnieniaTB.Size = new System.Drawing.Size(472, 206);
+            this.OpisPrzyczynyZwolnieniaTB.TabIndex = 1;
             // 
             // label13
             // 
@@ -327,12 +338,14 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             // 
             // InformacjeTP
             // 
+            this.InformacjeTP.Controls.Add(this.PrzyczynaZwolnieniaTB);
+            this.InformacjeTP.Controls.Add(this.label14);
             this.InformacjeTP.Location = new System.Drawing.Point(4, 24);
             this.InformacjeTP.Name = "InformacjeTP";
             this.InformacjeTP.Padding = new System.Windows.Forms.Padding(3);
             this.InformacjeTP.Size = new System.Drawing.Size(485, 238);
             this.InformacjeTP.TabIndex = 1;
-            this.InformacjeTP.Text = "Informacje";
+            this.InformacjeTP.Text = "Przyczyna zwolnienia";
             this.InformacjeTP.UseVisualStyleBackColor = true;
             // 
             // IloscPrzepracowanychDniTB
@@ -352,13 +365,21 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.label12.TabIndex = 23;
             this.label12.Text = "Ilość Przepracowanych dni";
             // 
-            // PrzyczynyZwolnieniaTB
+            // label14
             // 
-            this.PrzyczynyZwolnieniaTB.Location = new System.Drawing.Point(7, 26);
-            this.PrzyczynyZwolnieniaTB.Multiline = true;
-            this.PrzyczynyZwolnieniaTB.Name = "PrzyczynyZwolnieniaTB";
-            this.PrzyczynyZwolnieniaTB.Size = new System.Drawing.Size(472, 206);
-            this.PrzyczynyZwolnieniaTB.TabIndex = 1;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(124, 15);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Przyczyna zwolnienia: ";
+            // 
+            // PrzyczynaZwolnieniaTB
+            // 
+            this.PrzyczynaZwolnieniaTB.Location = new System.Drawing.Point(137, 6);
+            this.PrzyczynaZwolnieniaTB.Name = "PrzyczynaZwolnieniaTB";
+            this.PrzyczynaZwolnieniaTB.Size = new System.Drawing.Size(342, 23);
+            this.PrzyczynaZwolnieniaTB.TabIndex = 1;
             // 
             // FormerInfo
             // 
@@ -397,6 +418,8 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.PrzybornikTC.ResumeLayout(false);
             this.ZwolnieniaTP.ResumeLayout(false);
             this.ZwolnieniaTP.PerformLayout();
+            this.InformacjeTP.ResumeLayout(false);
+            this.InformacjeTP.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,6 +459,8 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox IloscPrzepracowanychDniTB;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox PrzyczynyZwolnieniaTB;
+        private System.Windows.Forms.TextBox OpisPrzyczynyZwolnieniaTB;
+        private System.Windows.Forms.TextBox PrzyczynaZwolnieniaTB;
+        private System.Windows.Forms.Label label14;
     }
 }
