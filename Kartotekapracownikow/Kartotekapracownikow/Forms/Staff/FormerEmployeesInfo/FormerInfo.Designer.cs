@@ -61,6 +61,7 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.InformacjeTP = new System.Windows.Forms.TabPage();
             this.IloscPrzepracowanychDniTB = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.PrzyczynyZwolnieniaTB = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.PrzybornikTC.SuspendLayout();
             this.ZwolnieniaTP.SuspendLayout();
@@ -305,6 +306,7 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             // 
             // ZwolnieniaTP
             // 
+            this.ZwolnieniaTP.Controls.Add(this.PrzyczynyZwolnieniaTB);
             this.ZwolnieniaTP.Controls.Add(this.label13);
             this.ZwolnieniaTP.Location = new System.Drawing.Point(4, 24);
             this.ZwolnieniaTP.Name = "ZwolnieniaTP";
@@ -349,6 +351,14 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.label12.Size = new System.Drawing.Size(147, 15);
             this.label12.TabIndex = 23;
             this.label12.Text = "Ilość Przepracowanych dni";
+            // 
+            // PrzyczynyZwolnieniaTB
+            // 
+            this.PrzyczynyZwolnieniaTB.Location = new System.Drawing.Point(7, 26);
+            this.PrzyczynyZwolnieniaTB.Multiline = true;
+            this.PrzyczynyZwolnieniaTB.Name = "PrzyczynyZwolnieniaTB";
+            this.PrzyczynyZwolnieniaTB.Size = new System.Drawing.Size(472, 206);
+            this.PrzyczynyZwolnieniaTB.TabIndex = 1;
             // 
             // FormerInfo
             // 
@@ -426,5 +436,6 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox IloscPrzepracowanychDniTB;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox PrzyczynyZwolnieniaTB;
     }
 }
