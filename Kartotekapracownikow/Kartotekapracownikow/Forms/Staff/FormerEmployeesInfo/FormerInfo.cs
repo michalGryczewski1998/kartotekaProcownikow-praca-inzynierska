@@ -39,6 +39,8 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
                                      zwolnieni.Umowa,
                                      zwolnieni.Etat,
                                      zwolnieni.Dzial,
+                                     zwolnieni.PrzyczynaZwolnienia,
+                                     zwolnieni.OpisPrzyczynyZwolnienia,
                                      zwolnieni.Stanowisko,
                                      zwolnieni.StawkaGodzinowa,
                                      zwolnieni.DziennyCzasPracy,
@@ -54,6 +56,8 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
                     UmowaTB.Text = query.Umowa.ToString();
                     EtatTB.Text = query.Etat.ToString();
                     DzialTB.Text = query.Dzial.ToString();
+                    PrzyczynaZwolnieniaTB.Text = query.PrzyczynaZwolnienia.ToString();
+                    OpisPrzyczynyZwolnieniaTB.Text = query.OpisPrzyczynyZwolnienia.ToString();
                     StanowiskoTB.Text = query.Stanowisko.ToString();
                     StawkaGodzinowaTB.Text = query.StawkaGodzinowa.ToString();
                     DziennyCzasPracyTB.Text = query.DziennyCzasPracy.ToString();

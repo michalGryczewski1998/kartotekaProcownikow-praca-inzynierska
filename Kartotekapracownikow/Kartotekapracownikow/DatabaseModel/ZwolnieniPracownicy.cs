@@ -25,6 +25,10 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public string Dzial { get; set; }
 
+        public string PrzyczynaZwolnienia { get; set; }
+
+        public string OpisPrzyczynyZwolnienia { get; set; }
+
         public string Stanowisko { get; set; }
 
         public string StawkaGodzinowa { get; set; }
