@@ -50,6 +50,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.imiePracownikaTB = new System.Windows.Forms.TextBox();
             this.imiePracownikaLabel = new System.Windows.Forms.Label();
             this.daneZatrudnieniaGB = new System.Windows.Forms.GroupBox();
+            this.UlgaPodatkowaLB = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Umowa = new System.Windows.Forms.Label();
             this.daneEtatCB = new System.Windows.Forms.ComboBox();
@@ -87,6 +88,15 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.PlikiGB = new System.Windows.Forms.GroupBox();
+            this.OrzeczenieLekarskieBTN = new System.Windows.Forms.Button();
+            this.OrzeczenieLekarskieLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.DokZawodoweBTN = new System.Windows.Forms.Button();
+            this.DokumentyZawodoweLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.UmowaPrzegladajBTN = new System.Windows.Forms.Button();
+            this.UmowaLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.zdjecieBTN = new System.Windows.Forms.Button();
             this.zdjeciePracownikaPB = new System.Windows.Forms.PictureBox();
@@ -151,15 +161,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.StawkaGodzinowaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DataZatrudnieniaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DziennyCzasPracyEP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.UmowaLabel = new System.Windows.Forms.Label();
-            this.UmowaPrzegladajBTN = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.DokumentyZawodoweLabel = new System.Windows.Forms.Label();
-            this.DokZawodoweBTN = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.OrzeczenieLekarskieLabel = new System.Windows.Forms.Label();
-            this.OrzeczenieLekarskieBTN = new System.Windows.Forms.Button();
+            this.KosztPrzychoduLB = new System.Windows.Forms.ListBox();
             this.danePodstawoweGB.SuspendLayout();
             this.daneZatrudnieniaGB.SuspendLayout();
             this.adresGB.SuspendLayout();
@@ -411,6 +413,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // daneZatrudnieniaGB
             // 
+            this.daneZatrudnieniaGB.Controls.Add(this.KosztPrzychoduLB);
+            this.daneZatrudnieniaGB.Controls.Add(this.UlgaPodatkowaLB);
             this.daneZatrudnieniaGB.Controls.Add(this.label5);
             this.daneZatrudnieniaGB.Controls.Add(this.Umowa);
             this.daneZatrudnieniaGB.Controls.Add(this.daneEtatCB);
@@ -427,10 +431,38 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneZatrudnieniaGB.Controls.Add(this.bankDoPrzelewuLabel);
             this.daneZatrudnieniaGB.Location = new System.Drawing.Point(12, 445);
             this.daneZatrudnieniaGB.Name = "daneZatrudnieniaGB";
-            this.daneZatrudnieniaGB.Size = new System.Drawing.Size(591, 358);
+            this.daneZatrudnieniaGB.Size = new System.Drawing.Size(591, 433);
             this.daneZatrudnieniaGB.TabIndex = 1;
             this.daneZatrudnieniaGB.TabStop = false;
             this.daneZatrudnieniaGB.Text = "Dane o zatrudnieniu";
+            // 
+            // UlgaPodatkowaLB
+            // 
+            this.UlgaPodatkowaLB.FormattingEnabled = true;
+            this.UlgaPodatkowaLB.ItemHeight = 15;
+            this.UlgaPodatkowaLB.Items.AddRange(new object[] {
+            "1. Ulga internetowa - Rachunki za internet",
+            "2. Ulga rehabilitacyjna",
+            "3. Ulga prorodzinna",
+            "3. Ulga dla krwiodawców",
+            "4. Ulga na nowe technologie",
+            "5. Ulga odsetkowa",
+            "6. Darowizny kościelne",
+            "7. Darowizny na cele pożytku publicznego",
+            "8. Darowizny na cele edukacyjne dla szkół",
+            "9. Zwrot niezależnie pobranych świadczeń\t",
+            "10. Odliczenie składek społecznych",
+            "11. Odliczenie składek zdrowotnych",
+            "12. Wpłaty na IKZE",
+            "13. Darowizna na cele walki z COVID-19",
+            "14. Ulga termomodernizacyjna",
+            "15. Darowizna  komputerów przenośnych (tabletów i laptopów) na rzecz jednostek pr" +
+                "owadzących placówki oświatowe",
+            "16. Ulga dla młodych"});
+            this.UlgaPodatkowaLB.Location = new System.Drawing.Point(18, 202);
+            this.UlgaPodatkowaLB.Name = "UlgaPodatkowaLB";
+            this.UlgaPodatkowaLB.Size = new System.Drawing.Size(544, 94);
+            this.UlgaPodatkowaLB.TabIndex = 52;
             // 
             // label5
             // 
@@ -481,9 +513,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.kosztyUzyskaniaPrzychoduCB.FormattingEnabled = true;
             this.kosztyUzyskaniaPrzychoduCB.Items.AddRange(new object[] {
             "Tak"});
-            this.kosztyUzyskaniaPrzychoduCB.Location = new System.Drawing.Point(22, 257);
+            this.kosztyUzyskaniaPrzychoduCB.Location = new System.Drawing.Point(469, 53);
             this.kosztyUzyskaniaPrzychoduCB.Name = "kosztyUzyskaniaPrzychoduCB";
-            this.kosztyUzyskaniaPrzychoduCB.Size = new System.Drawing.Size(420, 23);
+            this.kosztyUzyskaniaPrzychoduCB.Size = new System.Drawing.Size(116, 23);
             this.kosztyUzyskaniaPrzychoduCB.TabIndex = 47;
             this.kosztyUzyskaniaPrzychoduCB.Validating += new System.ComponentModel.CancelEventHandler(this.kosztyUzyskaniaPrzychoduCB_Validating);
             // 
@@ -492,9 +524,9 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.ulgaPodatkowaCB.FormattingEnabled = true;
             this.ulgaPodatkowaCB.Items.AddRange(new object[] {
             "Tak"});
-            this.ulgaPodatkowaCB.Location = new System.Drawing.Point(21, 202);
+            this.ulgaPodatkowaCB.Location = new System.Drawing.Point(465, 26);
             this.ulgaPodatkowaCB.Name = "ulgaPodatkowaCB";
-            this.ulgaPodatkowaCB.Size = new System.Drawing.Size(421, 23);
+            this.ulgaPodatkowaCB.Size = new System.Drawing.Size(120, 23);
             this.ulgaPodatkowaCB.TabIndex = 46;
             this.ulgaPodatkowaCB.Validating += new System.ComponentModel.CancelEventHandler(this.ulgaPodatkowaCB_Validating);
             // 
@@ -510,7 +542,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // kosztyPrzychoduLabel
             // 
             this.kosztyPrzychoduLabel.AutoSize = true;
-            this.kosztyPrzychoduLabel.Location = new System.Drawing.Point(18, 239);
+            this.kosztyPrzychoduLabel.Location = new System.Drawing.Point(17, 310);
             this.kosztyPrzychoduLabel.Name = "kosztyPrzychoduLabel";
             this.kosztyPrzychoduLabel.Size = new System.Drawing.Size(154, 15);
             this.kosztyPrzychoduLabel.TabIndex = 43;
@@ -780,7 +812,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(942, 911);
+            this.panel1.Size = new System.Drawing.Size(942, 971);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -797,10 +829,88 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.PlikiGB.Controls.Add(this.label6);
             this.PlikiGB.Location = new System.Drawing.Point(609, 620);
             this.PlikiGB.Name = "PlikiGB";
-            this.PlikiGB.Size = new System.Drawing.Size(321, 182);
+            this.PlikiGB.Size = new System.Drawing.Size(321, 258);
             this.PlikiGB.TabIndex = 49;
             this.PlikiGB.TabStop = false;
             this.PlikiGB.Text = "Pliki";
+            // 
+            // OrzeczenieLekarskieBTN
+            // 
+            this.OrzeczenieLekarskieBTN.Location = new System.Drawing.Point(8, 153);
+            this.OrzeczenieLekarskieBTN.Name = "OrzeczenieLekarskieBTN";
+            this.OrzeczenieLekarskieBTN.Size = new System.Drawing.Size(75, 23);
+            this.OrzeczenieLekarskieBTN.TabIndex = 8;
+            this.OrzeczenieLekarskieBTN.Text = "Przeglądaj";
+            this.OrzeczenieLekarskieBTN.UseVisualStyleBackColor = true;
+            // 
+            // OrzeczenieLekarskieLabel
+            // 
+            this.OrzeczenieLekarskieLabel.AutoSize = true;
+            this.OrzeczenieLekarskieLabel.Location = new System.Drawing.Point(127, 117);
+            this.OrzeczenieLekarskieLabel.Name = "OrzeczenieLekarskieLabel";
+            this.OrzeczenieLekarskieLabel.Size = new System.Drawing.Size(0, 15);
+            this.OrzeczenieLekarskieLabel.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 135);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 15);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Orzeczenie lekarskie: ";
+            // 
+            // DokZawodoweBTN
+            // 
+            this.DokZawodoweBTN.Location = new System.Drawing.Point(7, 97);
+            this.DokZawodoweBTN.Name = "DokZawodoweBTN";
+            this.DokZawodoweBTN.Size = new System.Drawing.Size(75, 23);
+            this.DokZawodoweBTN.TabIndex = 5;
+            this.DokZawodoweBTN.Text = "Przeglądaj";
+            this.DokZawodoweBTN.UseVisualStyleBackColor = true;
+            // 
+            // DokumentyZawodoweLabel
+            // 
+            this.DokumentyZawodoweLabel.AutoSize = true;
+            this.DokumentyZawodoweLabel.Location = new System.Drawing.Point(147, 68);
+            this.DokumentyZawodoweLabel.Name = "DokumentyZawodoweLabel";
+            this.DokumentyZawodoweLabel.Size = new System.Drawing.Size(0, 15);
+            this.DokumentyZawodoweLabel.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 15);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Dokumenty zawodowe: ";
+            // 
+            // UmowaPrzegladajBTN
+            // 
+            this.UmowaPrzegladajBTN.Location = new System.Drawing.Point(7, 42);
+            this.UmowaPrzegladajBTN.Name = "UmowaPrzegladajBTN";
+            this.UmowaPrzegladajBTN.Size = new System.Drawing.Size(75, 23);
+            this.UmowaPrzegladajBTN.TabIndex = 2;
+            this.UmowaPrzegladajBTN.Text = "Przeglądaj";
+            this.UmowaPrzegladajBTN.UseVisualStyleBackColor = true;
+            // 
+            // UmowaLabel
+            // 
+            this.UmowaLabel.AutoSize = true;
+            this.UmowaLabel.Location = new System.Drawing.Point(67, 23);
+            this.UmowaLabel.Name = "UmowaLabel";
+            this.UmowaLabel.Size = new System.Drawing.Size(0, 15);
+            this.UmowaLabel.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Umowa: ";
             // 
             // groupBox1
             // 
@@ -1068,7 +1178,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.panel2.Controls.Add(this.dodajPracownikaBTN);
             this.panel2.Controls.Add(this.anulujBTN);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 824);
+            this.panel2.Location = new System.Drawing.Point(0, 884);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(942, 87);
             this.panel2.TabIndex = 5;
@@ -1245,89 +1355,42 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.DziennyCzasPracyEP.ContainerControl = this;
             // 
-            // label6
+            // KosztPrzychoduLB
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Umowa: ";
-            // 
-            // UmowaLabel
-            // 
-            this.UmowaLabel.AutoSize = true;
-            this.UmowaLabel.Location = new System.Drawing.Point(67, 23);
-            this.UmowaLabel.Name = "UmowaLabel";
-            this.UmowaLabel.Size = new System.Drawing.Size(0, 15);
-            this.UmowaLabel.TabIndex = 1;
-            // 
-            // UmowaPrzegladajBTN
-            // 
-            this.UmowaPrzegladajBTN.Location = new System.Drawing.Point(7, 42);
-            this.UmowaPrzegladajBTN.Name = "UmowaPrzegladajBTN";
-            this.UmowaPrzegladajBTN.Size = new System.Drawing.Size(75, 23);
-            this.UmowaPrzegladajBTN.TabIndex = 2;
-            this.UmowaPrzegladajBTN.Text = "Przeglądaj";
-            this.UmowaPrzegladajBTN.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 15);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Dokumenty zawodowe: ";
-            // 
-            // DokumentyZawodoweLabel
-            // 
-            this.DokumentyZawodoweLabel.AutoSize = true;
-            this.DokumentyZawodoweLabel.Location = new System.Drawing.Point(147, 68);
-            this.DokumentyZawodoweLabel.Name = "DokumentyZawodoweLabel";
-            this.DokumentyZawodoweLabel.Size = new System.Drawing.Size(0, 15);
-            this.DokumentyZawodoweLabel.TabIndex = 4;
-            // 
-            // DokZawodoweBTN
-            // 
-            this.DokZawodoweBTN.Location = new System.Drawing.Point(7, 87);
-            this.DokZawodoweBTN.Name = "DokZawodoweBTN";
-            this.DokZawodoweBTN.Size = new System.Drawing.Size(75, 23);
-            this.DokZawodoweBTN.TabIndex = 5;
-            this.DokZawodoweBTN.Text = "Przeglądaj";
-            this.DokZawodoweBTN.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 117);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 15);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Orzeczenie lekarskie: ";
-            // 
-            // OrzeczenieLekarskieLabel
-            // 
-            this.OrzeczenieLekarskieLabel.AutoSize = true;
-            this.OrzeczenieLekarskieLabel.Location = new System.Drawing.Point(127, 117);
-            this.OrzeczenieLekarskieLabel.Name = "OrzeczenieLekarskieLabel";
-            this.OrzeczenieLekarskieLabel.Size = new System.Drawing.Size(0, 15);
-            this.OrzeczenieLekarskieLabel.TabIndex = 7;
-            // 
-            // OrzeczenieLekarskieBTN
-            // 
-            this.OrzeczenieLekarskieBTN.Location = new System.Drawing.Point(7, 135);
-            this.OrzeczenieLekarskieBTN.Name = "OrzeczenieLekarskieBTN";
-            this.OrzeczenieLekarskieBTN.Size = new System.Drawing.Size(75, 23);
-            this.OrzeczenieLekarskieBTN.TabIndex = 8;
-            this.OrzeczenieLekarskieBTN.Text = "Przeglądaj";
-            this.OrzeczenieLekarskieBTN.UseVisualStyleBackColor = true;
+            this.KosztPrzychoduLB.FormattingEnabled = true;
+            this.KosztPrzychoduLB.ItemHeight = 15;
+            this.KosztPrzychoduLB.Items.AddRange(new object[] {
+            "1. Dojazd do pracy",
+            "2. Czynsz i media",
+            "3. Abonament na telefon",
+            "4. Abonament na internet",
+            "5. Meble biurowe",
+            "6. Akcesoria biurowe",
+            "7. Przystosowanie mieszkania do pracy",
+            "8. Środki czystości",
+            "9. Komputery, tablety i akcesoria",
+            "10. Oprogramowanie",
+            "11. Drukarki, skanery i akcesoria",
+            "12. Książki i czasopisma branżowe",
+            "13. Szkolenia, warsztaty, studia podyplomowe",
+            "14. Kursy językowe",
+            "15. Strona www",
+            "16. Targi i spotkania branżowe",
+            "17. Noclegi",
+            "18. Paliwo",
+            "19. Ubezpieczenia komunikacyjne",
+            "20. Środki transportu zbiorowego",
+            "21. Ubezpieczenie biura, mieszkania i majątku firmowego"});
+            this.KosztPrzychoduLB.Location = new System.Drawing.Point(17, 328);
+            this.KosztPrzychoduLB.Name = "KosztPrzychoduLB";
+            this.KosztPrzychoduLB.Size = new System.Drawing.Size(545, 94);
+            this.KosztPrzychoduLB.TabIndex = 53;
             // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 911);
+            this.ClientSize = new System.Drawing.Size(942, 971);
             this.Controls.Add(this.panel1);
             this.Name = "AddEmployees";
             this.Text = "AddEmployees";
@@ -1523,5 +1586,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.Button UmowaPrzegladajBTN;
         private System.Windows.Forms.Label UmowaLabel;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox UlgaPodatkowaLB;
+        private System.Windows.Forms.ListBox KosztPrzychoduLB;
     }
 }
