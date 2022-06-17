@@ -50,13 +50,12 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.imiePracownikaTB = new System.Windows.Forms.TextBox();
             this.imiePracownikaLabel = new System.Windows.Forms.Label();
             this.daneZatrudnieniaGB = new System.Windows.Forms.GroupBox();
+            this.KosztPrzychoduLB = new System.Windows.Forms.ListBox();
             this.UlgaPodatkowaLB = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Umowa = new System.Windows.Forms.Label();
             this.daneEtatCB = new System.Windows.Forms.ComboBox();
             this.daneUmowaCB = new System.Windows.Forms.ComboBox();
-            this.kosztyUzyskaniaPrzychoduCB = new System.Windows.Forms.ComboBox();
-            this.ulgaPodatkowaCB = new System.Windows.Forms.ComboBox();
             this.ulgapodatkowaLabel = new System.Windows.Forms.Label();
             this.kosztyPrzychoduLabel = new System.Windows.Forms.Label();
             this.nfzTB = new System.Windows.Forms.TextBox();
@@ -161,7 +160,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.StawkaGodzinowaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DataZatrudnieniaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DziennyCzasPracyEP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.KosztPrzychoduLB = new System.Windows.Forms.ListBox();
             this.danePodstawoweGB.SuspendLayout();
             this.daneZatrudnieniaGB.SuspendLayout();
             this.adresGB.SuspendLayout();
@@ -419,8 +417,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneZatrudnieniaGB.Controls.Add(this.Umowa);
             this.daneZatrudnieniaGB.Controls.Add(this.daneEtatCB);
             this.daneZatrudnieniaGB.Controls.Add(this.daneUmowaCB);
-            this.daneZatrudnieniaGB.Controls.Add(this.kosztyUzyskaniaPrzychoduCB);
-            this.daneZatrudnieniaGB.Controls.Add(this.ulgaPodatkowaCB);
             this.daneZatrudnieniaGB.Controls.Add(this.ulgapodatkowaLabel);
             this.daneZatrudnieniaGB.Controls.Add(this.kosztyPrzychoduLabel);
             this.daneZatrudnieniaGB.Controls.Add(this.nfzTB);
@@ -436,6 +432,37 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneZatrudnieniaGB.TabStop = false;
             this.daneZatrudnieniaGB.Text = "Dane o zatrudnieniu";
             // 
+            // KosztPrzychoduLB
+            // 
+            this.KosztPrzychoduLB.FormattingEnabled = true;
+            this.KosztPrzychoduLB.ItemHeight = 15;
+            this.KosztPrzychoduLB.Items.AddRange(new object[] {
+            "1. Dojazd do pracy",
+            "2. Czynsz i media",
+            "3. Abonament na telefon",
+            "4. Abonament na internet",
+            "5. Meble biurowe",
+            "6. Akcesoria biurowe",
+            "7. Przystosowanie mieszkania do pracy",
+            "8. Środki czystości",
+            "9. Komputery, tablety i akcesoria",
+            "10. Oprogramowanie",
+            "11. Drukarki, skanery i akcesoria",
+            "12. Książki i czasopisma branżowe",
+            "13. Szkolenia, warsztaty, studia podyplomowe",
+            "14. Kursy językowe",
+            "15. Strona www",
+            "16. Targi i spotkania branżowe",
+            "17. Noclegi",
+            "18. Paliwo",
+            "19. Ubezpieczenia komunikacyjne",
+            "20. Środki transportu zbiorowego",
+            "21. Ubezpieczenie biura, mieszkania i majątku firmowego"});
+            this.KosztPrzychoduLB.Location = new System.Drawing.Point(17, 328);
+            this.KosztPrzychoduLB.Name = "KosztPrzychoduLB";
+            this.KosztPrzychoduLB.Size = new System.Drawing.Size(545, 94);
+            this.KosztPrzychoduLB.TabIndex = 53;
+            // 
             // UlgaPodatkowaLB
             // 
             this.UlgaPodatkowaLB.FormattingEnabled = true;
@@ -444,21 +471,21 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             "1. Ulga internetowa - Rachunki za internet",
             "2. Ulga rehabilitacyjna",
             "3. Ulga prorodzinna",
-            "3. Ulga dla krwiodawców",
-            "4. Ulga na nowe technologie",
-            "5. Ulga odsetkowa",
-            "6. Darowizny kościelne",
-            "7. Darowizny na cele pożytku publicznego",
-            "8. Darowizny na cele edukacyjne dla szkół",
-            "9. Zwrot niezależnie pobranych świadczeń\t",
-            "10. Odliczenie składek społecznych",
-            "11. Odliczenie składek zdrowotnych",
-            "12. Wpłaty na IKZE",
-            "13. Darowizna na cele walki z COVID-19",
-            "14. Ulga termomodernizacyjna",
-            "15. Darowizna  komputerów przenośnych (tabletów i laptopów) na rzecz jednostek pr" +
+            "4. Ulga dla krwiodawców",
+            "5. Ulga na nowe technologie",
+            "6. Ulga odsetkowa",
+            "7. Darowizny kościelne",
+            "8. Darowizny na cele pożytku publicznego",
+            "9. Darowizny na cele edukacyjne dla szkół",
+            "10. Zwrot niezależnie pobranych świadczeń\t",
+            "11. Odliczenie składek społecznych",
+            "12. Odliczenie składek zdrowotnych",
+            "13. Wpłaty na IKZE",
+            "14. Darowizna na cele walki z COVID-19",
+            "15. Ulga termomodernizacyjna",
+            "16. Darowizna  komputerów przenośnych (tabletów i laptopów) na rzecz jednostek pr" +
                 "owadzących placówki oświatowe",
-            "16. Ulga dla młodych"});
+            "17. Ulga dla młodych"});
             this.UlgaPodatkowaLB.Location = new System.Drawing.Point(18, 202);
             this.UlgaPodatkowaLB.Name = "UlgaPodatkowaLB";
             this.UlgaPodatkowaLB.Size = new System.Drawing.Size(544, 94);
@@ -507,28 +534,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.daneUmowaCB.Size = new System.Drawing.Size(314, 23);
             this.daneUmowaCB.TabIndex = 48;
             this.daneUmowaCB.Validating += new System.ComponentModel.CancelEventHandler(this.daneUmowaCB_Validating);
-            // 
-            // kosztyUzyskaniaPrzychoduCB
-            // 
-            this.kosztyUzyskaniaPrzychoduCB.FormattingEnabled = true;
-            this.kosztyUzyskaniaPrzychoduCB.Items.AddRange(new object[] {
-            "Tak"});
-            this.kosztyUzyskaniaPrzychoduCB.Location = new System.Drawing.Point(469, 53);
-            this.kosztyUzyskaniaPrzychoduCB.Name = "kosztyUzyskaniaPrzychoduCB";
-            this.kosztyUzyskaniaPrzychoduCB.Size = new System.Drawing.Size(116, 23);
-            this.kosztyUzyskaniaPrzychoduCB.TabIndex = 47;
-            this.kosztyUzyskaniaPrzychoduCB.Validating += new System.ComponentModel.CancelEventHandler(this.kosztyUzyskaniaPrzychoduCB_Validating);
-            // 
-            // ulgaPodatkowaCB
-            // 
-            this.ulgaPodatkowaCB.FormattingEnabled = true;
-            this.ulgaPodatkowaCB.Items.AddRange(new object[] {
-            "Tak"});
-            this.ulgaPodatkowaCB.Location = new System.Drawing.Point(465, 26);
-            this.ulgaPodatkowaCB.Name = "ulgaPodatkowaCB";
-            this.ulgaPodatkowaCB.Size = new System.Drawing.Size(120, 23);
-            this.ulgaPodatkowaCB.TabIndex = 46;
-            this.ulgaPodatkowaCB.Validating += new System.ComponentModel.CancelEventHandler(this.ulgaPodatkowaCB_Validating);
             // 
             // ulgapodatkowaLabel
             // 
@@ -1355,37 +1360,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.DziennyCzasPracyEP.ContainerControl = this;
             // 
-            // KosztPrzychoduLB
-            // 
-            this.KosztPrzychoduLB.FormattingEnabled = true;
-            this.KosztPrzychoduLB.ItemHeight = 15;
-            this.KosztPrzychoduLB.Items.AddRange(new object[] {
-            "1. Dojazd do pracy",
-            "2. Czynsz i media",
-            "3. Abonament na telefon",
-            "4. Abonament na internet",
-            "5. Meble biurowe",
-            "6. Akcesoria biurowe",
-            "7. Przystosowanie mieszkania do pracy",
-            "8. Środki czystości",
-            "9. Komputery, tablety i akcesoria",
-            "10. Oprogramowanie",
-            "11. Drukarki, skanery i akcesoria",
-            "12. Książki i czasopisma branżowe",
-            "13. Szkolenia, warsztaty, studia podyplomowe",
-            "14. Kursy językowe",
-            "15. Strona www",
-            "16. Targi i spotkania branżowe",
-            "17. Noclegi",
-            "18. Paliwo",
-            "19. Ubezpieczenia komunikacyjne",
-            "20. Środki transportu zbiorowego",
-            "21. Ubezpieczenie biura, mieszkania i majątku firmowego"});
-            this.KosztPrzychoduLB.Location = new System.Drawing.Point(17, 328);
-            this.KosztPrzychoduLB.Name = "KosztPrzychoduLB";
-            this.KosztPrzychoduLB.Size = new System.Drawing.Size(545, 94);
-            this.KosztPrzychoduLB.TabIndex = 53;
-            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1507,8 +1481,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button anulujBTN;
         private System.Windows.Forms.ComboBox plecCB;
-        private System.Windows.Forms.ComboBox kosztyUzyskaniaPrzychoduCB;
-        private System.Windows.Forms.ComboBox ulgaPodatkowaCB;
         private System.Windows.Forms.GroupBox StanowiskoGB;
         private System.Windows.Forms.ComboBox dzialCB;
         private System.Windows.Forms.ComboBox stanowiskoCB;
