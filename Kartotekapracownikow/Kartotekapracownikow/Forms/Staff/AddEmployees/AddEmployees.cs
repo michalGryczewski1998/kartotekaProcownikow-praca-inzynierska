@@ -65,8 +65,8 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 try
                 {
                     string Plec = plecCB.SelectedItem.ToString();
-                    string UlgaPodatkowa = ulgaPodatkowaCB.SelectedItem.ToString();
-                    string KosztUzyskaniaPrzychodu = kosztyUzyskaniaPrzychoduCB.SelectedItem.ToString();
+                    string UlgaPodatkowa = UlgaPodatkowaLB.SelectedItem.ToString();
+                    string KosztUzyskaniaPrzychodu = KosztPrzychoduLB.SelectedItem.ToString();
                     string Stanowisko = stanowiskoCB.SelectedItem.ToString();
                     string PESEL = peselTB.Text;
                     string DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString();
@@ -291,12 +291,20 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
                     await db.DanePracownikaZatrudnienie.AddAsync(daneZatrudnienie);
                     await db.SaveChangesAsync();
+
+                    MessageBox.Show("Dodano pracownika");
+                    WyczyscPola();
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Błąd podczas dodawania pracownika do bazy danych !! \n");
                 }         
             }
+        }
+
+        private static void WyczyscPola()
+        {
+            throw new NotImplementedException();
         }
 
         private void imiePracownikaTB_Validating(object sender, CancelEventArgs e)
@@ -964,36 +972,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             {
                 e.Cancel = false;
                 EtatEP.SetError(daneEtatCB, null);
-            }
-        }
-
-        private void ulgaPodatkowaCB_Validating(object sender, CancelEventArgs e)
-        {
-            if (ulgaPodatkowaCB.SelectedIndex == -1)
-            {
-                e.Cancel = true;
-                ulgaPodatkowaCB.Focus();
-                UlgaPodatkowaEP.SetError(ulgaPodatkowaCB, "Proszę wybrać ulgę podatkową");
-            }
-            else
-            {
-                e.Cancel = false;
-                UlgaPodatkowaEP.SetError(ulgaPodatkowaCB, null);
-            }
-        }
-
-        private void kosztyUzyskaniaPrzychoduCB_Validating(object sender, CancelEventArgs e)
-        {
-            if (kosztyUzyskaniaPrzychoduCB.SelectedIndex == -1)
-            {
-                e.Cancel = true;
-                kosztyUzyskaniaPrzychoduCB.Focus();
-                KosztUzyskaniaPrzychoduEP.SetError(kosztyUzyskaniaPrzychoduCB, "Proszę podać koszt uzyskania przychodu");
-            }
-            else
-            {
-                e.Cancel = false;
-                KosztUzyskaniaPrzychoduEP.SetError(kosztyUzyskaniaPrzychoduCB, null);
             }
         }
 
