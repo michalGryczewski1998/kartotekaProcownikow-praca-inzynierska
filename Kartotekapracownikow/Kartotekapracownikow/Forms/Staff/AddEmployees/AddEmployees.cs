@@ -153,7 +153,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
 
         private void anulujBTN_Click(object sender, EventArgs e)
         {
-
+            WyczyscPola();
         }
 
         private void imiePracownikaTB_TextChanged(object sender, EventArgs e)
@@ -293,7 +293,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                     await db.SaveChangesAsync();
 
                     MessageBox.Show("Dodano pracownika");
-                    WyczyscPola();
                 }
                 catch (Exception)
                 {
@@ -302,9 +301,48 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             }
         }
 
-        private static void WyczyscPola()
+        private void WyczyscPola()
         {
-            throw new NotImplementedException();
+            plecCB.Text = "";
+            UlgaPodatkowaLB.SelectedIndex = 0;
+            KosztPrzychoduLB.SelectedIndex = 0;
+            stanowiskoCB.Text = "";
+            peselTB.Text = "";
+            dziennyCzasPracyCB.Text = "";
+            daneUmowaCB.Text = "";
+            daneEtatCB.Text = "";
+            imiePracownikaTB.Text = "";
+            Nazwisko.Text = "";
+
+            base64ConvertImageEmployee = "";
+            zdjeciePracownikaPB.Image = null;
+
+            dataUrodzinDTP.CustomFormat = "";
+
+            numertelefonuPracownikaTB.Text = "";
+            adresEmailPracownika.Text = "";
+            miejsceUrodzeniaTB.Text = "";
+            imieMatkiTB.Text = "";
+            imieOjcaTB.Text = "";
+            nipTB.Text = "";
+            krajTB.Text = "";
+            wojewodztwoTB.Text = "";
+            gminaTB.Text = "";
+            kodTB.Text = "";
+            miejscowoscTB.Text = "";
+            ulicaTB.Text = "";
+            numerDomuTB.Text = "";
+            numerLokaluTB.Text = "";
+            pocztaTB.Text = "";
+            doKogoNaglyWypadekTB.Text = "";
+            NumerTelefonuNaglyWypadekTB.Text = "";
+            numerKontaTB.Text = "";
+            bankTB.Text = "";
+            nfzTB.Text = "";
+            dzialCB.Text = "";
+            stawkaGodzinaTB.Text = "";
+
+            dataZatrudnieniaDTP.CustomFormat = "";
         }
 
         private void imiePracownikaTB_Validating(object sender, CancelEventArgs e)
