@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
+using Kartotekapracownikow.Forms.Email;
 
 namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
 {
@@ -19,6 +20,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
     {
         private int danePracownikaID;
         private string newPicture;
+        string emailPracownika;
 
         public EmployessInfo(int danePracownikaID)
         {
@@ -90,6 +92,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     DataUrodzinDTP.Value = query.DataUrodzenia;
                     numertelefonuPracownikaTB.Text = query.NumerTelefonu.ToString();
                     adresEmailPracownika.Text = query.AdresEmail.ToString();
+                    emailPracownika = query.AdresEmail.ToString();
                     miejsceUrodzeniaTB.Text = query.MiejsceUrodzenia.ToString();
                     plecTB.Text = query.Plec.ToString();
                     imieMatkiTB.Text = query.ImieMatki.ToString();
@@ -239,6 +242,12 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             {
                 MessageBox.Show("Nie można zaktualizować danych pracownika, proszę ponowic próbę");
             }
+        }
+
+        private void EmailBTN_Click(object sender, EventArgs e)
+        {
+            EmailMessage email = new EmailMessage(emailPracownika);
+            email.ShowDialog();
         }
 
         private void UpdateData()

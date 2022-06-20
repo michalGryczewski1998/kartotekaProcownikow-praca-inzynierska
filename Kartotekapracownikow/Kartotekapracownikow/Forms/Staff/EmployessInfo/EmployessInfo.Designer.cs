@@ -151,6 +151,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.StawkaGodzinowaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DataRozpoczeciaPracyEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DziennyCzasPracyEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.EmailBTN = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1018,6 +1019,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.EmailBTN);
             this.groupBox8.Controls.Add(this.button2);
             this.groupBox8.Controls.Add(this.EdytujPodstawoweBTN);
             this.groupBox8.Controls.Add(this.edytujZatrudnienieBTN);
@@ -1034,7 +1036,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(6, 129);
+            this.button2.Location = new System.Drawing.Point(6, 181);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(188, 48);
             this.button2.TabIndex = 65;
@@ -1177,6 +1179,16 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // DziennyCzasPracyEP
             // 
             this.DziennyCzasPracyEP.ContainerControl = this;
+            // 
+            // EmailBTN
+            // 
+            this.EmailBTN.Location = new System.Drawing.Point(6, 127);
+            this.EmailBTN.Name = "EmailBTN";
+            this.EmailBTN.Size = new System.Drawing.Size(188, 48);
+            this.EmailBTN.TabIndex = 66;
+            this.EmailBTN.Text = "Wyślij E-mail do pracownika";
+            this.EmailBTN.UseVisualStyleBackColor = true;
+            this.EmailBTN.Click += new System.EventHandler(this.EmailBTN_Click);
             // 
             // EmployessInfo
             // 
@@ -1369,5 +1381,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.ErrorProvider StawkaGodzinowaEP;
         private System.Windows.Forms.ErrorProvider DataRozpoczeciaPracyEP;
         private System.Windows.Forms.ErrorProvider DziennyCzasPracyEP;
+        private System.Windows.Forms.Button EmailBTN;
     }
 }
