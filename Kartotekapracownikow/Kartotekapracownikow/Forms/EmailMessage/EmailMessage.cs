@@ -90,14 +90,10 @@ namespace Kartotekapracownikow.Forms.Email
                 SenderEmailPassword = "pmlnmihwhcutttvi"
             });
 
-            Debug.WriteLine("Wysyłka");
-
             await email.WysylkaEmail(
                 emailAdres,
                 temat,
                 tresc);
-
-            Debug.WriteLine("Wysłano");
         }
     }
 }
