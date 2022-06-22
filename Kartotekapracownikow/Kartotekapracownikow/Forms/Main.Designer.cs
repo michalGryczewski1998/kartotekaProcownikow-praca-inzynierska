@@ -31,7 +31,6 @@ namespace Kartotekapracownikow
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.panelMenuMain = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.splitter5 = new System.Windows.Forms.Splitter();
             this.byliPracownicyBTN = new System.Windows.Forms.Button();
             this.splitter4 = new System.Windows.Forms.Splitter();
@@ -69,7 +68,6 @@ namespace Kartotekapracownikow
             // 
             // panelMenuMain
             // 
-            this.panelMenuMain.Controls.Add(this.button1);
             this.panelMenuMain.Controls.Add(this.splitter5);
             this.panelMenuMain.Controls.Add(this.byliPracownicyBTN);
             this.panelMenuMain.Controls.Add(this.splitter4);
@@ -88,19 +86,9 @@ namespace Kartotekapracownikow
             this.panelMenuMain.Text = "Pracownicy";
             this.panelMenuMain.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(561, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(215, 38);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Dodaj Pracownika z zagranicy";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // splitter5
             // 
-            this.splitter5.Location = new System.Drawing.Point(558, 3);
+            this.splitter5.Location = new System.Drawing.Point(700, 3);
             this.splitter5.Name = "splitter5";
             this.splitter5.Size = new System.Drawing.Size(3, 38);
             this.splitter5.TabIndex = 10;
@@ -109,7 +97,7 @@ namespace Kartotekapracownikow
             // byliPracownicyBTN
             // 
             this.byliPracownicyBTN.Dock = System.Windows.Forms.DockStyle.Left;
-            this.byliPracownicyBTN.Location = new System.Drawing.Point(421, 3);
+            this.byliPracownicyBTN.Location = new System.Drawing.Point(563, 3);
             this.byliPracownicyBTN.Name = "byliPracownicyBTN";
             this.byliPracownicyBTN.Size = new System.Drawing.Size(137, 38);
             this.byliPracownicyBTN.TabIndex = 8;
@@ -119,7 +107,7 @@ namespace Kartotekapracownikow
             // 
             // splitter4
             // 
-            this.splitter4.Location = new System.Drawing.Point(418, 3);
+            this.splitter4.Location = new System.Drawing.Point(560, 3);
             this.splitter4.Name = "splitter4";
             this.splitter4.Size = new System.Drawing.Size(3, 38);
             this.splitter4.TabIndex = 7;
@@ -128,9 +116,9 @@ namespace Kartotekapracownikow
             // zwolnijPracownikaBTN
             // 
             this.zwolnijPracownikaBTN.Dock = System.Windows.Forms.DockStyle.Left;
-            this.zwolnijPracownikaBTN.Location = new System.Drawing.Point(297, 3);
+            this.zwolnijPracownikaBTN.Location = new System.Drawing.Point(423, 3);
             this.zwolnijPracownikaBTN.Name = "zwolnijPracownikaBTN";
-            this.zwolnijPracownikaBTN.Size = new System.Drawing.Size(121, 38);
+            this.zwolnijPracownikaBTN.Size = new System.Drawing.Size(137, 38);
             this.zwolnijPracownikaBTN.TabIndex = 6;
             this.zwolnijPracownikaBTN.Text = "Zwolnij Pracownika";
             this.zwolnijPracownikaBTN.UseVisualStyleBackColor = true;
@@ -138,7 +126,7 @@ namespace Kartotekapracownikow
             // 
             // splitter3
             // 
-            this.splitter3.Location = new System.Drawing.Point(294, 3);
+            this.splitter3.Location = new System.Drawing.Point(420, 3);
             this.splitter3.Name = "splitter3";
             this.splitter3.Size = new System.Drawing.Size(3, 38);
             this.splitter3.TabIndex = 5;
@@ -147,9 +135,9 @@ namespace Kartotekapracownikow
             // dodajPracownikaBTN
             // 
             this.dodajPracownikaBTN.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dodajPracownikaBTN.Location = new System.Drawing.Point(173, 3);
+            this.dodajPracownikaBTN.Location = new System.Drawing.Point(283, 3);
             this.dodajPracownikaBTN.Name = "dodajPracownikaBTN";
-            this.dodajPracownikaBTN.Size = new System.Drawing.Size(121, 38);
+            this.dodajPracownikaBTN.Size = new System.Drawing.Size(137, 38);
             this.dodajPracownikaBTN.TabIndex = 4;
             this.dodajPracownikaBTN.Text = "Dodaj Pracownika";
             this.dodajPracownikaBTN.UseVisualStyleBackColor = true;
@@ -157,7 +145,7 @@ namespace Kartotekapracownikow
             // 
             // splitter2
             // 
-            this.splitter2.Location = new System.Drawing.Point(170, 3);
+            this.splitter2.Location = new System.Drawing.Point(280, 3);
             this.splitter2.Name = "splitter2";
             this.splitter2.Size = new System.Drawing.Size(3, 38);
             this.splitter2.TabIndex = 3;
@@ -166,17 +154,17 @@ namespace Kartotekapracownikow
             // pracownicyZagranica
             // 
             this.pracownicyZagranica.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pracownicyZagranica.Location = new System.Drawing.Point(88, 3);
+            this.pracownicyZagranica.Location = new System.Drawing.Point(143, 3);
             this.pracownicyZagranica.Name = "pracownicyZagranica";
-            this.pracownicyZagranica.Size = new System.Drawing.Size(82, 38);
+            this.pracownicyZagranica.Size = new System.Drawing.Size(137, 38);
             this.pracownicyZagranica.TabIndex = 2;
-            this.pracownicyZagranica.Text = "Zagraniczni";
+            this.pracownicyZagranica.Text = "Dodaj zagranicznego pracownika";
             this.pracownicyZagranica.UseVisualStyleBackColor = true;
             this.pracownicyZagranica.Click += new System.EventHandler(this.pracownicyZagranica_Click);
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(85, 3);
+            this.splitter1.Location = new System.Drawing.Point(140, 3);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(3, 38);
             this.splitter1.TabIndex = 1;
@@ -187,7 +175,7 @@ namespace Kartotekapracownikow
             this.pracownikaBTN.Dock = System.Windows.Forms.DockStyle.Left;
             this.pracownikaBTN.Location = new System.Drawing.Point(3, 3);
             this.pracownikaBTN.Name = "pracownikaBTN";
-            this.pracownikaBTN.Size = new System.Drawing.Size(82, 38);
+            this.pracownikaBTN.Size = new System.Drawing.Size(137, 38);
             this.pracownikaBTN.TabIndex = 0;
             this.pracownikaBTN.Text = "Pracownicy";
             this.pracownikaBTN.UseVisualStyleBackColor = true;
@@ -299,7 +287,6 @@ namespace Kartotekapracownikow
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Button byliPracownicyBTN;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Splitter splitter5;
     }
 }
