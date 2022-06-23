@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kartotekapracownikow.Forms.Staff.InternationalStaff;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,6 +47,12 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
         private void InternationalStaff_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void DodajBTN_Click(object sender, EventArgs e)
+        {
+            DaneZatrudnienie zatrudnienie = new DaneZatrudnienie();
+            zatrudnienie.ShowDialog();
         }
     }
 }
