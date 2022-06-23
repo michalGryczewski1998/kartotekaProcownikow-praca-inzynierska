@@ -150,6 +150,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             this.StawkaGodzinowaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DataZatrudnieniaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DziennyCzasPracyEP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.danePodstawoweGB.SuspendLayout();
             this.daneZatrudnieniaGB.SuspendLayout();
             this.adresGB.SuspendLayout();
@@ -795,6 +796,7 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.daneKontaktoweGB);
             this.panel1.Controls.Add(this.StanowiskoGB);
@@ -1252,6 +1254,15 @@ namespace Kartotekapracownikow.Forms.AddEmployees
             // 
             this.DziennyCzasPracyEP.ContainerControl = this;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(610, 615);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(320, 263);
+            this.groupBox2.TabIndex = 49;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Wykształcenie";
+            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1440,5 +1451,6 @@ namespace Kartotekapracownikow.Forms.AddEmployees
         private System.Windows.Forms.ErrorProvider DziennyCzasPracyEP;
         private System.Windows.Forms.ListBox UlgaPodatkowaLB;
         private System.Windows.Forms.ListBox KosztPrzychoduLB;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
