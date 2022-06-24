@@ -718,20 +718,20 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(6, 55);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(151, 15);
+            this.label18.Size = new System.Drawing.Size(125, 15);
             this.label18.TabIndex = 7;
-            this.label18.Text = "Poziom języka angielskiego";
+            this.label18.Text = "Poziom języka obcego";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "poziom A1 (początkujący)",
-            "poziom A2 (początkujący)",
-            "poziom B1 (średnio zaawansowany)",
-            "poziom B2 (średnio zaawansowany)",
-            "poziom C1 (zaawansowany)",
-            "poziom C2 (zaawansowany)"});
+            "Angielski - poziom A1 (początkujący)",
+            "Angielski - poziom A2 (początkujący)",
+            "Angielski - poziom B1 (średnio zaawansowany)",
+            "Angielski - poziom B2 (średnio zaawansowany)",
+            "Angielski - poziom C1 (zaawansowany)",
+            "Angielski - poziom C2 (zaawansowany)"});
             this.comboBox2.Location = new System.Drawing.Point(164, 52);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(247, 23);
