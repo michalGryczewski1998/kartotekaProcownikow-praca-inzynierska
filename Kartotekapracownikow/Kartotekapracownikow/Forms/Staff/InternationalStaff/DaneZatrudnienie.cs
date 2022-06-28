@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kartotekapracownikow.DatabaseModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,71 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
     {
         private string PdfToBase64;
 
-        public DaneZatrudnienie()
+        private string Imie;
+        private string Nazwisko;
+        private string ImieMatki;
+        private string ImieOjca;
+        private string MiejsceUrodzenia;
+        private DateTime DataUrodzenia;
+        private string KrajPochodzenia;
+        private string Miejscowosc;
+        private string Gmina;
+        private string Kod;
+        private string Poczta;
+        private string Ulica;
+        private string NumerDomuMieszkania;
+        private string KrajZamieszkania;
+        private string PodzialAdministracyjnyKraju;
+        private string ZdjeciePracownika;
+        private string SzkolaSrednia;
+        private string PoziomJezykaObcego;
+        private string Uczelnia;
+        private string Specjalizacja;
+        private string Tytul;
+        private string TelefonKontaktowy;
+        private string AdresEmail;
+        private string OsobaZaufanaPracownika;
+        private string NumerTelefonuOsobyZaufanej;
+        private string Dzial;
+        private string Stanowisko;
+        private string StawkaGodzinowa;
+        private DateTime DataZatrudnienia;
+        private string DziennyCzasPracy;
+
+        public DaneZatrudnienie(DataParameters parameters)
         {
             InitializeComponent();
+
+            Imie = parameters.Imie;
+            Nazwisko = parameters.Nazwisko;
+            ImieMatki = parameters.ImieMatki;
+            ImieOjca = parameters.ImieOjca;
+            MiejsceUrodzenia = parameters.MiejsceUrodzenia;
+            DataUrodzenia = parameters.DataUrodzenia;
+            KrajPochodzenia = parameters.KrajPochodzenia;
+            Miejscowosc = parameters.Miejscowosc;
+            Gmina = parameters.Gmina;
+            Kod = parameters.Kod;
+            Poczta = parameters.Poczta;
+            Ulica = parameters.Ulica;
+            NumerDomuMieszkania = parameters.NumerDomuMieszkania;
+            KrajPochodzenia = parameters.KrajPochodzenia;
+            PodzialAdministracyjnyKraju = parameters.PodzialAdministracyjnyKraju;
+            ZdjeciePracownika = parameters.ZdjeciePracownika;
+            SzkolaSrednia = parameters.SzkolaSrednia;
+            PoziomJezykaObcego = parameters.PoziomJezykaObcego;
+            Uczelnia = parameters.Uczelnia;
+            Specjalizacja = parameters.Specjalizacja;
+            Tytul = parameters.Tytul;
+            TelefonKontaktowy = parameters.TelefonKontaktowy;
+            AdresEmail = parameters.AdresEmail;
+            OsobaZaufanaPracownika = parameters.OsobaZaufanaPracownika;
+            NumerTelefonuOsobyZaufanej = parameters.NumerTelefonuOsobyZaufanej;
+            Dzial = parameters.Dzial;
+            Stanowisko = parameters.Stanowisko;
+            StawkaGodzinowa = parameters.StawkaGodzinowa;
+            DataZatrudnienia = parameters.DataZatrudnienia;
+            DziennyCzasPracy = parameters.DziennyCzasPracy;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +135,31 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             catch (Exception)
             {
                 MessageBox.Show("Błąd podczas dodawania dokumentu.");
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (PobytCzasowyCB.Checked)
+            {
+                DataWygasnieciaKartyPobytuTymczasowegoDTP.Enabled = true;
+            }
+            else
+            {
+                DataWygasnieciaKartyPobytuTymczasowegoDTP.Enabled = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _ = DodajDoBazy();
+        }
+
+        private async Task DodajDoBazy()
+        {
+            using(var db = new Database())
+            {
+
             }
         }
     }

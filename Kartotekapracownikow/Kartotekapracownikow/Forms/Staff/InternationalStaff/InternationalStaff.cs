@@ -14,7 +14,7 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
     public partial class InternationalStaff : Form
     {
         private static InternationalStaff _instance = null;
-
+        private string ZdjeciePracownikaBase64;
         public static InternationalStaff Instance
         {
             get
@@ -48,10 +48,64 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
         {
 
         }
+        private void DodajZdjecieBTN_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Images (*.PNG;*.JPG;*.GIF)|*.PNG;*.JPG;*.GIF|" + "All files (*.*)|*.*";
 
+            try
+            {
+                string fileName = "";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    fileName = openFileDialog.FileName;
+                    ZdjeciePracownikaZagranicznegoPB.Image = Image.FromFile(openFileDialog.FileName);
+                }
+
+                byte[] imageArray = System.IO.File.ReadAllBytes(fileName);
+                ZdjeciePracownikaBase64 = Convert.ToBase64String(imageArray);
+                //Debug.WriteLine(base64ConvertImageEmployee);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd podczas dodawania zdjęcia");
+            }
+        }
         private void DodajBTN_Click(object sender, EventArgs e)
         {
-            DaneZatrudnienie zatrudnienie = new DaneZatrudnienie();
+            DaneZatrudnienie zatrudnienie = new DaneZatrudnienie(new DataParameters
+            { 
+                Imie = ImieTB.Text,
+                Nazwisko = NazwiskoTB.Text,
+                ImieMatki = ImieMatkiTB.Text,
+                ImieOjca = ImieOjcaTB.Text,
+                MiejsceUrodzenia = MiejsceUrodzeniaTB.Text,
+                DataUrodzenia = DataUrodzeniaDTP.Value,
+                KrajPochodzenia = KrajPochodzeniaTB.Text,
+                Miejscowosc = miejscowoscTB.Text,
+                Gmina = gminaTB.Text,
+                Kod = kodTB.Text,
+                Poczta = PocztaTB.Text,
+                Ulica = UlicaTB.Text,
+                NumerDomuMieszkania = numerDomuTB.Text,
+                KrajZamieszkania = krajTB.Text,
+                PodzialAdministracyjnyKraju = PodzialAdmKrajuTB.Text,
+                ZdjeciePracownika = ZdjeciePracownikaBase64,
+                SzkolaSrednia = SzkolaSredniaTB.Text,
+                PoziomJezykaObcego = PoziomJezykaObcegoTB.Text,
+                Uczelnia = UczelniaTB.Text,
+                Specjalizacja = SpecjalizacjaTB.Text,
+                Tytul = TytulPoUkonczeniuUczelniTB.Text,
+                TelefonKontaktowy = NumerTelefonuPracownikaTB.Text,
+                AdresEmail = AdresEmailPracownika.Text,
+                OsobaZaufanaPracownika = OsobaZaufanaPracownikaTB.Text,
+                NumerTelefonuOsobyZaufanej = NumerTelefonuOsobyZaufanejTB.Text,
+                Dzial = dzial.Text,
+                Stanowisko = stanowiskoCB.SelectedItem.ToString(),
+                StawkaGodzinowa = stawkaGodzinaTB.Text,
+                DataZatrudnienia = DataZatrudnieniaDTP.Value,
+                DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString(),
+            });
             zatrudnienie.ShowDialog();
         }
     }
