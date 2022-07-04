@@ -309,7 +309,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             this.DokumentPobytowyBTN.TabIndex = 24;
             this.DokumentPobytowyBTN.Text = "Przeglądaj";
             this.DokumentPobytowyBTN.UseVisualStyleBackColor = true;
-            this.DokumentPobytowyBTN.Click += new System.EventHandler(this.button2_Click);
+            this.DokumentPobytowyBTN.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label1
             // 
@@ -328,7 +328,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             this.button1.TabIndex = 6;
             this.button1.Text = "Dodaj";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label7
             // 

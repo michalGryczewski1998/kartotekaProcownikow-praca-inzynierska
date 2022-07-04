@@ -1,4 +1,5 @@
 ﻿using Kartotekapracownikow.DatabaseModel;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -117,7 +118,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             try
             {
@@ -150,17 +151,68 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            _ = DodajDoBazy();
-        }
+        private void Button1_Click(object sender, EventArgs e) => DodajDoBazy();
 
-        private async Task DodajDoBazy()
+        private void DodajDoBazy()
         {
-            using(var db = new Database())
+            try
             {
+                using var db = new Database();
+                //tworzenie bd jesli nie istnieje
+                db.Database.EnsureCreated();
 
+                DataParameters parameters = new();
+
+                var DanePodstawowe = new DanePracownikZagranicznyPodstawowe
+                {
+                    Imie = Imie,
+                    Nazwisko = Nazwisko,
+                    ImieMatki = ImieMatki,
+                    ImieOjca = ImieOjca,
+                    MiejsceUrodzenia = MiejsceUrodzenia,
+                    DataUrodzenia = DataUrodzenia,
+                    KrajPochodzenia = KrajPochodzenia,
+                    Miejscowosc = Miejscowosc,
+                    Ulica = Ulica,
+                    Gmina = Gmina,
+                    KodPocztowy = Kod,
+                    Poczta = Poczta,
+                    DomMieszkanie = NumerDomuMieszkania,
+                    KrajZamieszkania = KrajZamieszkania,
+                    PodzialAdministracyjny = PodzialAdministracyjnyKraju,
+                    ZdjeciePracownika = ZdjeciePracownika,
+                    TelefonKontaktowy = TelefonKontaktowy,
+                    AdresEmail = AdresEmail,
+                    OsobaZaufana = OsobaZaufanaPracownika,
+                    NumerTelefonuOsobyZaufanej = NumerTelefonuOsobyZaufanej
+                };
+
+                db.DanePracownikZagranicznyPodstawowes.Add(DanePodstawowe);
+
+                var DaneZatrudnienie = new DanePracownikZagranicznyZatrudnienie
+                {
+                    SzkolaSrednia = SzkolaSrednia,
+                    PoziomJezykaObcego = PoziomJezykaObcego,
+                    Uczelnia = Uczelnia,
+                    SpecjalizacjaZawodowa = Specjalizacja,
+                    Tytul = Tytul,
+                    Dzial = Dzial,
+                    Stanowisko = Stanowisko,
+                    StawkaGodzinowa = StawkaGodzinowa,
+                    DataZatrudnienia = DataZatrudnienia,
+                    DziennyCzasPracy = DziennyCzasPracy,
+                };
+
+                db.DanePracownikZagranicznyZatrudnienies.Add(DaneZatrudnienie);
+                db.SaveChanges();
+
+                MessageBox.Show("Dodano pracownika");
             }
+            catch (Exception)
+            {
+                MessageBox.Show($"Błąd podczas dodawania do bazy danych.");
+            }
+
         }
     }
 }
