@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -73,8 +74,8 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
         }
         private void DodajBTN_Click(object sender, EventArgs e)
         {
-            DaneZatrudnienie zatrudnienie = new DaneZatrudnienie(new DataParameters
-            { 
+            DaneZatrudnienie zatrudnienie = new(new DataParameters
+            {
                 Imie = ImieTB.Text,
                 Nazwisko = NazwiskoTB.Text,
                 ImieMatki = ImieMatkiTB.Text,
@@ -106,6 +107,7 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
                 DataZatrudnienia = DataZatrudnieniaDTP.Value,
                 DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString(),
             });
+
             zatrudnienie.ShowDialog();
         }
     }
