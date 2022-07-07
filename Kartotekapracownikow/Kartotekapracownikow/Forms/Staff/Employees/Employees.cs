@@ -1,5 +1,6 @@
 ﻿using Kartotekapracownikow.DatabaseModel;
 using Kartotekapracownikow.Forms.Staff.EmployessInfo;
+using Kartotekapracownikow.Forms.Staff.InternationalStaffInfo;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace Kartotekapracownikow.Forms.Employees
         {
             get
             {
-                if(_instance == null)
+                if (_instance == null)
                 {
                     _instance = new Employees();
                 }
@@ -70,16 +71,16 @@ namespace Kartotekapracownikow.Forms.Employees
                 try
                 {
                     var querry = (from collection in db.DanePracownikaPodstawowe
-                    select new
-                    {
-                        collection.ID,
-                        collection.Imie,
-                        collection.Nazwisko,
-                        collection.NumerTelefonu,
-                        collection.DataUrodzenia,
-                        collection.Miejscowosc,
-                        collection.Ulica
-                    }).ToList();
+                                  select new
+                                  {
+                                      collection.ID,
+                                      collection.Imie,
+                                      collection.Nazwisko,
+                                      collection.NumerTelefonu,
+                                      collection.DataUrodzenia,
+                                      collection.Miejscowosc,
+                                      collection.Kraj
+                                  }).ToList();
 
                     daneDGW.DataSource = querry;
                 }
@@ -87,25 +88,48 @@ namespace Kartotekapracownikow.Forms.Employees
                 {
                     MessageBox.Show("Błąd podczas wyświetlania");
                 }
-            }           
+            }
         }
 
         private void daneDGW_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                /**
-                * Pobieramy indeks po kliknięciu np. w nazwisko pracownika
-                */
-                int index = e.RowIndex;
-                DataGridViewRow wybranaPozycja = daneDGW.Rows[index];
+                string kraj;
+                if (e.RowIndex >= 0)
+                {
+                    /**
+                    * Pobieramy indeks po kliknięciu np. w nazwisko pracownika
+                    */
+                    int index = e.RowIndex;
 
-                /**
-                 * Następnie przekazujemy go do kolejnego WindowsForma
-                 * Gdzie wyświetlane są wszystkie dane pracownika
-                 */
-                EmployessInfo info = new EmployessInfo(index);
-                info.ShowDialog();
+                    DataGridViewRow row = daneDGW.Rows[e.RowIndex];
+                    kraj = row.Cells["KrajPochodzenia"].Value.ToString();
+
+                    if (kraj == "Polska")
+                    {
+                        DataGridViewRow wybranaPozycja = daneDGW.Rows[index];
+
+                        /**
+                         * Następnie przekazujemy go do kolejnego WindowsForma
+                         * Gdzie wyświetlane są wszystkie dane pracownika
+                         */
+
+                        EmployessInfo info = new EmployessInfo(index);
+                        info.ShowDialog();
+                    }
+                    else
+                    {
+                        InternationalInfo international = new();
+                        international.Show();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Błąd");
+                }
+
             }
             catch (Exception)
             {
@@ -127,20 +151,20 @@ namespace Kartotekapracownikow.Forms.Employees
                 try
                 {
                     var querry = (from collection in db.DanePracownikaPodstawowe
-                                    where collection.Nazwisko == nazwisko
-                                    select new
-                                    {
-                                        collection.ID,
-                                        collection.Imie,
-                                        collection.Nazwisko,
-                                        collection.NumerTelefonu,
-                                        collection.DataUrodzenia,
-                                        collection.Miejscowosc,
-                                        collection.Ulica
-                                    }).ToList();
+                                  where collection.Nazwisko == nazwisko
+                                  select new
+                                  {
+                                      collection.ID,
+                                      collection.Imie,
+                                      collection.Nazwisko,
+                                      collection.NumerTelefonu,
+                                      collection.DataUrodzenia,
+                                      collection.Miejscowosc,
+                                      collection.Kraj
+                                  }).ToList();
                     daneDGW.DataSource = querry;
 
-                    if(!querry.Any())
+                    if (!querry.Any())
                     {
                         infoStatus.Text = "Nie znaleziono";
                     }
@@ -160,9 +184,37 @@ namespace Kartotekapracownikow.Forms.Employees
             //daneDGW.DataSource = GetNewValues();
         }
 
-        private object GetNewValues()
+        private void ZagraniczniPracownicy_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            using (var db = new Database())
+            {
+                // Zapytanie LINQ do bazy danych
+                try
+                {
+                    var querry = (from collection in db.DanePracownikZagranicznyPodstawowes
+                                  select new
+                                  {
+                                      collection.ID,
+                                      collection.Imie,
+                                      collection.Nazwisko,
+                                      collection.TelefonKontaktowy,
+                                      collection.DataUrodzenia,
+                                      collection.Miejscowosc,
+                                      collection.KrajPochodzenia
+                                  }).ToList();
+                    daneDGW.DataSource = querry;
+
+                    if (!querry.Any())
+                    {
+                        infoStatus.Text = "Nie znaleziono";
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd wyszukiwania");
+                }
+            }
         }
     }
 }

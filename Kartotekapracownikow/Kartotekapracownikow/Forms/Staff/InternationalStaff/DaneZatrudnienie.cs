@@ -184,7 +184,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
                     KodPocztowy = Kod,
                     Poczta = Poczta,
                     DomMieszkanie = NumerDomuMieszkania,
-                    KrajZamieszkania = KrajZamieszkania,
+                    Kraj = KrajZamieszkania,
                     PodzialAdministracyjny = PodzialAdministracyjnyKraju,
                     ZdjeciePracownika = ZdjeciePracownika,
                     TelefonKontaktowy = TelefonKontaktowy,
