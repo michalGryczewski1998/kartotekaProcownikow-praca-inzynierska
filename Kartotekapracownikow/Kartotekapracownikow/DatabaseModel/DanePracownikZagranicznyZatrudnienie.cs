@@ -72,6 +72,71 @@ namespace Kartotekapracownikow.DatabaseModel
             set;
         }
 
+        public string TypZezwolenia
+        {
+            get;
+            set;
+        }
+
+        public string MiejsceWydaniaWizy
+        {
+            get;
+            set;
+        }
+
+        public double NumerWizy
+        {
+            get;
+            set;
+        }
+
+        public string NumerKontrolnyWizy
+        {
+            get;
+            set;
+        }
+
+        public string NumerPaszportu
+        {
+            get;
+            set;
+        }
+
+        public string Wpisy
+        {
+            get;
+            set;
+        }
+
+        public string TypKlasaWizy
+        {
+            get;
+            set;
+        }
+
+        public DateTime WaznoscWizyStart
+        {
+            get;
+            set;
+        }
+
+        public DateTime WaznoscWizyKoniec
+        {
+            get;
+            set;
+        }
+
+        public string SkanDokumentuPobytowego
+        {
+            get;
+            set;
+        }
+
+        public DateTime? ZezwolenieNaPobytCzasowy
+        {
+            get;
+            set;
+        }
         public int PodstawoweId
         {
             get;

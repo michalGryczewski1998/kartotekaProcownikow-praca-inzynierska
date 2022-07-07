@@ -74,41 +74,48 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
         }
         private void DodajBTN_Click(object sender, EventArgs e)
         {
-            DaneZatrudnienie zatrudnienie = new(new DataParameters
+            try
             {
-                Imie = ImieTB.Text,
-                Nazwisko = NazwiskoTB.Text,
-                ImieMatki = ImieMatkiTB.Text,
-                ImieOjca = ImieOjcaTB.Text,
-                MiejsceUrodzenia = MiejsceUrodzeniaTB.Text,
-                DataUrodzenia = DataUrodzeniaDTP.Value,
-                KrajPochodzenia = KrajPochodzeniaTB.Text,
-                Miejscowosc = miejscowoscTB.Text,
-                Gmina = gminaTB.Text,
-                Kod = kodTB.Text,
-                Poczta = PocztaTB.Text,
-                Ulica = UlicaTB.Text,
-                NumerDomuMieszkania = numerDomuTB.Text,
-                KrajZamieszkania = krajTB.Text,
-                PodzialAdministracyjnyKraju = PodzialAdmKrajuTB.Text,
-                ZdjeciePracownika = ZdjeciePracownikaBase64,
-                SzkolaSrednia = SzkolaSredniaTB.Text,
-                PoziomJezykaObcego = PoziomJezykaObcegoTB.Text,
-                Uczelnia = UczelniaTB.Text,
-                Specjalizacja = SpecjalizacjaTB.Text,
-                Tytul = TytulPoUkonczeniuUczelniTB.Text,
-                TelefonKontaktowy = NumerTelefonuPracownikaTB.Text,
-                AdresEmail = AdresEmailPracownika.Text,
-                OsobaZaufanaPracownika = OsobaZaufanaPracownikaTB.Text,
-                NumerTelefonuOsobyZaufanej = NumerTelefonuOsobyZaufanejTB.Text,
-                Dzial = dzial.Text,
-                Stanowisko = stanowiskoCB.SelectedItem.ToString(),
-                StawkaGodzinowa = stawkaGodzinaTB.Text,
-                DataZatrudnienia = DataZatrudnieniaDTP.Value,
-                DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString(),
-            });
+                DaneZatrudnienie zatrudnienie = new(new DataParameters
+                {
+                    Imie = ImieTB.Text,
+                    Nazwisko = NazwiskoTB.Text,
+                    ImieMatki = ImieMatkiTB.Text,
+                    ImieOjca = ImieOjcaTB.Text,
+                    MiejsceUrodzenia = MiejsceUrodzeniaTB.Text,
+                    DataUrodzenia = DataUrodzeniaDTP.Value,
+                    KrajPochodzenia = KrajPochodzeniaTB.Text,
+                    Miejscowosc = miejscowoscTB.Text,
+                    Gmina = gminaTB.Text,
+                    Kod = kodTB.Text,
+                    Poczta = PocztaTB.Text,
+                    Ulica = UlicaTB.Text,
+                    NumerDomuMieszkania = numerDomuTB.Text,
+                    KrajZamieszkania = krajTB.Text,
+                    PodzialAdministracyjnyKraju = PodzialAdmKrajuTB.Text,
+                    ZdjeciePracownika = ZdjeciePracownikaBase64,
+                    SzkolaSrednia = SzkolaSredniaTB.Text,
+                    PoziomJezykaObcego = PoziomJezykaObcegoTB.Text,
+                    Uczelnia = UczelniaTB.Text,
+                    Specjalizacja = SpecjalizacjaTB.Text,
+                    Tytul = TytulPoUkonczeniuUczelniTB.Text,
+                    TelefonKontaktowy = NumerTelefonuPracownikaTB.Text,
+                    AdresEmail = AdresEmailPracownika.Text,
+                    OsobaZaufanaPracownika = OsobaZaufanaPracownikaTB.Text,
+                    NumerTelefonuOsobyZaufanej = NumerTelefonuOsobyZaufanejTB.Text,
+                    Dzial = dzial.Text,
+                    Stanowisko = stanowiskoCB.SelectedItem.ToString(),
+                    StawkaGodzinowa = stawkaGodzinaTB.Text,
+                    DataZatrudnienia = DataZatrudnieniaDTP.Value,
+                    DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString(),
+                });
 
-            zatrudnienie.ShowDialog();
+                zatrudnienie.ShowDialog();
+            }
+            catch (NullReferenceException d)
+            {
+                MessageBox.Show($"Proszę wpisać wszystkie dane. {d.Message}");
+            }
         }
     }
 }
