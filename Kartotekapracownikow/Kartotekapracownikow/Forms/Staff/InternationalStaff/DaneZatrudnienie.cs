@@ -201,6 +201,15 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
                     StawkaGodzinowa = StawkaGodzinowa,
                     DataZatrudnienia = DataZatrudnienia,
                     DziennyCzasPracy = DziennyCzasPracy,
+                    TypZezwolenia = TypZezwoleniaCB.SelectedItem.ToString(),
+                    MiejsceWydaniaWizy = MiejsceWydaniaTB.Text,
+                    NumerWizy = Convert.ToDouble(NumerWizyTB.Text),
+                    NumerKontrolnyWizy = NumerKontrolnyTB.Text,
+                    NumerPaszportu = NumerPaszportuTB.Text,
+                    Wpisy = WpisyTB.Text,
+                    TypKlasaWizy = TypKlasaWizyTB.Text,
+                    WaznoscWizyStart = StartWizaDTP.Value,
+                    WaznoscWizyKoniec = KoniecWizaDTP.Value
                 };
 
                 db.DanePracownikZagranicznyZatrudnienies.Add(DaneZatrudnienie);

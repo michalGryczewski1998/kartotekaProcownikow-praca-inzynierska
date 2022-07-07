@@ -37,20 +37,20 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             this.label12 = new System.Windows.Forms.Label();
             this.DataWygasnieciaKartyPobytuTymczasowegoDTP = new System.Windows.Forms.DateTimePicker();
             this.PobytCzasowyCB = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.MiejsceWydaniaTB = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NumerPaszportuTB = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.WpisyTB = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.TypKlasaWizyTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.NumerKontrolnyTB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.NumerWizyTB = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.KoniecWizaDTP = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.StartWizaDTP = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DokumentPobytowyBTN = new System.Windows.Forms.Button();
@@ -113,20 +113,20 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.DataWygasnieciaKartyPobytuTymczasowegoDTP);
             this.groupBox2.Controls.Add(this.PobytCzasowyCB);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.MiejsceWydaniaTB);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.NumerPaszportuTB);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.WpisyTB);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.TypKlasaWizyTB);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.NumerKontrolnyTB);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.NumerWizyTB);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.KoniecWizaDTP);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.StartWizaDTP);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.DokumentPobytowyBTN);
@@ -168,12 +168,12 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             this.PobytCzasowyCB.UseVisualStyleBackColor = true;
             this.PobytCzasowyCB.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox3
+            // MiejsceWydaniaTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(114, 17);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(297, 23);
-            this.textBox3.TabIndex = 40;
+            this.MiejsceWydaniaTB.Location = new System.Drawing.Point(114, 17);
+            this.MiejsceWydaniaTB.Name = "MiejsceWydaniaTB";
+            this.MiejsceWydaniaTB.Size = new System.Drawing.Size(297, 23);
+            this.MiejsceWydaniaTB.TabIndex = 40;
             // 
             // label11
             // 
@@ -184,12 +184,12 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             this.label11.TabIndex = 39;
             this.label11.Text = "Miejsce wydania";
             // 
-            // textBox2
+            // NumerPaszportuTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(114, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(297, 23);
-            this.textBox2.TabIndex = 38;
+            this.NumerPaszportuTB.Location = new System.Drawing.Point(114, 104);
+            this.NumerPaszportuTB.Name = "NumerPaszportuTB";
+            this.NumerPaszportuTB.Size = new System.Drawing.Size(297, 23);
+            this.NumerPaszportuTB.TabIndex = 38;
             // 
             // label10
             // 
@@ -200,12 +200,12 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             this.label10.TabIndex = 37;
             this.label10.Text = "Numer paszportu";
             // 
-            // textBox1
+            // WpisyTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 23);
-            this.textBox1.TabIndex = 36;
+            this.WpisyTB.Location = new System.Drawing.Point(114, 133);
+            this.WpisyTB.Name = "WpisyTB";
+            this.WpisyTB.Size = new System.Drawing.Size(297, 23);
+            this.WpisyTB.TabIndex = 36;
             // 
             // label9
             // 
@@ -255,13 +255,13 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             this.NumerWizyTB.Size = new System.Drawing.Size(297, 23);
             this.NumerWizyTB.TabIndex = 30;
             // 
-            // dateTimePicker2
+            // KoniecWizaDTP
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(114, 220);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(297, 23);
-            this.dateTimePicker2.TabIndex = 29;
+            this.KoniecWizaDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.KoniecWizaDTP.Location = new System.Drawing.Point(114, 220);
+            this.KoniecWizaDTP.Name = "KoniecWizaDTP";
+            this.KoniecWizaDTP.Size = new System.Drawing.Size(297, 23);
+            this.KoniecWizaDTP.TabIndex = 29;
             // 
             // label4
             // 
@@ -272,13 +272,13 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             this.label4.TabIndex = 28;
             this.label4.Text = "Ważność wizy do:";
             // 
-            // dateTimePicker1
+            // StartWizaDTP
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(114, 191);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(297, 23);
-            this.dateTimePicker1.TabIndex = 27;
+            this.StartWizaDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.StartWizaDTP.Location = new System.Drawing.Point(114, 191);
+            this.StartWizaDTP.Name = "StartWizaDTP";
+            this.StartWizaDTP.Size = new System.Drawing.Size(297, 23);
+            this.StartWizaDTP.TabIndex = 27;
             // 
             // label3
             // 
@@ -369,9 +369,9 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
         private System.Windows.Forms.Button DokumentPobytowyBTN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NumerWizyTB;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker KoniecWizaDTP;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker StartWizaDTP;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox NumerKontrolnyTB;
@@ -379,11 +379,11 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker DataWygasnieciaKartyPobytuTymczasowegoDTP;
         private System.Windows.Forms.CheckBox PobytCzasowyCB;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox MiejsceWydaniaTB;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NumerPaszportuTB;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox WpisyTB;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TypKlasaWizyTB;
         private System.Windows.Forms.Label label6;
