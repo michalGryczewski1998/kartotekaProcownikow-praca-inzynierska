@@ -36,10 +36,10 @@ namespace Kartotekapracownikow.Forms.Employees
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelBazyDanych = new System.Windows.Forms.GroupBox();
             this.przybornikGB = new System.Windows.Forms.GroupBox();
+            this.infoStatus = new System.Windows.Forms.Label();
             this.wyszukiwanieGB = new System.Windows.Forms.GroupBox();
             this.wyszukajBTN = new System.Windows.Forms.Button();
             this.nazwiskoPracownikaWyszukaj = new System.Windows.Forms.TextBox();
-            this.infoStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.daneDGW)).BeginInit();
             this.panelPracownicy.SuspendLayout();
             this.panelBazyDanych.SuspendLayout();
@@ -81,6 +81,7 @@ namespace Kartotekapracownikow.Forms.Employees
             this.zagraniczniPracownicy.TabIndex = 2;
             this.zagraniczniPracownicy.Text = "Zagraniczni Pracownicy";
             this.zagraniczniPracownicy.UseVisualStyleBackColor = true;
+            this.zagraniczniPracownicy.Click += new System.EventHandler(this.ZagraniczniPracownicy_Click);
             // 
             // panelPracownicy
             // 
@@ -126,6 +127,14 @@ namespace Kartotekapracownikow.Forms.Employees
             this.przybornikGB.TabStop = false;
             this.przybornikGB.Text = "Przybornik";
             // 
+            // infoStatus
+            // 
+            this.infoStatus.AutoSize = true;
+            this.infoStatus.Location = new System.Drawing.Point(15, 206);
+            this.infoStatus.Name = "infoStatus";
+            this.infoStatus.Size = new System.Drawing.Size(0, 15);
+            this.infoStatus.TabIndex = 4;
+            // 
             // wyszukiwanieGB
             // 
             this.wyszukiwanieGB.Controls.Add(this.wyszukajBTN);
@@ -153,14 +162,6 @@ namespace Kartotekapracownikow.Forms.Employees
             this.nazwiskoPracownikaWyszukaj.Name = "nazwiskoPracownikaWyszukaj";
             this.nazwiskoPracownikaWyszukaj.Size = new System.Drawing.Size(142, 23);
             this.nazwiskoPracownikaWyszukaj.TabIndex = 1;
-            // 
-            // infoStatus
-            // 
-            this.infoStatus.AutoSize = true;
-            this.infoStatus.Location = new System.Drawing.Point(15, 206);
-            this.infoStatus.Name = "infoStatus";
-            this.infoStatus.Size = new System.Drawing.Size(0, 15);
-            this.infoStatus.TabIndex = 4;
             // 
             // Employees
             // 

@@ -91,7 +91,7 @@ namespace Kartotekapracownikow.DatabaseModel
             set;
         }
 
-        public string KrajZamieszkania
+        public string Kraj
         {
             get;
             set;
