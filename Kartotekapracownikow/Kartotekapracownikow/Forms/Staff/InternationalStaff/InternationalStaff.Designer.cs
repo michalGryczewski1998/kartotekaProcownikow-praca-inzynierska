@@ -412,6 +412,7 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             this.ZdjeciePracownikaZagranicznegoPB.Location = new System.Drawing.Point(3, 16);
             this.ZdjeciePracownikaZagranicznegoPB.Name = "ZdjeciePracownikaZagranicznegoPB";
             this.ZdjeciePracownikaZagranicznegoPB.Size = new System.Drawing.Size(299, 240);
+            this.ZdjeciePracownikaZagranicznegoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ZdjeciePracownikaZagranicznegoPB.TabIndex = 0;
             this.ZdjeciePracownikaZagranicznegoPB.TabStop = false;
             // 
