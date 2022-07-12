@@ -60,6 +60,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             MiejsceUrodzenia = parameters.MiejsceUrodzenia;
             DataUrodzenia = parameters.DataUrodzenia;
             KrajPochodzenia = parameters.KrajPochodzenia;
+            KrajZamieszkania = parameters.KrajZamieszkania;
             Miejscowosc = parameters.Miejscowosc;
             Gmina = parameters.Gmina;
             Kod = parameters.Kod;
