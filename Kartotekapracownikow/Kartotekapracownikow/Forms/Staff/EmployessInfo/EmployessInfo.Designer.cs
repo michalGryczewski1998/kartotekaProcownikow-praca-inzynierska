@@ -32,8 +32,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DataUrodzinDTP = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.peselTB = new System.Windows.Forms.TextBox();
             this.nipTB = new System.Windows.Forms.TextBox();
@@ -115,6 +113,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.UpdateError = new System.Windows.Forms.ErrorProvider(this.components);
             this.UpdateErrorPodstawoweEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.EmailBTN = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.UpdateInfo = new System.Windows.Forms.HelpProvider();
             this.imieEP = new System.Windows.Forms.ErrorProvider(this.components);
@@ -151,7 +150,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.StawkaGodzinowaEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DataRozpoczeciaPracyEP = new System.Windows.Forms.ErrorProvider(this.components);
             this.DziennyCzasPracyEP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.EmailBTN = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -202,8 +200,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.DataUrodzinDTP);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.groupBox5);
@@ -237,25 +233,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.DataUrodzinDTP.Size = new System.Drawing.Size(147, 23);
             this.DataUrodzinDTP.TabIndex = 51;
             this.DataUrodzinDTP.Validating += new System.ComponentModel.CancelEventHandler(this.DataUrodzinDTP_Validating);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(538, 188);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 15);
-            this.label8.TabIndex = 50;
-            this.label8.Text = "Nowe zdjęcie:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(538, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 34);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Przeglądaj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox7
             // 
@@ -1031,6 +1008,16 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Przybornik";
             // 
+            // EmailBTN
+            // 
+            this.EmailBTN.Location = new System.Drawing.Point(6, 127);
+            this.EmailBTN.Name = "EmailBTN";
+            this.EmailBTN.Size = new System.Drawing.Size(188, 48);
+            this.EmailBTN.TabIndex = 66;
+            this.EmailBTN.Text = "Wyślij E-mail do pracownika";
+            this.EmailBTN.UseVisualStyleBackColor = true;
+            this.EmailBTN.Click += new System.EventHandler(this.EmailBTN_Click);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
@@ -1180,16 +1167,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
             // 
             this.DziennyCzasPracyEP.ContainerControl = this;
             // 
-            // EmailBTN
-            // 
-            this.EmailBTN.Location = new System.Drawing.Point(6, 127);
-            this.EmailBTN.Name = "EmailBTN";
-            this.EmailBTN.Size = new System.Drawing.Size(188, 48);
-            this.EmailBTN.TabIndex = 66;
-            this.EmailBTN.Text = "Wyślij E-mail do pracownika";
-            this.EmailBTN.UseVisualStyleBackColor = true;
-            this.EmailBTN.Click += new System.EventHandler(this.EmailBTN_Click);
-            // 
             // EmployessInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1338,8 +1315,6 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.HelpProvider UpdateInfo;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox zdjeciePracownikaPB;
         private System.Windows.Forms.DateTimePicker DataPracaDTP;
         private System.Windows.Forms.DateTimePicker DataUrodzinDTP;
