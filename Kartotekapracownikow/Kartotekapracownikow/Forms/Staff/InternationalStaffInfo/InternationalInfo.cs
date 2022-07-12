@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,7 +49,11 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                         collection.DomMieszkanie,
                         collection.Kraj,
                         collection.PodzialAdministracyjny,
-                        collection.ZdjeciePracownika
+                        collection.ZdjeciePracownika,
+                        collection.TelefonKontaktowy,
+                        collection.AdresEmail,
+                        collection.OsobaZaufana,
+                        collection.NumerTelefonuOsobyZaufanej
                     }).Single();
 
                 var zatrudnienieZapytanie = (
@@ -95,6 +100,18 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                 numerDomuLokaluTB.Text = podstawoweZapytanie.DomMieszkanie.ToString();
                 pocztaTB.Text = podstawoweZapytanie.Poczta.ToString();
                 PodzialAdministracyjnyTB.Text = podstawoweZapytanie.PodzialAdministracyjny.ToString();
+                numertelefonuPracownikaTB.Text = podstawoweZapytanie.TelefonKontaktowy.ToString();
+                adresEmailPracownika.Text = podstawoweZapytanie.AdresEmail.ToString();
+                numerTelefonuNagleWypadkiTB.Text = podstawoweZapytanie.NumerTelefonuOsobyZaufanej.ToString();
+
+
+                byte[] zdjecie = Convert.FromBase64String(podstawoweZapytanie.ZdjeciePracownika.ToString());
+                var pomocZdjecie = new MemoryStream(zdjecie, 0, zdjecie.Length);
+                zdjeciePracownikaPB.Image = Image.FromStream(pomocZdjecie, true);
+
+                //955; 508
+
+
             }
             catch (Exception)
             {
@@ -103,5 +120,22 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             
         }
 
+        private void panel_Paint(object sender, PaintEventArgs e)
+        {
+            panel.AutoScroll = true;
+            panel.HorizontalScroll.Enabled = false;
+            panel.HorizontalScroll.Visible = false;
+            panel.HorizontalScroll.Maximum = 0;
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox8_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
