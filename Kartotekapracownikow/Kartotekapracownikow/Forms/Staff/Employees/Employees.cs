@@ -120,10 +120,9 @@ namespace Kartotekapracownikow.Forms.Employees
                     }
                     else
                     {
-                        InternationalInfo international = new();
+                        InternationalInfo international = new(index);
                         international.Show();
                     }
-
                 }
                 else
                 {
@@ -138,42 +137,40 @@ namespace Kartotekapracownikow.Forms.Employees
 
         }
 
-        private void wyszukajBTN_Click(object sender, EventArgs e)
+        private void WyszukajBTN_Click(object sender, EventArgs e)
         {
             string nazwisko = nazwiskoPracownikaWyszukaj.Text;
 
             infoStatus.Text = "";
             clearDGW();
 
-            using (var db = new Database())
+            using var db = new Database();
+            // Zapytanie LINQ do bazy danych
+            try
             {
-                // Zapytanie LINQ do bazy danych
-                try
-                {
-                    var querry = (from collection in db.DanePracownikaPodstawowe
-                                  where collection.Nazwisko == nazwisko
-                                  select new
-                                  {
-                                      collection.ID,
-                                      collection.Imie,
-                                      collection.Nazwisko,
-                                      collection.NumerTelefonu,
-                                      collection.DataUrodzenia,
-                                      collection.Miejscowosc,
-                                      collection.Kraj
-                                  }).ToList();
-                    daneDGW.DataSource = querry;
+                var querry = (from collection in db.DanePracownikaPodstawowe
+                              where collection.Nazwisko == nazwisko
+                              select new
+                              {
+                                  collection.ID,
+                                  collection.Imie,
+                                  collection.Nazwisko,
+                                  collection.NumerTelefonu,
+                                  collection.DataUrodzenia,
+                                  collection.Miejscowosc,
+                                  collection.Kraj
+                              }).ToList();
+                daneDGW.DataSource = querry;
 
-                    if (!querry.Any())
-                    {
-                        infoStatus.Text = "Nie znaleziono";
-                    }
-
-                }
-                catch (Exception)
+                if (!querry.Any())
                 {
-                    MessageBox.Show("Błąd wyszukiwania");
+                    infoStatus.Text = "Nie znaleziono";
                 }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd wyszukiwania");
             }
         }
 

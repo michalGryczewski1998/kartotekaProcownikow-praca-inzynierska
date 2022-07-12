@@ -154,7 +154,7 @@ namespace Kartotekapracownikow.Forms.Employees
             this.wyszukajBTN.TabIndex = 3;
             this.wyszukajBTN.Text = "Wyszukaj po Nazwisku";
             this.wyszukajBTN.UseVisualStyleBackColor = true;
-            this.wyszukajBTN.Click += new System.EventHandler(this.wyszukajBTN_Click);
+            this.wyszukajBTN.Click += new System.EventHandler(this.WyszukajBTN_Click);
             // 
             // nazwiskoPracownikaWyszukaj
             // 
