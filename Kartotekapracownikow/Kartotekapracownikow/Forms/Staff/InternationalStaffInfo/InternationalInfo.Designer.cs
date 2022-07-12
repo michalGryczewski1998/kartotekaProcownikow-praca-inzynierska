@@ -29,38 +29,9 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
         /// </summary>
         private void InitializeComponent()
         {
-            this.DataUrodzinDTP = new System.Windows.Forms.DateTimePicker();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.numerDoTB = new System.Windows.Forms.TextBox();
-            this.numerTelefonuNagleWypadkiTB = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numertelefonuPracownikaTB = new System.Windows.Forms.TextBox();
-            this.adresEmailPracownika = new System.Windows.Forms.TextBox();
-            this.adresEmailLabel = new System.Windows.Forms.Label();
-            this.numerTelefonuPracownikaLabel = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.KrajPochodzeniaTB = new System.Windows.Forms.TextBox();
-            this.krajZamieszkaniaPracownikaLabel = new System.Windows.Forms.Label();
-            this.plecTB = new System.Windows.Forms.TextBox();
-            this.zdjeciePracownikaPB = new System.Windows.Forms.PictureBox();
-            this.imiePracownikaTB = new System.Windows.Forms.TextBox();
-            this.imiePracownikaLabel = new System.Windows.Forms.Label();
-            this.imieOjcaPracownikaLabel = new System.Windows.Forms.Label();
-            this.nazwiskoPracownikaTB = new System.Windows.Forms.TextBox();
-            this.imiematkiPracownikaLabel = new System.Windows.Forms.Label();
-            this.nazwiskoPracownikaLabel = new System.Windows.Forms.Label();
-            this.dataUrodzeniaLabel = new System.Windows.Forms.Label();
-            this.miejsceUrodzeniaTB = new System.Windows.Forms.TextBox();
-            this.imieOjcaTB = new System.Windows.Forms.TextBox();
-            this.miejsceurodzeniaLabel = new System.Windows.Forms.Label();
-            this.imieMatkiTB = new System.Windows.Forms.TextBox();
-            this.plecLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.kosztUzyskaniaPrzychoduTB = new System.Windows.Forms.TextBox();
-            this.ulgapodatkowaTB = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.DzialTB = new System.Windows.Forms.TextBox();
             this.StanowiskoTB = new System.Windows.Forms.TextBox();
@@ -74,6 +45,64 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.stawkaZaGodzine = new System.Windows.Forms.Label();
             this.dzial = new System.Windows.Forms.Label();
             this.stanowisko = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.KrajPochodzeniaTB = new System.Windows.Forms.TextBox();
+            this.krajZamieszkaniaPracownikaLabel = new System.Windows.Forms.Label();
+            this.DataUrodzinDTP = new System.Windows.Forms.DateTimePicker();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.numerDoTB = new System.Windows.Forms.TextBox();
+            this.numerTelefonuNagleWypadkiTB = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numertelefonuPracownikaTB = new System.Windows.Forms.TextBox();
+            this.adresEmailPracownika = new System.Windows.Forms.TextBox();
+            this.adresEmailLabel = new System.Windows.Forms.Label();
+            this.numerTelefonuPracownikaLabel = new System.Windows.Forms.Label();
+            this.plecLabel = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.miejscowoscTB = new System.Windows.Forms.TextBox();
+            this.KrajZamieszkaniaTB = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.miejscowoscLabel = new System.Windows.Forms.Label();
+            this.kodTB = new System.Windows.Forms.TextBox();
+            this.PodzialAdministracyjnyTB = new System.Windows.Forms.TextBox();
+            this.wojewodztwoLabel = new System.Windows.Forms.Label();
+            this.pocztaTB = new System.Windows.Forms.TextBox();
+            this.ulicaTB = new System.Windows.Forms.TextBox();
+            this.kodLabel = new System.Windows.Forms.Label();
+            this.pocztaLabel = new System.Windows.Forms.Label();
+            this.ulicaLabel = new System.Windows.Forms.Label();
+            this.gminaTB = new System.Windows.Forms.TextBox();
+            this.numerDomuLabel = new System.Windows.Forms.Label();
+            this.gminaLabel = new System.Windows.Forms.Label();
+            this.numerDomuLokaluTB = new System.Windows.Forms.TextBox();
+            this.imieMatkiTB = new System.Windows.Forms.TextBox();
+            this.miejsceurodzeniaLabel = new System.Windows.Forms.Label();
+            this.imieOjcaTB = new System.Windows.Forms.TextBox();
+            this.miejsceUrodzeniaTB = new System.Windows.Forms.TextBox();
+            this.dataUrodzeniaLabel = new System.Windows.Forms.Label();
+            this.nazwiskoPracownikaLabel = new System.Windows.Forms.Label();
+            this.plecTB = new System.Windows.Forms.TextBox();
+            this.imiematkiPracownikaLabel = new System.Windows.Forms.Label();
+            this.zdjeciePracownikaPB = new System.Windows.Forms.PictureBox();
+            this.nazwiskoPracownikaTB = new System.Windows.Forms.TextBox();
+            this.imiePracownikaTB = new System.Windows.Forms.TextBox();
+            this.imieOjcaPracownikaLabel = new System.Windows.Forms.Label();
+            this.imiePracownikaLabel = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.TytulPoUkonczeniuUczelniTB = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.SpecjalizacjaTB = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.PoziomJezykaObcegoTB = new System.Windows.Forms.ComboBox();
+            this.UczelniaTB = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.SzkolaSredniaTB = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.kosztUzyskaniaPrzychoduTB = new System.Windows.Forms.TextBox();
+            this.ulgapodatkowaTB = new System.Windows.Forms.TextBox();
             this.etatTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.umowaTB = new System.Windows.Forms.TextBox();
@@ -86,357 +115,80 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.numerKontaLabel = new System.Windows.Forms.Label();
             this.bankTB = new System.Windows.Forms.TextBox();
             this.bankDoPrzelewuLabel = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.TypZezwoleniaTB = new System.Windows.Forms.TextBox();
+            this.MiejsceWydaniaTB = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.NumerPaszportuTB = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.miejscowoscTB = new System.Windows.Forms.TextBox();
-            this.KrajZamieszkaniaTB = new System.Windows.Forms.TextBox();
-            this.miejscowoscLabel = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.kodTB = new System.Windows.Forms.TextBox();
-            this.pocztaTB = new System.Windows.Forms.TextBox();
-            this.kodLabel = new System.Windows.Forms.Label();
-            this.pocztaLabel = new System.Windows.Forms.Label();
-            this.gminaTB = new System.Windows.Forms.TextBox();
-            this.gminaLabel = new System.Windows.Forms.Label();
-            this.PodzialAdministracyjnyTB = new System.Windows.Forms.TextBox();
-            this.wojewodztwoLabel = new System.Windows.Forms.Label();
-            this.numerDomuLokaluTB = new System.Windows.Forms.TextBox();
-            this.numerDomuLabel = new System.Windows.Forms.Label();
-            this.ulicaTB = new System.Windows.Forms.TextBox();
-            this.ulicaLabel = new System.Windows.Forms.Label();
+            this.WpisyTB = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TypKlasaWizyTB = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.NumerKontrolnyTB = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.NumerWizyTB = new System.Windows.Forms.TextBox();
+            this.KoniecWizaDTP = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.StartWizaDTP = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.DataWygasnieciaKartyPobytuTymczasowegoDTP = new System.Windows.Forms.DateTimePicker();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.EmailBTN = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.EdytujPodstawoweBTN = new System.Windows.Forms.Button();
+            this.edytujZatrudnienieBTN = new System.Windows.Forms.Button();
+            this.panel.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zdjeciePracownikaPB)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
-            // DataUrodzinDTP
+            // panel
             // 
-            this.DataUrodzinDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DataUrodzinDTP.Location = new System.Drawing.Point(108, 165);
-            this.DataUrodzinDTP.Name = "DataUrodzinDTP";
-            this.DataUrodzinDTP.Size = new System.Drawing.Size(147, 23);
-            this.DataUrodzinDTP.TabIndex = 72;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.numerDoTB);
-            this.groupBox6.Controls.Add(this.numerTelefonuNagleWypadkiTB);
-            this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.numertelefonuPracownikaTB);
-            this.groupBox6.Controls.Add(this.adresEmailPracownika);
-            this.groupBox6.Controls.Add(this.adresEmailLabel);
-            this.groupBox6.Controls.Add(this.numerTelefonuPracownikaLabel);
-            this.groupBox6.Location = new System.Drawing.Point(13, 476);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(318, 177);
-            this.groupBox6.TabIndex = 68;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Dane kontaktowe";
-            // 
-            // numerDoTB
-            // 
-            this.numerDoTB.Location = new System.Drawing.Point(129, 93);
-            this.numerDoTB.Name = "numerDoTB";
-            this.numerDoTB.Size = new System.Drawing.Size(147, 23);
-            this.numerDoTB.TabIndex = 46;
-            // 
-            // numerTelefonuNagleWypadkiTB
-            // 
-            this.numerTelefonuNagleWypadkiTB.Location = new System.Drawing.Point(129, 122);
-            this.numerTelefonuNagleWypadkiTB.Name = "numerTelefonuNagleWypadkiTB";
-            this.numerTelefonuNagleWypadkiTB.Size = new System.Drawing.Size(147, 23);
-            this.numerTelefonuNagleWypadkiTB.TabIndex = 47;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 125);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 15);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "Numer telefonu";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 15);
-            this.label7.TabIndex = 48;
-            this.label7.Text = "Telefon do";
-            // 
-            // numertelefonuPracownikaTB
-            // 
-            this.numertelefonuPracownikaTB.Location = new System.Drawing.Point(129, 32);
-            this.numertelefonuPracownikaTB.Name = "numertelefonuPracownikaTB";
-            this.numertelefonuPracownikaTB.Size = new System.Drawing.Size(147, 23);
-            this.numertelefonuPracownikaTB.TabIndex = 42;
-            // 
-            // adresEmailPracownika
-            // 
-            this.adresEmailPracownika.Location = new System.Drawing.Point(129, 61);
-            this.adresEmailPracownika.Name = "adresEmailPracownika";
-            this.adresEmailPracownika.Size = new System.Drawing.Size(147, 23);
-            this.adresEmailPracownika.TabIndex = 43;
-            // 
-            // adresEmailLabel
-            // 
-            this.adresEmailLabel.AutoSize = true;
-            this.adresEmailLabel.Location = new System.Drawing.Point(13, 64);
-            this.adresEmailLabel.Name = "adresEmailLabel";
-            this.adresEmailLabel.Size = new System.Drawing.Size(74, 15);
-            this.adresEmailLabel.TabIndex = 45;
-            this.adresEmailLabel.Text = "Adres e-mail";
-            // 
-            // numerTelefonuPracownikaLabel
-            // 
-            this.numerTelefonuPracownikaLabel.AutoSize = true;
-            this.numerTelefonuPracownikaLabel.Location = new System.Drawing.Point(12, 32);
-            this.numerTelefonuPracownikaLabel.Name = "numerTelefonuPracownikaLabel";
-            this.numerTelefonuPracownikaLabel.Size = new System.Drawing.Size(45, 15);
-            this.numerTelefonuPracownikaLabel.TabIndex = 44;
-            this.numerTelefonuPracownikaLabel.Text = "Telefon";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.miejscowoscTB);
-            this.groupBox3.Controls.Add(this.KrajZamieszkaniaTB);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.miejscowoscLabel);
-            this.groupBox3.Controls.Add(this.kodTB);
-            this.groupBox3.Controls.Add(this.PodzialAdministracyjnyTB);
-            this.groupBox3.Controls.Add(this.wojewodztwoLabel);
-            this.groupBox3.Controls.Add(this.pocztaTB);
-            this.groupBox3.Controls.Add(this.ulicaTB);
-            this.groupBox3.Controls.Add(this.kodLabel);
-            this.groupBox3.Controls.Add(this.pocztaLabel);
-            this.groupBox3.Controls.Add(this.ulicaLabel);
-            this.groupBox3.Controls.Add(this.gminaTB);
-            this.groupBox3.Controls.Add(this.numerDomuLabel);
-            this.groupBox3.Controls.Add(this.gminaLabel);
-            this.groupBox3.Controls.Add(this.numerDomuLokaluTB);
-            this.groupBox3.Location = new System.Drawing.Point(13, 293);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(692, 177);
-            this.groupBox3.TabIndex = 66;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Informacje o zamieszkaniu";
-            // 
-            // KrajPochodzeniaTB
-            // 
-            this.KrajPochodzeniaTB.Location = new System.Drawing.Point(108, 223);
-            this.KrajPochodzeniaTB.Name = "KrajPochodzeniaTB";
-            this.KrajPochodzeniaTB.Size = new System.Drawing.Size(147, 23);
-            this.KrajPochodzeniaTB.TabIndex = 37;
-            // 
-            // krajZamieszkaniaPracownikaLabel
-            // 
-            this.krajZamieszkaniaPracownikaLabel.AutoSize = true;
-            this.krajZamieszkaniaPracownikaLabel.Location = new System.Drawing.Point(7, 226);
-            this.krajZamieszkaniaPracownikaLabel.Name = "krajZamieszkaniaPracownikaLabel";
-            this.krajZamieszkaniaPracownikaLabel.Size = new System.Drawing.Size(98, 15);
-            this.krajZamieszkaniaPracownikaLabel.TabIndex = 36;
-            this.krajZamieszkaniaPracownikaLabel.Text = "Kraj pochodzenia";
-            // 
-            // plecTB
-            // 
-            this.plecTB.Location = new System.Drawing.Point(108, 194);
-            this.plecTB.Name = "plecTB";
-            this.plecTB.Size = new System.Drawing.Size(147, 23);
-            this.plecTB.TabIndex = 65;
-            // 
-            // zdjeciePracownikaPB
-            // 
-            this.zdjeciePracownikaPB.Location = new System.Drawing.Point(446, 22);
-            this.zdjeciePracownikaPB.Name = "zdjeciePracownikaPB";
-            this.zdjeciePracownikaPB.Size = new System.Drawing.Size(236, 228);
-            this.zdjeciePracownikaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.zdjeciePracownikaPB.TabIndex = 52;
-            this.zdjeciePracownikaPB.TabStop = false;
-            // 
-            // imiePracownikaTB
-            // 
-            this.imiePracownikaTB.Location = new System.Drawing.Point(108, 22);
-            this.imiePracownikaTB.Name = "imiePracownikaTB";
-            this.imiePracownikaTB.Size = new System.Drawing.Size(147, 23);
-            this.imiePracownikaTB.TabIndex = 54;
-            // 
-            // imiePracownikaLabel
-            // 
-            this.imiePracownikaLabel.AutoSize = true;
-            this.imiePracownikaLabel.Location = new System.Drawing.Point(4, 25);
-            this.imiePracownikaLabel.Name = "imiePracownikaLabel";
-            this.imiePracownikaLabel.Size = new System.Drawing.Size(30, 15);
-            this.imiePracownikaLabel.TabIndex = 53;
-            this.imiePracownikaLabel.Text = "Imię";
-            // 
-            // imieOjcaPracownikaLabel
-            // 
-            this.imieOjcaPracownikaLabel.AutoSize = true;
-            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(2, 109);
-            this.imieOjcaPracownikaLabel.Name = "imieOjcaPracownikaLabel";
-            this.imieOjcaPracownikaLabel.Size = new System.Drawing.Size(55, 15);
-            this.imieOjcaPracownikaLabel.TabIndex = 64;
-            this.imieOjcaPracownikaLabel.Text = "Imię ojca";
-            // 
-            // nazwiskoPracownikaTB
-            // 
-            this.nazwiskoPracownikaTB.Location = new System.Drawing.Point(108, 51);
-            this.nazwiskoPracownikaTB.Name = "nazwiskoPracownikaTB";
-            this.nazwiskoPracownikaTB.Size = new System.Drawing.Size(147, 23);
-            this.nazwiskoPracownikaTB.TabIndex = 55;
-            // 
-            // imiematkiPracownikaLabel
-            // 
-            this.imiematkiPracownikaLabel.AutoSize = true;
-            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(2, 80);
-            this.imiematkiPracownikaLabel.Name = "imiematkiPracownikaLabel";
-            this.imiematkiPracownikaLabel.Size = new System.Drawing.Size(63, 15);
-            this.imiematkiPracownikaLabel.TabIndex = 63;
-            this.imiematkiPracownikaLabel.Text = "Imię matki";
-            // 
-            // nazwiskoPracownikaLabel
-            // 
-            this.nazwiskoPracownikaLabel.AutoSize = true;
-            this.nazwiskoPracownikaLabel.Location = new System.Drawing.Point(2, 54);
-            this.nazwiskoPracownikaLabel.Name = "nazwiskoPracownikaLabel";
-            this.nazwiskoPracownikaLabel.Size = new System.Drawing.Size(57, 15);
-            this.nazwiskoPracownikaLabel.TabIndex = 56;
-            this.nazwiskoPracownikaLabel.Text = "Nazwisko";
-            // 
-            // dataUrodzeniaLabel
-            // 
-            this.dataUrodzeniaLabel.AutoSize = true;
-            this.dataUrodzeniaLabel.Location = new System.Drawing.Point(2, 168);
-            this.dataUrodzeniaLabel.Name = "dataUrodzeniaLabel";
-            this.dataUrodzeniaLabel.Size = new System.Drawing.Size(86, 15);
-            this.dataUrodzeniaLabel.TabIndex = 57;
-            this.dataUrodzeniaLabel.Text = "Data urodzenia";
-            // 
-            // miejsceUrodzeniaTB
-            // 
-            this.miejsceUrodzeniaTB.Location = new System.Drawing.Point(108, 136);
-            this.miejsceUrodzeniaTB.Name = "miejsceUrodzeniaTB";
-            this.miejsceUrodzeniaTB.Size = new System.Drawing.Size(147, 23);
-            this.miejsceUrodzeniaTB.TabIndex = 58;
-            // 
-            // imieOjcaTB
-            // 
-            this.imieOjcaTB.Location = new System.Drawing.Point(108, 106);
-            this.imieOjcaTB.Name = "imieOjcaTB";
-            this.imieOjcaTB.Size = new System.Drawing.Size(147, 23);
-            this.imieOjcaTB.TabIndex = 62;
-            // 
-            // miejsceurodzeniaLabel
-            // 
-            this.miejsceurodzeniaLabel.AutoSize = true;
-            this.miejsceurodzeniaLabel.Location = new System.Drawing.Point(2, 139);
-            this.miejsceurodzeniaLabel.Name = "miejsceurodzeniaLabel";
-            this.miejsceurodzeniaLabel.Size = new System.Drawing.Size(102, 15);
-            this.miejsceurodzeniaLabel.TabIndex = 59;
-            this.miejsceurodzeniaLabel.Text = "Miejsce urodzenia";
-            // 
-            // imieMatkiTB
-            // 
-            this.imieMatkiTB.Location = new System.Drawing.Point(108, 77);
-            this.imieMatkiTB.Name = "imieMatkiTB";
-            this.imieMatkiTB.Size = new System.Drawing.Size(147, 23);
-            this.imieMatkiTB.TabIndex = 61;
-            // 
-            // plecLabel
-            // 
-            this.plecLabel.AutoSize = true;
-            this.plecLabel.Location = new System.Drawing.Point(2, 197);
-            this.plecLabel.Name = "plecLabel";
-            this.plecLabel.Size = new System.Drawing.Size(29, 15);
-            this.plecLabel.TabIndex = 60;
-            this.plecLabel.Text = "Płeć";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.KrajPochodzeniaTB);
-            this.groupBox1.Controls.Add(this.krajZamieszkaniaPracownikaLabel);
-            this.groupBox1.Controls.Add(this.DataUrodzinDTP);
-            this.groupBox1.Controls.Add(this.plecLabel);
-            this.groupBox1.Controls.Add(this.imieMatkiTB);
-            this.groupBox1.Controls.Add(this.miejsceurodzeniaLabel);
-            this.groupBox1.Controls.Add(this.imieOjcaTB);
-            this.groupBox1.Controls.Add(this.miejsceUrodzeniaTB);
-            this.groupBox1.Controls.Add(this.dataUrodzeniaLabel);
-            this.groupBox1.Controls.Add(this.nazwiskoPracownikaLabel);
-            this.groupBox1.Controls.Add(this.plecTB);
-            this.groupBox1.Controls.Add(this.imiematkiPracownikaLabel);
-            this.groupBox1.Controls.Add(this.zdjeciePracownikaPB);
-            this.groupBox1.Controls.Add(this.nazwiskoPracownikaTB);
-            this.groupBox1.Controls.Add(this.imiePracownikaTB);
-            this.groupBox1.Controls.Add(this.imieOjcaPracownikaLabel);
-            this.groupBox1.Controls.Add(this.imiePracownikaLabel);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(692, 274);
-            this.groupBox1.TabIndex = 73;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dane podstawowe";
+            this.panel.Controls.Add(this.groupBox9);
+            this.panel.Controls.Add(this.groupBox2);
+            this.panel.Controls.Add(this.groupBox1);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel.Location = new System.Drawing.Point(0, 0);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1015, 1061);
+            this.panel.TabIndex = 0;
+            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.kosztUzyskaniaPrzychoduTB);
-            this.groupBox2.Controls.Add(this.ulgapodatkowaTB);
+            this.groupBox2.Controls.Add(this.groupBox8);
+            this.groupBox2.Controls.Add(this.groupBox7);
+            this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.etatTB);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.umowaTB);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.ulgapodatkowaLabel);
-            this.groupBox2.Controls.Add(this.kosztyPrzychoduLabel);
-            this.groupBox2.Controls.Add(this.nfzTB);
-            this.groupBox2.Controls.Add(this.nfzLabel);
-            this.groupBox2.Controls.Add(this.numerKontaTB);
-            this.groupBox2.Controls.Add(this.numerKontaLabel);
-            this.groupBox2.Controls.Add(this.bankTB);
-            this.groupBox2.Controls.Add(this.bankDoPrzelewuLabel);
-            this.groupBox2.Location = new System.Drawing.Point(13, 662);
+            this.groupBox2.Location = new System.Drawing.Point(12, 537);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(692, 291);
-            this.groupBox2.TabIndex = 74;
+            this.groupBox2.Size = new System.Drawing.Size(991, 512);
+            this.groupBox2.TabIndex = 76;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane o Zatrudnieniu";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(243, 38);
+            this.button1.Location = new System.Drawing.Point(371, 76);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 24);
+            this.button1.Size = new System.Drawing.Size(271, 49);
             this.button1.TabIndex = 67;
-            this.button1.Text = "Drukuj";
+            this.button1.Text = "Drukuj skan dokumentu pobytowego";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // kosztUzyskaniaPrzychoduTB
-            // 
-            this.kosztUzyskaniaPrzychoduTB.Location = new System.Drawing.Point(8, 249);
-            this.kosztUzyskaniaPrzychoduTB.Name = "kosztUzyskaniaPrzychoduTB";
-            this.kosztUzyskaniaPrzychoduTB.Size = new System.Drawing.Size(310, 23);
-            this.kosztUzyskaniaPrzychoduTB.TabIndex = 66;
-            // 
-            // ulgapodatkowaTB
-            // 
-            this.ulgapodatkowaTB.Location = new System.Drawing.Point(8, 205);
-            this.ulgapodatkowaTB.Name = "ulgapodatkowaTB";
-            this.ulgapodatkowaTB.Size = new System.Drawing.Size(310, 23);
-            this.ulgapodatkowaTB.TabIndex = 65;
             // 
             // groupBox4
             // 
@@ -452,9 +204,9 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.groupBox4.Controls.Add(this.stawkaZaGodzine);
             this.groupBox4.Controls.Add(this.dzial);
             this.groupBox4.Controls.Add(this.stanowisko);
-            this.groupBox4.Location = new System.Drawing.Point(361, 17);
+            this.groupBox4.Location = new System.Drawing.Point(317, 17);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(321, 259);
+            this.groupBox4.Size = new System.Drawing.Size(324, 264);
             this.groupBox4.TabIndex = 64;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dane o miejscu pracy";
@@ -501,7 +253,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // 
             this.IloscPrzepracowanychDniLabel.AutoSize = true;
             this.IloscPrzepracowanychDniLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.IloscPrzepracowanychDniLabel.Location = new System.Drawing.Point(21, 191);
+            this.IloscPrzepracowanychDniLabel.Location = new System.Drawing.Point(21, 192);
             this.IloscPrzepracowanychDniLabel.Name = "IloscPrzepracowanychDniLabel";
             this.IloscPrzepracowanychDniLabel.Size = new System.Drawing.Size(282, 19);
             this.IloscPrzepracowanychDniLabel.TabIndex = 63;
@@ -560,184 +312,172 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.stanowisko.TabIndex = 46;
             this.stanowisko.Text = "Stanowisko";
             // 
-            // etatTB
+            // groupBox1
             // 
-            this.etatTB.Location = new System.Drawing.Point(102, 71);
-            this.etatTB.Name = "etatTB";
-            this.etatTB.Size = new System.Drawing.Size(215, 23);
-            this.etatTB.TabIndex = 63;
+            this.groupBox1.Controls.Add(this.KrajPochodzeniaTB);
+            this.groupBox1.Controls.Add(this.krajZamieszkaniaPracownikaLabel);
+            this.groupBox1.Controls.Add(this.DataUrodzinDTP);
+            this.groupBox1.Controls.Add(this.groupBox6);
+            this.groupBox1.Controls.Add(this.plecLabel);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.imieMatkiTB);
+            this.groupBox1.Controls.Add(this.miejsceurodzeniaLabel);
+            this.groupBox1.Controls.Add(this.imieOjcaTB);
+            this.groupBox1.Controls.Add(this.miejsceUrodzeniaTB);
+            this.groupBox1.Controls.Add(this.dataUrodzeniaLabel);
+            this.groupBox1.Controls.Add(this.nazwiskoPracownikaLabel);
+            this.groupBox1.Controls.Add(this.plecTB);
+            this.groupBox1.Controls.Add(this.imiematkiPracownikaLabel);
+            this.groupBox1.Controls.Add(this.zdjeciePracownikaPB);
+            this.groupBox1.Controls.Add(this.nazwiskoPracownikaTB);
+            this.groupBox1.Controls.Add(this.imiePracownikaTB);
+            this.groupBox1.Controls.Add(this.imieOjcaPracownikaLabel);
+            this.groupBox1.Controls.Add(this.imiePracownikaLabel);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(636, 519);
+            this.groupBox1.TabIndex = 75;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dane podstawowe";
             // 
-            // label2
+            // KrajPochodzeniaTB
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 15);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "Etat";
+            this.KrajPochodzeniaTB.Location = new System.Drawing.Point(108, 223);
+            this.KrajPochodzeniaTB.Name = "KrajPochodzeniaTB";
+            this.KrajPochodzeniaTB.Size = new System.Drawing.Size(147, 23);
+            this.KrajPochodzeniaTB.TabIndex = 37;
             // 
-            // umowaTB
+            // krajZamieszkaniaPracownikaLabel
             // 
-            this.umowaTB.Location = new System.Drawing.Point(102, 39);
-            this.umowaTB.Name = "umowaTB";
-            this.umowaTB.Size = new System.Drawing.Size(135, 23);
-            this.umowaTB.TabIndex = 61;
+            this.krajZamieszkaniaPracownikaLabel.AutoSize = true;
+            this.krajZamieszkaniaPracownikaLabel.Location = new System.Drawing.Point(0, 226);
+            this.krajZamieszkaniaPracownikaLabel.Name = "krajZamieszkaniaPracownikaLabel";
+            this.krajZamieszkaniaPracownikaLabel.Size = new System.Drawing.Size(98, 15);
+            this.krajZamieszkaniaPracownikaLabel.TabIndex = 36;
+            this.krajZamieszkaniaPracownikaLabel.Text = "Kraj pochodzenia";
             // 
-            // label3
+            // DataUrodzinDTP
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 15);
-            this.label3.TabIndex = 60;
-            this.label3.Text = "Umowa";
+            this.DataUrodzinDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DataUrodzinDTP.Location = new System.Drawing.Point(108, 165);
+            this.DataUrodzinDTP.Name = "DataUrodzinDTP";
+            this.DataUrodzinDTP.Size = new System.Drawing.Size(147, 23);
+            this.DataUrodzinDTP.TabIndex = 72;
             // 
-            // ulgapodatkowaLabel
+            // groupBox6
             // 
-            this.ulgapodatkowaLabel.AutoSize = true;
-            this.ulgapodatkowaLabel.Location = new System.Drawing.Point(8, 187);
-            this.ulgapodatkowaLabel.Name = "ulgapodatkowaLabel";
-            this.ulgapodatkowaLabel.Size = new System.Drawing.Size(93, 15);
-            this.ulgapodatkowaLabel.TabIndex = 57;
-            this.ulgapodatkowaLabel.Text = "Ulga podatkowa";
+            this.groupBox6.Controls.Add(this.numerDoTB);
+            this.groupBox6.Controls.Add(this.numerTelefonuNagleWypadkiTB);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.numertelefonuPracownikaTB);
+            this.groupBox6.Controls.Add(this.adresEmailPracownika);
+            this.groupBox6.Controls.Add(this.adresEmailLabel);
+            this.groupBox6.Controls.Add(this.numerTelefonuPracownikaLabel);
+            this.groupBox6.Location = new System.Drawing.Point(2, 405);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(613, 104);
+            this.groupBox6.TabIndex = 68;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Dane kontaktowe";
             // 
-            // kosztyPrzychoduLabel
+            // numerDoTB
             // 
-            this.kosztyPrzychoduLabel.AutoSize = true;
-            this.kosztyPrzychoduLabel.Location = new System.Drawing.Point(8, 231);
-            this.kosztyPrzychoduLabel.Name = "kosztyPrzychoduLabel";
-            this.kosztyPrzychoduLabel.Size = new System.Drawing.Size(154, 15);
-            this.kosztyPrzychoduLabel.TabIndex = 56;
-            this.kosztyPrzychoduLabel.Text = "Koszty uzyskania przychodu";
+            this.numerDoTB.Location = new System.Drawing.Point(445, 29);
+            this.numerDoTB.Name = "numerDoTB";
+            this.numerDoTB.Size = new System.Drawing.Size(147, 23);
+            this.numerDoTB.TabIndex = 46;
             // 
-            // nfzTB
+            // numerTelefonuNagleWypadkiTB
             // 
-            this.nfzTB.Location = new System.Drawing.Point(102, 161);
-            this.nfzTB.Name = "nfzTB";
-            this.nfzTB.Size = new System.Drawing.Size(216, 23);
-            this.nfzTB.TabIndex = 55;
+            this.numerTelefonuNagleWypadkiTB.Location = new System.Drawing.Point(445, 58);
+            this.numerTelefonuNagleWypadkiTB.Name = "numerTelefonuNagleWypadkiTB";
+            this.numerTelefonuNagleWypadkiTB.Size = new System.Drawing.Size(147, 23);
+            this.numerTelefonuNagleWypadkiTB.TabIndex = 47;
             // 
-            // nfzLabel
+            // label6
             // 
-            this.nfzLabel.AutoSize = true;
-            this.nfzLabel.Location = new System.Drawing.Point(8, 164);
-            this.nfzLabel.Name = "nfzLabel";
-            this.nfzLabel.Size = new System.Drawing.Size(29, 15);
-            this.nfzLabel.TabIndex = 54;
-            this.nfzLabel.Text = "NFZ";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(308, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 15);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "Numer telefonu";
             // 
-            // numerKontaTB
+            // label7
             // 
-            this.numerKontaTB.Location = new System.Drawing.Point(102, 132);
-            this.numerKontaTB.Name = "numerKontaTB";
-            this.numerKontaTB.Size = new System.Drawing.Size(216, 23);
-            this.numerKontaTB.TabIndex = 53;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(307, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 15);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Telefon do";
             // 
-            // numerKontaLabel
+            // numertelefonuPracownikaTB
             // 
-            this.numerKontaLabel.AutoSize = true;
-            this.numerKontaLabel.Location = new System.Drawing.Point(8, 135);
-            this.numerKontaLabel.Name = "numerKontaLabel";
-            this.numerKontaLabel.Size = new System.Drawing.Size(77, 15);
-            this.numerKontaLabel.TabIndex = 52;
-            this.numerKontaLabel.Text = "Numer konta";
+            this.numertelefonuPracownikaTB.Location = new System.Drawing.Point(129, 32);
+            this.numertelefonuPracownikaTB.Name = "numertelefonuPracownikaTB";
+            this.numertelefonuPracownikaTB.Size = new System.Drawing.Size(147, 23);
+            this.numertelefonuPracownikaTB.TabIndex = 42;
             // 
-            // bankTB
+            // adresEmailPracownika
             // 
-            this.bankTB.Location = new System.Drawing.Point(102, 100);
-            this.bankTB.Name = "bankTB";
-            this.bankTB.Size = new System.Drawing.Size(215, 23);
-            this.bankTB.TabIndex = 51;
+            this.adresEmailPracownika.Location = new System.Drawing.Point(129, 61);
+            this.adresEmailPracownika.Name = "adresEmailPracownika";
+            this.adresEmailPracownika.Size = new System.Drawing.Size(147, 23);
+            this.adresEmailPracownika.TabIndex = 43;
             // 
-            // bankDoPrzelewuLabel
+            // adresEmailLabel
             // 
-            this.bankDoPrzelewuLabel.AutoSize = true;
-            this.bankDoPrzelewuLabel.Location = new System.Drawing.Point(8, 103);
-            this.bankDoPrzelewuLabel.Name = "bankDoPrzelewuLabel";
-            this.bankDoPrzelewuLabel.Size = new System.Drawing.Size(33, 15);
-            this.bankDoPrzelewuLabel.TabIndex = 50;
-            this.bankDoPrzelewuLabel.Text = "Bank";
+            this.adresEmailLabel.AutoSize = true;
+            this.adresEmailLabel.Location = new System.Drawing.Point(13, 64);
+            this.adresEmailLabel.Name = "adresEmailLabel";
+            this.adresEmailLabel.Size = new System.Drawing.Size(74, 15);
+            this.adresEmailLabel.TabIndex = 45;
+            this.adresEmailLabel.Text = "Adres e-mail";
             // 
-            // groupBox7
+            // numerTelefonuPracownikaLabel
             // 
-            this.groupBox7.Controls.Add(this.textBox1);
-            this.groupBox7.Controls.Add(this.textBox2);
-            this.groupBox7.Controls.Add(this.label5);
-            this.groupBox7.Controls.Add(this.label8);
-            this.groupBox7.Controls.Add(this.textBox3);
-            this.groupBox7.Controls.Add(this.textBox4);
-            this.groupBox7.Controls.Add(this.label9);
-            this.groupBox7.Controls.Add(this.label10);
-            this.groupBox7.Location = new System.Drawing.Point(337, 476);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(368, 177);
-            this.groupBox7.TabIndex = 75;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Dane kontaktowe";
+            this.numerTelefonuPracownikaLabel.AutoSize = true;
+            this.numerTelefonuPracownikaLabel.Location = new System.Drawing.Point(12, 32);
+            this.numerTelefonuPracownikaLabel.Name = "numerTelefonuPracownikaLabel";
+            this.numerTelefonuPracownikaLabel.Size = new System.Drawing.Size(45, 15);
+            this.numerTelefonuPracownikaLabel.TabIndex = 44;
+            this.numerTelefonuPracownikaLabel.Text = "Telefon";
             // 
-            // textBox1
+            // plecLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 23);
-            this.textBox1.TabIndex = 46;
+            this.plecLabel.AutoSize = true;
+            this.plecLabel.Location = new System.Drawing.Point(2, 197);
+            this.plecLabel.Name = "plecLabel";
+            this.plecLabel.Size = new System.Drawing.Size(29, 15);
+            this.plecLabel.TabIndex = 60;
+            this.plecLabel.Text = "Płeć";
             // 
-            // textBox2
+            // groupBox3
             // 
-            this.textBox2.Location = new System.Drawing.Point(138, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 23);
-            this.textBox2.TabIndex = 47;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 125);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 15);
-            this.label5.TabIndex = 49;
-            this.label5.Text = "Numer telefonu";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 93);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 15);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "Telefon do";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(138, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(147, 23);
-            this.textBox3.TabIndex = 42;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(138, 58);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(147, 23);
-            this.textBox4.TabIndex = 43;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(47, 64);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 15);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "Adres e-mail";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(46, 32);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 15);
-            this.label10.TabIndex = 44;
-            this.label10.Text = "Telefon";
+            this.groupBox3.Controls.Add(this.miejscowoscTB);
+            this.groupBox3.Controls.Add(this.KrajZamieszkaniaTB);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.miejscowoscLabel);
+            this.groupBox3.Controls.Add(this.kodTB);
+            this.groupBox3.Controls.Add(this.PodzialAdministracyjnyTB);
+            this.groupBox3.Controls.Add(this.wojewodztwoLabel);
+            this.groupBox3.Controls.Add(this.pocztaTB);
+            this.groupBox3.Controls.Add(this.ulicaTB);
+            this.groupBox3.Controls.Add(this.kodLabel);
+            this.groupBox3.Controls.Add(this.pocztaLabel);
+            this.groupBox3.Controls.Add(this.ulicaLabel);
+            this.groupBox3.Controls.Add(this.gminaTB);
+            this.groupBox3.Controls.Add(this.numerDomuLabel);
+            this.groupBox3.Controls.Add(this.gminaLabel);
+            this.groupBox3.Controls.Add(this.numerDomuLokaluTB);
+            this.groupBox3.Location = new System.Drawing.Point(2, 256);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(613, 143);
+            this.groupBox3.TabIndex = 66;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Informacje o zamieszkaniu";
             // 
             // miejscowoscTB
             // 
@@ -753,15 +493,6 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.KrajZamieszkaniaTB.Size = new System.Drawing.Size(147, 23);
             this.KrajZamieszkaniaTB.TabIndex = 81;
             // 
-            // miejscowoscLabel
-            // 
-            this.miejscowoscLabel.AutoSize = true;
-            this.miejscowoscLabel.Location = new System.Drawing.Point(14, 56);
-            this.miejscowoscLabel.Name = "miejscowoscLabel";
-            this.miejscowoscLabel.Size = new System.Drawing.Size(75, 15);
-            this.miejscowoscLabel.TabIndex = 70;
-            this.miejscowoscLabel.Text = "Miejscowosc";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -771,24 +502,56 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.label11.TabIndex = 80;
             this.label11.Text = "Kraj zamieszkania";
             // 
+            // miejscowoscLabel
+            // 
+            this.miejscowoscLabel.AutoSize = true;
+            this.miejscowoscLabel.Location = new System.Drawing.Point(14, 56);
+            this.miejscowoscLabel.Name = "miejscowoscLabel";
+            this.miejscowoscLabel.Size = new System.Drawing.Size(75, 15);
+            this.miejscowoscLabel.TabIndex = 70;
+            this.miejscowoscLabel.Text = "Miejscowosc";
+            // 
             // kodTB
             // 
-            this.kodTB.Location = new System.Drawing.Point(129, 138);
+            this.kodTB.Location = new System.Drawing.Point(436, 22);
             this.kodTB.Name = "kodTB";
             this.kodTB.Size = new System.Drawing.Size(147, 23);
             this.kodTB.TabIndex = 69;
             // 
+            // PodzialAdministracyjnyTB
+            // 
+            this.PodzialAdministracyjnyTB.Location = new System.Drawing.Point(436, 108);
+            this.PodzialAdministracyjnyTB.Name = "PodzialAdministracyjnyTB";
+            this.PodzialAdministracyjnyTB.Size = new System.Drawing.Size(147, 23);
+            this.PodzialAdministracyjnyTB.TabIndex = 65;
+            // 
+            // wojewodztwoLabel
+            // 
+            this.wojewodztwoLabel.AutoSize = true;
+            this.wojewodztwoLabel.Location = new System.Drawing.Point(298, 112);
+            this.wojewodztwoLabel.Name = "wojewodztwoLabel";
+            this.wojewodztwoLabel.Size = new System.Drawing.Size(132, 15);
+            this.wojewodztwoLabel.TabIndex = 64;
+            this.wojewodztwoLabel.Text = "Podział administracyjny";
+            // 
             // pocztaTB
             // 
-            this.pocztaTB.Location = new System.Drawing.Point(424, 51);
+            this.pocztaTB.Location = new System.Drawing.Point(436, 80);
             this.pocztaTB.Name = "pocztaTB";
             this.pocztaTB.Size = new System.Drawing.Size(147, 23);
             this.pocztaTB.TabIndex = 79;
             // 
+            // ulicaTB
+            // 
+            this.ulicaTB.Location = new System.Drawing.Point(129, 80);
+            this.ulicaTB.Name = "ulicaTB";
+            this.ulicaTB.Size = new System.Drawing.Size(147, 23);
+            this.ulicaTB.TabIndex = 73;
+            // 
             // kodLabel
             // 
             this.kodLabel.AutoSize = true;
-            this.kodLabel.Location = new System.Drawing.Point(15, 141);
+            this.kodLabel.Location = new System.Drawing.Point(298, 25);
             this.kodLabel.Name = "kodLabel";
             this.kodLabel.Size = new System.Drawing.Size(28, 15);
             this.kodLabel.TabIndex = 68;
@@ -797,66 +560,11 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // pocztaLabel
             // 
             this.pocztaLabel.AutoSize = true;
-            this.pocztaLabel.Location = new System.Drawing.Point(286, 54);
+            this.pocztaLabel.Location = new System.Drawing.Point(298, 83);
             this.pocztaLabel.Name = "pocztaLabel";
             this.pocztaLabel.Size = new System.Drawing.Size(42, 15);
             this.pocztaLabel.TabIndex = 78;
             this.pocztaLabel.Text = "Poczta";
-            // 
-            // gminaTB
-            // 
-            this.gminaTB.Location = new System.Drawing.Point(129, 109);
-            this.gminaTB.Name = "gminaTB";
-            this.gminaTB.Size = new System.Drawing.Size(147, 23);
-            this.gminaTB.TabIndex = 67;
-            // 
-            // gminaLabel
-            // 
-            this.gminaLabel.AutoSize = true;
-            this.gminaLabel.Location = new System.Drawing.Point(15, 112);
-            this.gminaLabel.Name = "gminaLabel";
-            this.gminaLabel.Size = new System.Drawing.Size(42, 15);
-            this.gminaLabel.TabIndex = 66;
-            this.gminaLabel.Text = "Gmina";
-            // 
-            // PodzialAdministracyjnyTB
-            // 
-            this.PodzialAdministracyjnyTB.Location = new System.Drawing.Point(424, 79);
-            this.PodzialAdministracyjnyTB.Name = "PodzialAdministracyjnyTB";
-            this.PodzialAdministracyjnyTB.Size = new System.Drawing.Size(147, 23);
-            this.PodzialAdministracyjnyTB.TabIndex = 65;
-            // 
-            // wojewodztwoLabel
-            // 
-            this.wojewodztwoLabel.AutoSize = true;
-            this.wojewodztwoLabel.Location = new System.Drawing.Point(286, 83);
-            this.wojewodztwoLabel.Name = "wojewodztwoLabel";
-            this.wojewodztwoLabel.Size = new System.Drawing.Size(132, 15);
-            this.wojewodztwoLabel.TabIndex = 64;
-            this.wojewodztwoLabel.Text = "Podział administracyjny";
-            // 
-            // numerDomuLokaluTB
-            // 
-            this.numerDomuLokaluTB.Location = new System.Drawing.Point(424, 22);
-            this.numerDomuLokaluTB.Name = "numerDomuLokaluTB";
-            this.numerDomuLokaluTB.Size = new System.Drawing.Size(147, 23);
-            this.numerDomuLokaluTB.TabIndex = 75;
-            // 
-            // numerDomuLabel
-            // 
-            this.numerDomuLabel.AutoSize = true;
-            this.numerDomuLabel.Location = new System.Drawing.Point(286, 25);
-            this.numerDomuLabel.Name = "numerDomuLabel";
-            this.numerDomuLabel.Size = new System.Drawing.Size(116, 15);
-            this.numerDomuLabel.TabIndex = 74;
-            this.numerDomuLabel.Text = "Numer domu/lokalu";
-            // 
-            // ulicaTB
-            // 
-            this.ulicaTB.Location = new System.Drawing.Point(129, 80);
-            this.ulicaTB.Name = "ulicaTB";
-            this.ulicaTB.Size = new System.Drawing.Size(147, 23);
-            this.ulicaTB.TabIndex = 73;
             // 
             // ulicaLabel
             // 
@@ -867,68 +575,693 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.ulicaLabel.TabIndex = 72;
             this.ulicaLabel.Text = "Ulica";
             // 
+            // gminaTB
+            // 
+            this.gminaTB.Location = new System.Drawing.Point(129, 109);
+            this.gminaTB.Name = "gminaTB";
+            this.gminaTB.Size = new System.Drawing.Size(147, 23);
+            this.gminaTB.TabIndex = 67;
+            // 
+            // numerDomuLabel
+            // 
+            this.numerDomuLabel.AutoSize = true;
+            this.numerDomuLabel.Location = new System.Drawing.Point(298, 54);
+            this.numerDomuLabel.Name = "numerDomuLabel";
+            this.numerDomuLabel.Size = new System.Drawing.Size(116, 15);
+            this.numerDomuLabel.TabIndex = 74;
+            this.numerDomuLabel.Text = "Numer domu/lokalu";
+            // 
+            // gminaLabel
+            // 
+            this.gminaLabel.AutoSize = true;
+            this.gminaLabel.Location = new System.Drawing.Point(15, 112);
+            this.gminaLabel.Name = "gminaLabel";
+            this.gminaLabel.Size = new System.Drawing.Size(42, 15);
+            this.gminaLabel.TabIndex = 66;
+            this.gminaLabel.Text = "Gmina";
+            // 
+            // numerDomuLokaluTB
+            // 
+            this.numerDomuLokaluTB.Location = new System.Drawing.Point(436, 51);
+            this.numerDomuLokaluTB.Name = "numerDomuLokaluTB";
+            this.numerDomuLokaluTB.Size = new System.Drawing.Size(147, 23);
+            this.numerDomuLokaluTB.TabIndex = 75;
+            // 
+            // imieMatkiTB
+            // 
+            this.imieMatkiTB.Location = new System.Drawing.Point(108, 77);
+            this.imieMatkiTB.Name = "imieMatkiTB";
+            this.imieMatkiTB.Size = new System.Drawing.Size(147, 23);
+            this.imieMatkiTB.TabIndex = 61;
+            // 
+            // miejsceurodzeniaLabel
+            // 
+            this.miejsceurodzeniaLabel.AutoSize = true;
+            this.miejsceurodzeniaLabel.Location = new System.Drawing.Point(2, 139);
+            this.miejsceurodzeniaLabel.Name = "miejsceurodzeniaLabel";
+            this.miejsceurodzeniaLabel.Size = new System.Drawing.Size(102, 15);
+            this.miejsceurodzeniaLabel.TabIndex = 59;
+            this.miejsceurodzeniaLabel.Text = "Miejsce urodzenia";
+            // 
+            // imieOjcaTB
+            // 
+            this.imieOjcaTB.Location = new System.Drawing.Point(108, 106);
+            this.imieOjcaTB.Name = "imieOjcaTB";
+            this.imieOjcaTB.Size = new System.Drawing.Size(147, 23);
+            this.imieOjcaTB.TabIndex = 62;
+            // 
+            // miejsceUrodzeniaTB
+            // 
+            this.miejsceUrodzeniaTB.Location = new System.Drawing.Point(108, 136);
+            this.miejsceUrodzeniaTB.Name = "miejsceUrodzeniaTB";
+            this.miejsceUrodzeniaTB.Size = new System.Drawing.Size(147, 23);
+            this.miejsceUrodzeniaTB.TabIndex = 58;
+            // 
+            // dataUrodzeniaLabel
+            // 
+            this.dataUrodzeniaLabel.AutoSize = true;
+            this.dataUrodzeniaLabel.Location = new System.Drawing.Point(2, 168);
+            this.dataUrodzeniaLabel.Name = "dataUrodzeniaLabel";
+            this.dataUrodzeniaLabel.Size = new System.Drawing.Size(86, 15);
+            this.dataUrodzeniaLabel.TabIndex = 57;
+            this.dataUrodzeniaLabel.Text = "Data urodzenia";
+            // 
+            // nazwiskoPracownikaLabel
+            // 
+            this.nazwiskoPracownikaLabel.AutoSize = true;
+            this.nazwiskoPracownikaLabel.Location = new System.Drawing.Point(2, 54);
+            this.nazwiskoPracownikaLabel.Name = "nazwiskoPracownikaLabel";
+            this.nazwiskoPracownikaLabel.Size = new System.Drawing.Size(57, 15);
+            this.nazwiskoPracownikaLabel.TabIndex = 56;
+            this.nazwiskoPracownikaLabel.Text = "Nazwisko";
+            // 
+            // plecTB
+            // 
+            this.plecTB.Location = new System.Drawing.Point(108, 194);
+            this.plecTB.Name = "plecTB";
+            this.plecTB.Size = new System.Drawing.Size(147, 23);
+            this.plecTB.TabIndex = 65;
+            // 
+            // imiematkiPracownikaLabel
+            // 
+            this.imiematkiPracownikaLabel.AutoSize = true;
+            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(2, 80);
+            this.imiematkiPracownikaLabel.Name = "imiematkiPracownikaLabel";
+            this.imiematkiPracownikaLabel.Size = new System.Drawing.Size(63, 15);
+            this.imiematkiPracownikaLabel.TabIndex = 63;
+            this.imiematkiPracownikaLabel.Text = "Imię matki";
+            // 
+            // zdjeciePracownikaPB
+            // 
+            this.zdjeciePracownikaPB.Location = new System.Drawing.Point(336, 22);
+            this.zdjeciePracownikaPB.Name = "zdjeciePracownikaPB";
+            this.zdjeciePracownikaPB.Size = new System.Drawing.Size(236, 228);
+            this.zdjeciePracownikaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.zdjeciePracownikaPB.TabIndex = 52;
+            this.zdjeciePracownikaPB.TabStop = false;
+            // 
+            // nazwiskoPracownikaTB
+            // 
+            this.nazwiskoPracownikaTB.Location = new System.Drawing.Point(108, 51);
+            this.nazwiskoPracownikaTB.Name = "nazwiskoPracownikaTB";
+            this.nazwiskoPracownikaTB.Size = new System.Drawing.Size(147, 23);
+            this.nazwiskoPracownikaTB.TabIndex = 55;
+            // 
+            // imiePracownikaTB
+            // 
+            this.imiePracownikaTB.Location = new System.Drawing.Point(108, 22);
+            this.imiePracownikaTB.Name = "imiePracownikaTB";
+            this.imiePracownikaTB.Size = new System.Drawing.Size(147, 23);
+            this.imiePracownikaTB.TabIndex = 54;
+            // 
+            // imieOjcaPracownikaLabel
+            // 
+            this.imieOjcaPracownikaLabel.AutoSize = true;
+            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(2, 109);
+            this.imieOjcaPracownikaLabel.Name = "imieOjcaPracownikaLabel";
+            this.imieOjcaPracownikaLabel.Size = new System.Drawing.Size(55, 15);
+            this.imieOjcaPracownikaLabel.TabIndex = 64;
+            this.imieOjcaPracownikaLabel.Text = "Imię ojca";
+            // 
+            // imiePracownikaLabel
+            // 
+            this.imiePracownikaLabel.AutoSize = true;
+            this.imiePracownikaLabel.Location = new System.Drawing.Point(4, 25);
+            this.imiePracownikaLabel.Name = "imiePracownikaLabel";
+            this.imiePracownikaLabel.Size = new System.Drawing.Size(30, 15);
+            this.imiePracownikaLabel.TabIndex = 53;
+            this.imiePracownikaLabel.Text = "Imię";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.TytulPoUkonczeniuUczelniTB);
+            this.groupBox5.Controls.Add(this.label20);
+            this.groupBox5.Controls.Add(this.SpecjalizacjaTB);
+            this.groupBox5.Controls.Add(this.label19);
+            this.groupBox5.Controls.Add(this.label18);
+            this.groupBox5.Controls.Add(this.PoziomJezykaObcegoTB);
+            this.groupBox5.Controls.Add(this.UczelniaTB);
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.SzkolaSredniaTB);
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Location = new System.Drawing.Point(647, 17);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(338, 264);
+            this.groupBox5.TabIndex = 68;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Wykształcenie";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
+            // TytulPoUkonczeniuUczelniTB
+            // 
+            this.TytulPoUkonczeniuUczelniTB.Location = new System.Drawing.Point(143, 163);
+            this.TytulPoUkonczeniuUczelniTB.Name = "TytulPoUkonczeniuUczelniTB";
+            this.TytulPoUkonczeniuUczelniTB.Size = new System.Drawing.Size(177, 23);
+            this.TytulPoUkonczeniuUczelniTB.TabIndex = 21;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(14, 166);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(32, 15);
+            this.label20.TabIndex = 20;
+            this.label20.Text = "Tytuł";
+            // 
+            // SpecjalizacjaTB
+            // 
+            this.SpecjalizacjaTB.Location = new System.Drawing.Point(143, 134);
+            this.SpecjalizacjaTB.Name = "SpecjalizacjaTB";
+            this.SpecjalizacjaTB.Size = new System.Drawing.Size(177, 23);
+            this.SpecjalizacjaTB.TabIndex = 19;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(14, 137);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(73, 15);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "Specjalizacja";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(11, 69);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(125, 15);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "Poziom języka obcego";
+            // 
+            // PoziomJezykaObcegoTB
+            // 
+            this.PoziomJezykaObcegoTB.FormattingEnabled = true;
+            this.PoziomJezykaObcegoTB.Items.AddRange(new object[] {
+            "Angielski - poziom A1 (początkujący)",
+            "Angielski - poziom A2 (początkujący)",
+            "Angielski - poziom B1 (średnio zaawansowany)",
+            "Angielski - poziom B2 (średnio zaawansowany)",
+            "Angielski - poziom C1 (zaawansowany)",
+            "Angielski - poziom C2 (zaawansowany)"});
+            this.PoziomJezykaObcegoTB.Location = new System.Drawing.Point(143, 66);
+            this.PoziomJezykaObcegoTB.Name = "PoziomJezykaObcegoTB";
+            this.PoziomJezykaObcegoTB.Size = new System.Drawing.Size(177, 23);
+            this.PoziomJezykaObcegoTB.TabIndex = 16;
+            // 
+            // UczelniaTB
+            // 
+            this.UczelniaTB.Location = new System.Drawing.Point(143, 105);
+            this.UczelniaTB.Name = "UczelniaTB";
+            this.UczelniaTB.Size = new System.Drawing.Size(177, 23);
+            this.UczelniaTB.TabIndex = 15;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(14, 108);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 15);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "Uczelnia";
+            // 
+            // SzkolaSredniaTB
+            // 
+            this.SzkolaSredniaTB.Location = new System.Drawing.Point(143, 37);
+            this.SzkolaSredniaTB.Name = "SzkolaSredniaTB";
+            this.SzkolaSredniaTB.Size = new System.Drawing.Size(177, 23);
+            this.SzkolaSredniaTB.TabIndex = 13;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(11, 40);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 15);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Szkoła średnia";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.kosztUzyskaniaPrzychoduTB);
+            this.groupBox7.Controls.Add(this.ulgapodatkowaTB);
+            this.groupBox7.Controls.Add(this.etatTB);
+            this.groupBox7.Controls.Add(this.label2);
+            this.groupBox7.Controls.Add(this.umowaTB);
+            this.groupBox7.Controls.Add(this.label3);
+            this.groupBox7.Controls.Add(this.ulgapodatkowaLabel);
+            this.groupBox7.Controls.Add(this.kosztyPrzychoduLabel);
+            this.groupBox7.Controls.Add(this.nfzTB);
+            this.groupBox7.Controls.Add(this.nfzLabel);
+            this.groupBox7.Controls.Add(this.numerKontaTB);
+            this.groupBox7.Controls.Add(this.numerKontaLabel);
+            this.groupBox7.Controls.Add(this.bankTB);
+            this.groupBox7.Controls.Add(this.bankDoPrzelewuLabel);
+            this.groupBox7.Location = new System.Drawing.Point(6, 17);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(305, 264);
+            this.groupBox7.TabIndex = 69;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Dane ogólne";
+            // 
+            // kosztUzyskaniaPrzychoduTB
+            // 
+            this.kosztUzyskaniaPrzychoduTB.Location = new System.Drawing.Point(13, 231);
+            this.kosztUzyskaniaPrzychoduTB.Name = "kosztUzyskaniaPrzychoduTB";
+            this.kosztUzyskaniaPrzychoduTB.Size = new System.Drawing.Size(259, 23);
+            this.kosztUzyskaniaPrzychoduTB.TabIndex = 80;
+            // 
+            // ulgapodatkowaTB
+            // 
+            this.ulgapodatkowaTB.Location = new System.Drawing.Point(13, 187);
+            this.ulgapodatkowaTB.Name = "ulgapodatkowaTB";
+            this.ulgapodatkowaTB.Size = new System.Drawing.Size(259, 23);
+            this.ulgapodatkowaTB.TabIndex = 79;
+            // 
+            // etatTB
+            // 
+            this.etatTB.Location = new System.Drawing.Point(107, 53);
+            this.etatTB.Name = "etatTB";
+            this.etatTB.Size = new System.Drawing.Size(164, 23);
+            this.etatTB.TabIndex = 78;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 15);
+            this.label2.TabIndex = 77;
+            this.label2.Text = "Etat";
+            // 
+            // umowaTB
+            // 
+            this.umowaTB.Location = new System.Drawing.Point(107, 21);
+            this.umowaTB.Name = "umowaTB";
+            this.umowaTB.Size = new System.Drawing.Size(165, 23);
+            this.umowaTB.TabIndex = 76;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 15);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Umowa";
+            // 
+            // ulgapodatkowaLabel
+            // 
+            this.ulgapodatkowaLabel.AutoSize = true;
+            this.ulgapodatkowaLabel.Location = new System.Drawing.Point(13, 169);
+            this.ulgapodatkowaLabel.Name = "ulgapodatkowaLabel";
+            this.ulgapodatkowaLabel.Size = new System.Drawing.Size(93, 15);
+            this.ulgapodatkowaLabel.TabIndex = 74;
+            this.ulgapodatkowaLabel.Text = "Ulga podatkowa";
+            // 
+            // kosztyPrzychoduLabel
+            // 
+            this.kosztyPrzychoduLabel.AutoSize = true;
+            this.kosztyPrzychoduLabel.Location = new System.Drawing.Point(13, 213);
+            this.kosztyPrzychoduLabel.Name = "kosztyPrzychoduLabel";
+            this.kosztyPrzychoduLabel.Size = new System.Drawing.Size(154, 15);
+            this.kosztyPrzychoduLabel.TabIndex = 73;
+            this.kosztyPrzychoduLabel.Text = "Koszty uzyskania przychodu";
+            // 
+            // nfzTB
+            // 
+            this.nfzTB.Location = new System.Drawing.Point(107, 143);
+            this.nfzTB.Name = "nfzTB";
+            this.nfzTB.Size = new System.Drawing.Size(165, 23);
+            this.nfzTB.TabIndex = 72;
+            // 
+            // nfzLabel
+            // 
+            this.nfzLabel.AutoSize = true;
+            this.nfzLabel.Location = new System.Drawing.Point(13, 146);
+            this.nfzLabel.Name = "nfzLabel";
+            this.nfzLabel.Size = new System.Drawing.Size(82, 15);
+            this.nfzLabel.TabIndex = 71;
+            this.nfzLabel.Text = "Ubezpieczenie";
+            // 
+            // numerKontaTB
+            // 
+            this.numerKontaTB.Location = new System.Drawing.Point(107, 114);
+            this.numerKontaTB.Name = "numerKontaTB";
+            this.numerKontaTB.Size = new System.Drawing.Size(165, 23);
+            this.numerKontaTB.TabIndex = 70;
+            // 
+            // numerKontaLabel
+            // 
+            this.numerKontaLabel.AutoSize = true;
+            this.numerKontaLabel.Location = new System.Drawing.Point(13, 117);
+            this.numerKontaLabel.Name = "numerKontaLabel";
+            this.numerKontaLabel.Size = new System.Drawing.Size(77, 15);
+            this.numerKontaLabel.TabIndex = 69;
+            this.numerKontaLabel.Text = "Numer konta";
+            // 
+            // bankTB
+            // 
+            this.bankTB.Location = new System.Drawing.Point(107, 82);
+            this.bankTB.Name = "bankTB";
+            this.bankTB.Size = new System.Drawing.Size(164, 23);
+            this.bankTB.TabIndex = 68;
+            // 
+            // bankDoPrzelewuLabel
+            // 
+            this.bankDoPrzelewuLabel.AutoSize = true;
+            this.bankDoPrzelewuLabel.Location = new System.Drawing.Point(13, 85);
+            this.bankDoPrzelewuLabel.Name = "bankDoPrzelewuLabel";
+            this.bankDoPrzelewuLabel.Size = new System.Drawing.Size(33, 15);
+            this.bankDoPrzelewuLabel.TabIndex = 67;
+            this.bankDoPrzelewuLabel.Text = "Bank";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label24);
+            this.groupBox8.Controls.Add(this.label23);
+            this.groupBox8.Controls.Add(this.label22);
+            this.groupBox8.Controls.Add(this.DataWygasnieciaKartyPobytuTymczasowegoDTP);
+            this.groupBox8.Controls.Add(this.MiejsceWydaniaTB);
+            this.groupBox8.Controls.Add(this.label5);
+            this.groupBox8.Controls.Add(this.button1);
+            this.groupBox8.Controls.Add(this.NumerPaszportuTB);
+            this.groupBox8.Controls.Add(this.label10);
+            this.groupBox8.Controls.Add(this.WpisyTB);
+            this.groupBox8.Controls.Add(this.label9);
+            this.groupBox8.Controls.Add(this.TypKlasaWizyTB);
+            this.groupBox8.Controls.Add(this.label12);
+            this.groupBox8.Controls.Add(this.NumerKontrolnyTB);
+            this.groupBox8.Controls.Add(this.label13);
+            this.groupBox8.Controls.Add(this.NumerWizyTB);
+            this.groupBox8.Controls.Add(this.KoniecWizaDTP);
+            this.groupBox8.Controls.Add(this.label14);
+            this.groupBox8.Controls.Add(this.StartWizaDTP);
+            this.groupBox8.Controls.Add(this.label17);
+            this.groupBox8.Controls.Add(this.label21);
+            this.groupBox8.Controls.Add(this.TypZezwoleniaTB);
+            this.groupBox8.Controls.Add(this.label8);
+            this.groupBox8.Location = new System.Drawing.Point(6, 287);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(979, 215);
+            this.groupBox8.TabIndex = 70;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Informacje o pobycie";
+            this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(205, 15);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Zezwolenie na pracę dla cudzoziemca";
+            // 
+            // TypZezwoleniaTB
+            // 
+            this.TypZezwoleniaTB.Location = new System.Drawing.Point(220, 16);
+            this.TypZezwoleniaTB.Name = "TypZezwoleniaTB";
+            this.TypZezwoleniaTB.Size = new System.Drawing.Size(116, 23);
+            this.TypZezwoleniaTB.TabIndex = 14;
+            // 
+            // MiejsceWydaniaTB
+            // 
+            this.MiejsceWydaniaTB.Location = new System.Drawing.Point(116, 45);
+            this.MiejsceWydaniaTB.Name = "MiejsceWydaniaTB";
+            this.MiejsceWydaniaTB.Size = new System.Drawing.Size(220, 23);
+            this.MiejsceWydaniaTB.TabIndex = 56;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 15);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "Miejsce wydania";
+            // 
+            // NumerPaszportuTB
+            // 
+            this.NumerPaszportuTB.Location = new System.Drawing.Point(116, 132);
+            this.NumerPaszportuTB.Name = "NumerPaszportuTB";
+            this.NumerPaszportuTB.Size = new System.Drawing.Size(220, 23);
+            this.NumerPaszportuTB.TabIndex = 54;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 135);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(99, 15);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "Numer paszportu";
+            // 
+            // WpisyTB
+            // 
+            this.WpisyTB.Location = new System.Drawing.Point(116, 158);
+            this.WpisyTB.Name = "WpisyTB";
+            this.WpisyTB.Size = new System.Drawing.Size(220, 23);
+            this.WpisyTB.TabIndex = 52;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 161);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 15);
+            this.label9.TabIndex = 51;
+            this.label9.Text = "Wpisy";
+            // 
+            // TypKlasaWizyTB
+            // 
+            this.TypKlasaWizyTB.Location = new System.Drawing.Point(116, 187);
+            this.TypKlasaWizyTB.Name = "TypKlasaWizyTB";
+            this.TypKlasaWizyTB.Size = new System.Drawing.Size(220, 23);
+            this.TypKlasaWizyTB.TabIndex = 50;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 190);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(88, 15);
+            this.label12.TabIndex = 49;
+            this.label12.Text = "Wiza Typ/Klasa ";
+            // 
+            // NumerKontrolnyTB
+            // 
+            this.NumerKontrolnyTB.Location = new System.Drawing.Point(116, 103);
+            this.NumerKontrolnyTB.Name = "NumerKontrolnyTB";
+            this.NumerKontrolnyTB.Size = new System.Drawing.Size(220, 23);
+            this.NumerKontrolnyTB.TabIndex = 48;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 106);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(98, 15);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Numer kontrolny";
+            // 
+            // NumerWizyTB
+            // 
+            this.NumerWizyTB.Location = new System.Drawing.Point(116, 74);
+            this.NumerWizyTB.Name = "NumerWizyTB";
+            this.NumerWizyTB.Size = new System.Drawing.Size(220, 23);
+            this.NumerWizyTB.TabIndex = 46;
+            // 
+            // KoniecWizaDTP
+            // 
+            this.KoniecWizaDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.KoniecWizaDTP.Location = new System.Drawing.Point(478, 47);
+            this.KoniecWizaDTP.Name = "KoniecWizaDTP";
+            this.KoniecWizaDTP.Size = new System.Drawing.Size(164, 23);
+            this.KoniecWizaDTP.TabIndex = 45;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(371, 53);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 15);
+            this.label14.TabIndex = 44;
+            this.label14.Text = "Ważność wizy do:";
+            // 
+            // StartWizaDTP
+            // 
+            this.StartWizaDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.StartWizaDTP.Location = new System.Drawing.Point(478, 18);
+            this.StartWizaDTP.Name = "StartWizaDTP";
+            this.StartWizaDTP.Size = new System.Drawing.Size(164, 23);
+            this.StartWizaDTP.TabIndex = 43;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(371, 24);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 15);
+            this.label17.TabIndex = 42;
+            this.label17.Text = "Ważność wizy od:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(9, 79);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(70, 15);
+            this.label21.TabIndex = 41;
+            this.label21.Text = "Numer wizy";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(371, 192);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(98, 15);
+            this.label22.TabIndex = 69;
+            this.label22.Text = "Data wygaśnięcia";
+            // 
+            // DataWygasnieciaKartyPobytuTymczasowegoDTP
+            // 
+            this.DataWygasnieciaKartyPobytuTymczasowegoDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DataWygasnieciaKartyPobytuTymczasowegoDTP.Location = new System.Drawing.Point(478, 186);
+            this.DataWygasnieciaKartyPobytuTymczasowegoDTP.Name = "DataWygasnieciaKartyPobytuTymczasowegoDTP";
+            this.DataWygasnieciaKartyPobytuTymczasowegoDTP.Size = new System.Drawing.Size(164, 23);
+            this.DataWygasnieciaKartyPobytuTymczasowegoDTP.TabIndex = 68;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(371, 163);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(169, 15);
+            this.label23.TabIndex = 70;
+            this.label23.Text = "Zezwolenie na pobyt czasowy: ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label24.Location = new System.Drawing.Point(371, 155);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.MaximumSize = new System.Drawing.Size(0, 2);
+            this.label24.MinimumSize = new System.Drawing.Size(280, 2);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(280, 2);
+            this.label24.TabIndex = 71;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.EmailBTN);
+            this.groupBox9.Controls.Add(this.button2);
+            this.groupBox9.Controls.Add(this.EdytujPodstawoweBTN);
+            this.groupBox9.Controls.Add(this.edytujZatrudnienieBTN);
+            this.groupBox9.Location = new System.Drawing.Point(654, 12);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(349, 519);
+            this.groupBox9.TabIndex = 77;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Przybornik";
+            // 
+            // EmailBTN
+            // 
+            this.EmailBTN.Location = new System.Drawing.Point(6, 127);
+            this.EmailBTN.Name = "EmailBTN";
+            this.EmailBTN.Size = new System.Drawing.Size(337, 48);
+            this.EmailBTN.TabIndex = 66;
+            this.EmailBTN.Text = "Wyślij E-mail do pracownika";
+            this.EmailBTN.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(6, 181);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(337, 48);
+            this.button2.TabIndex = 65;
+            this.button2.Text = "Odświerz";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // EdytujPodstawoweBTN
+            // 
+            this.EdytujPodstawoweBTN.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.EdytujPodstawoweBTN.Cursor = System.Windows.Forms.Cursors.Default;
+            this.EdytujPodstawoweBTN.Location = new System.Drawing.Point(6, 22);
+            this.EdytujPodstawoweBTN.Name = "EdytujPodstawoweBTN";
+            this.EdytujPodstawoweBTN.Size = new System.Drawing.Size(337, 48);
+            this.EdytujPodstawoweBTN.TabIndex = 64;
+            this.EdytujPodstawoweBTN.Text = "Edytuj dane podstawowe";
+            this.EdytujPodstawoweBTN.UseVisualStyleBackColor = false;
+            // 
+            // edytujZatrudnienieBTN
+            // 
+            this.edytujZatrudnienieBTN.Location = new System.Drawing.Point(6, 73);
+            this.edytujZatrudnienieBTN.Name = "edytujZatrudnienieBTN";
+            this.edytujZatrudnienieBTN.Size = new System.Drawing.Size(337, 48);
+            this.edytujZatrudnienieBTN.TabIndex = 1;
+            this.edytujZatrudnienieBTN.Text = "Edytuj dane o zatrudnieniu";
+            this.edytujZatrudnienieBTN.UseVisualStyleBackColor = true;
+            // 
             // InternationalInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 959);
-            this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox3);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1015, 1061);
+            this.Controls.Add(this.panel);
             this.Name = "InternationalInfo";
             this.Text = "Informacje o pracowniku zagranicznym";
+            this.panel.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zdjeciePracownikaPB)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker DataUrodzinDTP;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox numerDoTB;
-        private System.Windows.Forms.TextBox numerTelefonuNagleWypadkiTB;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox numertelefonuPracownikaTB;
-        private System.Windows.Forms.TextBox adresEmailPracownika;
-        private System.Windows.Forms.Label adresEmailLabel;
-        private System.Windows.Forms.Label numerTelefonuPracownikaLabel;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox KrajPochodzeniaTB;
-        private System.Windows.Forms.Label krajZamieszkaniaPracownikaLabel;
-        private System.Windows.Forms.TextBox plecTB;
-        private System.Windows.Forms.PictureBox zdjeciePracownikaPB;
-        private System.Windows.Forms.TextBox imiePracownikaTB;
-        private System.Windows.Forms.Label imiePracownikaLabel;
-        private System.Windows.Forms.Label imieOjcaPracownikaLabel;
-        private System.Windows.Forms.TextBox nazwiskoPracownikaTB;
-        private System.Windows.Forms.Label imiematkiPracownikaLabel;
-        private System.Windows.Forms.Label nazwiskoPracownikaLabel;
-        private System.Windows.Forms.Label dataUrodzeniaLabel;
-        private System.Windows.Forms.TextBox miejsceUrodzeniaTB;
-        private System.Windows.Forms.TextBox imieOjcaTB;
-        private System.Windows.Forms.Label miejsceurodzeniaLabel;
-        private System.Windows.Forms.TextBox imieMatkiTB;
-        private System.Windows.Forms.Label plecLabel;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox kosztUzyskaniaPrzychoduTB;
-        private System.Windows.Forms.TextBox ulgapodatkowaTB;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox DzialTB;
         private System.Windows.Forms.TextBox StanowiskoTB;
@@ -942,28 +1275,21 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
         private System.Windows.Forms.Label stawkaZaGodzine;
         private System.Windows.Forms.Label dzial;
         private System.Windows.Forms.Label stanowisko;
-        private System.Windows.Forms.TextBox etatTB;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox umowaTB;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label ulgapodatkowaLabel;
-        private System.Windows.Forms.Label kosztyPrzychoduLabel;
-        private System.Windows.Forms.TextBox nfzTB;
-        private System.Windows.Forms.Label nfzLabel;
-        private System.Windows.Forms.TextBox numerKontaTB;
-        private System.Windows.Forms.Label numerKontaLabel;
-        private System.Windows.Forms.TextBox bankTB;
-        private System.Windows.Forms.Label bankDoPrzelewuLabel;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox KrajPochodzeniaTB;
+        private System.Windows.Forms.Label krajZamieszkaniaPracownikaLabel;
+        private System.Windows.Forms.DateTimePicker DataUrodzinDTP;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox numerDoTB;
+        private System.Windows.Forms.TextBox numerTelefonuNagleWypadkiTB;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox numertelefonuPracownikaTB;
+        private System.Windows.Forms.TextBox adresEmailPracownika;
+        private System.Windows.Forms.Label adresEmailLabel;
+        private System.Windows.Forms.Label numerTelefonuPracownikaLabel;
+        private System.Windows.Forms.Label plecLabel;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox miejscowoscTB;
         private System.Windows.Forms.TextBox KrajZamieszkaniaTB;
         private System.Windows.Forms.Label label11;
@@ -980,5 +1306,72 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
         private System.Windows.Forms.Label numerDomuLabel;
         private System.Windows.Forms.Label gminaLabel;
         private System.Windows.Forms.TextBox numerDomuLokaluTB;
+        private System.Windows.Forms.TextBox imieMatkiTB;
+        private System.Windows.Forms.Label miejsceurodzeniaLabel;
+        private System.Windows.Forms.TextBox imieOjcaTB;
+        private System.Windows.Forms.TextBox miejsceUrodzeniaTB;
+        private System.Windows.Forms.Label dataUrodzeniaLabel;
+        private System.Windows.Forms.Label nazwiskoPracownikaLabel;
+        private System.Windows.Forms.TextBox plecTB;
+        private System.Windows.Forms.Label imiematkiPracownikaLabel;
+        private System.Windows.Forms.PictureBox zdjeciePracownikaPB;
+        private System.Windows.Forms.TextBox nazwiskoPracownikaTB;
+        private System.Windows.Forms.TextBox imiePracownikaTB;
+        private System.Windows.Forms.Label imieOjcaPracownikaLabel;
+        private System.Windows.Forms.Label imiePracownikaLabel;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox TytulPoUkonczeniuUczelniTB;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox SpecjalizacjaTB;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox PoziomJezykaObcegoTB;
+        private System.Windows.Forms.TextBox UczelniaTB;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox SzkolaSredniaTB;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox kosztUzyskaniaPrzychoduTB;
+        private System.Windows.Forms.TextBox ulgapodatkowaTB;
+        private System.Windows.Forms.TextBox etatTB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox umowaTB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label ulgapodatkowaLabel;
+        private System.Windows.Forms.Label kosztyPrzychoduLabel;
+        private System.Windows.Forms.TextBox nfzTB;
+        private System.Windows.Forms.Label nfzLabel;
+        private System.Windows.Forms.TextBox numerKontaTB;
+        private System.Windows.Forms.Label numerKontaLabel;
+        private System.Windows.Forms.TextBox bankTB;
+        private System.Windows.Forms.Label bankDoPrzelewuLabel;
+        private System.Windows.Forms.TextBox TypZezwoleniaTB;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox MiejsceWydaniaTB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox NumerPaszportuTB;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox WpisyTB;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox TypKlasaWizyTB;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox NumerKontrolnyTB;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox NumerWizyTB;
+        private System.Windows.Forms.DateTimePicker KoniecWizaDTP;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker StartWizaDTP;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DateTimePicker DataWygasnieciaKartyPobytuTymczasowegoDTP;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button EmailBTN;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button EdytujPodstawoweBTN;
+        private System.Windows.Forms.Button edytujZatrudnienieBTN;
     }
 }
