@@ -111,7 +111,28 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
 
                 //955; 508
 
+                DzialTB.Text = zatrudnienieZapytanie.Dzial.ToString();
+                StanowiskoTB.Text = zatrudnienieZapytanie.Stanowisko.ToString();
+                StawkaGodzinowaTB.Text = zatrudnienieZapytanie.StawkaGodzinowa.ToString();
+                DataPracaDTP.Value = zatrudnienieZapytanie.DataZatrudnienia;
+                DziennyCzasPracyTB.Text = zatrudnienieZapytanie.DziennyCzasPracy.ToString();
 
+                SzkolaSredniaTB.Text = zatrudnienieZapytanie.SzkolaSrednia.ToString();
+                PoziomJezykaObcegoTB.Text = zatrudnienieZapytanie.PoziomJezykaObcego.ToString();
+                UczelniaTB.Text = zatrudnienieZapytanie.Uczelnia.ToString();
+                SpecjalizacjaTB.Text = zatrudnienieZapytanie.SpecjalizacjaZawodowa.ToString();
+                TytulPoUkonczeniuUczelniTB.Text = zatrudnienieZapytanie.Tytul.ToString();
+
+                TypZezwoleniaTB.Text = zatrudnienieZapytanie.TypZezwolenia.ToString();
+                MiejsceWydaniaTB.Text = zatrudnienieZapytanie.MiejsceWydaniaWizy.ToString();
+                NumerWizyTB.Text = zatrudnienieZapytanie.NumerWizy.ToString();
+                NumerKontrolnyTB.Text = zatrudnienieZapytanie.NumerKontrolnyWizy.ToString();
+                NumerPaszportuTB.Text = zatrudnienieZapytanie.NumerPaszportu.ToString();
+                WpisyTB.Text = zatrudnienieZapytanie.Wpisy.ToString();
+                TypKlasaWizyTB.Text = zatrudnienieZapytanie.TypKlasaWizy.ToString();
+                StartWizaDTP.Value = zatrudnienieZapytanie.WaznoscWizyStart;
+                KoniecWizaDTP.Value = zatrudnienieZapytanie.WaznoscWizyKoniec;
+                //DataWygasnieciaKartyPobytuTymczasowegoDTP.Value = zatrudnienieZapytanie.DataWygasnieciaKartyPobytuTymczasowegoDTP;
             }
             catch (Exception)
             {
