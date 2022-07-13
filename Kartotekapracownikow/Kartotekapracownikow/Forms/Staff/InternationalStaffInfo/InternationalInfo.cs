@@ -37,6 +37,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                         collection.Imie,
                         collection.Nazwisko,
                         collection.ImieMatki,
+                        collection.Plec,
                         collection.ImieOjca,
                         collection.MiejsceUrodzenia,
                         collection.DataUrodzenia,
@@ -90,7 +91,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                 imieOjcaTB.Text = podstawoweZapytanie.ImieOjca.ToString();
                 miejsceUrodzeniaTB.Text = podstawoweZapytanie.MiejsceUrodzenia.ToString();
                 DataUrodzinDTP.Value = podstawoweZapytanie.DataUrodzenia;
-                //plecTB.Text = podstawoweZapytanie.Plec.ToString();
+                plecTB.Text = podstawoweZapytanie.Plec.ToString();
                 KrajPochodzeniaTB.Text = podstawoweZapytanie.KrajPochodzenia.ToString();
                 KrajZamieszkaniaTB.Text = podstawoweZapytanie.Kraj.ToString();
                 miejscowoscTB.Text = podstawoweZapytanie.Miejscowosc.ToString();
@@ -108,8 +109,6 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                 byte[] zdjecie = Convert.FromBase64String(podstawoweZapytanie.ZdjeciePracownika.ToString());
                 var pomocZdjecie = new MemoryStream(zdjecie, 0, zdjecie.Length);
                 zdjeciePracownikaPB.Image = Image.FromStream(pomocZdjecie, true);
-
-                //955; 508
 
                 DzialTB.Text = zatrudnienieZapytanie.Dzial.ToString();
                 StanowiskoTB.Text = zatrudnienieZapytanie.Stanowisko.ToString();

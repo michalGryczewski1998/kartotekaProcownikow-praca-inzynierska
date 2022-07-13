@@ -10,6 +10,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
     {
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
+        public string Plec { get; set; }
         public string ImieMatki { get; set; }
         public string ImieOjca { get; set; }
         public string MiejsceUrodzenia { get; set; }
@@ -38,5 +39,13 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
         public string StawkaGodzinowa { get; set; }
         public DateTime DataZatrudnienia { get; set; }
         public string DziennyCzasPracy { get; set; }
+        public string Bank { get; set; }
+        public string NumerKonta { get; set; }
+        public string UbezpieczenieNFZ { get; set; }
+        public string TypUmowy { get; set; }
+        public string Etat { get; set; }
+        public string UlgaPodatkowa { get; set; }
+        public string KosztUzyskaniaPrzychodu { get; set; }
+
     }
 }

@@ -30,6 +30,8 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
         private void InitializeComponent()
         {
             this.zagraniczniPracownicyGB = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.PlecCB = new System.Windows.Forms.ComboBox();
             this.numerDomuTB = new System.Windows.Forms.TextBox();
             this.numerDomuLabel = new System.Windows.Forms.Label();
             this.UlicaTB = new System.Windows.Forms.TextBox();
@@ -98,6 +100,7 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.daneZatrudnieniaGB = new System.Windows.Forms.GroupBox();
+            this.UbezpieczenieCB = new System.Windows.Forms.ComboBox();
             this.KosztPrzychoduLB = new System.Windows.Forms.ListBox();
             this.UlgaPodatkowaLB = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -111,9 +114,6 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             this.numerKontaLabel = new System.Windows.Forms.Label();
             this.bankTB = new System.Windows.Forms.TextBox();
             this.bankDoPrzelewuLabel = new System.Windows.Forms.Label();
-            this.PlecCB = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.zagraniczniPracownicyGB.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ZdjeciePracownikaZagranicznegoPB)).BeginInit();
@@ -163,6 +163,27 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             this.zagraniczniPracownicyGB.TabIndex = 0;
             this.zagraniczniPracownicyGB.TabStop = false;
             this.zagraniczniPracownicyGB.Text = "Dane Podstawowe";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 15);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "Płeć";
+            // 
+            // PlecCB
+            // 
+            this.PlecCB.FormattingEnabled = true;
+            this.PlecCB.Items.AddRange(new object[] {
+            "Kobieta",
+            "Mężczyzna",
+            "Nie chcę podawać"});
+            this.PlecCB.Location = new System.Drawing.Point(117, 81);
+            this.PlecCB.Name = "PlecCB";
+            this.PlecCB.Size = new System.Drawing.Size(138, 23);
+            this.PlecCB.TabIndex = 44;
             // 
             // numerDomuTB
             // 
@@ -473,16 +494,16 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             // 
             // NumerTelefonuOsobyZaufanejTB
             // 
-            this.NumerTelefonuOsobyZaufanejTB.Location = new System.Drawing.Point(133, 112);
+            this.NumerTelefonuOsobyZaufanejTB.Location = new System.Drawing.Point(140, 112);
             this.NumerTelefonuOsobyZaufanejTB.Name = "NumerTelefonuOsobyZaufanejTB";
-            this.NumerTelefonuOsobyZaufanejTB.Size = new System.Drawing.Size(284, 23);
+            this.NumerTelefonuOsobyZaufanejTB.Size = new System.Drawing.Size(272, 23);
             this.NumerTelefonuOsobyZaufanejTB.TabIndex = 19;
             // 
             // OsobaZaufanaPracownikaTB
             // 
-            this.OsobaZaufanaPracownikaTB.Location = new System.Drawing.Point(133, 83);
+            this.OsobaZaufanaPracownikaTB.Location = new System.Drawing.Point(140, 83);
             this.OsobaZaufanaPracownikaTB.Name = "OsobaZaufanaPracownikaTB";
-            this.OsobaZaufanaPracownikaTB.Size = new System.Drawing.Size(284, 23);
+            this.OsobaZaufanaPracownikaTB.Size = new System.Drawing.Size(272, 23);
             this.OsobaZaufanaPracownikaTB.TabIndex = 18;
             // 
             // adresEmailLabel
@@ -505,16 +526,16 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             // 
             // AdresEmailPracownika
             // 
-            this.AdresEmailPracownika.Location = new System.Drawing.Point(133, 49);
+            this.AdresEmailPracownika.Location = new System.Drawing.Point(140, 49);
             this.AdresEmailPracownika.Name = "AdresEmailPracownika";
-            this.AdresEmailPracownika.Size = new System.Drawing.Size(284, 23);
+            this.AdresEmailPracownika.Size = new System.Drawing.Size(272, 23);
             this.AdresEmailPracownika.TabIndex = 3;
             // 
             // NumerTelefonuPracownikaTB
             // 
-            this.NumerTelefonuPracownikaTB.Location = new System.Drawing.Point(133, 20);
+            this.NumerTelefonuPracownikaTB.Location = new System.Drawing.Point(140, 20);
             this.NumerTelefonuPracownikaTB.Name = "NumerTelefonuPracownikaTB";
-            this.NumerTelefonuPracownikaTB.Size = new System.Drawing.Size(284, 23);
+            this.NumerTelefonuPracownikaTB.Size = new System.Drawing.Size(272, 23);
             this.NumerTelefonuPracownikaTB.TabIndex = 2;
             // 
             // StanowiskoGB
@@ -791,7 +812,7 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             // 
             // daneZatrudnieniaGB
             // 
-            this.daneZatrudnieniaGB.Controls.Add(this.comboBox1);
+            this.daneZatrudnieniaGB.Controls.Add(this.UbezpieczenieCB);
             this.daneZatrudnieniaGB.Controls.Add(this.KosztPrzychoduLB);
             this.daneZatrudnieniaGB.Controls.Add(this.UlgaPodatkowaLB);
             this.daneZatrudnieniaGB.Controls.Add(this.label7);
@@ -811,6 +832,16 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             this.daneZatrudnieniaGB.TabIndex = 54;
             this.daneZatrudnieniaGB.TabStop = false;
             this.daneZatrudnieniaGB.Text = "Dane o zatrudnieniu";
+            // 
+            // UbezpieczenieCB
+            // 
+            this.UbezpieczenieCB.FormattingEnabled = true;
+            this.UbezpieczenieCB.Items.AddRange(new object[] {
+            "Obowiązkowe ubezpieczenie zdrowotne"});
+            this.UbezpieczenieCB.Location = new System.Drawing.Point(127, 87);
+            this.UbezpieczenieCB.Name = "UbezpieczenieCB";
+            this.UbezpieczenieCB.Size = new System.Drawing.Size(285, 23);
+            this.UbezpieczenieCB.TabIndex = 54;
             // 
             // KosztPrzychoduLB
             // 
@@ -972,37 +1003,6 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             this.bankDoPrzelewuLabel.TabIndex = 35;
             this.bankDoPrzelewuLabel.Text = "Bank";
             // 
-            // PlecCB
-            // 
-            this.PlecCB.FormattingEnabled = true;
-            this.PlecCB.Items.AddRange(new object[] {
-            "Kobieta",
-            "Mężczyzna",
-            "Nie chcę podawać"});
-            this.PlecCB.Location = new System.Drawing.Point(117, 81);
-            this.PlecCB.Name = "PlecCB";
-            this.PlecCB.Size = new System.Drawing.Size(138, 23);
-            this.PlecCB.TabIndex = 44;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 84);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 15);
-            this.label8.TabIndex = 45;
-            this.label8.Text = "Płeć";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Obowiązkowe ubezpieczenie zdrowotne"});
-            this.comboBox1.Location = new System.Drawing.Point(127, 87);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(285, 23);
-            this.comboBox1.TabIndex = 54;
-            // 
             // InternationalStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1123,6 +1123,6 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
         private System.Windows.Forms.Label bankDoPrzelewuLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox PlecCB;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox UbezpieczenieCB;
     }
 }
