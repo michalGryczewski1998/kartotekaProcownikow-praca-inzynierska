@@ -190,6 +190,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
                 {
                     Imie = Imie,
                     Nazwisko = Nazwisko,
+                    Plec = Plec,
                     ImieMatki = ImieMatki,
                     ImieOjca = ImieOjca,
                     MiejsceUrodzenia = MiejsceUrodzenia,
@@ -233,6 +234,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
                     TypKlasaWizy = TypKlasaWizyTB.Text,
                     WaznoscWizyStart = StartWizaDTP.Value,
                     WaznoscWizyKoniec = KoniecWizaDTP.Value,
+                    ZezwolenieNaPobytCzasowy = DataWygasnieciaKartyPobytuTymczasowegoDTP.Value,
                     TypUmowy = TypUmowy,
                     Etat = Etat,
                     Bank = Bank,

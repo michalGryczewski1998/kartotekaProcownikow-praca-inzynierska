@@ -82,7 +82,14 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                         zatrudnienie.WaznoscWizyStart,
                         zatrudnienie.WaznoscWizyKoniec,
                         zatrudnienie.SkanDokumentuPobytowego,
-                        zatrudnienie.ZezwolenieNaPobytCzasowy
+                        zatrudnienie.ZezwolenieNaPobytCzasowy,
+                        zatrudnienie.TypUmowy,
+                        zatrudnienie.Etat,
+                        zatrudnienie.Bank,
+                        zatrudnienie.NumerKonta,
+                        zatrudnienie.UbezpieczenieZdrowotne,
+                        zatrudnienie.UlgaPodatkowa,
+                        zatrudnienie.KosztUzyskaniaPrzychodu
                     }).Single();
 
                 imiePracownikaTB.Text = podstawoweZapytanie.Imie.ToString();
@@ -131,7 +138,15 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                 TypKlasaWizyTB.Text = zatrudnienieZapytanie.TypKlasaWizy.ToString();
                 StartWizaDTP.Value = zatrudnienieZapytanie.WaznoscWizyStart;
                 KoniecWizaDTP.Value = zatrudnienieZapytanie.WaznoscWizyKoniec;
-                //DataWygasnieciaKartyPobytuTymczasowegoDTP.Value = zatrudnienieZapytanie.DataWygasnieciaKartyPobytuTymczasowegoDTP;
+                DataWygasnieciaKartyPobytuTymczasowegoDTP.Value = zatrudnienieZapytanie.ZezwolenieNaPobytCzasowy;
+
+                TypUmowyTB.Text = zatrudnienieZapytanie.TypUmowy.ToString();
+                etatTB.Text = zatrudnienieZapytanie.Etat.ToString();
+                bankTB.Text = zatrudnienieZapytanie.ToString();
+                numerKontaTB.Text = zatrudnienieZapytanie.NumerKonta.ToString();
+                UbezpieczenieZdrowotneBTN.Text = zatrudnienieZapytanie.UbezpieczenieZdrowotne.ToString();
+                ulgapodatkowaTB.Text = zatrudnienieZapytanie.UlgaPodatkowa.ToString();
+                kosztUzyskaniaPrzychoduTB.Text = zatrudnienieZapytanie.KosztUzyskaniaPrzychodu.ToString();
             }
             catch (Exception)
             {
