@@ -132,11 +132,26 @@ namespace Kartotekapracownikow.DatabaseModel
             set;
         }
 
-        public DateTime? ZezwolenieNaPobytCzasowy
+        public DateTime ZezwolenieNaPobytCzasowy
         {
             get;
             set;
         }
+
+        public string TypUmowy { get; set; }
+
+        public string Etat { get; set; }
+
+        public string Bank { get; set; }
+
+        public string NumerKonta { get; set; }
+
+        public string UbezpieczenieZdrowotne { get; set; }
+
+        public string UlgaPodatkowa { get; set; }
+
+        public string KosztUzyskaniaPrzychodu { get; set; }
+
         public int PodstawoweId
         {
             get;

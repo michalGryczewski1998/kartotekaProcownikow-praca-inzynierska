@@ -25,6 +25,11 @@ namespace Kartotekapracownikow.DatabaseModel
             set;
         }
 
+        public string Plec 
+        { 
+            get; set; 
+        }
+
         public string ImieMatki
         {
             get;
