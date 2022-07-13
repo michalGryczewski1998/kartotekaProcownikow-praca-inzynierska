@@ -80,6 +80,7 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
                 {
                     Imie = ImieTB.Text,
                     Nazwisko = NazwiskoTB.Text,
+                    Plec = PlecCB.SelectedItem.ToString(),
                     ImieMatki = ImieMatkiTB.Text,
                     ImieOjca = ImieOjcaTB.Text,
                     MiejsceUrodzenia = MiejsceUrodzeniaTB.Text,
@@ -108,6 +109,13 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
                     StawkaGodzinowa = stawkaGodzinaTB.Text,
                     DataZatrudnienia = DataZatrudnieniaDTP.Value,
                     DziennyCzasPracy = dziennyCzasPracyCB.SelectedItem.ToString(),
+                    Bank = bankTB.Text,
+                    NumerKonta = numerKontaTB.Text,
+                    UbezpieczenieNFZ = UbezpieczenieCB.SelectedItem.ToString(),
+                    TypUmowy = Umowa.Text,
+                    Etat = daneEtatCB.SelectedItem.ToString(),
+                    UlgaPodatkowa = UlgaPodatkowaLB.SelectedItem.ToString(),
+                    KosztUzyskaniaPrzychodu = KosztPrzychoduLB.SelectedItem.ToString(),
                 });
 
                 zatrudnienie.ShowDialog();

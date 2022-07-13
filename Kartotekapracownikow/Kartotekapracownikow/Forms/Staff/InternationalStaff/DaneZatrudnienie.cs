@@ -19,6 +19,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
 
         private string Imie;
         private string Nazwisko;
+        private string Plec;
         private string ImieMatki;
         private string ImieOjca;
         private string MiejsceUrodzenia;
@@ -47,6 +48,13 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
         private string StawkaGodzinowa;
         private DateTime DataZatrudnienia;
         private string DziennyCzasPracy;
+        private string Bank;
+        private string NumerKonta;
+        private string UbezpieczenieNFZ;
+        private string TypUmowy;
+        private string Etat;
+        private string UlgaPodatkowa;
+        private string KosztUzyskaniaPrzychodu;
 
         public DaneZatrudnienie(DataParameters parameters)
         {
@@ -55,6 +63,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
 
             Imie = parameters.Imie;
             Nazwisko = parameters.Nazwisko;
+            Plec = parameters.Plec;
             ImieMatki = parameters.ImieMatki;
             ImieOjca = parameters.ImieOjca;
             MiejsceUrodzenia = parameters.MiejsceUrodzenia;
@@ -84,6 +93,13 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
             StawkaGodzinowa = parameters.StawkaGodzinowa;
             DataZatrudnienia = parameters.DataZatrudnienia;
             DziennyCzasPracy = parameters.DziennyCzasPracy;
+            Bank = parameters.Bank;
+            NumerKonta = parameters.NumerKonta;
+            UbezpieczenieNFZ = parameters.UbezpieczenieNFZ;
+            TypUmowy = parameters.TypUmowy;
+            Etat = parameters.Etat;
+            UlgaPodatkowa = parameters.UlgaPodatkowa;
+            KosztUzyskaniaPrzychodu = parameters.KosztUzyskaniaPrzychodu;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -216,7 +232,14 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
                     Wpisy = WpisyTB.Text,
                     TypKlasaWizy = TypKlasaWizyTB.Text,
                     WaznoscWizyStart = StartWizaDTP.Value,
-                    WaznoscWizyKoniec = KoniecWizaDTP.Value
+                    WaznoscWizyKoniec = KoniecWizaDTP.Value,
+                    TypUmowy = TypUmowy,
+                    Etat = Etat,
+                    Bank = Bank,
+                    NumerKonta = NumerKonta,
+                    UbezpieczenieZdrowotne = UbezpieczenieNFZ,
+                    UlgaPodatkowa = UlgaPodatkowa,
+                    KosztUzyskaniaPrzychodu = KosztUzyskaniaPrzychodu,
                 };
 
                 db.DanePracownikZagranicznyZatrudnienies.Add(DaneZatrudnienie);

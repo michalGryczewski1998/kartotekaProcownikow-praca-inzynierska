@@ -164,7 +164,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel.Location = new System.Drawing.Point(0, 0);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1015, 1061);
+            this.panel.Size = new System.Drawing.Size(1019, 469);
             this.panel.TabIndex = 0;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
@@ -856,7 +856,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // 
             // KrajPochodzeniaTB
             // 
-            this.KrajPochodzeniaTB.Location = new System.Drawing.Point(108, 223);
+            this.KrajPochodzeniaTB.Location = new System.Drawing.Point(131, 226);
             this.KrajPochodzeniaTB.Name = "KrajPochodzeniaTB";
             this.KrajPochodzeniaTB.Size = new System.Drawing.Size(147, 23);
             this.KrajPochodzeniaTB.TabIndex = 37;
@@ -864,7 +864,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // krajZamieszkaniaPracownikaLabel
             // 
             this.krajZamieszkaniaPracownikaLabel.AutoSize = true;
-            this.krajZamieszkaniaPracownikaLabel.Location = new System.Drawing.Point(0, 226);
+            this.krajZamieszkaniaPracownikaLabel.Location = new System.Drawing.Point(19, 229);
             this.krajZamieszkaniaPracownikaLabel.Name = "krajZamieszkaniaPracownikaLabel";
             this.krajZamieszkaniaPracownikaLabel.Size = new System.Drawing.Size(98, 15);
             this.krajZamieszkaniaPracownikaLabel.TabIndex = 36;
@@ -873,7 +873,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // DataUrodzinDTP
             // 
             this.DataUrodzinDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DataUrodzinDTP.Location = new System.Drawing.Point(108, 165);
+            this.DataUrodzinDTP.Location = new System.Drawing.Point(131, 168);
             this.DataUrodzinDTP.Name = "DataUrodzinDTP";
             this.DataUrodzinDTP.Size = new System.Drawing.Size(147, 23);
             this.DataUrodzinDTP.TabIndex = 72;
@@ -962,7 +962,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // plecLabel
             // 
             this.plecLabel.AutoSize = true;
-            this.plecLabel.Location = new System.Drawing.Point(2, 197);
+            this.plecLabel.Location = new System.Drawing.Point(19, 199);
             this.plecLabel.Name = "plecLabel";
             this.plecLabel.Size = new System.Drawing.Size(29, 15);
             this.plecLabel.TabIndex = 60;
@@ -1123,7 +1123,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // 
             // imieMatkiTB
             // 
-            this.imieMatkiTB.Location = new System.Drawing.Point(108, 77);
+            this.imieMatkiTB.Location = new System.Drawing.Point(131, 80);
             this.imieMatkiTB.Name = "imieMatkiTB";
             this.imieMatkiTB.Size = new System.Drawing.Size(147, 23);
             this.imieMatkiTB.TabIndex = 61;
@@ -1131,7 +1131,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // miejsceurodzeniaLabel
             // 
             this.miejsceurodzeniaLabel.AutoSize = true;
-            this.miejsceurodzeniaLabel.Location = new System.Drawing.Point(2, 139);
+            this.miejsceurodzeniaLabel.Location = new System.Drawing.Point(19, 144);
             this.miejsceurodzeniaLabel.Name = "miejsceurodzeniaLabel";
             this.miejsceurodzeniaLabel.Size = new System.Drawing.Size(102, 15);
             this.miejsceurodzeniaLabel.TabIndex = 59;
@@ -1139,14 +1139,14 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // 
             // imieOjcaTB
             // 
-            this.imieOjcaTB.Location = new System.Drawing.Point(108, 106);
+            this.imieOjcaTB.Location = new System.Drawing.Point(131, 109);
             this.imieOjcaTB.Name = "imieOjcaTB";
             this.imieOjcaTB.Size = new System.Drawing.Size(147, 23);
             this.imieOjcaTB.TabIndex = 62;
             // 
             // miejsceUrodzeniaTB
             // 
-            this.miejsceUrodzeniaTB.Location = new System.Drawing.Point(108, 136);
+            this.miejsceUrodzeniaTB.Location = new System.Drawing.Point(131, 139);
             this.miejsceUrodzeniaTB.Name = "miejsceUrodzeniaTB";
             this.miejsceUrodzeniaTB.Size = new System.Drawing.Size(147, 23);
             this.miejsceUrodzeniaTB.TabIndex = 58;
@@ -1154,7 +1154,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // dataUrodzeniaLabel
             // 
             this.dataUrodzeniaLabel.AutoSize = true;
-            this.dataUrodzeniaLabel.Location = new System.Drawing.Point(2, 168);
+            this.dataUrodzeniaLabel.Location = new System.Drawing.Point(19, 174);
             this.dataUrodzeniaLabel.Name = "dataUrodzeniaLabel";
             this.dataUrodzeniaLabel.Size = new System.Drawing.Size(86, 15);
             this.dataUrodzeniaLabel.TabIndex = 57;
@@ -1163,7 +1163,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // nazwiskoPracownikaLabel
             // 
             this.nazwiskoPracownikaLabel.AutoSize = true;
-            this.nazwiskoPracownikaLabel.Location = new System.Drawing.Point(2, 54);
+            this.nazwiskoPracownikaLabel.Location = new System.Drawing.Point(19, 57);
             this.nazwiskoPracownikaLabel.Name = "nazwiskoPracownikaLabel";
             this.nazwiskoPracownikaLabel.Size = new System.Drawing.Size(57, 15);
             this.nazwiskoPracownikaLabel.TabIndex = 56;
@@ -1171,7 +1171,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // 
             // plecTB
             // 
-            this.plecTB.Location = new System.Drawing.Point(108, 194);
+            this.plecTB.Location = new System.Drawing.Point(131, 197);
             this.plecTB.Name = "plecTB";
             this.plecTB.Size = new System.Drawing.Size(147, 23);
             this.plecTB.TabIndex = 65;
@@ -1179,7 +1179,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // imiematkiPracownikaLabel
             // 
             this.imiematkiPracownikaLabel.AutoSize = true;
-            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(2, 80);
+            this.imiematkiPracownikaLabel.Location = new System.Drawing.Point(19, 83);
             this.imiematkiPracownikaLabel.Name = "imiematkiPracownikaLabel";
             this.imiematkiPracownikaLabel.Size = new System.Drawing.Size(63, 15);
             this.imiematkiPracownikaLabel.TabIndex = 63;
@@ -1196,14 +1196,14 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // 
             // nazwiskoPracownikaTB
             // 
-            this.nazwiskoPracownikaTB.Location = new System.Drawing.Point(108, 51);
+            this.nazwiskoPracownikaTB.Location = new System.Drawing.Point(131, 54);
             this.nazwiskoPracownikaTB.Name = "nazwiskoPracownikaTB";
             this.nazwiskoPracownikaTB.Size = new System.Drawing.Size(147, 23);
             this.nazwiskoPracownikaTB.TabIndex = 55;
             // 
             // imiePracownikaTB
             // 
-            this.imiePracownikaTB.Location = new System.Drawing.Point(108, 22);
+            this.imiePracownikaTB.Location = new System.Drawing.Point(131, 25);
             this.imiePracownikaTB.Name = "imiePracownikaTB";
             this.imiePracownikaTB.Size = new System.Drawing.Size(147, 23);
             this.imiePracownikaTB.TabIndex = 54;
@@ -1211,7 +1211,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // imieOjcaPracownikaLabel
             // 
             this.imieOjcaPracownikaLabel.AutoSize = true;
-            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(2, 109);
+            this.imieOjcaPracownikaLabel.Location = new System.Drawing.Point(19, 112);
             this.imieOjcaPracownikaLabel.Name = "imieOjcaPracownikaLabel";
             this.imieOjcaPracownikaLabel.Size = new System.Drawing.Size(55, 15);
             this.imieOjcaPracownikaLabel.TabIndex = 64;
@@ -1220,7 +1220,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // imiePracownikaLabel
             // 
             this.imiePracownikaLabel.AutoSize = true;
-            this.imiePracownikaLabel.Location = new System.Drawing.Point(4, 25);
+            this.imiePracownikaLabel.Location = new System.Drawing.Point(17, 28);
             this.imiePracownikaLabel.Name = "imiePracownikaLabel";
             this.imiePracownikaLabel.Size = new System.Drawing.Size(30, 15);
             this.imiePracownikaLabel.TabIndex = 53;
@@ -1231,7 +1231,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1015, 1061);
+            this.ClientSize = new System.Drawing.Size(1019, 469);
             this.Controls.Add(this.panel);
             this.Name = "InternationalInfo";
             this.Text = "Informacje o pracowniku zagranicznym";
