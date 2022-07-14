@@ -243,7 +243,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
                     UlgaPodatkowa = UlgaPodatkowa,
                     KosztUzyskaniaPrzychodu = KosztUzyskaniaPrzychodu,
                 };
-
+                
                 db.DanePracownikZagranicznyZatrudnienies.Add(DaneZatrudnienie);
                 db.SaveChanges();
 

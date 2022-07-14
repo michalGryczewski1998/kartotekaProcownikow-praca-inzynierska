@@ -1,4 +1,5 @@
 ﻿using Kartotekapracownikow.DatabaseModel;
+using Kartotekapracownikow.Forms.Email;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
     public partial class InternationalInfo : Form
     {
         private int Id;
+        private string wysylkaEmailDoPracownika;
 
         public InternationalInfo(int index)
         {
@@ -110,6 +112,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                 PodzialAdministracyjnyTB.Text = podstawoweZapytanie.PodzialAdministracyjny.ToString();
                 numertelefonuPracownikaTB.Text = podstawoweZapytanie.TelefonKontaktowy.ToString();
                 adresEmailPracownika.Text = podstawoweZapytanie.AdresEmail.ToString();
+                wysylkaEmailDoPracownika = podstawoweZapytanie.AdresEmail.ToString();
                 numerTelefonuNagleWypadkiTB.Text = podstawoweZapytanie.NumerTelefonuOsobyZaufanej.ToString();
 
 
@@ -147,12 +150,36 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                 UbezpieczenieZdrowotneBTN.Text = zatrudnienieZapytanie.UbezpieczenieZdrowotne.ToString();
                 ulgapodatkowaTB.Text = zatrudnienieZapytanie.UlgaPodatkowa.ToString();
                 kosztUzyskaniaPrzychoduTB.Text = zatrudnienieZapytanie.KosztUzyskaniaPrzychodu.ToString();
+
+                IloscPrzepracowanychDni();
             }
             catch (Exception)
             {
                 MessageBox.Show("Błąd podczas pobierania danych.");
             }
             
+        }
+
+        private void IloscPrzepracowanychDni()
+        {
+            DateTime StartTime;
+
+            using (var db = new Database())
+            {
+                var queryZatrudnienie = (from zatrudnienie in db.DanePracownikZagranicznyZatrudnienies
+                                         where zatrudnienie.ID == Id + 1
+                                         select new
+                                         {
+                                             zatrudnienie.DataZatrudnienia
+                                         }).Single();
+
+                StartTime = queryZatrudnienie.DataZatrudnienia;
+            }
+
+            DateTime EndTime = DateTime.Now.Date;
+            double different = (EndTime - StartTime).Days;
+
+            iloscPrzepracowanychDniTB.Text = different.ToString();
         }
 
         private void panel_Paint(object sender, PaintEventArgs e)
@@ -171,6 +198,34 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
         private void groupBox8_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void OdswierzBTN_Click(object sender, EventArgs e)
+        {
+            _ = DanePracownika();
+        }
+
+        private void EmailBTN_Click(object sender, EventArgs e)
+        {
+            EmailMessage email = new EmailMessage(wysylkaEmailDoPracownika);
+            email.ShowDialog();
+        }
+
+        private void EdytujZatrudnienieBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateZatrudnienie();
+            }
+            catch
+            {
+                MessageBox.Show("Nie można zaktualizować danych pracownika, proszę ponowic próbę");
+            }
+        }
+
+        private void UpdateZatrudnienie()
+        {
+            
         }
     }
 }

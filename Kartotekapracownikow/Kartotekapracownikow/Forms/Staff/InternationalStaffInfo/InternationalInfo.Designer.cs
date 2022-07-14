@@ -189,6 +189,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.EmailBTN.TabIndex = 66;
             this.EmailBTN.Text = "Wyślij E-mail do pracownika";
             this.EmailBTN.UseVisualStyleBackColor = true;
+            this.EmailBTN.Click += new System.EventHandler(this.EmailBTN_Click);
             // 
             // OdswierzBTN
             // 
@@ -201,6 +202,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.OdswierzBTN.TabIndex = 65;
             this.OdswierzBTN.Text = "Odświerz";
             this.OdswierzBTN.UseVisualStyleBackColor = false;
+            this.OdswierzBTN.Click += new System.EventHandler(this.OdswierzBTN_Click);
             // 
             // EdytujPodstawoweBTN
             // 
@@ -221,6 +223,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.EdytujZatrudnienieBTN.TabIndex = 1;
             this.EdytujZatrudnienieBTN.Text = "Edytuj dane o zatrudnieniu";
             this.EdytujZatrudnienieBTN.UseVisualStyleBackColor = true;
+            this.EdytujZatrudnienieBTN.Click += new System.EventHandler(this.EdytujZatrudnienieBTN_Click);
             // 
             // groupBox2
             // 
@@ -769,9 +772,9 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.IloscPrzepracowanychDniLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.IloscPrzepracowanychDniLabel.Location = new System.Drawing.Point(21, 192);
             this.IloscPrzepracowanychDniLabel.Name = "IloscPrzepracowanychDniLabel";
-            this.IloscPrzepracowanychDniLabel.Size = new System.Drawing.Size(282, 19);
+            this.IloscPrzepracowanychDniLabel.Size = new System.Drawing.Size(252, 19);
             this.IloscPrzepracowanychDniLabel.TabIndex = 63;
-            this.IloscPrzepracowanychDniLabel.Text = "Ilość przepracowanych dni w firmie.";
+            this.IloscPrzepracowanychDniLabel.Text = "IloscPrzepracowanychDniLabel";
             // 
             // iloscPrzepracowanychDniTB
             // 
@@ -1234,6 +1237,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.ClientSize = new System.Drawing.Size(1019, 469);
             this.Controls.Add(this.panel);
             this.Name = "InternationalInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informacje o pracowniku zagranicznym";
             this.panel.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
