@@ -12,3 +12,7 @@ Wersja 1.3.1 - Zaawansowane peracje CRUD - Zwolnienia
 Wersja 1.3.2 - Poprawa walidacji - Walidacja 
 <br>
 Wersja 1.4.1 - Dodanie pracowników z zagranicy
+<br>
+Wersja 1.4.2 - Modyfikacja danych pracowników  zagranicy
+<br>
+Wersja 1.4.3 - Zwalnianie pracowników z zagranicy
