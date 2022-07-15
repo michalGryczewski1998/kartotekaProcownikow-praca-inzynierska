@@ -111,7 +111,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
                 pocztaTB.Text = podstawoweZapytanie.Poczta.ToString();
                 PodzialAdministracyjnyTB.Text = podstawoweZapytanie.PodzialAdministracyjny.ToString();
                 numertelefonuPracownikaTB.Text = podstawoweZapytanie.TelefonKontaktowy.ToString();
-                adresEmailPracownika.Text = podstawoweZapytanie.AdresEmail.ToString();
+                adresEmailPracownikaTB.Text = podstawoweZapytanie.AdresEmail.ToString();
                 wysylkaEmailDoPracownika = podstawoweZapytanie.AdresEmail.ToString();
                 numerTelefonuNagleWypadkiTB.Text = podstawoweZapytanie.NumerTelefonuOsobyZaufanej.ToString();
 
@@ -297,6 +297,74 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             catch (Exception)
             {
                 MessageBox.Show("Błąd podczas aktualizacji danych o zatrudnieniu.");
+            }
+        }
+
+        private void EdytujPodstawoweBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdatePodstawowe();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nie można zaktualizować danych pracownika, proszę ponowic próbę.");
+            }
+        }
+
+        private void UpdatePodstawowe()
+        {
+            string imiePracownika = imiePracownikaTB.Text;
+            string nazwiskoPracownika = nazwiskoPracownikaTB.Text;
+            string imieMatki = imieMatkiTB.Text;
+            string imieOjca = imieOjcaTB.Text;
+            string miejsceUrodzenia = miejsceUrodzeniaTB.Text;
+            DateTime dataUrodzenia = DataUrodzinDTP.Value;
+            string krajPochodzenia = KrajPochodzeniaTB.Text;
+            string krajZamieszkania = KrajZamieszkaniaTB.Text;
+            string miejscowosc = miejscowoscTB.Text;
+            string ulica = ulicaTB.Text;
+            string gmina = gminaTB.Text;
+            string kod = kodTB.Text;
+            string numerDomuLokalu = numerDomuLokaluTB.Text;
+            string poczta = pocztaTB.Text;
+            string podzialAdministracyjny = PodzialAdministracyjnyTB.Text;
+            string telefonDoPracownika = numertelefonuPracownikaTB.Text;
+            string adresEmail = adresEmailPracownikaTB.Text;
+            string osobaZaufana = numerDoTB.Text;
+            string numerTelefonuOsobaZaufana = numerTelefonuNagleWypadkiTB.Text;
+
+            try
+            {
+                using(var db = new Database())
+                {
+                    var updatePodstawowe = (from p in db.DanePracownikZagranicznyPodstawowes where p.ID == Id + 1 select p).First();
+                    updatePodstawowe.Imie = imiePracownika;
+                    updatePodstawowe.Nazwisko = nazwiskoPracownika;
+                    updatePodstawowe.ImieMatki = imieMatki;
+                    updatePodstawowe.ImieOjca = imieOjca;
+                    updatePodstawowe.MiejsceUrodzenia = miejsceUrodzenia;
+                    updatePodstawowe.DataUrodzenia = dataUrodzenia;
+                    updatePodstawowe.KrajPochodzenia = krajPochodzenia;
+                    updatePodstawowe.Kraj = krajZamieszkania;
+                    updatePodstawowe.Miejscowosc = miejscowosc;
+                    updatePodstawowe.Ulica = ulica;
+                    updatePodstawowe.Gmina = gmina;
+                    updatePodstawowe.KodPocztowy = kod;
+                    updatePodstawowe.DomMieszkanie = numerDomuLokalu;
+                    updatePodstawowe.Poczta = poczta;
+                    updatePodstawowe.PodzialAdministracyjny = podzialAdministracyjny;
+                    updatePodstawowe.TelefonKontaktowy = telefonDoPracownika;
+                    updatePodstawowe.OsobaZaufana = osobaZaufana;
+                    updatePodstawowe.NumerTelefonuOsobyZaufanej = numerTelefonuOsobaZaufana;
+
+                    db.SaveChanges();
+                }
+                MessageBox.Show("Zaktualizowano pomyślnie dane podstawowe.");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd podczas aktualizacji danych podstawowych.");
             }
         }
     }
