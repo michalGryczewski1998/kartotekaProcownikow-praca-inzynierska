@@ -248,12 +248,28 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaff
                 db.SaveChanges();
 
                 MessageBox.Show("Dodano pracownika");
+
+                Czyszczenie();
             }
             catch (Exception)
             {
                 MessageBox.Show($"Błąd podczas dodawania do bazy danych.");
             }
 
+        }
+
+        private void Czyszczenie()
+        {
+            TypZezwoleniaCB.SelectedIndex = 0;
+            MiejsceWydaniaTB.Text = "";
+            NumerWizyTB.Text = "";
+            NumerKontrolnyTB.Text = "";
+            NumerPaszportuTB.Text = "";
+            WpisyTB.Text = "";
+            TypKlasaWizyTB.Text = "";
+            StartWizaDTP.Value = DateTime.Now;
+            KoniecWizaDTP.Value = DateTime.Now;
+            DataWygasnieciaKartyPobytuTymczasowegoDTP.Value = DateTime.Now;
         }
     }
 }

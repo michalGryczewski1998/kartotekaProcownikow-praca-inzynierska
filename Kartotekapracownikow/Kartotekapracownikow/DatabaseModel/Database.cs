@@ -80,6 +80,11 @@ namespace Kartotekapracownikow.DatabaseModel
                 entity.Property(d => d.StawkaGodzinowa).IsRequired();
                 entity.Property(d => d.DataRozpoczeciaPracy).IsRequired();
                 entity.Property(d => d.DziennyCzasPracy).IsRequired();
+                entity.Property(e => e.SzkolaSrednia).IsRequired();
+                entity.Property(e => e.PoziomJezykaObcego).IsRequired();
+                entity.Property(e => e.Uczelnia).IsRequired();
+                entity.Property(e => e.SpecjalizacjaZawodowa).IsRequired();
+                entity.Property(e => e.Tytul).IsRequired();
                 entity.HasOne(d => d.Podstawowe).WithMany(m => m.Zatrudnienie);
             });
 

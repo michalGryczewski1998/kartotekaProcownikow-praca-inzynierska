@@ -99,6 +99,11 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                     string Dzial = dzial.Text;
                     string StawkaGodzinowa = stawkaGodzinaTB.Text;
                     DateTime DataRozpoczeciaPracy = dataZatrudnieniaDTP.Value;
+                    string SzkolaSrednia = SzkolaSredniaTB.Text;
+                    string PoziomJezykaObcego = PoziomJezykaObcegoCB.SelectedItem.ToString();
+                    string Uczelnia = UczelniaTB.Text;
+                    string SpecjalizacjaZawodowa = SpecjalizacjaZawodowaTB.Text;
+                    string Tytul = TytulTB.Text;
 
                     _ = InsertData(
                          imie,
@@ -135,7 +140,12 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                          Stanowisko,
                          StawkaGodzinowa,
                          DataRozpoczeciaPracy,
-                         DziennyCzasPracy
+                         DziennyCzasPracy,
+                         SzkolaSrednia,
+                         PoziomJezykaObcego,
+                         Uczelnia,
+                         SpecjalizacjaZawodowa,
+                         Tytul
                         );
                 }
                 catch (Exception)
@@ -234,7 +244,12 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                 string Stanowisko,
                 string StawkaGodzinowa,
                 DateTime DataRozpoczeciaPracy,
-                string DziennyCzasPracy
+                string DziennyCzasPracy,
+                string SzkolaSrednia,
+                string PoziomJezykaObcego,
+                string Uczelnia,
+                string Specjalizacja,
+                string Tytul
 
             )
         {         
@@ -286,7 +301,12 @@ namespace Kartotekapracownikow.Forms.AddEmployees
                         Stanowisko = Stanowisko,
                         StawkaGodzinowa = StawkaGodzinowa,
                         DataRozpoczeciaPracy = DataRozpoczeciaPracy,
-                        DziennyCzasPracy = DziennyCzasPracy
+                        DziennyCzasPracy = DziennyCzasPracy,
+                        SzkolaSrednia = SzkolaSrednia,
+                        PoziomJezykaObcego = PoziomJezykaObcego,
+                        Uczelnia = Uczelnia,
+                        SpecjalizacjaZawodowa = Specjalizacja,
+                        Tytul = Tytul
                     };
 
                     await db.DanePracownikaZatrudnienie.AddAsync(daneZatrudnienie);

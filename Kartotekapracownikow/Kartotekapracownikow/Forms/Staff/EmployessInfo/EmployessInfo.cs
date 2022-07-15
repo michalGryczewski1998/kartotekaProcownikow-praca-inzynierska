@@ -80,7 +80,12 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                                      zatrudnienie.Stanowisko,
                                      zatrudnienie.StawkaGodzinowa,
                                      zatrudnienie.DataRozpoczeciaPracy,
-                                     zatrudnienie.DziennyCzasPracy
+                                     zatrudnienie.DziennyCzasPracy,
+                                     zatrudnienie.SzkolaSrednia,
+                                     zatrudnienie.PoziomJezykaObcego,
+                                     zatrudnienie.Uczelnia,
+                                     zatrudnienie.SpecjalizacjaZawodowa,
+                                     zatrudnienie.Tytul
                                  }).Single();
 
                     byte[] zdjecie = Convert.FromBase64String(query.ZdjeciePracownika.ToString());
@@ -123,6 +128,12 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                     StawkaGodzinowaTB.Text = queryZatrudnienie.StawkaGodzinowa.ToString();
                     DataPracaDTP.Value = queryZatrudnienie.DataRozpoczeciaPracy;
                     DziennyCzasPracyTB.Text = queryZatrudnienie.DziennyCzasPracy.ToString();
+
+                    SzkolaSredniaTB.Text = queryZatrudnienie.SzkolaSrednia.ToString();
+                    JezykObcyPoziomTB.Text = queryZatrudnienie.PoziomJezykaObcego.ToString();
+                    UczelniaTB.Text = queryZatrudnienie.Uczelnia.ToString();
+                    SpecjalizacjaZawodowaTB.Text = queryZatrudnienie.SpecjalizacjaZawodowa.ToString();
+                    TytulTB.Text = queryZatrudnienie.Tytul.ToString();
 
                     IloscPrzepracowanychDni();
 
