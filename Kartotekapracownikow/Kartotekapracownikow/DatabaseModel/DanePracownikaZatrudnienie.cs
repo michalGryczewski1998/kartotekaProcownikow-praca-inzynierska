@@ -35,6 +35,16 @@ namespace Kartotekapracownikow.DatabaseModel
 
         public string DziennyCzasPracy { get; set; }
 
+        public string SzkolaSrednia { get; set; }
+
+        public string PoziomJezykaObcego { get; set; }
+
+        public string Uczelnia { get; set; }
+
+        public string SpecjalizacjaZawodowa { get; set; }
+
+        public string Tytul { get; set; }
+
         public virtual DanePracownikaPodstawowe Podstawowe { get; set; }
     }
 }

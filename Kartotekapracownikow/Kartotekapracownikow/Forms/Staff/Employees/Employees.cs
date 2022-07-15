@@ -104,7 +104,7 @@ namespace Kartotekapracownikow.Forms.Employees
                     int index = e.RowIndex;
 
                     DataGridViewRow row = daneDGW.Rows[e.RowIndex];
-                    kraj = row.Cells["KrajPochodzenia"].Value.ToString();
+                    kraj = row.Cells["Kraj"].Value.ToString();
 
                     if (kraj == "Polska")
                     {
