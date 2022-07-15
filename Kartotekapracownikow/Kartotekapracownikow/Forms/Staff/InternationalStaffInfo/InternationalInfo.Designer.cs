@@ -109,7 +109,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.numertelefonuPracownikaTB = new System.Windows.Forms.TextBox();
-            this.adresEmailPracownika = new System.Windows.Forms.TextBox();
+            this.adresEmailPracownikaTB = new System.Windows.Forms.TextBox();
             this.adresEmailLabel = new System.Windows.Forms.Label();
             this.numerTelefonuPracownikaLabel = new System.Windows.Forms.Label();
             this.plecLabel = new System.Windows.Forms.Label();
@@ -214,6 +214,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.EdytujPodstawoweBTN.TabIndex = 64;
             this.EdytujPodstawoweBTN.Text = "Edytuj dane podstawowe";
             this.EdytujPodstawoweBTN.UseVisualStyleBackColor = false;
+            this.EdytujPodstawoweBTN.Click += new System.EventHandler(this.EdytujPodstawoweBTN_Click);
             // 
             // EdytujZatrudnienieBTN
             // 
@@ -888,7 +889,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.numertelefonuPracownikaTB);
-            this.groupBox6.Controls.Add(this.adresEmailPracownika);
+            this.groupBox6.Controls.Add(this.adresEmailPracownikaTB);
             this.groupBox6.Controls.Add(this.adresEmailLabel);
             this.groupBox6.Controls.Add(this.numerTelefonuPracownikaLabel);
             this.groupBox6.Location = new System.Drawing.Point(2, 405);
@@ -937,12 +938,12 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.numertelefonuPracownikaTB.Size = new System.Drawing.Size(147, 23);
             this.numertelefonuPracownikaTB.TabIndex = 42;
             // 
-            // adresEmailPracownika
+            // adresEmailPracownikaTB
             // 
-            this.adresEmailPracownika.Location = new System.Drawing.Point(129, 61);
-            this.adresEmailPracownika.Name = "adresEmailPracownika";
-            this.adresEmailPracownika.Size = new System.Drawing.Size(147, 23);
-            this.adresEmailPracownika.TabIndex = 43;
+            this.adresEmailPracownikaTB.Location = new System.Drawing.Point(129, 61);
+            this.adresEmailPracownikaTB.Name = "adresEmailPracownikaTB";
+            this.adresEmailPracownikaTB.Size = new System.Drawing.Size(147, 23);
+            this.adresEmailPracownikaTB.TabIndex = 43;
             // 
             // adresEmailLabel
             // 
@@ -1289,7 +1290,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox numertelefonuPracownikaTB;
-        private System.Windows.Forms.TextBox adresEmailPracownika;
+        private System.Windows.Forms.TextBox adresEmailPracownikaTB;
         private System.Windows.Forms.Label adresEmailLabel;
         private System.Windows.Forms.Label numerTelefonuPracownikaLabel;
         private System.Windows.Forms.Label plecLabel;
