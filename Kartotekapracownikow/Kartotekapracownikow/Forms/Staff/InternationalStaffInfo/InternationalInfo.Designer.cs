@@ -62,14 +62,14 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.kosztUzyskaniaPrzychoduTB = new System.Windows.Forms.TextBox();
-            this.ulgapodatkowaTB = new System.Windows.Forms.TextBox();
+            this.ulgaPodatkowaTB = new System.Windows.Forms.TextBox();
             this.etatTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TypUmowyTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ulgapodatkowaLabel = new System.Windows.Forms.Label();
             this.kosztyPrzychoduLabel = new System.Windows.Forms.Label();
-            this.UbezpieczenieZdrowotneBTN = new System.Windows.Forms.TextBox();
+            this.UbezpieczenieZdrowotneTB = new System.Windows.Forms.TextBox();
             this.nfzLabel = new System.Windows.Forms.Label();
             this.numerKontaTB = new System.Windows.Forms.TextBox();
             this.numerKontaLabel = new System.Windows.Forms.Label();
@@ -164,7 +164,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel.Location = new System.Drawing.Point(0, 0);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1019, 469);
+            this.panel.Size = new System.Drawing.Size(1019, 491);
             this.panel.TabIndex = 0;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
@@ -467,14 +467,14 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.kosztUzyskaniaPrzychoduTB);
-            this.groupBox7.Controls.Add(this.ulgapodatkowaTB);
+            this.groupBox7.Controls.Add(this.ulgaPodatkowaTB);
             this.groupBox7.Controls.Add(this.etatTB);
             this.groupBox7.Controls.Add(this.label2);
             this.groupBox7.Controls.Add(this.TypUmowyTB);
             this.groupBox7.Controls.Add(this.label3);
             this.groupBox7.Controls.Add(this.ulgapodatkowaLabel);
             this.groupBox7.Controls.Add(this.kosztyPrzychoduLabel);
-            this.groupBox7.Controls.Add(this.UbezpieczenieZdrowotneBTN);
+            this.groupBox7.Controls.Add(this.UbezpieczenieZdrowotneTB);
             this.groupBox7.Controls.Add(this.nfzLabel);
             this.groupBox7.Controls.Add(this.numerKontaTB);
             this.groupBox7.Controls.Add(this.numerKontaLabel);
@@ -494,12 +494,12 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.kosztUzyskaniaPrzychoduTB.Size = new System.Drawing.Size(259, 23);
             this.kosztUzyskaniaPrzychoduTB.TabIndex = 80;
             // 
-            // ulgapodatkowaTB
+            // ulgaPodatkowaTB
             // 
-            this.ulgapodatkowaTB.Location = new System.Drawing.Point(13, 187);
-            this.ulgapodatkowaTB.Name = "ulgapodatkowaTB";
-            this.ulgapodatkowaTB.Size = new System.Drawing.Size(259, 23);
-            this.ulgapodatkowaTB.TabIndex = 79;
+            this.ulgaPodatkowaTB.Location = new System.Drawing.Point(13, 187);
+            this.ulgaPodatkowaTB.Name = "ulgaPodatkowaTB";
+            this.ulgaPodatkowaTB.Size = new System.Drawing.Size(259, 23);
+            this.ulgaPodatkowaTB.TabIndex = 79;
             // 
             // etatTB
             // 
@@ -551,12 +551,12 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.kosztyPrzychoduLabel.TabIndex = 73;
             this.kosztyPrzychoduLabel.Text = "Koszty uzyskania przychodu";
             // 
-            // UbezpieczenieZdrowotneBTN
+            // UbezpieczenieZdrowotneTB
             // 
-            this.UbezpieczenieZdrowotneBTN.Location = new System.Drawing.Point(107, 143);
-            this.UbezpieczenieZdrowotneBTN.Name = "UbezpieczenieZdrowotneBTN";
-            this.UbezpieczenieZdrowotneBTN.Size = new System.Drawing.Size(165, 23);
-            this.UbezpieczenieZdrowotneBTN.TabIndex = 72;
+            this.UbezpieczenieZdrowotneTB.Location = new System.Drawing.Point(107, 143);
+            this.UbezpieczenieZdrowotneTB.Name = "UbezpieczenieZdrowotneTB";
+            this.UbezpieczenieZdrowotneTB.Size = new System.Drawing.Size(165, 23);
+            this.UbezpieczenieZdrowotneTB.TabIndex = 72;
             // 
             // nfzLabel
             // 
@@ -1234,7 +1234,7 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1019, 469);
+            this.ClientSize = new System.Drawing.Size(1019, 491);
             this.Controls.Add(this.panel);
             this.Name = "InternationalInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1337,14 +1337,14 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox kosztUzyskaniaPrzychoduTB;
-        private System.Windows.Forms.TextBox ulgapodatkowaTB;
+        private System.Windows.Forms.TextBox ulgaPodatkowaTB;
         private System.Windows.Forms.TextBox etatTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TypUmowyTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label ulgapodatkowaLabel;
         private System.Windows.Forms.Label kosztyPrzychoduLabel;
-        private System.Windows.Forms.TextBox UbezpieczenieZdrowotneBTN;
+        private System.Windows.Forms.TextBox UbezpieczenieZdrowotneTB;
         private System.Windows.Forms.Label nfzLabel;
         private System.Windows.Forms.TextBox numerKontaTB;
         private System.Windows.Forms.Label numerKontaLabel;

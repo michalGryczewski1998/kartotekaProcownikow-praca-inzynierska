@@ -286,7 +286,7 @@ namespace Kartotekapracownikow.Forms.Staff.EmployessInfo
                         update.DziennyCzasPracy = dziennyCzasPracy;
                         //Zapisanie zaktualizowanych danych
                         db.SaveChanges();
-                        MessageBox.Show("Zaktualizowano pomyślnie :)");
+                        MessageBox.Show("Zaktualizowano pomyślnie");
                     }
                     catch (Exception)
                     {

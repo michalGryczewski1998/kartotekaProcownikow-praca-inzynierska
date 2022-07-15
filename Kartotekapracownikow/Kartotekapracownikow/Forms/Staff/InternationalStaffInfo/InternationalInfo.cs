@@ -145,10 +145,10 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
 
                 TypUmowyTB.Text = zatrudnienieZapytanie.TypUmowy.ToString();
                 etatTB.Text = zatrudnienieZapytanie.Etat.ToString();
-                bankTB.Text = zatrudnienieZapytanie.ToString();
+                bankTB.Text = zatrudnienieZapytanie.Bank.ToString();
                 numerKontaTB.Text = zatrudnienieZapytanie.NumerKonta.ToString();
-                UbezpieczenieZdrowotneBTN.Text = zatrudnienieZapytanie.UbezpieczenieZdrowotne.ToString();
-                ulgapodatkowaTB.Text = zatrudnienieZapytanie.UlgaPodatkowa.ToString();
+                UbezpieczenieZdrowotneTB.Text = zatrudnienieZapytanie.UbezpieczenieZdrowotne.ToString();
+                ulgaPodatkowaTB.Text = zatrudnienieZapytanie.UlgaPodatkowa.ToString();
                 kosztUzyskaniaPrzychoduTB.Text = zatrudnienieZapytanie.KosztUzyskaniaPrzychodu.ToString();
 
                 IloscPrzepracowanychDni();
@@ -225,7 +225,79 @@ namespace Kartotekapracownikow.Forms.Staff.InternationalStaffInfo
 
         private void UpdateZatrudnienie()
         {
-            
+            string Dzial = DzialTB.Text;
+            string Stanowisko = StanowiskoTB.Text;
+            string StawkaGodzinowa = StawkaGodzinowaTB.Text;
+            DateTime DataZatrudnienia = DataPracaDTP.Value;
+            string DziennyCzasPracy = DziennyCzasPracyTB.Text;
+
+            string SzkolaSrednia = SzkolaSredniaTB.Text;
+            string PoziomJezykaObcego = PoziomJezykaObcegoTB.Text;
+            string Uczelnia = UczelniaTB.Text;
+            string SpecjalizacjaZawodowa = SpecjalizacjaTB.Text;
+            string Tytul = TytulPoUkonczeniuUczelniTB.Text;
+
+            string TypZezwolenia = TypZezwoleniaTB.Text;
+            string MiejsceWydaniaWizy = MiejsceWydaniaTB.Text;
+            double NumerWizy = Convert.ToDouble(NumerWizyTB.Text);
+            string NumerKontrolnyWizy = NumerKontrolnyTB.Text;
+            string NumerPaszportu = NumerPaszportuTB.Text;
+            string Wpisy = WpisyTB.Text;
+            string TypKlasaWizy = TypKlasaWizyTB.Text;
+            DateTime WaznoscWizyStart = StartWizaDTP.Value;
+            DateTime WaznoscWizyKoniec = KoniecWizaDTP.Value;
+            DateTime ZezwolenieNaPobytCzasowy = DataWygasnieciaKartyPobytuTymczasowegoDTP.Value;
+
+            string TypUmowy = TypUmowyTB.Text;
+            string Etat = etatTB.Text;
+            string Bank = bankTB.Text;
+            string NumerKonta = numerKontaTB.Text;
+            string UbezpieczenieZdrowotne = UbezpieczenieZdrowotneTB.Text;
+            string UlgaPodatkowa = ulgaPodatkowaTB.Text;
+            string KosztUzyskaniaPrzychodu = kosztUzyskaniaPrzychoduTB.Text;
+
+            try
+            {
+                using (var db = new Database())
+                {
+                    var updateZatrudnienie = (from s in db.DanePracownikZagranicznyZatrudnienies where s.ID == Id + 1 select s).First();
+
+                    updateZatrudnienie.Dzial = Dzial;
+                    updateZatrudnienie.Stanowisko = Stanowisko;
+                    updateZatrudnienie.StawkaGodzinowa = StawkaGodzinowa;
+                    updateZatrudnienie.DataZatrudnienia = DataZatrudnienia;
+                    updateZatrudnienie.DziennyCzasPracy = DziennyCzasPracy;
+                    updateZatrudnienie.SzkolaSrednia = SzkolaSrednia;
+                    updateZatrudnienie.PoziomJezykaObcego = PoziomJezykaObcego;
+                    updateZatrudnienie.Uczelnia = Uczelnia;
+                    updateZatrudnienie.SpecjalizacjaZawodowa = SpecjalizacjaZawodowa;
+                    updateZatrudnienie.Tytul = Tytul;
+                    updateZatrudnienie.TypZezwolenia = TypZezwolenia;
+                    updateZatrudnienie.MiejsceWydaniaWizy = MiejsceWydaniaWizy;
+                    updateZatrudnienie.NumerWizy = NumerWizy;
+                    updateZatrudnienie.NumerKontrolnyWizy = NumerKontrolnyWizy;
+                    updateZatrudnienie.NumerPaszportu = NumerPaszportu;
+                    updateZatrudnienie.Wpisy = Wpisy;
+                    updateZatrudnienie.TypKlasaWizy = TypKlasaWizy;
+                    updateZatrudnienie.WaznoscWizyStart = WaznoscWizyStart;
+                    updateZatrudnienie.WaznoscWizyKoniec = WaznoscWizyKoniec;
+                    updateZatrudnienie.TypUmowy = TypUmowy;
+                    updateZatrudnienie.Etat = Etat;
+                    updateZatrudnienie.Bank = Bank;
+                    updateZatrudnienie.NumerKonta = NumerKonta;
+                    updateZatrudnienie.UbezpieczenieZdrowotne = UbezpieczenieZdrowotne;
+                    updateZatrudnienie.UlgaPodatkowa = UlgaPodatkowa;
+                    updateZatrudnienie.KosztUzyskaniaPrzychodu = KosztUzyskaniaPrzychodu;
+
+                    db.SaveChanges();
+                }
+             
+                MessageBox.Show("Zaktualizowano pomyślnie dane o zatrudnieniu.");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd podczas aktualizacji danych o zatrudnieniu.");
+            }
         }
     }
 }
