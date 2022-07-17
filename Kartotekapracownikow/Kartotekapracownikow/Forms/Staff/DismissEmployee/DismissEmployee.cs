@@ -64,34 +64,61 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
 
         private void WczytanieDanych()
         {
-            using (var db = new Database())
+            using var db = new Database();
+            try
             {
-                try
-                {
-                    var querry = (from collection in db.DanePracownikaPodstawowe
-                                  select new
-                                  {
-                                      collection.ID,
-                                      collection.Imie,
-                                      collection.Nazwisko,
-                                      collection.ImieMatki,
-                                      collection.ImieOjca,
-                                      collection.NumerTelefonu,
-                                      collection.DataUrodzenia,
-                                      collection.Miejscowosc,
-                                      collection.Ulica
-                                  }).ToList();
+                var querry = (from collection in db.DanePracownikaPodstawowe
+                              select new
+                              {
+                                  collection.ID,
+                                  collection.Imie,
+                                  collection.Nazwisko,
+                                  collection.ImieMatki,
+                                  collection.ImieOjca,
+                                  collection.NumerTelefonu,
+                                  collection.DataUrodzenia,
+                                  collection.Miejscowosc,
+                                  collection.Kraj
+                              }).ToList();
 
-                    daneDGW.DataSource = querry;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Błąd podczas wyświetlania");
-                }
+                daneDGW.DataSource = querry;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd podczas wyświetlania");
             }
         }
 
-        private void daneDGW_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
+        {
+
+
+            using var db = new Database();
+            try
+            {
+                var querry = (from collection in db.DanePracownikZagranicznyPodstawowes
+                              select new
+                              {
+                                  collection.ID,
+                                  collection.Imie,
+                                  collection.Nazwisko,
+                                  collection.ImieMatki,
+                                  collection.ImieOjca,
+                                  collection.TelefonKontaktowy,
+                                  collection.DataUrodzenia,
+                                  collection.Miejscowosc,
+                                  collection.Kraj
+                              }).ToList();
+
+                daneDGW.DataSource = querry;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd podczas wyświetlania");
+            }
+        }
+
+        private void DaneDGW_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             /*
              * Po kliknięciu w dany wiersz
@@ -106,8 +133,22 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
                 employeesID = (int)row.Cells["ID"].Value;
                 imieZwolnionego = row.Cells["Imie"].Value.ToString();
                 zaznaczonyPracownikLabel.Text = row.Cells["Imie"].Value.ToString();
-            }
 
+                bool status;
+
+                if (row.Cells["Kraj"].Value.ToString() == "Polska")
+                {
+                    status = true;
+                    FiredEmployeesDetails fed = new FiredEmployeesDetails(employeesID, status);
+                    fed.ShowDialog();
+                }
+                else
+                {
+                    status = false;
+                    FiredEmployeesDetails fed = new FiredEmployeesDetails(employeesID, status);
+                    fed.ShowDialog();
+                }
+            }
         }
 
         private void DismissEmployee_Load(object sender, EventArgs e)
@@ -118,8 +159,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
         private void button1_Click(object sender, EventArgs e)
         {
             //ZwolnijPracownikaGB();
-            FiredEmployeesDetails fed = new FiredEmployeesDetails(employeesID);
-            fed.ShowDialog();
+
         }
 
         private void ZwolnijPracownikaGB()

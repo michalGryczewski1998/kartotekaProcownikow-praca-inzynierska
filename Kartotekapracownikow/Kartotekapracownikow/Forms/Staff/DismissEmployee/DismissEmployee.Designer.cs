@@ -30,30 +30,50 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
         private void InitializeComponent()
         {
             this.zwolnijPracownikaGB = new System.Windows.Forms.GroupBox();
+            this.PracownicyZagraniczniSzukajBTN = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.zaznaczonyPracownikLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.daneDGW = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.zwolnijPracownikaGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.daneDGW)).BeginInit();
             this.SuspendLayout();
             // 
             // zwolnijPracownikaGB
             // 
+            this.zwolnijPracownikaGB.Controls.Add(this.PracownicyZagraniczniSzukajBTN);
             this.zwolnijPracownikaGB.Controls.Add(this.button2);
             this.zwolnijPracownikaGB.Controls.Add(this.zaznaczonyPracownikLabel);
             this.zwolnijPracownikaGB.Controls.Add(this.label2);
             this.zwolnijPracownikaGB.Controls.Add(this.label1);
             this.zwolnijPracownikaGB.Controls.Add(this.daneDGW);
-            this.zwolnijPracownikaGB.Controls.Add(this.button1);
             this.zwolnijPracownikaGB.Location = new System.Drawing.Point(13, 13);
             this.zwolnijPracownikaGB.Name = "zwolnijPracownikaGB";
             this.zwolnijPracownikaGB.Size = new System.Drawing.Size(936, 367);
             this.zwolnijPracownikaGB.TabIndex = 0;
             this.zwolnijPracownikaGB.TabStop = false;
             this.zwolnijPracownikaGB.Text = "Zwolnienia pracowników";
+            // 
+            // PracownicyZagraniczniSzukajBTN
+            // 
+            this.PracownicyZagraniczniSzukajBTN.Location = new System.Drawing.Point(752, 338);
+            this.PracownicyZagraniczniSzukajBTN.Name = "PracownicyZagraniczniSzukajBTN";
+            this.PracownicyZagraniczniSzukajBTN.Size = new System.Drawing.Size(176, 23);
+            this.PracownicyZagraniczniSzukajBTN.TabIndex = 6;
+            this.PracownicyZagraniczniSzukajBTN.Text = "Pracownicy z zagranicy";
+            this.PracownicyZagraniczniSzukajBTN.UseVisualStyleBackColor = true;
+            this.PracownicyZagraniczniSzukajBTN.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(672, 338);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Odśwież";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // zaznaczonyPracownikLabel
             // 
@@ -75,7 +95,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(585, 338);
+            this.label1.Location = new System.Drawing.Point(666, 342);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 15);
             this.label1.TabIndex = 2;
@@ -89,27 +109,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
             this.daneDGW.RowTemplate.Height = 25;
             this.daneDGW.Size = new System.Drawing.Size(922, 284);
             this.daneDGW.TabIndex = 1;
-            this.daneDGW.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daneDGW_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(853, 338);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Zwolnij";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(772, 338);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Odśwież";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.daneDGW.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DaneDGW_CellContentClick);
             // 
             // DismissEmployee
             // 
@@ -130,11 +130,11 @@ namespace Kartotekapracownikow.Forms.Staff.DismissEmployee
         #endregion
 
         private System.Windows.Forms.GroupBox zwolnijPracownikaGB;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView daneDGW;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label zaznaczonyPracownikLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button PracownicyZagraniczniSzukajBTN;
     }
 }

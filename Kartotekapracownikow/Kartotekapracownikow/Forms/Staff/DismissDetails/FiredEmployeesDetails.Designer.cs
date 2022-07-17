@@ -177,6 +177,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
             this.Name = "FiredEmployeesDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Szczegóły zwolnienia";
+            this.Load += new System.EventHandler(this.FiredEmployeesDetails_Load);
             this.OpisZwolnieniaPanel.ResumeLayout(false);
             this.OpisZwolnieniaPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PrzyczynaZwolnieniaEP)).EndInit();
