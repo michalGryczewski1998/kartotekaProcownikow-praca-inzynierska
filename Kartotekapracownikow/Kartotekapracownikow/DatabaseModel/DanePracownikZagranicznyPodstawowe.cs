@@ -54,6 +54,7 @@ namespace Kartotekapracownikow.DatabaseModel
             set;
         }
 
+        //Kraj zamieszkania
         public string KrajPochodzenia
         {
             get;
@@ -96,6 +97,7 @@ namespace Kartotekapracownikow.DatabaseModel
             set;
         }
 
+        //Kraj pochodzenia
         public string Kraj
         {
             get;

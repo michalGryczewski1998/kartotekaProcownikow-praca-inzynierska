@@ -197,7 +197,7 @@ namespace Kartotekapracownikow.Forms.Employees
                                       collection.TelefonKontaktowy,
                                       collection.DataUrodzenia,
                                       collection.Miejscowosc,
-                                      collection.KrajPochodzenia
+                                      collection.Kraj
                                   }).ToList();
                     daneDGW.DataSource = querry;
 
