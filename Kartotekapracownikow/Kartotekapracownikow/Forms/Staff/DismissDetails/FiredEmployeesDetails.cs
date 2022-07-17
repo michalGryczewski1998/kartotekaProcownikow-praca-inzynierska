@@ -14,6 +14,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
     public partial class FiredEmployeesDetails : Form
     {
         int employeesID;
+        bool status;
 
         string imiePracownika;
         string nazwiskoPracownika;
@@ -28,10 +29,11 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
         DateTime dataRozpoczeciaPracy;
         DateTime dataZakonczeniaPracy;
 
-        public FiredEmployeesDetails(int employeesID)
+        public FiredEmployeesDetails(int employeesID, bool status)
         {
             InitializeComponent();
             this.employeesID = employeesID;
+            this.status = status;
             WczytajDane();
         }
 
@@ -39,47 +41,112 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
         {
             try
             {
-                using (var db = new Database())
+                switch (status)
                 {
-                    try
-                    {
-                        var query = (from podstawowe in db.DanePracownikaPodstawowe
-                                     join zatrudnienie in db.DanePracownikaZatrudnienie
-                                     on podstawowe.ID equals zatrudnienie.ID
-                                     select new
-                                     {
-                                         podstawowe.Imie,
-                                         podstawowe.Nazwisko,
-                                         podstawowe.Kraj,
-                                         podstawowe.NumerTelefonu,
-                                         zatrudnienie.Umowa,
-                                         zatrudnienie.Etat,
-                                         zatrudnienie.Dzial,
-                                         zatrudnienie.Stanowisko,
-                                         zatrudnienie.StawkaGodzinowa,
-                                         zatrudnienie.DataRozpoczeciaPracy,
-                                         zatrudnienie.DziennyCzasPracy,
-                                     }).Single();
+                    case true:
+                        DanePracownikPolski();
+                        break;
+                    case false:
+                        DanePracownikZagranicznyPodstawowe();
+                        break;
+                    default:
+                        throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd wyszukiwania pracowników.");
+            }    
+        }
 
-                        imiePracownika = query.Imie.ToString();
-                        nazwiskoPracownika = query.Nazwisko.ToString();
-                        kraj = query.Kraj.ToString();
-                        numerTelefonu = query.NumerTelefonu.ToString();
-                        umowa = query.Umowa.ToString();
-                        etat = query.Etat.ToString();
-                        dzial = query.Dzial.ToString();
-                        stanowisko = query.Stanowisko.ToString();
-                        stawkaGodzinowa = query.StawkaGodzinowa.ToString();
-                        dziennyCzasPracy = query.DziennyCzasPracy.ToString();
-                        dataRozpoczeciaPracy = query.DataRozpoczeciaPracy;
+        private void DanePracownikZagranicznyPodstawowe()
+        {
+            try
+            {
+                using var db = new Database();
 
-                        ImieZwalnianegoPracownikaTB.Text = imiePracownika;
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Błąd");
-                        ZwolnijPracownikaGB();
-                    }
+                var query = (from podstawowe in db.DanePracownikZagranicznyPodstawowes
+                              join zatrudnienie in db.DanePracownikZagranicznyZatrudnienies
+                              on podstawowe.ID equals zatrudnienie.ID
+                              select new
+                              {
+                                  podstawowe.Imie,
+                                  podstawowe.Nazwisko,
+                                  podstawowe.Kraj,
+                                  podstawowe.TelefonKontaktowy,
+                                  zatrudnienie.TypUmowy,
+                                  zatrudnienie.Etat,
+                                  zatrudnienie.Dzial,
+                                  zatrudnienie.Stanowisko,
+                                  zatrudnienie.StawkaGodzinowa,
+                                  zatrudnienie.DataZatrudnienia,
+                                  zatrudnienie.DziennyCzasPracy,
+                              }).Single();
+
+                imiePracownika = query.Imie.ToString();
+                nazwiskoPracownika = query.Nazwisko.ToString();
+                kraj = query.Kraj.ToString();
+                numerTelefonu = query.TelefonKontaktowy.ToString();
+                umowa = query.TypUmowy.ToString();
+                etat = query.Etat.ToString();
+                dzial = query.Dzial.ToString();
+                stanowisko = query.Stanowisko.ToString();
+                stawkaGodzinowa = query.StawkaGodzinowa.ToString();
+                dziennyCzasPracy = query.DziennyCzasPracy.ToString();
+                dataRozpoczeciaPracy = query.DataZatrudnienia;
+
+                ImieZwalnianegoPracownikaTB.Text = imiePracownika;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Błąd");
+                ZwolnijPracownikaGB();
+            }
+        }
+
+        private void DanePracownikPolski()
+        {
+            try
+            {
+                using var db = new Database();
+                try
+                {
+                    var query = (from podstawowe in db.DanePracownikaPodstawowe
+                                 join zatrudnienie in db.DanePracownikaZatrudnienie
+                                 on podstawowe.ID equals zatrudnienie.ID
+                                 select new
+                                 {
+                                     podstawowe.Imie,
+                                     podstawowe.Nazwisko,
+                                     podstawowe.Kraj,
+                                     podstawowe.NumerTelefonu,
+                                     zatrudnienie.Umowa,
+                                     zatrudnienie.Etat,
+                                     zatrudnienie.Dzial,
+                                     zatrudnienie.Stanowisko,
+                                     zatrudnienie.StawkaGodzinowa,
+                                     zatrudnienie.DataRozpoczeciaPracy,
+                                     zatrudnienie.DziennyCzasPracy,
+                                 }).Single();
+
+                    imiePracownika = query.Imie.ToString();
+                    nazwiskoPracownika = query.Nazwisko.ToString();
+                    kraj = query.Kraj.ToString();
+                    numerTelefonu = query.NumerTelefonu.ToString();
+                    umowa = query.Umowa.ToString();
+                    etat = query.Etat.ToString();
+                    dzial = query.Dzial.ToString();
+                    stanowisko = query.Stanowisko.ToString();
+                    stawkaGodzinowa = query.StawkaGodzinowa.ToString();
+                    dziennyCzasPracy = query.DziennyCzasPracy.ToString();
+                    dataRozpoczeciaPracy = query.DataRozpoczeciaPracy;
+
+                    ImieZwalnianegoPracownikaTB.Text = imiePracownika;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd");
+                    ZwolnijPracownikaGB();
                 }
             }
             catch
@@ -233,6 +300,11 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
                 e.Cancel = false;
                 OpisZwolnieniaEP.SetError(OpisZwolnieniaTB, null);
             }
+        }
+
+        private void FiredEmployeesDetails_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
