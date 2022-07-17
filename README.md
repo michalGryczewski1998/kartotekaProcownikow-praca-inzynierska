@@ -16,3 +16,5 @@ Wersja 1.4.1 - Dodanie pracowników z zagranicy
 Wersja 1.4.2 - Modyfikacja danych pracowników  zagranicy
 <br>
 Wersja 1.4.3 - Zwalnianie pracowników z zagranicy
+<br>
+Wersja 1.5.0 - Frontent aplikacji oraz ostateczne HotFix'y
