@@ -552,7 +552,7 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             this.StanowiskoGB.Controls.Add(this.stanowisko);
             this.StanowiskoGB.Location = new System.Drawing.Point(455, 527);
             this.StanowiskoGB.Name = "StanowiskoGB";
-            this.StanowiskoGB.Size = new System.Drawing.Size(449, 295);
+            this.StanowiskoGB.Size = new System.Drawing.Size(449, 198);
             this.StanowiskoGB.TabIndex = 48;
             this.StanowiskoGB.TabStop = false;
             this.StanowiskoGB.Text = "Dane o miejscu pracy";
@@ -642,7 +642,7 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             // DataZatrudnieniaDTP
             // 
             this.DataZatrudnieniaDTP.CustomFormat = " ";
-            this.DataZatrudnieniaDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DataZatrudnieniaDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DataZatrudnieniaDTP.Location = new System.Drawing.Point(140, 114);
             this.DataZatrudnieniaDTP.Name = "DataZatrudnieniaDTP";
             this.DataZatrudnieniaDTP.Size = new System.Drawing.Size(272, 23);
@@ -677,7 +677,7 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             // 
             // DodajBTN
             // 
-            this.DodajBTN.Location = new System.Drawing.Point(763, 902);
+            this.DodajBTN.Location = new System.Drawing.Point(765, 970);
             this.DodajBTN.Name = "DodajBTN";
             this.DodajBTN.Size = new System.Drawing.Size(139, 51);
             this.DodajBTN.TabIndex = 50;
@@ -795,15 +795,15 @@ namespace Kartotekapracownikow.Forms.InternationalStaff
             // groupBox2
             // 
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 965);
+            this.groupBox2.Location = new System.Drawing.Point(0, 1027);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(931, 96);
+            this.groupBox2.Size = new System.Drawing.Size(931, 34);
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(618, 902);
+            this.button1.Location = new System.Drawing.Point(620, 970);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 51);
             this.button1.TabIndex = 53;
