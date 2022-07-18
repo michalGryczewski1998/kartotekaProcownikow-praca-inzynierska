@@ -1,7 +1,7 @@
 # kartotekaProcownikow-praca-inzynierska
 Praca inżynierska - Michał Gryczewski
 <br>
-Obecnie pracuję nad - Okienko wyświetlające informacje szczegółowe
+Obecnie pracuję nad - Ostateczne poprawki
 <br>
 Wersja 1.0.1 - Dodanie podstawowych formularzy
 <br>
