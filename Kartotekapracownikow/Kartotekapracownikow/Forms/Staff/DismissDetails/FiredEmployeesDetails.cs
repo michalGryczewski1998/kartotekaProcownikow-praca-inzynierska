@@ -155,16 +155,24 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
 
         private void ZwolnijPracownikaBTN_Click(object sender, EventArgs e)
         {
-            ZwolnijPracownikaGB();
+            ZwolnijPracownika();
         }
 
-        private void ZwolnijPracownikaGB()
+        private void ZwolnijPracownika()
         {
             try
             {
-                //double iloscPrzepracowanych = ObliczenieIlosciPrzepracowanychDni();
-                //Debug.WriteLine(iloscPrzepracowanych);
                 using var db = new Database();
+                double iloscPrzepracowanych;
+
+                if(status == true)
+                {
+                    iloscPrzepracowanych = ObliczenieIlosciPrzepracowanychDni();
+                }
+                else
+                {
+                    iloscPrzepracowanych = ObliczenieIlosciPrzepracowanychDniZagraniczny();
+                }
 
                 try
                 {
@@ -186,7 +194,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
                         DataRozpoczeciaPracy = dataRozpoczeciaPracy,
                         DataZakonczeniaPracy = DateTime.Now.Date,
                         DziennyCzasPracy = dziennyCzasPracy,
-                        IloscPrzepracowanychDni = 43
+                        IloscPrzepracowanychDni = iloscPrzepracowanych
 
                     };
 
@@ -213,6 +221,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
                 MessageBox.Show("Błąd podczas zwalniania");
             }
         }
+
 
         private void UsunieciePracownikaZagranicznegoBazaDanych()
         {
@@ -277,7 +286,27 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
 
             return different;
         }
+        private double ObliczenieIlosciPrzepracowanychDniZagraniczny()
+        {
+            DateTime StartTime;
 
+            using (var db = new Database())
+            {
+                var queryZatrudnienie = (from zatrudnienie in db.DanePracownikZagranicznyZatrudnienies
+                                         where zatrudnienie.ID == employeesID
+                                         select new
+                                         {
+                                             zatrudnienie.DataZatrudnienia
+                                         }).Single();
+
+                StartTime = queryZatrudnienie.DataZatrudnienia;
+            }
+
+            DateTime EndTime = DateTime.Now.Date;
+            double different = Convert.ToDouble((EndTime - StartTime).Days);
+
+            return different;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             //Wyczysc
