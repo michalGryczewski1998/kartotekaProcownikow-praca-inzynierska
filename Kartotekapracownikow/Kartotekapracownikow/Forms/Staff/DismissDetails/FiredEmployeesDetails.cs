@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,6 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
         string stawkaGodzinowa;
         string dziennyCzasPracy;
         DateTime dataRozpoczeciaPracy;
-        DateTime dataZakonczeniaPracy;
 
         public FiredEmployeesDetails(int employeesID, bool status)
         {
@@ -47,7 +47,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
                         DanePracownikPolski();
                         break;
                     case false:
-                        DanePracownikZagranicznyPodstawowe();
+                        DanePracownikZagraniczny();
                         break;
                     default:
                         throw new Exception();
@@ -59,7 +59,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
             }    
         }
 
-        private void DanePracownikZagranicznyPodstawowe()
+        private void DanePracownikZagraniczny()
         {
             try
             {
@@ -100,7 +100,6 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
             catch (Exception)
             {
                 MessageBox.Show("Błąd");
-                ZwolnijPracownikaGB();
             }
         }
 
@@ -146,7 +145,6 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
                 catch (Exception)
                 {
                     MessageBox.Show("Błąd");
-                    ZwolnijPracownikaGB();
                 }
             }
             catch
@@ -164,63 +162,97 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
         {
             try
             {
-                using(var db = new Database())
+                //double iloscPrzepracowanych = ObliczenieIlosciPrzepracowanychDni();
+                //Debug.WriteLine(iloscPrzepracowanych);
+                using var db = new Database();
+
+                try
                 {
-                    double iloscPrzepracowanych = ObliczenieIlosciPrzepracowanychDni();
+                    db.Database.EnsureCreated();
 
-                    try
+                    var ZwolnieniPracownicy = new ZwolnieniPracownicy
                     {
-                        db.Database.EnsureCreated();
+                        Imie = imiePracownika,
+                        Nazwisko = nazwiskoPracownika,
+                        Kraj = kraj,
+                        NumerTelefonu = numerTelefonu,
+                        Umowa = umowa,
+                        Etat = etat,
+                        Dzial = dzial,
+                        PrzyczynaZwolnienia = PrzyczynaZwolnieniaTB.ToString(),
+                        OpisPrzyczynyZwolnienia = OpisZwolnieniaTB.ToString(),
+                        Stanowisko = stanowisko,
+                        StawkaGodzinowa = stawkaGodzinowa,
+                        DataRozpoczeciaPracy = dataRozpoczeciaPracy,
+                        DataZakonczeniaPracy = DateTime.Now.Date,
+                        DziennyCzasPracy = dziennyCzasPracy,
+                        IloscPrzepracowanychDni = 43
 
-                        var ZwolnieniPracownicy = new ZwolnieniPracownicy
-                        {
-                            Imie = imiePracownika,
-                            Nazwisko = nazwiskoPracownika,
-                            Kraj = kraj,
-                            NumerTelefonu = numerTelefonu,
-                            Umowa = umowa,
-                            Etat = etat,
-                            Dzial = dzial,
-                            PrzyczynaZwolnienia = PrzyczynaZwolnieniaTB.ToString(),
-                            OpisPrzyczynyZwolnienia = OpisZwolnieniaTB.ToString(),
-                            Stanowisko = stanowisko,
-                            StawkaGodzinowa = stawkaGodzinowa,
-                            DataRozpoczeciaPracy = dataRozpoczeciaPracy,
-                            DataZakonczeniaPracy = dataZakonczeniaPracy,
-                            DziennyCzasPracy = dziennyCzasPracy,
-                            IloscPrzepracowanychDni = iloscPrzepracowanych
+                    };
 
-                        };
+                    db.ZwolnieniPracownicy.Add(ZwolnieniPracownicy);
+                    db.SaveChanges();
 
-                        db.ZwolnieniPracownicy.Add(ZwolnieniPracownicy);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Błąd podczas zwalniania pracownika \n");
+                }
 
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Błąd podczas zwalniania pracownika \n");
-                    }
-
-                    try
-                    {
-                        var zatrudnienie = (from z in db.DanePracownikaZatrudnienie where z.ID == employeesID select z).FirstOrDefault();
-                        db.DanePracownikaZatrudnienie.Remove(zatrudnienie);
-
-                        var podstawowe = (from p in db.DanePracownikaPodstawowe where p.ID == employeesID select p).FirstOrDefault();
-                        db.DanePracownikaPodstawowe.Remove(podstawowe);
-
-                        db.SaveChanges();
-
-                        MessageBox.Show("Pracownik " + imiePracownika + " został zwolniony.");
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Pracownik " + imiePracownika + " nie został zwolniony.");
-                    }
+                if (status == true)
+                {
+                    UsunieciePracownikaBazaDanych();
+                }
+                else
+                {
+                    UsunieciePracownikaZagranicznegoBazaDanych();
                 }
             }
             catch(Exception)
             {
                 MessageBox.Show("Błąd podczas zwalniania");
+            }
+        }
+
+        private void UsunieciePracownikaZagranicznegoBazaDanych()
+        {
+            using var db = new Database();
+            try
+            {
+                var zatrudnienie = (from z in db.DanePracownikZagranicznyZatrudnienies where z.ID == employeesID select z).FirstOrDefault();
+                db.DanePracownikZagranicznyZatrudnienies.Remove(zatrudnienie);
+
+                var podstawowe = (from p in db.DanePracownikZagranicznyPodstawowes where p.ID == employeesID select p).FirstOrDefault();
+                db.DanePracownikZagranicznyPodstawowes.Remove(podstawowe);
+
+                db.SaveChanges();
+
+                MessageBox.Show("Pracownik " + imiePracownika + " został zwolniony.");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pracownik " + imiePracownika + " nie został zwolniony.");
+            }
+        }
+
+        private void UsunieciePracownikaBazaDanych()
+        {
+            using var db = new Database();
+            try
+            {
+                var zatrudnienie = (from z in db.DanePracownikaZatrudnienie where z.ID == employeesID select z).FirstOrDefault();
+                db.DanePracownikaZatrudnienie.Remove(zatrudnienie);
+
+                var podstawowe = (from p in db.DanePracownikaPodstawowe where p.ID == employeesID select p).FirstOrDefault();
+                db.DanePracownikaPodstawowe.Remove(podstawowe);
+
+                db.SaveChanges();
+
+                MessageBox.Show("Pracownik " + imiePracownika + " został zwolniony.");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Pracownik " + imiePracownika + " nie został zwolniony.");
             }
         }
 
@@ -241,7 +273,7 @@ namespace Kartotekapracownikow.Forms.Staff.DismissDetails
             }
 
             DateTime EndTime = DateTime.Now.Date;
-            double different = (EndTime - StartTime).Days;
+            double different = Convert.ToDouble((EndTime - StartTime).Days);
 
             return different;
         }

@@ -13,12 +13,12 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
 {
     public partial class FormerInfo : Form
     {
-        int employeesID;
+        private readonly int employeesID;
 
         public FormerInfo(int employesID)
         {
             InitializeComponent();
-            this.employeesID = employesID;
+            employeesID = employesID;
             ZapytanieZwolnionyPracownik();
         }
 
@@ -71,11 +71,6 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
                 MessageBox.Show("Błąd podczas pobierania danych");
             }
 
-        }
-
-        private void UmowaPodgladBTN_Click(object sender, EventArgs e)
-        {
-            // TODO: podgląd umowy PDF w WindowsForm
         }
     }
 }

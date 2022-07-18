@@ -39,7 +39,6 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.label4 = new System.Windows.Forms.Label();
             this.UmowaTB = new System.Windows.Forms.TextBox();
             this.UmowaLabel = new System.Windows.Forms.Label();
-            this.UmowaPodgladBTN = new System.Windows.Forms.Button();
             this.EtatTB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.DzialTB = new System.Windows.Forms.TextBox();
@@ -60,10 +59,10 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.OpisPrzyczynyZwolnieniaTB = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.InformacjeTP = new System.Windows.Forms.TabPage();
+            this.PrzyczynaZwolnieniaTB = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.IloscPrzepracowanychDniTB = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.PrzyczynaZwolnieniaTB = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.PrzybornikTC.SuspendLayout();
             this.ZwolnieniaTP.SuspendLayout();
@@ -154,16 +153,6 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.UmowaLabel.Size = new System.Drawing.Size(48, 15);
             this.UmowaLabel.TabIndex = 8;
             this.UmowaLabel.Text = "Umowa";
-            // 
-            // UmowaPodgladBTN
-            // 
-            this.UmowaPodgladBTN.Location = new System.Drawing.Point(12, 402);
-            this.UmowaPodgladBTN.Name = "UmowaPodgladBTN";
-            this.UmowaPodgladBTN.Size = new System.Drawing.Size(120, 36);
-            this.UmowaPodgladBTN.TabIndex = 10;
-            this.UmowaPodgladBTN.Text = "Podgląd umowy";
-            this.UmowaPodgladBTN.UseVisualStyleBackColor = true;
-            this.UmowaPodgladBTN.Click += new System.EventHandler(this.UmowaPodgladBTN_Click);
             // 
             // EtatTB
             // 
@@ -348,6 +337,22 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.InformacjeTP.Text = "Przyczyna zwolnienia";
             this.InformacjeTP.UseVisualStyleBackColor = true;
             // 
+            // PrzyczynaZwolnieniaTB
+            // 
+            this.PrzyczynaZwolnieniaTB.Location = new System.Drawing.Point(137, 6);
+            this.PrzyczynaZwolnieniaTB.Name = "PrzyczynaZwolnieniaTB";
+            this.PrzyczynaZwolnieniaTB.Size = new System.Drawing.Size(342, 23);
+            this.PrzyczynaZwolnieniaTB.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(124, 15);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Przyczyna zwolnienia: ";
+            // 
             // IloscPrzepracowanychDniTB
             // 
             this.IloscPrzepracowanychDniTB.Location = new System.Drawing.Point(165, 302);
@@ -364,22 +369,6 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.label12.Size = new System.Drawing.Size(147, 15);
             this.label12.TabIndex = 23;
             this.label12.Text = "Ilość Przepracowanych dni";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(124, 15);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Przyczyna zwolnienia: ";
-            // 
-            // PrzyczynaZwolnieniaTB
-            // 
-            this.PrzyczynaZwolnieniaTB.Location = new System.Drawing.Point(137, 6);
-            this.PrzyczynaZwolnieniaTB.Name = "PrzyczynaZwolnieniaTB";
-            this.PrzyczynaZwolnieniaTB.Size = new System.Drawing.Size(342, 23);
-            this.PrzyczynaZwolnieniaTB.TabIndex = 1;
             // 
             // FormerInfo
             // 
@@ -400,7 +389,6 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.Controls.Add(this.label6);
             this.Controls.Add(this.EtatTB);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.UmowaPodgladBTN);
             this.Controls.Add(this.UmowaTB);
             this.Controls.Add(this.UmowaLabel);
             this.Controls.Add(this.NumerTelefonuTB);
@@ -412,6 +400,7 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
             this.Controls.Add(this.ImiePracownikaTB);
             this.Controls.Add(this.label1);
             this.Name = "FormerInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormerEmployeesInfo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -437,7 +426,6 @@ namespace Kartotekapracownikow.Forms.Staff.FormerEmployeesInfo
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox UmowaTB;
         private System.Windows.Forms.Label UmowaLabel;
-        private System.Windows.Forms.Button UmowaPodgladBTN;
         private System.Windows.Forms.TextBox EtatTB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox DzialTB;
