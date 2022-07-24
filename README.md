@@ -22,5 +22,8 @@ Wersja 1.5.0 - Frontent aplikacji oraz ostateczne HotFix'y
 <h1>Aplikacje Kartoteka Pracownicza</h1>
 <hr>
 <h2>Widok aplikacji</h2>
-<img src="https://drive.google.com/file/d/10wwUmf1HfMB7dMUlkvMoktBV1EYzUO0S/view">
+<img src="">
+<h2>
+Dodawanie pracownika krajowego jak i pracownika z zagrnicy. 
+</h2>
 <br>
